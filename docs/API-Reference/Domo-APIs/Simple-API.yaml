@@ -1,0 +1,139 @@
+openapi: 3.1.0
+x-stoplight:
+  id: jaqelzzxpee3e
+info:
+  title: Simple API
+  version: '1.0'
+  description: The Simple API allows you to create new DataSets and import data into the DataSets in your Domo instance.
+servers:
+  - url: 'https://api.domo.com'
+    description: Domo API
+paths:
+  /v1/json:
+    parameters: []
+    post:
+      summary: Create DataSet
+      operationId: ''
+      description: 'Creates a new DataSet in your Domo instance. Once the DataSet has been created, data can then be imported into the DataSet.'
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: name
+          required: true
+          description: Name of the DataSet to create
+        - schema:
+            type: string
+          in: query
+          name: description
+          required: true
+          description: Description of DataSet to create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+              x-examples:
+                Example 1:
+                  name: Leonhard Euler Party
+                  description: Mathematician Guest List
+            examples:
+              Example 1:
+                value:
+                  name: Leonhard Euler Party
+                  description: Mathematician Guest List
+        description: ''
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  description:
+                    type: string
+                  rows:
+                    type: integer
+                  columns:
+                    type: integer
+                  owner:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                  createdAt:
+                    type: string
+                  updatedAt:
+                    type: string
+                x-examples:
+                  Example 1:
+                    id: 4405ff58-1957-45f0-82bd-914d989a3ea3
+                    name: Leonhard Euler Party
+                    description: Mathematician Guest List
+                    rows: 0
+                    columns: 0
+                    owner:
+                      id: 27
+                      name: DomoSupport
+                    createdAt: '2016-06-21T17:20:36Z'
+                    updatedAt: '2016-06-21T17:20:36Z'
+              examples:
+                Example 1:
+                  value:
+                    id: 4405ff58-1957-45f0-82bd-914d989a3ea3
+                    name: Leonhard Euler Party
+                    description: Mathematician Guest List
+                    rows: 0
+                    columns: 0
+                    owner:
+                      id: 27
+                      name: DomoSupport
+                    createdAt: '2016-06-21T17:20:36Z'
+                    updatedAt: '2016-06-21T17:20:36Z'
+  '/v1/json/{DATASET_ID}/data':
+    parameters:
+      - schema:
+          type: string
+        name: DATASET_ID
+        in: path
+        required: true
+        description: The ID of the DataSet to have data imported
+    put:
+      summary: Import data into DataSet
+      operationId: ''
+      description: Imports data into an already existing DataSet in your Domo instance.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            examples:
+              Example 1:
+                value:
+                  - Friend: John
+                    Attending: 'false'
+                  - Friend: Jane
+                    Attending: 'true'
+      responses:
+        '200':
+          description: Returns an empty response.
+components:
+  schemas: {}
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+  - bearerAuth: []
