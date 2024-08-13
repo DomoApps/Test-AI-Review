@@ -1553,9 +1553,7 @@
   ],
   "library": {
     "cHJqOjEyMzU4Ng@35": {
-      "name": "Stoplight Style Guide",
       "description": "## Stoplight Style Guide\n\nStoplight's built-in style guide contains style and validation rules for OAS (OpenAPI specification) 2 and 3.x. \n\nThis built-in style guide is always initially enabled for Stoplight API projects. \n\nYou can:\n\n- Use the style guide as-is to [automatically lint](https://meta.stoplight.io/docs/platform/7975f76a794c4-validation-and-linting) your API files\n- [Disable individual rules](https://meta.stoplight.io/docs/platform/3f80fd36750e3-disable-inherited-rules)  that do not follow your organization's standards\n- [Disable the entire style guide](https://meta.stoplight.io/docs/platform/ff8502dfbe156-enable-a-style-guide#disable-a-style-guide)\n- [Reuse and customtize rules](https://meta.stoplight.io/docs/platform/2331c5241ddfc) to meet your needs\n\n> For best results, never disable the `oas2-schema` and `oas3-schema` rules. These rules validate the structure of your API document against the OpenAPI specification.",
-      "spectralExtends": [],
       "formats": [
         "oas2",
         "oas3",
@@ -1564,6 +1562,7 @@
       ],
       "aliases": {
         "API_Document": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "The complete API specification document. This can be used to target any part of the OpenAPI document using **field**.\n\n*Use this if you don't find specific targets that cater to your usecase.* ",
           "name": "API_Document",
           "targets": [
@@ -1579,10 +1578,10 @@
               ],
               "given": "$"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "API_Description": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "The top level description in an API document",
           "name": "API_Description",
           "targets": [
@@ -1598,10 +1597,10 @@
               ],
               "given": "$.info.description"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "Operation_Object": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "The complete operation object. Use it in combo with field object.",
           "name": "Operation_Object",
           "targets": [
@@ -1617,10 +1616,10 @@
               ],
               "given": "#Path_Item[get,put,post,delete,options,head,patch,trace]"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "Operation_Responses": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "Responses for all operations including get, put, post, delete, options, head, patch, trace.",
           "name": "Operation_Responses",
           "targets": [
@@ -1636,10 +1635,10 @@
               ],
               "given": "#Operation_Object.responses"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "Path_Item": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "name": "Path_Item",
           "targets": [
             {
@@ -1654,10 +1653,10 @@
               ],
               "given": "$.paths[*]"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "API_Contact": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "The top level description in an API document",
           "name": "API_Contact",
           "targets": [
@@ -1673,10 +1672,10 @@
               ],
               "given": "$.info.contact"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "API_License": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "The top level description in an API document",
           "name": "API_License",
           "targets": [
@@ -1692,10 +1691,10 @@
               ],
               "given": "$.info.license"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "All_Markdown": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "All markdown descriptions across the document.",
           "name": "All_Markdown",
           "targets": [
@@ -1711,10 +1710,10 @@
               ],
               "given": "$..[description,title]"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "API_Tags": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "Tags on an API object",
           "name": "API_Tags",
           "targets": [
@@ -1730,10 +1729,10 @@
               ],
               "given": "#Operation_Object.tags"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "API_Server": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "API hosts defined in the API specification",
           "name": "API_Server",
           "targets": [
@@ -1749,10 +1748,10 @@
               ],
               "given": "$.host"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "Response_All_Object": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "All responses (object) in an API",
           "name": "Response_All_Object",
           "targets": [
@@ -1792,10 +1791,10 @@
               ],
               "given": "$..responses"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "API_Server_URL": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "API host urls defined in the API specification",
           "name": "API_Server_URL",
           "targets": [
@@ -1811,10 +1810,10 @@
               ],
               "given": "$.host"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "All_Ref": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "All references throughout the API",
           "name": "All_Ref",
           "targets": [
@@ -1830,10 +1829,10 @@
               ],
               "given": "$..[?(@property === '$ref')]"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "All_Enum_Object": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "All references throughout the API",
           "name": "All_Enum_Object",
           "targets": [
@@ -1849,10 +1848,10 @@
               ],
               "given": "$..[?(@ && @.enum && @.type)]"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "Request_Parameter_All": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "All request parameters",
           "name": "Request_Parameter_All",
           "targets": [
@@ -1868,10 +1867,10 @@
               ],
               "given": "$..parameters[*]"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "Request_Parameter_Query": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "All request query parameters",
           "name": "Request_Parameter_Query",
           "targets": [
@@ -1887,10 +1886,10 @@
               ],
               "given": "$..parameters[?(@.in==\"query\")]"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "Request_Parameter_Header": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "All request header parameters",
           "name": "Request_Parameter_Header",
           "targets": [
@@ -1906,10 +1905,10 @@
               ],
               "given": "$..parameters[?(@.in==\"header\")]"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "Request_Parameter_Cookie": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "All request cookie parameters",
           "name": "Request_Parameter_Cookie",
           "targets": [
@@ -1925,10 +1924,10 @@
               ],
               "given": "$..parameters[?(@.in==\"cookie\")]"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "Request_Parameter_Path": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "All request path parameters",
           "name": "Request_Parameter_Path",
           "targets": [
@@ -1944,10 +1943,10 @@
               ],
               "given": "$..parameters[?(@.in==\"path\")]"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "Path_Object": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "Path object. Usually used to target the Path key e.g. `/users/{userId}`",
           "name": "Path_Object",
           "targets": [
@@ -1963,10 +1962,10 @@
               ],
               "given": "$.paths"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "All_Example_Schema": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "All examples for schemas",
           "name": "All_Example_Schema",
           "targets": [
@@ -2012,10 +2011,10 @@
               ],
               "given": "$..parameters..[?(@property !== 'properties' && @ && (@ && @.example !== void 0 || @.default !== void 0) && (@.enum || @.type || @.format || @.$ref || @.properties || @.items))]"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "API_Document_RecursiveSearch": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "The complete API specification document. This can be used to target any part of the OpenAPI document using **field**.\n\n*Use this if you don't find specific targets that cater to your usecase.* ",
           "name": "API_Document_RecursiveSearch",
           "targets": [
@@ -2031,10 +2030,10 @@
               ],
               "given": "$.."
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "All_Example": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "All examples across the API document",
           "name": "All_Example",
           "targets": [
@@ -2080,10 +2079,10 @@
               ],
               "given": "$.components.headers[*].examples[*]"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "All_Example_Media": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "All examples for schemas",
           "name": "All_Example_Media",
           "targets": [
@@ -2111,10 +2110,10 @@
               ],
               "given": "$..parameters..[?(@ && @.schema && (@.example !== void 0 || @.examples))]"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "API_Tags_Item": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "Tags on an API object",
           "name": "API_Tags_Item",
           "targets": [
@@ -2130,10 +2129,10 @@
               ],
               "given": "$.tags[*]"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         },
         "All_Enum_Value": {
+          "extendedFrom": "cHJqOjEyMzU4Ng@35",
           "description": "All enum values throughout the API",
           "name": "All_Enum_Value",
           "targets": [
@@ -2149,8 +2148,7 @@
               ],
               "given": "$..[?(@ && @.enum)].enum[*]"
             }
-          ],
-          "extendedFrom": "cHJqOjEyMzU4Ng@35"
+          ]
         }
       },
       "rules": {
@@ -2894,6 +2892,8 @@
           ]
         }
       },
+      "spectralExtends": [],
+      "name": "Stoplight Style Guide",
       "x-embeddedFunctions": [
         {
           "id": "7vlMlWLJeLfv6M_PHO36r",
