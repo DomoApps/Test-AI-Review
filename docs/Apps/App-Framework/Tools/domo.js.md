@@ -101,7 +101,7 @@ For mobile web the routes are currently prefixed with `/m#`. For example `/m#/pr
 >
 > For security reasons, Custom Apps can link only to approved, whitelisted domains by default. You can whitelist domains or authorize linking to all domains in "Admin" > "Network Security" > "Custom Apps authorized domains". If you don't see this option, you may need the "Domo Apps Whitelisting" feature switch enabled in your Domo instance.
 
-### domo.env()
+### domo.env
 ---
 Some meta-data specific to Domo is passed into the card as query parameters in the iframe.
 
@@ -134,7 +134,7 @@ domo.env.userId // Example: 2133179061
 The name of the customer on which the app has been installed.
 
 ```
-domo.env.customer // Example: dev
+domo.env.customer // Example: domo-instance
 ```
 
 #### locale
