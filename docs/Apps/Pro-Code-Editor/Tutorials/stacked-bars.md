@@ -396,6 +396,4 @@ You can also use the GUI editor to edit the manifest file. Simply add the datase
 
 Congratulations! You've successfully built a stacked bar chart with a trended line in Domo's Pro-Code Editor. This tutorial provided you with the foundational steps to create a custom chart using JavaScript, Chart.js, and Domo's data platform. Feel free to customize and expand on this tutorial to fit your specific needs.
 
----
-
 This guide should get you started on building more complex visualizations in Domo's Pro-Code Editor. Remember to explore Domo’s documentation for advanced features and customization options.
