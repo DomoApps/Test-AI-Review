@@ -479,7 +479,7 @@
     },
         {
       "type": "divider",
-      "title": "Domo AI"
+      "title": "AI Resources Guide"
     },
     {
       "type": "item",
@@ -488,7 +488,7 @@
     },
     {
       "type": "item",
-      "title": "AI Services",
+      "title": "Domo.AI",
       "uri": "docs/Data-Science/ai-services.md"
     },
     {
