@@ -7,7 +7,7 @@ stoplight-id: 0mnsejhg5livn
 The AI Resources Guide is your one-stop shop for all help resources related to Domo AI products. 
 
 Domo offers a suite of AI / data science / machine learning tools to help you do more with your data. These tools include:
-- [AI Services](ai-services.md)
+- [Domo.AI](ai-services.md)
 - [Jupyter Workspaces](jupyter.md)
 - [Data Science Accelerators](accelerators.md)
 - [Magic ETL R/Python Scripting Tiles (Scripting Tiles)](scripting-tiles.md)
