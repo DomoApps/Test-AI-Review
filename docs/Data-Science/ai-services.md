@@ -9,7 +9,11 @@ Empower your enterprise with AI-guided experiences, chat-style data exploration,
 See [ai.domo.com](https://ai.domo.com/) for the latest product updates. See below for help resources.
 
 
-### Videos and Webinars
+## Security and Privacy
+[Frequently Asked Questions](https://web-assets.domo.com/blog/wp-content/uploads/2024/07/Domo.AI-and-DomoGPT-Security-and-Privacy-FAQ-2.pdf)
+
+
+## Videos and Webinars
 
 [**Preview of Universal Models (July 2024)**](https://www.youtube.com/live/v6t0ldqC5b0?si=Dijrr1mflyX0wtUA&t=208
 )
@@ -44,7 +48,7 @@ https://youtu.be/JCFkPcwMZY0?si=02cD_OzUc8bbZPZr&t=1226
 *Learn how to expertly select and apply LLMs to match your specific AI needs*
 
 
-### Other Resources
+## Other Resources
 
 - [AI Service Layer App Framework APIs](../Domo-App-APIs/AI-Service-Layer-API.md)
 - [Domo.AI Knowledge Base Articles](https://domo-support.domo.com/s/topic/0TO5w000000ZmGPGA0/domoai?language=en_US)
