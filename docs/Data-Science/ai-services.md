@@ -11,6 +11,11 @@ Most importantly, the framework lets customers and partners host and manage thei
 
 ### Videos and Webinars
 
+[**Preview of Universal Models (July 2024)**](https://www.youtube.com/live/v6t0ldqC5b0?si=Dijrr1mflyX0wtUA&t=208
+)
+
+Universal Models are pre-built AI models crafted for wide accessibility, providing significant benefits to low-code users. Multiple Universal Models, including Forecasting, Personal Data Protection, and Sentiment Analysis, will be available in the coming months. See the slide deck shared in the webinar here. 
+
 
 **Demos of NEW Domo AI Tools (Nov 2023)**
 
