@@ -2,7 +2,7 @@
 stoplight-id: x2i3bk0w4bwhe
 ---
 
-# AI Services
+# Domo.AI
 
 Empower your enterprise with AI-guided experiences, chat-style data exploration, flexible model creation and management, seamless deployment, and superior governance and security with Domo.AI. 
 
