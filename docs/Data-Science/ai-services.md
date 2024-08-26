@@ -4,9 +4,9 @@ stoplight-id: x2i3bk0w4bwhe
 
 # AI Services
 
-Domo’s AI Service Layer makes it easy for users to manage, deploy, and optimize AI and ML models—including Large Language Models (LLMs)—so they can get the most out of their data experiences. Its capabilities span from generative AI and natural language processing that enable text generation and SQL queries, to audio transcription and text translation. 
+Empower your enterprise with AI-guided experiences, chat-style data exploration, flexible model creation and management, seamless deployment, and superior governance and security with Domo.AI. 
 
-Most importantly, the framework lets customers and partners host and manage their own models and solutions in our data experience platform.
+See [ai.domo.com](https://ai.domo.com/) for the latest product updates. See below for help resources.
 
 
 ### Videos and Webinars
@@ -14,27 +14,27 @@ Most importantly, the framework lets customers and partners host and manage thei
 [**Preview of Universal Models (July 2024)**](https://www.youtube.com/live/v6t0ldqC5b0?si=Dijrr1mflyX0wtUA&t=208
 )
 
-Universal Models are pre-built AI models crafted for wide accessibility, providing significant benefits to low-code users. Multiple Universal Models, including Forecasting, Personal Data Protection, and Sentiment Analysis, will be available in the coming months. See the slide deck shared in the webinar here. 
+*Universal Models are pre-built AI models crafted for wide accessibility, providing significant benefits to low-code users. Multiple Universal Models, including Forecasting, Personal Data Protection, and Sentiment Analysis, will be available in the coming months. See the slide deck shared in the webinar [here](https://github.com/domoinc/domo-data-science-resources/blob/main/webinars/Domo_Universal_Models_240725.pdf).* 
 
 
 **Demos of NEW Domo AI Tools (Nov 2023)**
 
 https://www.youtube.com/watch?v=zaCSgsjjp7M&t=392s
 
-Advanced Dataset Views, Text-to-Beast-Mode in Analyzer, using Large Language Models (LLMs) in Domo Bricks, Model Management, and Model Comparisons
+*Learn about Advanced Dataset Views, Text-to-Beast-Mode in Analyzer, using Large Language Models (LLMs) in Domo Bricks, Model Management, and Model Comparisons*
 
 
 **Q&A Panel Session With Domo AI Experts**
 
 https://youtu.be/Mk83Dk7QEvg?si=_DKO057i8F99M5fh&t=25
 
-AI experts from Domo share insights on how to adopt & integrate AI into your company effectively & responsibly
+*AI experts from Domo share insights on how to adopt & integrate AI into your company effectively & responsibly*
 
 **AI Ready: Is Your Data Clean Enough?**
 
 https://youtu.be/JCFkPcwMZY0?si=02cD_OzUc8bbZPZr&t=1226
 
-13 common data cleanliness issues that need to be addressed to have AI-ready data.
+*13 common data cleanliness issues that need to be addressed to have AI-ready data.*
 - [Slide deck shared in presentation](https://github.com/domoinc/domo-data-science-resources/blob/main/webinars/Domopalooza_AI_Ready_Data_Cleanliness_2024.pdf)
 - [Data cleanliness checklist](https://github.com/domoinc/domo-data-science-resources/blob/main/webinars/Data_Cleanliness_Checklist.pdf)
 
