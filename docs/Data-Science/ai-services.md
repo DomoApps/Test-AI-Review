@@ -8,6 +8,12 @@ Empower your enterprise with AI-guided experiences, chat-style data exploration,
 
 See [ai.domo.com](https://ai.domo.com/) for the latest product updates. See below for help resources.
 
+## Tools and Capabilities
+- **AI Chat**: AI Chat gives customers the ability to hold contextual conversations with their data; AI Chat will know what data is most relevant depending on which dashboard or app a user is viewing. Users can have a true conversation with their data including suggested follow up questions.
+  *Note: AI Chat is currently in Beta. Please contact your AE or CSM to get access.* 
+
+- Beast Mode AI Assistant
+
 
 ## Security and Privacy
 [Frequently Asked Questions](https://web-assets.domo.com/blog/wp-content/uploads/2024/07/Domo.AI-and-DomoGPT-Security-and-Privacy-FAQ-2.pdf)
