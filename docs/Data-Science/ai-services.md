@@ -19,11 +19,11 @@ See [ai.domo.com](https://ai.domo.com/) for the latest product updates. See belo
   - Text Generation: Enter a question and the service returns an answer.
   - Text Summarization: Enter text and the service generates a summary of the text.
 - [**AI Service Layer Settings**](https://domo-support.domo.com/s/article/000005279?language=en_US): View details about and change the Domo Default Model associated with various  Domo.AI tools and services through the AI Service Layer Settings.
-- [**AI Models**](https://domo-support.domo.com/s/article/000005502?language=en_US): AI Models is the place to store and manage models ([live demo](https://www.youtube.com/live/f4L7bc52snE?si=PHf0BWkeKrCkC8GU&t=620)); see details about your models and compare their performance ([live demo](https://www.youtube.com/live/f4L7bc52snE?si=yDqC7YA9R01KzhyW&t=248)); and deploy your models for use with other Domo tools.
+- [**AI Models**](https://domo-support.domo.com/s/article/000005502?language=en_US): AI Models is the place to store and manage models ([live demo](https://www.youtube.com/live/f4L7bc52snE?si=PHf0BWkeKrCkC8GU&t=620)); see details about your models and compare their performance ([live demo](https://www.youtube.com/live/f4L7bc52snE?si=yDqC7YA9R01KzhyW&t=248)); and deploy your models for use with other Domo tools ([live demo](https://www.youtube.com/live/zaCSgsjjp7M?si=Z9co1efM3E7W2MMD&t=1988)).
 - **Domo Bricks for AI**: The following Domo Bricks were created within the Domo data experience platform to help low-code developers use ChatGPT and other AI capabilities.
     - [Text Generation Brick](https://www.domo.com/appstore/app/ai-chatgpt-brick/overview): Use ChatGPT to ask, save, edit, and search responses.
     - [Dataset Description Brick](https://www.domo.com/appstore/app/chatgpt-dataset-description-brick/overview): Automatically generate a description of any dataset based on its schema.
-    - [Text-to-SQL Query Brick](https://www.domo.com/appstore/app/explain-sql-with-ai/overview): Use ChatGPT to generate SQL.
+    - [Text-to-SQL Query Brick](https://www.domo.com/appstore/app/explain-sql-with-ai/overview): Use ChatGPT to generate SQL ([live demo](https://www.youtube.com/live/zaCSgsjjp7M?si=pbkNwTgaKqccQeTz&t=1087)).
 - [**Create a Model in Jupyter Workspaces**](https://domo-support.domo.com/s/article/000005291?language=en_US): An example of how to build a machine learning model using Jupyter Workspaces and then upload the model to the Domo AI Models interface.
 
 
