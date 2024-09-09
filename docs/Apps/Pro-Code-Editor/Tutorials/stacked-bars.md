@@ -389,8 +389,8 @@ All the information to customize the labels and legends can be found by looking 
 ### **Conclusion**
 
 Congratulations! You've successfully built a stacked bar chart with a trended line in Domo's Pro-Code Editor. This tutorial provided you with the foundational steps to create a custom chart using JavaScript, Chart.js, and Domo's data platform. Feel free to customize and expand on this tutorial to fit your specific needs.
-<p align="center">
-    <img src="../../../../assets/images/chart.png" width="90%">
+<p align="center">  
+   <img src="../../../../assets/images/stacked-bars.gif">
 </p>
 
 This guide should get you started on building more complex visualizations in Domo's Pro-Code Editor. Remember to explore Domo’s documentation for advanced features and customization options.

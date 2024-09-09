@@ -402,6 +402,23 @@
       ]
     },
     {
+      "type": "group",
+      "title": "Pro-Code Editor",
+      "items": [
+        {
+          "type": "group",
+          "title": "Tutorials",
+          "items": [
+            {
+              "type": "item",
+              "title": "Stacled Bars with Trended Line",
+              "uri": "/docs/Apps/Pro-Code-Editor/Tutorials/stacked-bars.md.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "divider",
       "title": "Partner Developers"
     },
