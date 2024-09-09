@@ -156,6 +156,12 @@
               "title": "Managing Dataset History API",
               "uri": "docs/API-Reference/Product-APIs/Managing-Dataset-History.md"
             }
+            ,
+            {
+              "type": "item",
+              "title": "Export Charts and Tables to PDF API",
+              "uri": "docs/API-Reference/Product-APIs/Render-KPI-Card-Chart.md"
+            }
           ]
     },  
     {
