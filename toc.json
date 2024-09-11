@@ -411,8 +411,13 @@
           "items": [
             {
               "type": "item",
-              "title": "Stacled Bars with Trended Line",
-              "uri": "/docs/Apps/Pro-Code-Editor/Tutorials/stacked-bars.md.md"
+              "title": "Stacked Bars with Trended Line",
+              "uri": "/docs/Apps/Pro-Code-Editor/Tutorials/stacked-bars.md"
+            },
+            {
+              "type": "item",
+              "title": "Dashboard Export to PDF",
+              "uri": "/docs/Apps/Pro-Code-Editor/Tutorials/pdf-export.md"
             }
           ]
         }
