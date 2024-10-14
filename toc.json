@@ -396,6 +396,11 @@
                 "type": "item",
                 "title": "Getting Data in Domo Bricks",
                 "uri": "/docs/Apps/DDX-Bricks/Guides/getting-data.md"
+              },
+              {
+                "type": "item",
+                "title": "Converting a Brick into a Pro-Code App",
+                "uri": "/docs/Apps/DDX-Bricks/Guides/DDX-Pro-Code.md"
               }
             ]
           }
