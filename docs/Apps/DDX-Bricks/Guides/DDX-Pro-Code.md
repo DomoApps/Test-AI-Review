@@ -23,7 +23,7 @@
       - Finally, copy your CSS from the Brick and paste it into app.css in the Pro-Code Editor.
 
 ### 3. Next, migrate any required datasets
-Bricks uses a “window.datasets” design paradigm, while the Pro-Code Editor leverages a manifest.json strategy.
+Bricks uses the `window.datasets` global property to execute a Configuration-driven design paradigm, while the Pro-Code Editor leverages a [manifest.json](https://developer.domo.com/portal/af407395c766b-the-manifest-file) file to implement a Metadata-driven design strategy.
 
 - Review your code and identify all required datasets.
 - Select the “manifest.json” file and use the “+ Add Dataset” button.
