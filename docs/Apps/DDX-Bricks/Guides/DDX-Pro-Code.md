@@ -11,7 +11,7 @@
 
 ### 1. Begin by setting up your Pro-Code Application
 - Edit your Brick and click the “Convert to App” button in the header.
-- Navigate to the Asset Library, click the “Pro-Code Editor” button, and choose “Blank Template.”
+- In a separate window, navigate to the Asset Library, click the “Pro-Code Editor” button, and choose “Blank Template.”
 - By default, you will already have the app.css, app.js, index.html, and manifest.json files provided.
 
 ### 2. Copy your code into the Pro-Code Editor
