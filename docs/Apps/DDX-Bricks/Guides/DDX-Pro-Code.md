@@ -5,7 +5,7 @@
 
 *   Access to Domo's Pro-Code Editor.
     *   Ensure that Pro-Code Editor is enabled in your Domo instance. After 11/13/2024 this will be automatically enabled.
-*   A dataset uploaded to Domo.
+*   Access to any dataset referenced in the Brick being migrated.
 
 * * *
 
