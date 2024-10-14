@@ -40,7 +40,7 @@ Bricks uses a “window.datasets” design paradigm, while the Pro-Code Editor l
 </p>
 
 ### 5. Create an alias for the dataset ID
-   - This will be used to humanize your API calls to the dataset endpoint(s).
+   - This will be used to humanize your API calls to the [DataSet endpoint(s)](https://developer.domo.com/portal/8s3y9eldnjq8d-data-api).
 
 <p align="center">
    <img src="../../../../assets/images/mapping.png" width="500">
