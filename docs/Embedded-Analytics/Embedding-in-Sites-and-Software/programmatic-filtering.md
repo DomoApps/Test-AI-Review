@@ -149,9 +149,9 @@ SQL filters allow you to use a familiar SQL syntax to define powerful and concis
 
 `sqlFilter`: (required) A SQL string that describes your filter. This should look like a "WHERE" clause in a typical SQL query. You can use "OR" and "AND" to create complex filters. Column names should be wrapped in backticks, and values should be wrapped in single quotes.
 
-`datasourceId`: (optional) An optional value of a datasource ID to apply this filter on. If this is not supplied, the filter will be applied to all datasets on the page. <b>If the specified column does not exist on a dataset, cards using that dataset will fail to render. Specifying the dataset will ensure that only cards on this dataset will have the filter applied.</b>
+`datasourceIds`: (optional) An array of datasource IDs to apply this filter on. If this is not supplied, the filter will be applied to all datasets on the page. <b>If the specified column does not exist on a dataset, cards using that dataset will fail to render. Specifying the dataset will ensure that only cards on this dataset will have the filter applied.</b>
 
-e.g. ```"sqlFilters": [{"sqlFilter": "`Region` IN ('WEST')", "datasourceId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"}]```
+e.g. ```"sqlFilters": [{"sqlFilter": "`Region` IN ('WEST')", "datasourceIds": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]}]```
 
 
 <!-- theme: info -->
