@@ -7,7 +7,7 @@ In this tutorial, you'll learn how to create an app that converts Domo dashboard
 
 *   Access to Domo's Pro-Code Editor.
     *   To get access to the beta, please reach out to your CSM.
-*   Basic understanding of JavaScript and Chart.js.
+*   Basic understanding of JavaScript and the [HTML2PDF.js](https://ekoopmans.github.io/html2pdf.js/) library.
 *   Code engine enabled in your Domo instance.
 
 * * *
@@ -310,12 +310,11 @@ async function page2PDF(pageID, filters) {
 
 * * *
 
-### **Step 4: Set Up `index.html`**
+### **Step 4: Configure `index.html`**
 
-The `index.html` file serves as the main interface for your app. It includes the input field for Page ID, the button to trigger the PDF conversion, and the result message.
+The `index.html` file serves as the main interface for your app. It includes an input field for Page ID, a button to trigger PDF conversion, and a result message.
 
 ```html
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -326,35 +325,31 @@ The `index.html` file serves as the main interface for your app. It includes the
 </head>
 <body>
     <!-- Input field for Page ID -->
-    <input type="text" id="pageIdInput" placeholder="Enter Page ID here">
+    <input type="text" id="pageIdInput" placeholder="Enter Page ID here" pattern="[0-9]*">
 
     <!-- Button to trigger the PDF conversion -->
     <button id="convertButton">Convert to PDF</button>
 
     <!-- Result Message -->
     <div id="result" style="display: none;">PDF Generated Successfully!</div>
-    <div id="loading-spinner" class="spinner" style="display: none;">
-</div>
-    <div id="filters">
-</div>
+    <div id="loading-spinner" class="spinner" style="display: none;"></div>
+    <div id="error" class="error" style="display: none;"></div>
+    <div id="filters"></div>
 
-    <!-- Importing domo.js and PDF-lib -->
-    <script src="https://unpkg.com/ryuu.js">
-</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.16.0/pdf-lib.min.js">
-</script>
-    <script src="app.js">
-</script>
+    <!-- Import libraries -->
+    <script src="https://unpkg.com/ryuu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.16.0/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
 ```
 
-### **Step 5: Create the `app.css` File**
+### **Step 5: Styling with `app.css`**
 
-The `app.css` file contains styles for your app’s layout and interface elements.
+The `app.css` file defines styles for the app’s layout and elements.
 
 ```css
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -375,11 +370,6 @@ body {
   cursor: pointer;
 }
 
-#result {
-  margin-top: 20px;
-  display: none;
-}
-
 .spinner {
   position: fixed;
   top: 50%;
@@ -397,26 +387,34 @@ body {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+#error {
+  color: red;
+  margin-top: 20px;
+}
 ```
 
-### **Step 6: Writing the JavaScript Logic**
-----------------------------------------
+### **Step 6: Write JavaScript Logic in `app.js`**
 
-The `app.js` file handles all interactions, including managing filters, merging PDFs, and triggering the PDF download.
+The `app.js` file handles interactions like managing filters, merging PDFs, and triggering the PDF download.
 
-#### 6.1 Initialize Variables and Event Listeners
-
-Start by initializing variables and setting up event listeners.
+#### 6.1: Initialize Variables and Event Listeners
 
 ```javascript
-
-let filterSet;
+const functionAlias = 'printFunctions';
+let filterSet = null;
 let filterString = '';
 
+// Listens for filter updates
 domo.onFiltersUpdate(handleFilters);
 
+// Add click event to the convert button
 document.getElementById('convertButton').addEventListener('click', startPDFConversion);
-if (domo.env.pageId) document.getElementById('pageIdInput').style.display = 'none';
+
+// Hide the Page ID input if a page ID is provided in the environment
+if (domo.env.pageId) {
+  document.getElementById('pageIdInput').style.display = 'none';
+}
 ```
 
 #### 6.2: Handle Filters
@@ -424,189 +422,139 @@ if (domo.env.pageId) document.getElementById('pageIdInput').style.display = 'non
 Manage and display the filters applied to the data.
 
 ```javascript
-
 function handleFilters(filterEvent) {
-  console.log(filterEvent);
   const filterDisplay = document.getElementById('filters');
   filterDisplay.innerHTML = '';
   if (filterEvent && filterEvent.length > 0) {
     filterString = '';
-    filterEvent.forEach(
-filter => {
+    filterEvent.forEach(filter => {
       const filterKey = filter.key.replace(/_/g, ' ');
-      const filterText = `${filterKey} ${filter.values.join(', ')}`;
+      const filterText = `${filterKey}: ${filter.values.join(', ')}`;
       filterString += filterText + '\n';
-      const filterElement = document.createTextNode(filterText);
       const filterItem = document.createElement('div');
-      filterItem.appendChild(filterElement);
+      filterItem.textContent = filterText;
       filterDisplay.appendChild(filterItem);
     });
     filterSet = filterEvent;
   } else {
-    const noFilterText = 'No filters applied, all available data shown.';
-    const noFilterElement = document.createTextNode(noFilterText);
-    const noFilterItem = document.createElement('div');
-    filterString = noFilterText;
-    noFilterItem.appendChild(noFilterElement);
-    filterDisplay.appendChild(noFilterItem);
+    filterDisplay.textContent = 'No filters applied, all data shown.';
+    filterString = 'No filters applied, all data shown.';
   }
 }
 ```
 
-#### 6.3: Create the PDF Conversion Function
+#### 6.3: Start PDF Conversion
 
-This function uses the Domo Code Engine function to generate the encoded PDF and call the merge function to build the pdf document with all tables and charts in the dashboard. We will pass the pdfArray and titleHtml variables to the mergePDFs function.  
+This function triggers the PDF generation and handles user feedback on the result. It uses the Domo Code Engine function to generate the encoded PDF and call the merge function to build the pdf document with all tables and charts in the dashboard.
 
 ```javascript
-
-async function startPDFConversion(
-) {
+async function startPDFConversion() {
     document.getElementById('loading-spinner').style.display = 'block';
     document.getElementById('result').style.display = 'none';
-    const pageID = document.getElementById('pageIdInput').value || domo.env.pageId;
+    const pageId = domo.env.pageId ?? document.getElementById('pageIdInput').value;
 
-    if (pageID) {
-        try {
-            let result;
-            if (filterSet) {
-                result = await startFunction("printFunctions", {"pageID": pageID, "filters": filterSet});
-            } else {
-                result = await startFunction("printFunctions", {"pageID": pageID});
-            }
-            console.log(result);
-
-            const pdfArray = result.pdfArray.pdfResult;
-            const titleHtml = result.pdfArray.metadata.titleHtml;
-            console.log(titleHtml);
-    
-            if (pdfArray && pdfArray.length > 0) {
-                await mergePDFs(pdfArray, titleHtml);
-                document.getElementById('result').style.display = 'block';
-                console.log("PDF generated and download triggered");
-            } else {
-                console.log("No PDF generated for this Page ID.");
-            }
-        } catch (error) {
-            console.error('Error generating PDF:', error);
-        }
-    } else {
-        console.log("Invalid Page ID entered");
+    if (!pageId) {
+        return handleErrors('No Page ID entered');
     }
-    document.getElementById('loading-spinner').style.display = 'none';
+
+    try {
+        const result = filterSet 
+            ? await startFunction(functionAlias, { "pageID": pageId, "filters": filterSet })
+            : await startFunction(functionAlias, { "pageID": pageId });
+
+        const pdfArray = result.pdfArray.pdfResult;
+        const titleHtml = result.pdfArray.metadata.titleHtml;
+
+        if (pdfArray && pdfArray.length > 0) {
+            await mergePDFs(pdfArray, titleHtml);
+            document.getElementById('result').style.display = 'block';
+        } else {
+            handleErrors("No PDF generated for this Page ID.");
+        }
+    } catch (error) {
+        handleErrors(error.message);
+    } finally {
+        document.getElementById('loading-spinner').style.display = 'none';
+    }
 }
 
 async function startFunction(functionAlias, inputParameters = {}) {
-    console.log('starting function');
     return await domo.post(`/domo/codeengine/v2/packages/${functionAlias}`, inputParameters)
-        .then(
-data => data)
-        .catch(
-err => {
-            console.log(err);
-            throw err;
-        });
+        .then(data => data)
+        .catch(err => { throw err });
 }
 ```
 
+#### 6.4: Merge PDFs
 
-#### 6.4: Merge PDFs and Download
+This function merges individual PDF pages into a single document and downloads it.
 
-This function consolidates individual PDFs into one document.
+PDF-Lib is used for merging multiple PDFs, reordering or resizing pages, and adding customized content like titles or footers. Whereas HTML2PDF is used to generate downloadable PDF files from HTML content
+
+Any time you want to reference the documentaions, please access the [HTML2PDF documentation](https://html2pdf.js.org/) and [PDF-Lib documentation](https://pdf-lib.js.org/).
 
 1.  **Initialize PDF-lib and Create a New Document**:
     
     *   Start by importing the PDF-lib library.
-    *   Create a new `PDFDocument` object named `mergedPdf`. This document will hold all the pages from the PDFs that will be merged.
+    *   Create a new `PDFDocument` object called `mergedPdf` to hold all pages from the PDFs being merged.
 2.  **Clean Up the Title String**:
     
-    *   Clean up the `titleHtml` string.
-    *   Remove any HTML tags and replace special characters with newlines. This will ensure the title appears clean and readable in the final PDF.
+    *   Clean up the `titleHtml` string by removing any HTML tags and replacing special characters with newlines to ensure a clear, readable title in the final PDF.
 3.  **Iterate Over Each PDF Result**:
     
-    *   Create an array named `pdfArray`, where each element (`pdfResult` from the code engine function response) is a base64-encoded string representing a PDF.
-    *   Loop through each `pdfResult` in the array.
-    *   For each `pdfResult`, decode the base64 string and load the PDF data into a new `PDFDocument` object.
-    *   Retrieve all pages from this document.
+    *   Create an array named `pdfArray`, with each element (`pdfResult` from the code engine function response) as a base64-encoded PDF string.
+    *   Loop through each `pdfResult` in the array, decode the base64 string, and load the PDF data into a new `PDFDocument`.
+    *   Retrieve all pages from the loaded PDF document.
 4.  **Conditional Title Addition**:
     
-    *   Here we are adding a title to the PDF if the `titleHtml` string is not empty. 
+    *   Add a title to the PDF if the `titleHtml` string is not empty.
 5.  **Copy Pages to Merged PDF**:
     
-    *   For each page in the loaded PDF, copy it over to the `mergedPdf` document.
-    *   This will accumulate all pages into a single document.
+    *   For each page in the loaded PDF, copy it to the `mergedPdf` document, accumulating all pages into a single document.
 6.  **Create a New Consolidated PDF Document**:
     
-    *   After merging the pages into `mergedPdf`, create another `PDFDocument` object named `consolidatedPdf`.
-    *   Add a title page to `consolidatedPdf` that includes the cleaned-up title and any applied filters.
+    *   After merging pages into `mergedPdf`, create another `PDFDocument` object named `consolidatedPdf`.
+    *   Add a title page to `consolidatedPdf` that displays the cleaned-up title and any applied filters.
 7.  **Organize Pages Based on Size**:
     
-    *   Iterate over the pages in `mergedPdf`.
-    *   Add each page to `consolidatedPdf` based on their width.
+    *   Loop over each page in `mergedPdf` and add it to `consolidatedPdf`, positioning based on the page’s width.
 8.  **Save and Download the Consolidated PDF**:
     
-    *   Save the `consolidatedPdf` document as a byte array.
-    *   Trigger a download of the final merged PDF using a `download` function.
-
+    *   Save `consolidatedPdf` as a byte array and trigger a download of the final merged PDF using a `download` function.
 
 ```javascript
-
 async function mergePDFs(pdfArray, titleHtml) {
     const { PDFDocument, rgb } = PDFLib;
     const mergedPdf = await PDFDocument.create();
-    const interimTitle = titleHtml.replace(/(<([^>]+)>)/ig, '');
-    const dashboardTitle = interimTitle.replaceAll("&#xfeff;", "\n");
-    console.log(dashboardTitle);
+    const dashboardTitle = titleHtml.replace(/(<([^>]+)>)/ig, '').replaceAll("&#xfeff;", "\n");
 
     for (const pdfResult of pdfArray) {
         const title = pdfResult.title;
         for (const base64 of pdfResult.image) {
-            const pdfData = await fetch(`data:application/pdf;base64,${base64}`).then(
-res => res.arrayBuffer());
+            const pdfData = await fetch(`data:application/pdf;base64,${base64}`).then(res => res.arrayBuffer());
             const pdf = await PDFDocument.load(pdfData);
-            const pages = pdf.getPages();
-            const firstPage = pages[0];
-            const { width, height } = firstPage.getSize();
-            if (width < 1000) {
-                firstPage.drawText(title, {
-                    x: 20,
-                    y: height - 20,
-                    size: 12,
-                    color: rgb(0, 0, 0),
-                });
-            }
-            const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
-            copiedPages.forEach(
-page => mergedPdf.addPage(page));
+            const pages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+            mergedPdf.addPage(pages[0]);
         }
     }
 
-    // Adding title and filter summary
-    const pages = mergedPdf.getPages();
+    // Add title and filters
     const consolidatedPdf = await PDFDocument.create();
     const titlePage = consolidatedPdf.addPage([1800, 2000]);
-    const title = dashboardTitle + "\nFilters applied:\n" + filterString;
-    const lines = title.split('\n');
-    const fontSize = 50;
     let yPosition = 1900;
-
-    lines.forEach(
-line => {
-        titlePage.drawText(line, {
-            x: 50,
-            y: yPosition,
-            size: fontSize,
-            color: rgb(0, 0, 0),
-        });
-        yPosition -= fontSize * 1.5;
+    dashboardTitle.split('\n').forEach(line => {
+        titlePage.drawText(line, { x: 50, y: yPosition, size: 50, color: rgb(0, 0, 0) });
+        yPosition -= 75;
     });
 
-    for (const page of pages) {
-        const copiedPages = await consolidatedPdf.copyPages(mergedPdf, [pages.indexOf(page)]);
-        consolidatedPdf.addPage(copiedPages[0]);
+    // Add merged pages to the final PDF
+    for (const page of mergedPdf.getPages()) {
+        const [copiedPage] = await consolidatedPdf.copyPages(mergedPdf, [mergedPdf.getPages().indexOf(page)]);
+        consolidatedPdf.addPage(copiedPage);
     }
 
     const mergedPdfBytes = await consolidatedPdf.save();
-    download(mergedPdfBytes, `dashboard.pdf`, "application/pdf");
+    download(mergedPdfBytes, 'dashboard.pdf', 'application/pdf');
 }
 
 function download(data, fileName, mimeType) {
