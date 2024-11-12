@@ -12,7 +12,7 @@ You can convert your Brick **semi-automatically** with the “Convert to App” 
 
 <!--
 type: tab
-title: Convert Button
+title: Semi-automatically
 -->
 
 ### 1. Start the conversion
@@ -51,7 +51,7 @@ As long as you've kept the order the same, that should be sufficient.
 
 <!--
 type: tab
-title: Copy & Paste
+title: Manually
 -->
 
 ### 1. Begin by setting up your Pro-Code Application
