@@ -95,7 +95,7 @@ Bricks use the `window.datasets` global property to execute a Configuration-driv
 
 _Note: It is not required to have all columns listed. Additionally, the Pro-Code Editor includes a 'sync' feature that will automatically populate the list of columns and their aliases for you!_
 
-- Ensure that your new aliases do not have any spaces in them, as the Pro-Code Editor will not allow it.
+- Ensure that your new aliases do not have any spaces or special characters in them, as the Pro-Code Editor will not allow it.
 
 ![manifestalias.png](../../../../assets/images/manifestalias.png)
 
