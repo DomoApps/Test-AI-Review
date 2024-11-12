@@ -18,7 +18,7 @@ See this **[video overview](https://www.domo.com/learn/video/automatic-insights-
 
 ### Knowledge Base articles
 
-- **[AutoML](https://github.com/domoinc/domo-data-science-resources/blob/main/webinars/AutoML%20Knowledge%20Base%20Article.pdf)**
+- **[Train & Deploy Models with AutoML](https://domo-support.domo.com/s/article/360048127854?language=en_US)**
 
 
 
