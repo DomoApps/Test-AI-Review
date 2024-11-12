@@ -13,7 +13,39 @@ type: tab
 title: Convert Button
 -->
 
-The contents of tab 1.
+### 1. Start the conversion
+
+1. **Edit** your Brick
+1. Click the “**Convert to App**” button in the header.
+
+![The button is in the header of the brick editor, next to the COLLABORATORS button.](../../../../assets/images/where_to_find_convert_to_app_button.png)
+
+<!-- theme: info -->
+> #### Dataset Configuration Transfer
+>
+> Notice that upon converting, the datasets you had wired previously have **automatically** been **transferred** to your [manifest.json]
+
+### 2. Replace `window.datasets`
+
+Bricks use the `window.datasets` global property to execute a Configuration-driven design paradigm, while the Pro-Code Editor leverages a [manifest.json] file to implement a Metadata-driven design strategy.
+
+[manifest.json]: https://developer.domo.com/portal/af407395c766b-the-manifest-file
+
+To make the switch, you'll need to **replace** any usages of `window.datasets` with the corresponding dataset **aliases** (found in your [manifest.json]).
+
+#### The Lowest-Touch Approach
+
+The simplest approach is to replace all instances of `window.datasets` with an **array of strings** corresponding to your aliases.
+
+So change
+
+`var datasets = window.datasets;`
+
+to something like
+
+`var datasets = ['sales', 'profit'];`
+
+As long as you've kept the order the same, that should be sufficient.
 
 <!--
 type: tab
@@ -41,7 +73,7 @@ The contents of tab 2.
 
 ### 3. Next, migrate any required datasets
 
-Bricks uses the `window.datasets` global property to execute a Configuration-driven design paradigm, while the Pro-Code Editor leverages a [manifest.json](https://developer.domo.com/portal/af407395c766b-the-manifest-file) file to implement a Metadata-driven design strategy.
+Bricks uses the `window.datasets` global property to execute a Configuration-driven design paradigm, while the Pro-Code Editor leverages a [manifest.json] file to implement a Metadata-driven design strategy.
 
 - Review your code and identify all required datasets.
 - Select the “manifest.json” file and use the “+ Add Dataset” button.
