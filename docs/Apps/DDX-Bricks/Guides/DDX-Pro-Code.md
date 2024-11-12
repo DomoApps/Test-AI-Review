@@ -8,6 +8,8 @@
 
 ---
 
+You can convert your Brick semi-automatically or manually by copying and pasting.
+
 <!--
 type: tab
 title: Convert Button
@@ -52,19 +54,13 @@ type: tab
 title: Copy & Paste
 -->
 
-The contents of tab 2.
-
-<!-- type: tab-end -->
-
 ### 1. Begin by setting up your Pro-Code Application
 
-- Edit your Brick and click the “Convert to App” button in the header.
 - In a separate window, navigate to the Asset Library, click the “Pro-Code Editor” button, and choose “Blank Template.”
   - By default, you will already have the app.css, app.js, index.html, and manifest.json files provided.
 
 ### 2. Copy your code into the Pro-Code Editor
 
-- If you chose the “Convert to Brick” option, and it successfully created your app, you will be automatically routed to the Pro-Code Editor, with your application already loaded. In this case, proceed to step 3.
 - Manual Copy & Paste
   - Copy the HTML from your Brick and paste it into the index.html file in the Pro-Code Editor.
   - Update the `<link>` and `<script>` tags that previously referenced your local resources to now reference “app.css” and “app.js” respectively.
@@ -114,6 +110,8 @@ Here is an example from a common Brick Template. In this example the original co
 
 ![codeafter.png](../../../../assets/images/codeafter.png)
 
+<!-- type: tab-end -->
+
 ## Conclusion:
 
-After this has been updated, test your application to ensure normal functionality, and ensure all data is able to be accessed correctly. You won’t need any references to “window.dataset,” so be sure to remove that reference and verify the application is working as expected!
+After this has been updated, test your application to ensure normal functionality, and ensure all data is able to be accessed correctly. You won’t need any references to `window.datasets`, so be sure to remove that reference and verify the application is working as expected!
