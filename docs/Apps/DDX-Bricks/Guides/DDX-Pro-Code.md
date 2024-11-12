@@ -31,39 +31,29 @@ Bricks uses the `window.datasets` global property to execute a Configuration-dri
 - Select the “manifest.json” file and use the “+ Add Dataset” button.
 - Click the icon in the dataset ID input field.
 
-<p align="center">
-   ![choosemanifest.png](../../../../assets/images/choosemanifest.png)
-</p>
+![choosemanifest.png](../../../../assets/images/choosemanifest.png)
 
 ### 4. Select your dataset from the modal:
 
-<p align="center">
-   ![choosedataset.png](../../../../assets/images/choosedataset.png)
-</p>
+![choosedataset.png](../../../../assets/images/choosedataset.png)
 
 ### 5. Create an alias for the dataset ID
 
 - This will be used to humanize your API calls to the [DataSet endpoint(s)](https://developer.domo.com/portal/8s3y9eldnjq8d-data-api).
 
-<p align="center">
-   ![mapping.png](../../../../assets/images/mapping.png)
-</p>
+![mapping.png](../../../../assets/images/mapping.png)
 
 - In this example, the alias we chose was “mapData” – you will need to update your API calls to use this alias for your dataset.
 
-<p align="center">
-   ![callalias.png](../../../../assets/images/callalias.png)
-</p>
-   
+![callalias.png](../../../../assets/images/callalias.png)
+
 ### 6. Create an alias for each Column Name that you will be using.
 
 _Note: It is not required to have all columns listed. Additionally, the Pro-Code Editor includes a 'sync' feature that will automatically populate the list of columns and their aliases for you!_
 
 - Ensure that your new aliases do not have any spaces in them, as the Pro-Code Editor will not allow it.
 
-<p align="center">
-   ![manifestalias.png](../../../../assets/images/manifestalias.png)
-</p>
+![manifestalias.png](../../../../assets/images/manifestalias.png)
 
 ### 7. Update the dataset references
 
@@ -72,13 +62,9 @@ _Note: It is not required to have all columns listed. Additionally, the Pro-Code
 
 Here is an example from a common Brick Template. In this example the original code is on the top with the updated code on the bottom:
 
-<p align="center">
-   ![codebefore.png](../../../../assets/images/codebefore.png)
-</p>
+![codebefore.png](../../../../assets/images/codebefore.png)
 
-<p align="center">
-   ![codeafter.png](../../../../assets/images/codeafter.png)
-</p>
+![codeafter.png](../../../../assets/images/codeafter.png)
 
 ## Conclusion:
 
