@@ -8,7 +8,7 @@
 
 ---
 
-You can convert your Brick semi-automatically or manually by copying and pasting.
+You can convert your Brick **semi-automatically** with the “Convert to App” button or **manually** by copying and pasting.
 
 <!--
 type: tab
