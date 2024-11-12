@@ -27,16 +27,14 @@ curl --request POST \
 
 ```
 
-
 #### Cookie Authentication (SSO)
 
 For instances that don't use direct sign on cookie authentication may be used with the `exptoken` method.
 
 To obtain the necessary cookie value, you may extract it using browser Developer Tools after logging into your instance.
-Locate and copy the `_dsidv1` cookie value 
+Locate and copy the `_dsidv1` cookie value
 
 ![image.png](../assets/images/image-98.png)
-
 
 Call the [authenticate](../Instance-Authetication.json/paths/~1api~1content~1v2~1authentication/post) endpoint with the matching `_dsidv1` cookie set and `"method": "exptoken"` in the request body.
 
@@ -55,9 +53,9 @@ Both methods will respond with a `sessionToken` needed for the next steps.
 
 ```json
 {
-  "userId":123456,
-  "success":true,
-  "sessionToken":"eyJhbGwiOiAiYmFzZSIsICJiZWxvbmciOiAidXMifQo="
+	"userId": 123456,
+	"success": true,
+	"sessionToken": "eyJhbGwiOiAiYmFzZSIsICJiZWxvbmciOiAidXMifQo="
 }
 ```
 
@@ -65,7 +63,7 @@ Both methods will respond with a `sessionToken` needed for the next steps.
 
 A Client for `api.domo.com` can be created using the `sessionToken`.
 
-Call the [clients](../reference/API-Authentication.yaml/paths/~1clients/post) endpoint using `sessionToken` as the value of `X-DOMO-Authentication`
+Call the [clients](Client-API.yaml/paths/~1clients/post) endpoint using `sessionToken` as the value of `X-DOMO-Authentication`
 
 ```bash
 curl --request POST \
@@ -76,16 +74,15 @@ curl --request POST \
   https://api.domo.com/clients
 ```
 
-
 In response, a client will have been created. Use the `client_id` and `client_secret` for any future Platform APIs
 
 ```json
 {
-    "name": "Automation Client",
-    "scope": ["data"],
-    "user": 123456,
-    "client_id": "4e21cf44-b616-48c5-bba7-0ab9c0d8ca77",
-    "client_secret": "abc123def456",
-    "authorized_grant_types": ["client_credentials"]
+	"name": "Automation Client",
+	"scope": ["data"],
+	"user": 123456,
+	"client_id": "4e21cf44-b616-48c5-bba7-0ab9c0d8ca77",
+	"client_secret": "abc123def456",
+	"authorized_grant_types": ["client_credentials"]
 }
 ```
