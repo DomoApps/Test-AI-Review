@@ -69,7 +69,7 @@ title: Manually
 
 ### 3. Next, migrate any required datasets
 
-Bricks uses the `window.datasets` global property to execute a Configuration-driven design paradigm, while the Pro-Code Editor leverages a [manifest.json] file to implement a Metadata-driven design strategy.
+Bricks use the `window.datasets` global property to execute a Configuration-driven design paradigm, while the Pro-Code Editor leverages a [manifest.json] file to implement a Metadata-driven design strategy.
 
 - Review your code and identify all required datasets.
 - Select the “manifest.json” file and use the “+ Add Dataset” button.
