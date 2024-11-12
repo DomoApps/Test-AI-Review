@@ -8,6 +8,22 @@
 
 ---
 
+<!--
+type: tab
+title: Convert Button
+-->
+
+The contents of tab 1.
+
+<!--
+type: tab
+title: Copy & Paste
+-->
+
+The contents of tab 2.
+
+<!-- type: tab-end -->
+
 ### 1. Begin by setting up your Pro-Code Application
 
 - Edit your Brick and click the “Convert to App” button in the header.
