@@ -110,8 +110,10 @@ Here is an example from a common Brick Template. In this example the original co
 
 ![codeafter.png](../../../../assets/images/codeafter.png)
 
+You won’t need any references to `window.datasets`, so be sure to remove that reference and verify the application is working as expected!
+
 <!-- type: tab-end -->
 
 ## Conclusion:
 
-After this has been updated, test your application to ensure normal functionality, and ensure all data is able to be accessed correctly. You won’t need any references to `window.datasets`, so be sure to remove that reference and verify the application is working as expected!
+After you're done, test your application to ensure normal functionality, and ensure all data is able to be accessed correctly.
