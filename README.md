@@ -34,16 +34,94 @@ If you are hoping to add documentation to the Developer Portal, please create a 
 
 ## Developer Portal Style Guide
 
-[TODO - general conventions]
+Across all resources, it's important to remain consistent. Please follow these brief principles in your contributions.
+
+- Markdown: Please use Markdown syntax `#` rather than HTML `<h1>`.
+- Headings: Use h1 (`#`) headings for all article titles. Use h2 (`##`) and h3 (`###`) headings to organize content logically
+- Emphasis: Apply bullet points or numbered lists for step-by-step instructions or key points, and emphasize important text using bold or italics sparingly.
+- Code: Include code snippets within triple backticks for syntax highlighting, and use inline code formatting for short code references.
+- Links: Hyperlink external references with descriptive text.
+- Tone: Aim for a helpful and approachable tone, free of jargon unless necessary, while ensuring accessibility best practices are met.
 
 ### Guide / How To
 
-[TODO - Guide / How To Conventions]
+Guides are the most common resource in the developer portal. They can range from overview articles, how-to achieve a specific task, or common code snippets and patterns that are useful.
+
+They tend to be shorter and more focused on a single subject than tutorials.
+
+#### Guide Template
+
+1. Start with a brief overview to set context and state the article’s goal clearly.
+2. Break down tasks into short, logically ordered steps, using bullet points or numbered lists as necessary. Introduce relevant code snippets with a brief explanation, ensuring they align with best practices.
+3. Include tips, warnings, and common pitfalls in callout blocks for clarity.
+4. Conclude by summarizing key takeaways or providing links to related resources for further exploration.
+
+#### Examples
 
 ### Tutorials
 
-[TODO - Tutorial Conventions]
+Tutorials are step-by-step, start-to-finish walkthroughs for complete solutions.
+
+These usually have multiple parts, include all code required to build the solution, and explanations for the purpose of each step in the walkthrough. They can (and often do) bridge multiple features / areas of the Domo Product.
+
+#### Tutorial Template
+
+1. Begin with an introduction outlining the goals, prerequisites, and expected outcomes.
+2. Divide the tutorial into clearly defined sections or parts, using numbered steps and descriptive headings to guide the user.
+3. Provide complete code snippets for each step, with detailed explanations of what each part does and why it’s essential to the solution.
+4. Incorporate visuals, such as diagrams or screenshots, to illustrate complex concepts.
+5. Summarize key points at the end of each section and conclude the tutorial with a recap and next steps for further exploration or related topics.
+
+#### Examples
 
 ### API Reference
 
-[TODO - Rough API Reference Conventions]
+API documentation is one of the most critical components to enabling developers to build on Domo.
+
+For convenience we've divided APIs into three categories:
+
+1. App Framework APIs: APIs available within the Domo App context.
+2. Platform APIs: APIs that use an OAuth 2.0 authorization and authentication pattern which allows you to define clients with a variety of scopes.
+3. Product APIs: APIs that allow you to do anything you can do in the Domo UI. Tokens generated for these APIs provide access to all resources the user has in Domo. These have often been referred to as "undocumented" APIs.
+
+See https://developer.domo.com/portal/8ba9aedad3679-ap-is for more info about the distinction.
+
+<!-- theme: info -->
+
+> #### Undocumented APIs
+>
+> Note: There is currently a project underway on Esteban's team to annotate APIs so many of the OpenAPI spec / internal Swagger docs can be synced with our public facing developer docs.
+>
+> In the meantime, we should provide at least minimal documentation for Product APIs.
+
+#### App Framework APIs
+
+Please see the (https://developer.domo.com/portal/wjqiqhsvpadon-ai-service-layer-api)[AI Service Layer API] for an example of how to document these endpoints.
+
+Please include:
+
+1. Overview of the service - (including links to relevant guides, examples, etc.)
+2. Then, each endpoint should have:
+
+- title: `h2`
+- brief description: `plain text`
+- code example: `code snippet`
+- http request (including query params): `code snippet`
+- request body arguments accepted: `table`
+- request body example code example: `code snippet`
+- http response example: `code snippet`
+
+#### Platform APIs
+
+See (https://developer.domo.com/portal/3b1e3a7d5f420-data-set-api)[DataSet API] for an example.
+
+These APIs are actively testable in the documentation itself. They are all OpenAPI spec `.yaml` files.
+
+#### Product APIs
+
+As noted above, this is where we currently have the largest gap. Eventually, we'll be able to mirror the internal OpenAPI specs, but in the meantime many developers are already building on these APIs and we need to provide more documentation.
+
+At a minimum, we should prioritize documenting the following APIs:
+
+1. All endpoints referenced in Global Code Engine packages.
+2. Anything that you, or customers have built scripts on.
