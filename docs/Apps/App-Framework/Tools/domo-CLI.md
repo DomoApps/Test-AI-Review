@@ -142,7 +142,7 @@ $ domo owner [options] [add|rm|ls] joe.bob@mycompany.com
 
 Uploads all the assets of your current working directory as a Custom App design.
 
-You can choose to ignore certain files, meaning domo publish will not upload those files. Any node_modules directories are ignored by default. Refer to the [manifest](/docs/Apps/App-Framework/Guides/manifest.md#ignore) reference docs for more details on ignoring files.
+You can choose to [ignore certain files]((/docs/Apps/App-Framework/Guides/manifest.md#ignore)), meaning domo publish will not upload those files. Any node_modules directories are ignored by default. Refer to the [manifest](/docs/Apps/App-Framework/Guides/manifest.md#ignore) reference docs for more details on ignoring files.
 
 If an existing ID is not found in the manifest then a new design will be created and the manifest file will be updated with the newly created design Id. Existing designs will be updated.
 
