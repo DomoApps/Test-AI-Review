@@ -58,7 +58,7 @@ They tend to be shorter and more focused on a single subject than tutorials.
 
 #### Examples
 
-[TODO AS FIRST EXAMPLE COMMIT]
+[Example Guide - How to Hit Code Engine from an App](docs/Apps/App-Framework/Guides/hitting-code-engine-from-an-app.md)​
 
 ### Tutorials
 
@@ -76,7 +76,8 @@ These usually have multiple parts, include all code required to build the soluti
 
 #### Examples
 
-[TODO AS FIRST EXAMPLE COMMIT]
+[Example Tutorial - Building Dynamic Infographics with Domo and Canva](docs/Apps/App-Framework/Tutorials/Vanilla-Javascript/DynamicInfographic.md)​
+
 
 ### API Reference
 
