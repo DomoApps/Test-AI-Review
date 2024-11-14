@@ -32,7 +32,7 @@ Additionally, you can get available options for a specific command
 $ domo [command] -h
 ```
 
-**OPTIONS**
+#### OPTIONS
 * `-v, --version`: output the version number
 * `-s, --ssl`: disable SSL
 * `-m, --manifest <filename>`: specify a manifest file. Defaults to `manifest.json` in the current working directory.
@@ -53,7 +53,7 @@ Spins up a local development server with the following features:
 $ domo dev [options]
 ```
 
-**OPTIONS**
+#### OPTIONS
 * `-u, --userId`: Use a specific user. Helpful for testing app states where user Id is important
 * `-e, --external`: exposes the dev server on a public IP address
 
@@ -79,12 +79,12 @@ Asks you some questions to initialize a new Custom App design template. Once com
 >
 > `domo init` will create the folder for you.
 
-**PROMPTS**
+#### PROMPTS
 * design name
 * select a starter: see "STARTERS" section
 * would you like to connect to any datasets? (Y/n): see "DATASET MAPPING PROMPTS"
 
-**STARTERS**
+#### STARTERS
 * hello world: creates a basic project in a new directory with the following content
 
 ```
@@ -98,7 +98,7 @@ design-name
 
 * manifest only: adds a single `manifest.json` file to the current working directory
 
-**DATASET MAPPING PROMPTS**
+#### DATASET MAPPING PROMPTS
 * dataset id: can be found in the URL of the dataset detail page in the Domo instance. `https://[customer].domo.com/datasources/[dataset id]/details/overview`
 * dataset alias: the alias your app will use when requesting data from Domo
 
@@ -112,7 +112,7 @@ Authenticate to your Domo instance from the CLI. This is a requirement before do
 $ domo login [options]
 ```
 
-**OPTIONS**
+#### OPTIONS
 * `i, --instance`: Domo instance (e.g. customer.domo.com)
 * `u, --user-email`: user email
 * `--no-upgrade-check`: prevent the CLI from checking for new versions and prompting for user input to upgrade or not
@@ -125,7 +125,7 @@ Manage the owners of the Custom App design. Only owners of a design are able to 
 $ domo owner [options] [add|rm|ls] joe.bob@mycompany.com
 ```
 
-**OPTIONS**
+#### OPTIONS
 * `-i, --design_id`: specify a design Id or defaults to the Id from the manifest file in the current working directory
 
 ### publish 
@@ -138,7 +138,7 @@ If an existing ID is not found in the manifest then a new design will be created
 $ domo publish [options]
 ```
 
-**OPTIONS**
+#### OPTIONS
 * `-g, --go`: open the design in the Asset Library after publishing
 
 ### release
