@@ -2,14 +2,14 @@
 
 # Deleting all documents from a collection
 
-Use the following script to delete all the files from a collection.
+Use the following script to delete all the documents from a collection.
 
 <!-- theme: warning -->
 > #### Danger!
 > **Note**: This action is destructive and is not reversible.<br/>
-> **Note**: If you ***really*** need to reverse this action please contact Domo Support
+> **Note**: If you ***really*** need to reverse this action please contact Domo Support. However, please be careful - we may not be able to restore this action and in cases where we can, there are costs associated with it.
 
-Just copy this code to your browser console, set up your collection id and press enter.
+Just copy this code to your browser console, set up your `collectionId` and press enter.
 
 ---
 ```js
