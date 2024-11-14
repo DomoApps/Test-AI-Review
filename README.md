@@ -108,13 +108,13 @@ Please include:
 1. Overview of the service - (including links to relevant guides, examples, etc.)
 2. Then, each endpoint should have:
 
-- title: `h2`
-- brief description: `plain text`
-- code example: `code snippet`
-- http request (including query params): `code snippet`
-- request body arguments accepted: `table`
-- request body example code example: `code snippet`
-- http response example: `code snippet`
+    - title: `h2`
+    - brief description: `plain text`
+    - code example: `code snippet`
+    - http request (including query params): `code snippet`
+    - request body arguments accepted: `table`
+    - request body example code example: `code snippet`
+    - http response example: `code snippet`
 
 #### Platform APIs
 
