@@ -106,7 +106,7 @@ All these filter types are layered in the sequence below:
 	<tr>
 		<td>/v1/appData/apply</td>
 		<td>Input</td>
-		<td>Event communicated by App Studio app to indicate the app finished loading</td>
+		<td>Event to communicate "appData" to an app within the embed asset</td>
 		<td>{ <br>
 			id: 'appData',<br>
 			jsonrpc: '2.0',<br>
