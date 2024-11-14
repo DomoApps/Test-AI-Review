@@ -1,7 +1,3 @@
----
-stoplight-id: 
----
-
 # Analytics API
 
 Instructions for tracking user interactions and application events within a Domo app or brick. These functions send HTTP requests to a predefined analytics endpoint (/domo/analytics/v1), logging events such as filter changes, application loads, page views, or any user interaction. This enables real-time tracking of user behavior and app usage, which can help enhance the user experience and provide valuable data insights.
