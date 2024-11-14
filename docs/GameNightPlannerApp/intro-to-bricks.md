@@ -133,7 +133,7 @@ When you click "Run", you should now see ~21.6k records printed in the console.
 Congrats! You've successfully connected our brick to a new Dataset.
 
 ### Importing Tabulator
-
+---
 Next we want to actually display our data in a new table visual. We'll be using an open-source third party library that is designed specifically to create very powerful table applications.
 
 You can check out more about the [Tabulator library in their documentation](https://tabulator.info/).
