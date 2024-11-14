@@ -69,7 +69,7 @@ function makeSafeText (text){
    return element.innerHTML;
 }
 ```
-Read more about sanitizing data here:### 
+Read more about sanitizing data here:
 <ul>
  	<li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Safely_inserting_external_content_into_a_page" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Safely_inserting_external_content_into_a_page</a></li>
  	<li><a href="https://owasp.org/www-community/xss-filter-evasion-cheatsheet" target="_blank" rel="noopener">https://owasp.org/www-community/xss-filter-evasion-cheatsheet</a></li>

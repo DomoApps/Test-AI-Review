@@ -5,13 +5,13 @@ tags: [app platform, quickstart]
 
 # Welcome
 
-Domo's App Developer Framework provides maximum flexibility for creating custom apps whether you are a customer, publisher, or partner. Domo Apps, at their core, are front-end web applications. In other words, you can build any Javascript web application on top of the Domo Platform by leveraging Domo’s Custom App APIs.
+Domo's App Developer Framework offers unparalleled flexibility for creating custom apps, whether you're a customer, publisher, or partner. At their core, Domo Apps are front-end web applications, meaning you can build any JavaScript-based application on the Domo Platform using the App Framework APIs.
 
-Learn why building on the Domo App Platform is so powerful and about how your front-end applications can leverage it.
+Discover the powerful capabilities of building on the Domo App Platform and learn how your front-end applications can make the most of it.
 
 https://player.vimeo.com/video/747276294?h=90fa0ce324&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479
 
-Excited to get started? Jump in!
+Ready to get started? Let's jump in!
 
 - [Quick Start](Quickstart/Prerequisites.md) – Start here to get up and running quickly.
 - Tutorials – Includes step-by-step walkthroughs for building sample apps on Domo.
