@@ -20,6 +20,8 @@ Select a template from the available options to get started with your app. These
 
 Give your app a descriptive name and set an initial version number. Establishing a version control strategy from the start will help keep track of updates and changes as your app evolves.
 
+\* *Be aware that when a version is released, that version is locked for viewing only. Each version’s code is distinct, so changes in one version won’t affect others. This allows you to maintain multiple iterations of your app without risk of unintended changes across versions.*
+
 ![save-template.png](../../../../assets/images/save-template.png)
 
 ### 4. Customize Your Workspace
