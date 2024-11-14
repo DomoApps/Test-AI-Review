@@ -49,7 +49,77 @@ All these filter types are layered in the sequence below:
 	<li>Outputs: The JS API listens for click events on the embedded content and passes them back up to the host page for cross-system links and interaction analytics. </li>
 	<li>Inputs: The JS API also completes the bi-directional passing of context by letting the host page push filters down into the embedded content </li>
 	<li>Controls: The code above can be triggered by any external menu in the host page </li>
-<ul>
+</ul>
+
+<strong>Events:</strong> currently the following events are supported.
+
+<table>
+	<tr>
+		<th>Event</th>
+		<th>Type</th>
+		<th>Description</th>
+		<th>Message</th>
+		<th>Support</th>
+	</tr>
+	<tr>
+		<td>/v1/onFrameSizeChange</td>
+		<td>Output</td>
+		<td>Event communicating the content size of the embed asset. Use when wanting to make sure the iframe is the exact size of the content so no scroll bars appear. </td>
+		<td></td>
+		<td>App Studio,<br> Dashboard,<br> Card</td>
+	</tr>
+	<tr>
+		<td>/v1/onFiltersChange</td>
+		<td>Output</td>
+		<td>Event communicating filter changes</td>
+		<td></td>
+		<td>App Studio,<br> Dashboard,<br> Card</td>
+	</tr>
+	<tr>
+		<td>/v1/onAppData</td>
+		<td>Output</td>
+		<td>Event communicating "appData" between an app in an embedded asset and the embedding website</td>
+		<td></td>
+		<td>App Studio,<br> Dashboard,<br> Card</td>
+	</tr>
+	<tr>
+		<td>/v1/onAppReady</td>
+		<td>Output</td>
+		<td>Event communicated by App Studio app to indicate the app finished loading</td>
+		<td></td>
+		<td>App Studio</td>
+	</tr>
+	<tr>
+		<td>/v1/filters/apply</td>
+		<td>Input</td>
+		<td>Event to communicate filters for an asset to apply</td>
+		<td>{<br>
+	                id: 'setFilters123',<br>
+        		jsonrpc: '2.0',<br>
+        		method: '/v1/filters/apply',<br>
+        		params: {<br>
+        			filters: [{'column': 'name', 'operand': 'IN', 'values': ['ABC']}]<br>
+                	}<br>
+		}</td>
+		<td>App Studio,<br> Dashboard,<br> Card</td>
+	</tr>
+	<tr>
+		<td>/v1/appData/apply</td>
+		<td>Input</td>
+		<td>Event to communicate "appData" to an app within the embed asset</td>
+		<td>{ <br>
+			id: 'appData',<br>
+			jsonrpc: '2.0',<br>
+			method: '/v1/appData/apply',<br>
+			params: {<br>
+ 				appData: appData <br>
+			}<br>
+		}</td>
+		<td>App Studio</td>
+	</tr>
+</table>
+
+<strong>Example</strong>
 
 Here are some <a href="https://github.com/STEEZENS/domo-pfilters" rel="noopener" target="_blank">examples</a> of external drop-down filter controls we used while building <a href="https://www.domo.com/covid19/daily-pulse/" rel="noopener" target="_blank">Domo’s COVID-19 Tracker</a>:  
 
