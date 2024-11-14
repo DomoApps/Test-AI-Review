@@ -65,8 +65,8 @@ The app Id can be found as part of the URL for the iframe in which your app is d
 * Make sure the app has been published at least once with `domo publish`
 * Publish a new card based on your app design, or navigate to an existing card made from your app design
 * Right-click anywhere in the card and choose "Inspect element"
-* Find the `<iframe>` that contains your app's code. The URL should be of the form //{HASH}.domoapps.prodX.domo.com?userId=...
-* Copy the ID found between // and .domoapps. That is your app's Id.
+* Find the `<iframe>` that contains your app's code. The URL should be of the form `//{ID}.domoapps.prodX.domo.com?userId=...`
+* Copy the ID found between `//` and `.domoapps`. That is your app's id.
 
 App Ids tie apps to cards. If you delete the card from which you retrieved the appContextId, you will have to get a new one from another card created from your app design.
 
