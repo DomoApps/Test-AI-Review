@@ -1,5 +1,13 @@
 # Users API
 
+This API reference is useful if you are trying to manage Domo Users from anywhere 'outside' of your Domo instance such as:
+
+1. Jupyter scripts
+1. Code Engine Functions
+1. Custom Java/Node/Python scripts
+
+If you are unfamiliar with how to authenticate against Product APIs, [please see this overview page](../Getting-Started/api-authentication.md).
+
 ## Create
 
 **Method**: `POST`  
@@ -26,7 +34,8 @@
 **Response**:
 
 ```json
-200:
+  HTTP/1.1 200 OK
+  Content-Type: application/json;charset=UTF-8
   {
     "attributes": [
       {
@@ -39,14 +48,6 @@
     "userName": string,
     "roleId": number,
     "emailAddress": string
-  }
-
-400:
-  {
-    "status": 400,
-    "statusReason": "Bad Request",
-    "message": "",
-    "toe": ""
   }
 ```
 
@@ -90,24 +91,25 @@
 **Response**:
 
 ```json
-200:
-{
-  "users": [
-    {
-      "attributes": [
-        {
-          "key": string,
-          "values": number|string[]
-        },
-      ],
-      "id": number,
-      "displayName": string,
-      "userName": string,
-      "roleId": number,
-      "emailAddress": string
-    }
-  ]
-}
+  HTTP/1.1 200 OK
+  Content-Type: application/json;charset=UTF-8
+  {
+    "users": [
+      {
+        "attributes": [
+          {
+            "key": string,
+            "values": number|string[]
+          },
+        ],
+        "id": number,
+        "displayName": string,
+        "userName": string,
+        "roleId": number,
+        "emailAddress": string
+      }
+    ]
+  }
 ```
 
 ---
@@ -144,24 +146,25 @@
 **Response**:
 
 ```json
-200:
-{
-  "users": [
-    {
-      "attributes": [
-        {
-          "key": string,
-          "values": number|string[]
-        },
-      ],
-      "id": number,
-      "displayName": string,
-      "userName": string,
-      "roleId": number,
-      "emailAddress": string
-    }
-  ]
-}
+  HTTP/1.1 200 OK
+  Content-Type: application/json;charset=UTF-8
+  {
+    "users": [
+      {
+        "attributes": [
+          {
+            "key": string,
+            "values": number|string[]
+          },
+        ],
+        "id": number,
+        "displayName": string,
+        "userName": string,
+        "roleId": number,
+        "emailAddress": string
+      }
+    ]
+  }
 ```
 
 ---
@@ -195,7 +198,8 @@
 **Response**:
 
 ```json
-200:
+  HTTP/1.1 200 OK
+  Content-Type: application/json;charset=UTF-8
   {
     "attributes": [
       {

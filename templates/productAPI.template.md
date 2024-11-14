@@ -23,8 +23,9 @@
 Description of the Response with an example of the data
 
 ```json
-200:
-{}
+  HTTP/1.1 200 OK
+  Content-Type: application/json;charset=UTF-8
+  {}
 
 ```
 
@@ -102,8 +103,9 @@ Description of the Response with an example of the data
 Description of the Response with an example of the data
 
 ```json
-200:
-{}
+  HTTP/1.1 200 OK
+  Content-Type: application/json;charset=UTF-8
+  {}
 
 ```
 
@@ -136,7 +138,8 @@ Description of the Response with an example of the data
 Description of the Response with an example of the data
 
 ```json
-200:
-{}
+  HTTP/1.1 200 OK
+  Content-Type: application/json;charset=UTF-8
+  {}
 
 ```
