@@ -17,7 +17,7 @@ https://www.youtube.com/watch?v=9CXoYW-wG-g&t=2588s
 
 *Conducts an automated exploratory analysis of all variables in your dataset; creates a Domo dashboard with a correlation matrix card that shows the correlations between variables, histogram and bar chart cards that show the distribution of variables, and scatterplot and bar chart cards that show the relationships between variables* 
 
-For files and instructions to set-up the Data Profiler Accelerator, see the [Data Profiler Accelerator GitHub page](https://github.com/domoinc/domo-data-science-resources/tree/main/data_science_accelerators/data_profiler). 
+For files and instructions to set up the Data Profiler Accelerator, see the [Data Profiler Accelerator GitHub page](https://github.com/domoinc/domo-data-science-resources/tree/main/data_science_accelerators/data_profiler). 
 
 
 ### Data Anonymizer
@@ -26,7 +26,7 @@ https://www.youtube.com/watch?v=Hymy521A7l4&t=705s
 
 *Creates an anonymized version of your dataset. The anonymized dataset maintains the aggregate characteristics of your dataset (i.e., correlations between and distributions of variables) without revealing information about observations within your dataset*
 
-For files and instructions to set-up the Data Anonymizer Accelerator, see the [Data Anonymizer Accelerator GitHub page](https://github.com/domoinc/domo-data-science-resources/tree/main/data_science_accelerators/data_anonymizer). 
+For files and instructions to set up the Data Anonymizer Accelerator, see the [Data Anonymizer Accelerator GitHub page](https://github.com/domoinc/domo-data-science-resources/tree/main/data_science_accelerators/data_anonymizer). 
 
 
 
@@ -43,6 +43,6 @@ The tool currently supports the use of regression, binary classification, and mu
 
 [Watch this walkthrough video](https://drive.google.com/file/d/1C7ssyocGBzC-ahXOCMODI8acta28yPHY/view) which shows how to prepare for and use the Model Insights Tool.
 
-For files and instructions to set-up the Model Insights Accelerator, see the [Model Insights Accelerator GitHub page](https://github.com/domoinc/domo-data-science-resources/tree/main/data_science_accelerators/model_insights). 
+For files and instructions to set up the Model Insights Accelerator, see the [Model Insights Accelerator GitHub page](https://github.com/domoinc/domo-data-science-resources/tree/main/data_science_accelerators/model_insights). 
 
 
