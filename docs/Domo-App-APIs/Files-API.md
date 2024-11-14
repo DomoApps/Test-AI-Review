@@ -382,3 +382,259 @@ Returns the parameter of success or error based on a valid permission object for
 ```text
 HTTP/1.1 200 OK
 ```
+
+<br/>
+
+# Multi-part Files API
+
+The Multi-part Files API allows for efficient upload, update, and management of large files in parts. It uses Domo’s Data File Service, supporting session-based file chunking for fault tolerance and enhanced control.
+
+### Creating a Multi-part Upload Session
+
+To begin a multi-part file upload, create an upload session by calling `createSession`. This will return a session ID that is essential for uploading file parts.
+
+#### Code Example
+
+```js
+export const createMPUSession = async (name, description, contentType) => {
+  const url = '/domo/data-files/v1/multipart';
+  return await domo.post(url, {
+    name,
+    description,
+    contentType,
+    'Cache-Control': 'no-cache',
+  });
+};
+```
+
+#### Parameters
+- **name** (String): The name of the file.
+- **description** (String): A description of the file.
+- **contentType** (String): The MIME type of the file.
+
+#### Arguments
+| Property Name| Type | Required | Description |
+| --- | --- | --- | --- |
+|name	|String	|Required	|The name of the file|
+|description	|String	|Optional	|A description of the file|
+|contentType	|String	|Required	|The MIME type of the file|
+
+#### HTTP Request
+
+```json
+POST /domo/data-files/v1/multipart HTTP/1.1
+Accept: application/json
+Request Body
+The request body accepts 
+{
+    "name": "SampleFile",
+    "description": "Sample Description",
+    "contentType": "application/pdf",
+    "Cache-Control": "no-cache",
+}
+```
+
+#### HTTP Response
+Returns the session ID.
+
+```text
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+    "sessionId": "1234567890"
+}
+```
+
+---
+
+### Creating a Multi-part Upload Update Session
+
+To update a multi-part file, create an update session by calling `createUpdateSession` and passing in the fileId. This will return a session ID that is essential for uploading file parts.
+
+#### Code Example
+
+```js
+export const createUpdateSession = async (fileId, name, description, contentType) => {
+  const url = `/domo/data-files/v1/${fileId}/multipart`
+  return await domo.post(url, {
+    fileId,
+    name,
+    description,
+    contentType,
+    'Cache-Control': 'no-cache',
+  });
+};
+```
+
+#### Parameters
+- **name** (String): The name of the file.
+- **description** (String): A description of the file.
+- **contentType** (String): The MIME type of the file.
+
+#### Arguments
+| Property Name| Type | Required | Description |
+| --- | --- | --- | --- |
+|fileId	|Long	|Required	|The id of the file you wish to update|
+|name	|String	|Required	|The name of the file|
+|description	|String	|Optional	|A description of the file|
+|contentType	|String	|Required	|The MIME type of the file|
+
+#### HTTP Request
+
+```json
+POST /domo/data-files/v1/{fileId}/multipart HTTP/1.1
+Accept: application/json
+Request Body
+The request body accepts 
+{
+    "fileId": 401,
+    "name": "SampleFile",
+    "description": "Sample Description",
+    "contentType": "application/pdf",
+    "Cache-Control": "no-cache",
+}
+```
+
+#### HTTP Response
+Returns the session ID.
+
+```text
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+    "sessionId": "1234567890"
+}
+```
+
+---
+
+### Uploading File Parts
+
+After creating a session, upload the file in chunks. Each chunk is sent with a unique `index` and can optionally include a `checksum` for verification. The `checkSum` is used to verify the integrity of the uploaded chunk.
+
+You can determine the chunk size manually, but a good recommended size is between 10MB and 100MB.
+
+```javascript
+export const uploadPart = async (sessionId, index, part, contentType, checkSum) => {
+  const url = `/domo/data-files/v1/multipart/${sessionId}/part/${index}${checkSum ? `?[checksum=${checkSum}]` : ''}`;
+  return await domo.put(url, part, { contentType });
+};
+```
+
+#### Parameters
+- **sessionId** (String): The session ID from `createSession` or `createUpdateSession`.
+- **index** (Number): Part number for ordering (1–10,000).
+- **part** (ArrayBuffer | String): File data chunk.
+- **contentType** (String): The content type of the chunk.
+- **checkSum** (String, optional): SHA-256 checksum for the chunk.
+
+#### Arguments
+| Property Name| Type | Required | Description |
+| --- | --- | --- | --- |
+|sessionId	|String	|Required	|The session ID from `createSession` or `createUpdateSession`|
+|index	|Number	|Required	|Part number for ordering (1–10,000)|
+|part	|ArrayBuffer | String	|Required	|File data chunk|
+|contentType	|String	|Required	|The content type of the chunk|
+|checkSum	|String	|Optional	|SHA-256 checksum for the chunk|
+
+#### HTTP Request
+
+```json
+PUT /domo/data-files/v1/multipart/{sessionId}/part/{index}$?checksum={checkSum} HTTP/1.1
+Accept: application/json
+Request Body
+The request body accepts the file data chunk.
+{
+    "contentType": "application/pdf",
+}
+```
+
+#### HTTP Response
+Returns the session ID.
+
+```text
+HTTP/1.1 200 OK
+```
+
+---
+
+### Completing a Multi-part Upload
+
+Once all parts are uploaded, finalize the process with `complete`:
+
+```javascript
+export const complete = async (sessionId) => {
+  const url = `/domo/data-files/v1/multipart/${sessionId}/commit`;
+  return await domo.post(url, { sessionId });
+};
+```
+
+#### Parameter
+- **sessionId** (String): The session ID to commit.
+
+#### Arguments
+| Property Name| Type | Required | Description |
+| --- | --- | --- | --- |
+|sessionId	|String	|Required	|The session ID to commit|
+#### HTTP Request
+
+```json
+POST /domo/data-files/v1/multipart/{sessionId}/commit HTTP/1.1
+Accept: application/json
+Request Body
+The request body accepts the file data chunk.
+{
+    "sessionId": "1234567890"
+}
+```
+
+#### HTTP Response
+Returns the session ID.
+
+```text
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+    "dataFileId": "1234567890",
+    "revisionId": "1234567890"
+}
+```
+
+---
+
+### Error Handling and Retry Mechanism
+
+If a part upload fails, a retry mechanism limits the attempts per chunk, aborting the session after a specified count.
+
+```javascript
+export const abort = async (sessionId) => {
+  const url = `/domo/data-files/v1/multipart/${sessionId}/abort`;
+  return await domo.post(url);
+};
+```
+
+#### Arguments
+| Property Name| Type | Required | Description |
+| --- | --- | --- | --- |
+|sessionId	|String	|Required	|The session ID to abort|
+#### HTTP Request
+
+```json
+POST /domo/data-files/v1/multipart/{sessionId}/abort HTTP/1.1
+Accept: application/json
+Request Body
+The request body accepts the file data chunk.
+{
+    "sessionId": "1234567890"
+}
+```
+
+#### HTTP Response
+Returns the session ID.
+
+```text
+HTTP/1.1 200 OK
+```
+
+---
+
