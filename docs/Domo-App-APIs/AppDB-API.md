@@ -11,6 +11,7 @@ AppDB allows the storage of arbitrary JSON documents similar to a normal nosql d
 3. Documents – Analogous to documents in a nosql database or a table row in a relational database. A Collection can have multiple documents
 
 ### Defining Collections in the Manifest
+---
 Within the app manifest, you can define the collections that you want your app to be able to use by simply listing it in a collections property like so:
 
 ```json
@@ -145,6 +146,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 
 ### List Documents
+---
 List all documents from a given collection.
 
 #### Code Example
@@ -206,6 +208,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 
 ### Get Document
+---
 Retrieve a single document from a collection given its document ID.
 
 #### Code Example
@@ -250,6 +253,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 
 ### Update Document
+---
 Update an existing document in a collection given its document ID.
 
 #### Code Example
@@ -304,6 +308,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 
 ### Delete Document
+---
 Permanently deletes a document from your application's collection.
 
 <!-- theme: danger -->
@@ -333,6 +338,7 @@ HTTP/1.1 200 OK
 ```
 
 ### Query Documents
+---
 Any MongoDB query that can be used in a Mongo `find()` function can be used to query for documents in an AppDB Datastore. Official MongoDB query documentation is below:
 https://docs.mongodb.com/manual/reference/operator/query/
 
@@ -415,6 +421,7 @@ Dates can be queried in AppDB using the [MongoDB Extended JSON v2](https://www.m
 ```
 
 ### Query Documents with Aggregations
+---
 After the query limits the documents that will be returned by the api call, you can optionally add query string parameters to the url to aggregate the results of the query. Each parameter (excluding `groupby`) has the optional ability to take an alias. While it is not required to alias each property that is being aggregated, it is useful in the event that you need to pass the same property to different aggregations to avoid name collisions.
 
 #### HTTP Request
@@ -505,7 +512,7 @@ domo.post(url, {}).then(data => console.log(data));
 ]
 ```
 ### Partially Update Documents Using Queries
-
+---
 Using standard mongo queries and update operations, you can do partial updates on your documents. The query must reference a document, or reference a property in a document.
 
 Supported Operators:
