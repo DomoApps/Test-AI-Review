@@ -2,9 +2,8 @@
 
 This code sample can be added directly to Code Engine to give you more granular control over provisioning Domo instances for Publish and Managed Embed. Key differences between this function and the default behavior in Instance Management; specify Region and Additional Users.
 
-`
+```
 const codeengine = require('codeengine');
-
 
 class Helpers {
   /**
@@ -84,4 +83,4 @@ async function provisionInstance(customerName,
 async function getInstanceTemplates() {
     return await Helpers.handleRequest('get', '/api/publish/v2/org-templates');
 }
-`
+```
