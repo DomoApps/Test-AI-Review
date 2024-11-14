@@ -1,6 +1,7 @@
 # FAQ
 
-## AppDB
+### AppDB
+---
 <strong>Q: I configured my AppDB collection in the manifest correctly, why can't I see the dataset?</strong>
 
 <strong>A</strong>: The dataset can sometimes take up to 15 minutes to show in the data center assuming that you setup the collection correctly the first time. If it is not setup correctly, there is not any feedback you will get in the data center to tell you why. Once the dataset has been successfully created the first time, however, any errors regarding updating that dataset will appear in the history tab of the dataset.
@@ -9,8 +10,8 @@ The dataset that is created by AppDB will follow the following naming convention
 
 <code>{collectionName}_{collectionUUID}_APP_DB</code>
 
-## Data
-
+### Data
+---
 <strong>Q: How can I leverage enhanced data analysis in my app?</strong>
 
 <strong>A</strong>: You should leverage Domo as your backend service to perform the necessary data transformation and analysis as much as possible. Domo offers data transformations via Blend, ETL, SQL, or R. Additional options include Workbench plugins, custom connectors, and custom services that leverage the Domo APIs. However, if your app does need to do any additional analysis on the front-end, you’re able to use any JavaScript library that provides that functionality, such as JsStat.
@@ -40,8 +41,8 @@ The dataset that is created by AppDB will follow the following naming convention
 <strong>A:</strong> There is currently a limit of 100 data connections per Custom App.
 
 
-## Design
-
+### Design
+---
 <strong>Q: Do Domo Apps support a responsive design?</strong>
 
 <strong>A</strong>: Absolutely. By setting `full-page: true` in your manifest file your app will grow to fill the remaining screen space on the detail, fullscreen, and mobile.
@@ -66,8 +67,8 @@ A: To ensure your app has a thumbnail, place a 300×300 image named `thumbnail.
 
 If you forget to upload your project with a `thumbnail.png`, you will be reminded by the CLI that you cannot create cards off of the design until you re-publish to that design ID with a thumbnail available at the root of the project.
 
-## Limitations
-
+### Limitations
+---
 <strong>Q: Ok, Apps seem to be pretty awesome. What can they not do?</strong>
 
 <strong>A</strong>: Apps currently don’t have access to some of the core product features available to standard cards, such as alerts, Buzz, data export, and export to slideshow. However, if you have a custom use-case you can reach out to Engineering Services who can help you leverage additional Domo functionality.
@@ -90,14 +91,14 @@ Custom Apps do not currently support viewing in an external slide show
 
 <strong>A:</strong> Custom App cards do not currently support Alerts.
 
-## Navigation
-
+### Navigation
+---
 <strong>Q: Can I navigate to other places within Domo from my app?</strong>
 
 <strong>A</strong>: `domo.navigate` allows you to link users to other pages in Domo as well as external domains. Refer to the [navigate](../Tools/domo.js.md#domonavigate) command in the `domo.js` library for more information.
 
-## Security and Access Control
-
+### Security and Access Control
+---
 <strong>Q: Do I have access to Domo Parent DOM from an App?</strong>
 
 <strong>A</strong>: No. Domo Apps are completely sandboxed from your Domo instance to prevent potential security issues.
@@ -127,8 +128,8 @@ For security reasons, Custom Apps can link only to approved, whitelisted domains
 You may customize this whitelist, but will need to request a feature switch to be enabled by your CSM. See the `domo.navigate()` command [for more information here](domo.js.md).
 
 
-## Tech Stack
-
+### Tech Stack
+---
 <strong>Q: Can I use my favorite front-end framework/library in an app?</strong>
 
 <strong>A</strong>: Absolutely. Any JavaScript library/framework that you use in your other projects should work in a Domo App. Check out [Domo's App Starter Kits](../Quickstart/Starter-Kits.md) for React, Angular, and Vue templates.
