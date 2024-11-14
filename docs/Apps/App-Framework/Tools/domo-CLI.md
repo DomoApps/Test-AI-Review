@@ -6,7 +6,9 @@ stoplight-id: rmfbkwje8kmqj
 
 The Domo Apps Command Line Interface (CLI) will be the main tool to create, publish, and edit custom app designs to your Domo instance. Here's how to [install it](/docs/Apps/App-Framework/Quickstart/Setup-and-Installation.md). 
 
-The following is an enhanced reference for the more common CLI commands. For a complete list of commands available then refer to the Help section below.
+The following is an enhanced **reference** for the more **common** CLI commands. 
+
+For a **complete** list of commands available, ask your version of the CLI with `domo --help` (refer to the Help section below).
 
 ### Help
 ---
