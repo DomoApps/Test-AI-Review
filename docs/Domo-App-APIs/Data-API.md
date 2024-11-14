@@ -5,7 +5,7 @@ stoplight-id: 8s3y9eldnjq8d
 # Data API
 
 ### Base URL
-
+---
 ```text
 GET /data/v1/:alias?:queryOperators
 ```
@@ -28,7 +28,7 @@ GET /data/v1/:alias?:queryOperators
 - unique
 
 ### aggregations
-
+---
 Consolidate all rows of a column into a single value or override the default aggregations for `dategrain` and `groupby` clauses. Multiple fields can be specified by delimiting with commas.
 
 ```text
@@ -38,12 +38,14 @@ GET /data/v1/:alias?{avg|count|max|min|sum|unique}=:fieldAlias1,:fieldAlias2
 When aggregations are requested without a `groupby` or `dategrain`, then a single row of data will be returned with the aggregated fields **only**.
 
 ### calendar
+---
 Specify which calendar to use for date-related operations such as `todate`, `last`, and `dategrain`.
 ```text
 GET /data/v1/:alias?calendar={fiscal|standard}
 ```
 
 ### dategrain
+---
 Perform a `groupby` with predefined date grains. By default, numerical columns are summed and unique entries of non-numerical columns are counted. Can be combined with an [aggregation](8s3y9eldnjq8d-data-api#aggregations) to override this default behavior.
 
 ```text
@@ -57,6 +59,7 @@ When graining by "week", "month", or "quarter", a column named `CalendarXXXX` wi
 If you already have a column with that name, it will be overridden by this new date field. In addition, the column you request as the date grain will not be present in the result by its original name.
 
 ### fields
+---
 Limit the result set to specific columns from the dataset by providing either the field alias or the original column name (if no alias was defined in the manifest). Multiple fields can be combined into a comma separated string.
 
 ```text
@@ -64,6 +67,7 @@ GET /data/v1/:alias?fields=:fieldAlias1,:fieldAlias2,:fieldAlias3
 ```
 
 ### filter
+---
 Limit the rows returned by the request by providing more fine-grained filters. Multiple filter parameters can be combined into a single comma separated string.
 
 ```text
@@ -89,6 +93,7 @@ last             Rolling Period: eg :dateField last :int {hours|days|weeks|month
 ```
 
 ### groupby
+---
 Aggregates identical data into groups. By default, numerical columns are summed and unique entries of non-numerical columns are counted. Can be combined with an [aggregation](8s3y9eldnjq8d-data-api#aggregations) to override this default behavior. Multiple columns can be grouped by delimiting each with a comma.
 
 ```text
@@ -96,12 +101,14 @@ GET /data/v1/:alias?fields=color,shape,qty&groupby=color,shape
 ```
 
 ### limit & offset
+---
 Provides the ability to paginate the query results.
 ```text
 GET /data/v1/:alias?offset=:int&limit=:int
 ```
 
 ### orderby
+---
 Rows can be ordered by any column in `ascending` or descending order. The order defaults to ascending and a multi-column order can be defined by delimiting each order clause with a comma.
 ```text
 GET /data/v1/:alias?orderby=:fieldName {ascending|descending}
@@ -110,6 +117,7 @@ GET /data/v1/:alias?orderby=:fieldName {ascending|descending}
 **Note**: You cannot order on an aggregation
 
 ### Data Formats
+---
 You can control the format of the data returned from this endpoint by setting the request `Accept` header. If leveraging the [domo.js](e947d87e17547-domo-js) library, the same can be accomplished by passing a `format` option in the request. Please refer to the [domo.get()](e947d87e17547-domo-js#domoget) documentation for further details.
 
 array-of-objects
@@ -199,6 +207,7 @@ domo.get('my-alias', { format: 'array-of-arrays' })
 ```
 
 ### Beast Modes
+---
 Previously a known limitation of the Data API, you can now optionally use beast modes in your queries. In order to use beast modes in your data request, the `useBeastMode` query parameter must be set to true.
 
 #### Basic Example
@@ -250,6 +259,7 @@ domo.get('/data/v1/dataAlias?useBeastMode=true&fields=beastModeAlias,reps&groupb
 > You cannot use the filter operator on a beast mode that contains an aggregate function (the equivalent of a having clause which is not supported in Domo today).
 
 ### SQL API
+---
 You can now use SQL to query your Domo DataSet as an alternative to using the Data API. You can use all of the same SQL you're used to with the exception of JOINs and trigonometric functions. For example:
 
 ```js
