@@ -114,7 +114,7 @@ design-name
 
 ### login [options]
 
-Authenticate to your Domo instance from the CLI. This is a requirement before doing other commands like `publish`, and for fetching data during `domo dev`. If no options are provided then you'll be prompted to choose from a list of previous instances or a "new instance", at which point you'll be prompted for instance name, username, and password.
+Authenticate to your Domo instance from the CLI. This is a requirement before doing other commands like `publish`, and for fetching data during `domo dev`. If no options are provided, then you'll be prompted to choose from a list of previous instances or a "new instance", at which point you'll be prompted for instance name, username, and password.
 
 ```
 $ domo login [options]
@@ -127,7 +127,9 @@ $ domo login [options]
 
 ### owner <add|rm|ls>
 
-Manage the owners of the Custom App design. Only owners of a design are able to manage that design from the CLI or the Asset Library within the Domo instance. Additionally, only owners of a design are authorized to deploy new apps based on said design.
+Manage the owners of the Custom App design. 
+
+Only owners of a design are able to manage that design from the CLI or the Asset Library within the Domo instance. Additionally, only owners of a design are authorized to deploy new apps based on said design.
 
 ```
 $ domo owner [options] [add|rm|ls] joe.bob@mycompany.com
