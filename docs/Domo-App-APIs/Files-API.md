@@ -396,7 +396,7 @@ To begin a multi-part file upload, create an upload session by calling `createSe
 #### Code Example
 
 ```js
-export const createMPUSession = async (name, description, contentType) => {
+export const createSession = async (name, description, contentType) => {
   const url = '/domo/data-files/v1/multipart';
   return await domo.post(url, {
     name,
