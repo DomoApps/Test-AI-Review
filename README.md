@@ -58,6 +58,8 @@ They tend to be shorter and more focused on a single subject than tutorials.
 
 #### Examples
 
+[TODO AS FIRST EXAMPLE COMMIT]
+
 ### Tutorials
 
 Tutorials are step-by-step, start-to-finish walkthroughs for complete solutions.
@@ -73,6 +75,8 @@ These usually have multiple parts, include all code required to build the soluti
 5. Summarize key points at the end of each section and conclude the tutorial with a recap and next steps for further exploration or related topics.
 
 #### Examples
+
+[TODO AS FIRST EXAMPLE COMMIT]
 
 ### API Reference
 
