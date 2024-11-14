@@ -19,9 +19,9 @@ Description of the Request body and its contents along with an example of the da
     "Content-Type": "application/json"
   },
   "body": {
-    "displayName": "User Display Name",
-    "emailAddress": "User Email",
-    "roleId": user Role Id (Integer)
+    "displayName": string,
+    "emailAddress": string,
+    "roleId": number
 }
 }
 ```
@@ -30,22 +30,27 @@ Description of the Request body and its contents along with an example of the da
 
 ```json
 200:
-{
-  "attributes": [List of user profile attributes ],
-  "id": user id (Integer),
-  "displayName": "display name",
-  "userName": "user email",
-  "roleId": provided role id (Integer),
-  "emailAddress": "user email"
-}
+  {
+    "attributes": [
+      {
+          "key": string,
+          "values": number|string[]
+      },
+    ],
+    "id": number,
+    "displayName": string,
+    "userName": string,
+    "roleId": number,
+    "emailAddress": string
+  }
 
 400:
-{
+  {
     "status": 400,
     "statusReason": "Bad Request",
     "message": "",
     "toe": ""
-}
+  }
 ```
 
 ---
@@ -90,7 +95,21 @@ Description of the Request body and its contents along with an example of the da
 ```json
 200:
 {
-  "users": [Array containing information for specified user]
+  "users": [
+    {
+        "attributes": [
+            {
+                "key": string,
+                "values": number|string[]
+            },
+        ],
+        "id": number,
+        "displayName": string,
+        "userName": string,
+        "roleId": number,
+        "emailAddress": string
+    }
+  ]
 }
 ```
 
@@ -99,8 +118,7 @@ Description of the Request body and its contents along with an example of the da
 ## Get All Users
 
 **Method**: `GET`  
-**Endpoint**: `/api/identity/v1/users`
-
+**Endpoint**: `/api/identity/v1/users`  
 **Optional Query Parameters**:
 
 - `parts`
@@ -131,7 +149,21 @@ Description of the Request body and its contents along with an example of the da
 ```json
 200:
 {
-  "users": [Array containing information for all users]
+  "users": [
+    {
+        "attributes": [
+            {
+                "key": string,
+                "values": number|string[]
+            },
+        ],
+        "id": number,
+        "displayName": string,
+        "userName": string,
+        "roleId": number,
+        "emailAddress": string
+    }
+  ]
 }
 ```
 
@@ -139,8 +171,8 @@ Description of the Request body and its contents along with an example of the da
 
 ## Update User
 
-**Method**: `PATCH`
-**Endpoint**: `/api/identity/v1/users/{id}`
+**Method**: `PATCH`  
+**Endpoint**: `/api/identity/v1/users/{id}`  
 **Path Parameters**:
 
 - `id` - Id of the user requested.
@@ -150,12 +182,12 @@ Description of the Request body and its contents along with an example of the da
 **Request Body**:
 Object containing properties to update
 
-**Example**
+**Example**:
 
 ```json http
 {
   "method": "PATCH",
-  "url": "https://{instance}.domo.com/api/identity/v1/users",
+  "url": "https://{instance}.domo.com/api/identity/v1/users/{id}",
   "headers": {
     "X-DOMO-Developer-Token": "",
     "Content-Type": "application/json",
@@ -166,20 +198,63 @@ Object containing properties to update
 }
 ```
 
-**Response**:  
-200: Returns updated user object
+**Response**:
 
-400: Bad Request - Validate your provided JSON
+```json
+200:
+{
+    "attributes": [
+        {
+            "key": string,
+            "values": number|string[]
+        },
+    ],
+    "id": number,
+    "displayName": string,
+    "userName": string,
+    "roleId": number,
+    "emailAddress": string
+}
+```
 
 ---
 
-## Delete
+## Delete User
 
 **Method**: `DELETE`  
-**Endpoint**: `/api/<endpoint>/{param 1}`  
+**Endpoint**: `/api/identity/v1/users/{id}`  
 **Path Parameters**:
 
-- `param 1` (<datatype, String, Number, Boolean etc. >, <Required | Optional>) - Description of the param.
+- `id` - Id of the user requested.
+  - Integer
+  - Required
 
-**Response**:  
-Description and example of the response
+**Example**:
+
+```json http
+{
+  "method": "DELETE",
+  "url": "https://{instance}.domo.com/api/identity/v1/users/{id}",
+  "headers": {
+    "X-DOMO-Developer-Token": "",
+    "Content-Type": "application/json",
+    "body": {
+      "roleId": 5
+    }
+  }
+}
+```
+
+**Response**:
+
+```json
+200: 1 (represents number of deleted records)
+
+404:
+  {
+      "status": 404,
+      "statusReason": string,
+      "message": string
+      "toe": string
+  }
+```
