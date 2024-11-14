@@ -77,7 +77,7 @@ Asks you some questions to initialize a new Custom App design template. Once com
 <!-- theme: info -->
 > #### No `mkdir` necessary
 >
-> `domo init` will create the folder for you
+> `domo init` will create the folder for you.
 
 **PROMPTS**
 * design name
