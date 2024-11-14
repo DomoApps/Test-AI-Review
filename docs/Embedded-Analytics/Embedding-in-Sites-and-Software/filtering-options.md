@@ -101,7 +101,7 @@ All these filter types are layered in the sequence below:
         			filters: [{'column': 'name', 'operand': 'IN', 'values': ['ABC']}]<br>
                 	}<br>
 		}</td>
-		<td>App Studio<br> Dashboard<br> Card</td>
+		<td>App Studio,<br> Dashboard,<br> Card</td>
 	</tr>
 	<tr>
 		<td>/v1/appData/apply</td>
