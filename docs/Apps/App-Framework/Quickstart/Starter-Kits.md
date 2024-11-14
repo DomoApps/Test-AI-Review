@@ -42,7 +42,7 @@ These commands will create your project in a `my-app` folder with the followin
 
 #### Upload and configure
 
-- Use the domoapps cli to login to your Domo instance with `domo login`
+- Use the [domoapps cli](docs/Apps/App-Framework/Quickstart/Setup-and-Installation.md) to login to your Domo instance with `domo login`
 - Upload the boilerplate app to your Domo instance using `yarn upload` or `npm run upload`
 - The project will build, add all assets to the `build` folder, and then upload the assets to Domo
 - The `manifest.json` file in the `build` folder will be modified by the domoapps cli to include an `id` property - you will want to copy this `id` into the manifest in your `public` folder so that it doesn't continue to create a new `id` on each upload
