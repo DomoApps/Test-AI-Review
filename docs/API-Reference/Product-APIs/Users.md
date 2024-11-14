@@ -5,9 +5,6 @@
 **Method**: `POST`  
 **Endpoint**: `/api/identity/v1/users`
 
-**Request Body**:  
-Description of the Request body and its contents along with an example of the data if it is not multi-part form data
-
 **Example**:
 
 ```json http
@@ -178,9 +175,6 @@ Description of the Request body and its contents along with an example of the da
 - `id` - Id of the user requested.
   - Integer
   - Required
-
-**Request Body**:
-Object containing properties to update
 
 **Example**:
 
