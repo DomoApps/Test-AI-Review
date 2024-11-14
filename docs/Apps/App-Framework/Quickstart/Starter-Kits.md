@@ -20,7 +20,9 @@ title: React
 
 #### Basic Create React App
 
-DomoApps has a basic create-react-app template that can be installed that includes all the Domo-specific dependencies and configurations. Follow the instructions from the <a href="https://create-react-app.dev/docs/getting-started#creating-an-app">create-react-app documentation</a> to install a new react app with the `@domoinc/cra-template` template based on the package manager of your choice (`npx`, `yarn`, or `npm`).
+DomoApps has a basic create-react-app template that can be installed that includes all the Domo-specific dependencies and configurations. Follow the instructions from the <a href="https://create-react-app.dev/docs/getting-started#creating-an-app">create-react-app documentation</a> to install a new react app with the [`@domoinc/cra-template`] template based on the package manager of your choice (`npx`, `yarn`, or `npm`).
+
+[`@domoinc/cra-template`]: https://www.npmjs.com/package/@domoinc/cra-template?activeTab=readme
 
 Replace the word `my-app` in the following commands with the app name of your choice.
 
