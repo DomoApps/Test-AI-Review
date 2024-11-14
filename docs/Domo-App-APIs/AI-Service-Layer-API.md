@@ -9,7 +9,7 @@ stoplight-id: ffvznqc76b2b5
 Generate text based on the given text input.
 
 **Method**: `POST`  
-**Endpoint**: `/api/<endpoint>`
+**Endpoint**: `/api/ai/v1/text/generation"`
 **Request Body Attributes**:
 
 - `input` - The input text to send to the model.
