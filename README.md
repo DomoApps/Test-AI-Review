@@ -10,9 +10,9 @@ Before contributing to the Developer Portal, please ensure you've reviewed the c
 
 In general, there are three types of articles in the Developer Portal. Please follow the style guide for each.
 
-1. Guide / How-to Article
-2. Tutorial
-3. API Reference
+1. Guide / How-to Article ([Style Guide](#guide--how-to))
+2. Tutorial ([Style Guide](#tutorials))
+3. API Reference ([Style Guide](#api-reference))
 
 ## Stoplight
 
