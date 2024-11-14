@@ -13,7 +13,7 @@ Property | Type  | Description | Notes | Required | Guide
  `version` | String | The version of your App Design. | | Required |
  `size` | Object | The size of your App.  | Object with `width` and `height` properties defined on a scale of 1-6 | Required |
  `fullpage` | Boolean | Allows the app to be viewed in full page mode.  |  | Optional | 
- `mapping` | List of Objects | A list of Datasets that the App Design uses. | Each object corresponds to one Dataset and should include an `alias`, `dataSetId`, and `fields` property. If the App Design doesn't use Datasets, `mapping` can be an empty list `[]`| Required |
+ `datasetsMapping` | List of Objects | A list of Datasets that the App Design uses. | Each object corresponds to one Dataset and should include an `alias`, `dataSetId`, and `fields` property. If the App Design doesn't use Datasets, `datasetsMapping` can be an empty list `[]`| Required |
  `collections` | List of Objects | A list of AppDB collections that the App Design uses  | Each object corresponds to one AppDB collection and should include a `name`, `schema` (optional), and `syncEnabled` property. If your App Design leverages AppDB collections, you'll also need to setup a `proxyId` property in the manifest file. | Optional | [AppDB API](../../../Domo-App-APIs/AppDB-API.md)
  `workflowMapping` | List of Objects | A list of Workflows that the App Design uses.  | Each object corresponds to one Workflow and should include an `alias` and `parameters` property. If your App Design leverages Workflows, you'll also need to setup a `proxyId` property in the manifest file.| Optional | [Hitting a Workflow from an App](hitting-a-workflow.md)
   `packageMapping` | List of Objects | A list of Code Engine packages that the App Design uses.  | Each object corresponds to one Code Engine package and should include an `alias`,  `parameters` (if applicable), and `output` property. If your App Design leverages Code Engine packages, you'll also need to setup a `proxyId` property in the manifest file.| Optional | [Hitting Code Engine from an App](hitting-code-engine-from-an-app.md)
@@ -35,7 +35,7 @@ Here is an example demonstrating a complete manifest file.
         "width": 4,
         "height": 3
     },
-    "mapping": [
+    "datasetsMapping": [
         {
         "alias": "sales",
         "dataSetId": "5168da8d-1c72-4e31-ba74-f609f73071dd",
@@ -295,14 +295,14 @@ Examples:
 
 If your app contains a `node_modules` directory that will be ignored as well.
 
-### mapping
+### datasetsMapping
 ---
-The `mapping` property consists of a list of DataSet mappings that the design uses. Each DataSet mapping object has the following format.
+The `datasetsMapping` property consists of a list of DataSet mappings that the design uses. Each DataSet mapping object has the following format.
 
 ```json
 {
     "name": "My Design",
-    "mapping": [
+    "datasetsMapping": [
         {
         "alias": "sales",
         "dataSetId": "5168da8d-1c72-4e31-ba74-f609f73071dd",
@@ -325,7 +325,7 @@ The `mapping` property consists of a list of DataSet mappings that the design us
 }
 ```
 
-As seen above, the properties in the mapping object are as follows.
+As seen above, the properties in the datasetsMapping object are as follows.
 
 * alias
 * dataSetId
