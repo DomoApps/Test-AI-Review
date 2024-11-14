@@ -10,13 +10,13 @@ For scenarios that require programmatic creation of Clients, the following guide
 
 ### Obtain a Customer Instance Session Identifier
 
-Using the [authenticate](../Instance-Authetication.json/paths/~1api~1content~1v2~1authentication/post) customer instance API, you are able to obtain a session identifier using multiple methods of authentication based upon the instance's sign on options.
+Using the [authenticate](Instance-Authentication.json/paths/~1api~1content~1v2~1authentication/post) customer instance API, you are able to obtain a session identifier using multiple methods of authentication based upon the instance's sign on options.
 
 #### Password Authentication
 
 Customer instances with direct sign on are able to use the `password` method to create a session token.
 
-Call the [authenticate](../Instance-Authetication.json/paths/~1api~1content~1v2~1authentication/post) endpoint using `"method": "password"` and including the appropriate `"emailAddress"` and `"password"`
+Call the [authenticate](Instance-Authentication.json/paths/~1api~1content~1v2~1authentication/post) endpoint using `"method": "password"` and including the appropriate `"emailAddress"` and `"password"`
 
 ```bash
 curl --request POST \
@@ -36,7 +36,7 @@ Locate and copy the `_dsidv1` cookie value
 
 ![image.png](../../../assets/images/image-98.png)
 
-Call the [authenticate](../Instance-Authetication.json/paths/~1api~1content~1v2~1authentication/post) endpoint with the matching `_dsidv1` cookie set and `"method": "exptoken"` in the request body.
+Call the [authenticate](Instance-Authentication.json/paths/~1api~1content~1v2~1authentication/post) endpoint with the matching `_dsidv1` cookie set and `"method": "exptoken"` in the request body.
 
 ```bash
 curl --request POST \
