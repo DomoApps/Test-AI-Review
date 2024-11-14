@@ -10,9 +10,9 @@ Before contributing to the Developer Portal, please ensure you've reviewed the c
 
 In general, there are three types of articles in the Developer Portal. Please follow the style guide for each.
 
-1. Guide / How-to Article
-2. Tutorial
-3. API Reference
+1. Guide / How-to Article ([Style Guide](#guide--how-to))
+2. Tutorial ([Style Guide](#tutorials))
+3. API Reference ([Style Guide](#api-reference))
 
 ## Stoplight
 
@@ -101,24 +101,24 @@ See https://developer.domo.com/portal/8ba9aedad3679-ap-is for more info about th
 
 #### App Framework APIs
 
-Please see the (https://developer.domo.com/portal/wjqiqhsvpadon-ai-service-layer-api)[AI Service Layer API] for an example of how to document these endpoints.
+Please see the [AI Service Layer API](https://developer.domo.com/portal/wjqiqhsvpadon-ai-service-layer-api) for an example of how to document these endpoints.
 
 Please include:
 
 1. Overview of the service - (including links to relevant guides, examples, etc.)
 2. Then, each endpoint should have:
 
-- title: `h2`
-- brief description: `plain text`
-- code example: `code snippet`
-- http request (including query params): `code snippet`
-- request body arguments accepted: `table`
-- request body example code example: `code snippet`
-- http response example: `code snippet`
+    - title: `h2`
+    - brief description: `plain text`
+    - code example: `code snippet`
+    - http request (including query params): `code snippet`
+    - request body arguments accepted: `table`
+    - request body example code example: `code snippet`
+    - http response example: `code snippet`
 
 #### Platform APIs
 
-See (https://developer.domo.com/portal/3b1e3a7d5f420-data-set-api)[DataSet API] for an example.
+See [DataSet API](https://developer.domo.com/portal/3b1e3a7d5f420-data-set-api) for an example.
 
 These APIs are actively testable in the documentation itself. They are all OpenAPI spec `.yaml` files.
 
