@@ -72,7 +72,7 @@ App ids tie apps to cards. If you delete the card from which you retrieved the i
 
 ### init
 
-Asks you some questions to initialize a new Custom App design template. Once complete be sure to follow the "Next Steps" provided.
+Asks you some questions to initialize a new Custom App design template. Once complete, be sure to follow the "Next Steps" provided.
 
 <!-- theme: info -->
 > #### No `mkdir` necessary
