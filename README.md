@@ -101,7 +101,7 @@ See https://developer.domo.com/portal/8ba9aedad3679-ap-is for more info about th
 
 #### App Framework APIs
 
-Please see the (https://developer.domo.com/portal/wjqiqhsvpadon-ai-service-layer-api)[AI Service Layer API] for an example of how to document these endpoints.
+Please see the [AI Service Layer API](https://developer.domo.com/portal/wjqiqhsvpadon-ai-service-layer-api) for an example of how to document these endpoints.
 
 Please include:
 
