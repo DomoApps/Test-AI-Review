@@ -81,7 +81,7 @@ Asks you some questions to initialize a new Custom App design template. Once com
 
 **PROMPTS**
 * design name
-* select a starter: see "STARTER PROMPTS"
+* select a starter: see "STARTERS" section
 * would you like to connect to any datasets? (Y/n): see "DATASET MAPPING PROMPTS"
 
 **STARTERS**
