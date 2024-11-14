@@ -293,6 +293,11 @@
           "items": [
             {
               "type": "item",
+              "title": "Getting started with the Pro-Code Editor",
+              "uri": "/docs/Apps/App-Framework/Guides/getting-started-pro-code.md"
+            },
+            {
+              "type": "item",
               "title": "The Manifest File",
               "uri": "/docs/Apps/App-Framework/Guides/manifest.md"
             },
