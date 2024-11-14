@@ -20,7 +20,9 @@ title: React
 
 #### Basic Create React App
 
-DomoApps has a basic create-react-app template that can be installed that includes all the Domo-specific dependencies and configurations. Follow the instructions from the <a href="https://create-react-app.dev/docs/getting-started#creating-an-app">create-react-app documentation</a> to install a new react app with the `@domoinc` template based on the package manager of your choice (`npx`, `yarn`, or `npm`).
+DomoApps has a basic create-react-app template that can be installed that includes all the Domo-specific dependencies and configurations. Follow the instructions from the <a href="https://create-react-app.dev/docs/getting-started#creating-an-app">create-react-app documentation</a> to install a new react app with the [`@domoinc/cra-template`] template based on the package manager of your choice (`npx`, `yarn`, or `npm`).
+
+[`@domoinc/cra-template`]: https://www.npmjs.com/package/@domoinc/cra-template?activeTab=readme
 
 Replace the word `my-app` in the following commands with the app name of your choice.
 
@@ -31,7 +33,7 @@ Replace the word `my-app` in the following commands with the app name of your 
 <pre><code>npx create-react-app my-app --template @domoinc
 </code></pre>
 <strong>npm</strong>
-<pre><code>npm init react-app my-app --template @domoinc
+<pre><code>npm init react-app my-app -- --template @domoinc
 </code></pre>
 
 These commands will create your project in a `my-app` folder with the following included:
@@ -42,16 +44,16 @@ These commands will create your project in a `my-app` folder with the followin
 
 #### Upload and configure
 
-- Use the domoapps cli to login to your Domo instance with `domo login`
+- Use the [domoapps cli](/docs/Apps/App-Framework/Quickstart/Setup-and-Installation.md) to login to your Domo instance with `domo login`
 - Upload the boilerplate app to your Domo instance using `yarn upload` or `npm run upload`
-- The project will build, add all assets to the `build` folder, and then upload the assets to Domo
-- The `manifest.json` file in the `build` folder will be modified by the domoapps cli to include an `id` property - you will want to copy this `id` into the manifest in your `public` folder so that it doesn't continue to create a new `id` on each upload
-- If you intend to use AppDB, make sure to also add a `proxyId` to the `manifest.json` file in your `public` folder. See [proxy documentation](../Guides/manifest.md#getting-a-proxyid-advanced) for more info.</li>
+  - The project will build, add all assets to the `build` folder, and then upload the assets to Domo
+  - The `manifest.json` file in the `build` folder will be modified by the domoapps cli to include an `id` property—you will want to copy this `id` into the manifest in your `public` folder so that it doesn't continue to create a new `id` on each upload
+- If you intend to use endpoints provided by the App Platform (e.g. datasets, AppDB, etc), make sure to also add a `proxyId` to the `manifest.json` file in your `public` folder. See [proxy documentation](../Guides/manifest.md#getting-a-proxyid-advanced) for more info.</li>
 
 #### Local Development
 
 
-Run the `yarn start` (or `npm start`) command after you've uploaded your app at least once to start developing locally.
+Run the `yarn start` (or `npm start`) command (after you've uploaded your app at least once) to start developing locally.
 
 
 <!--
@@ -71,6 +73,8 @@ You'll need the <a href="http://cli.angular.io/">Angular CLI</a> installed in 
 $ cd domo-app
 </code>
 </pre>
+
+Select NO when prompted whether SSR should be enabled for the new project.
 
 #### Add Ryuu Angular
 ---
