@@ -66,7 +66,7 @@ All these filter types are layered in the sequence below:
 		<td>Output</td>
 		<td>Event communicating the content size of the embed asset. Use when wanting to make sure the iframe is the exact size of the content so no scroll bars appear. </td>
 		<td></td>
-		<td>App Studio<br> Dashboard<br> Card</td>
+		<td>App Studio,<br> Dashboard,<br> Card</td>
 	</tr>
 	<tr>
 		<td>/v1/onFiltersChange</td>
