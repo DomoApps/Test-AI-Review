@@ -8,8 +8,8 @@ Please be familiar with the following principles and guidelines as you design yo
  	<li><a href="https://developer.apple.com/design/">App iOS Design Principles</a></li>
 </ul>
 
-## Domo Color Palette
-
+### Domo Color Palette
+---
 You're welcome to use the color palette of your choice when designing your app; however, designers will often want to design the app to look and feel more like native Domo. If that's the route you want to take we've provided the basic Domo color palette for your reference.
 
 #### Domo Blue Palette
@@ -161,8 +161,8 @@ When coloring multi-series charts, be sure to alternate the color saturation. Ch
     <span style="background:#e45621;">#e45621</span>
 </div>
 
-## Typography
-
+### Typography
+---
 Domo’s typography foundation lies in traditional typographical measures. It utilizes a 6px baseline grid. All pages are designed using spacing units of 6 between different components. This creates a pleasing and predictable vertical rhythm and extends to our horizontal grid as well. 
 
 Again, you're not required to use Domo styling in your app, but many designers have requested these guides in order to design their app to look and feel more like Domo.
