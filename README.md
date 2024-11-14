@@ -118,7 +118,7 @@ Please include:
 
 #### Platform APIs
 
-See (https://developer.domo.com/portal/3b1e3a7d5f420-data-set-api)[DataSet API] for an example.
+See [DataSet API](https://developer.domo.com/portal/3b1e3a7d5f420-data-set-api) for an example.
 
 These APIs are actively testable in the documentation itself. They are all OpenAPI spec `.yaml` files.
 
