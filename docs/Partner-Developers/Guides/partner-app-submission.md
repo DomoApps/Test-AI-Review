@@ -24,7 +24,7 @@ Decide if you want to purchase the advanced app platform for the most seamless d
 If there is interest in this feature, please contact your Partner Account Exec (AE), so the Partner AE can work with engineering team to coordinate the technical discussions.
 
 ## Step 4: Enable app publishing on partner instance
-<img src="https://web-assets.domo.com/blog/wp-content/uploads/2022/02/image001.png" width="3548" height="1852" class="alignnone size-full" />
+<img src="https://web-assets.domo.com/blog/wp-content/uploads/2022/02/image001.png" width="1100" height="" class="alignnone size-full" />
 
 Make sure that your partner instance (-partner) has app publishing enabled. You will know that app publishing is enabled when there is a + icon on the left navigation bar in the Domo Appstore. If publish is not enabled, send an email with your name and instance URL to <a href="mailto:appsubmissions@domo.com" rel="noopener" target="_blank">appsubmissions@domo.com</a>.
 
