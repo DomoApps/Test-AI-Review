@@ -98,6 +98,14 @@ design-name
 
 * manifest only: adds a single `manifest.json` file to the current working directory
 
+* basic chart: gets you started rendering a basic [Domo Phoenix] bar chart
+
+* map chart: gets you started rendering a [Domo Phoenix] world map chart
+
+* sugarforce: creates an app with multiple screens. It shows how to handle tabbing between screens, database CRUD operations and more.
+
+[Domo Phoenix]: https://domoapps.github.io/domo-phoenix/
+
 #### DATASET MAPPING PROMPTS
 * dataset id: can be found in the URL of the dataset detail page in the Domo instance. `https://[customer].domo.com/datasources/[dataset id]/details/overview`
 * dataset alias: the alias your app will use when requesting data from Domo
