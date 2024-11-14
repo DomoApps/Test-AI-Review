@@ -49,3 +49,11 @@ export const reportPageView = function(page) {
   });
 };
 ```
+
+
+### The Output Dataset
+
+The output of these 
+
+### Conclusion
+By integrating this module, teams can easily extend and customize event tracking as needed to capture additional insights or refine data collection, making this a versatile tool for Domo-based applications.
