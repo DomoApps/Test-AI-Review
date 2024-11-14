@@ -13,7 +13,7 @@ If you haven't leveraged Workflows from within Apps before, checkout [the guide 
 
 
 ### Start a Workflow
-
+---
 Starts a Workflow and returns details about the Workflow Instance.
 
 
@@ -69,7 +69,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 
 ### Get Metrics for a Workflow
-
+---
 Returns key metric information about a Workflow.
 
 
