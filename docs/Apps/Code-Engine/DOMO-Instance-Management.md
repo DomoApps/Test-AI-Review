@@ -52,8 +52,8 @@ class Helpers {
  *
  * @returns {object} - The response
  * {
- *     "id": "a0QVq0000043DmPMAU",
- *     "customerDomain": "domo-dev-bananas.domo.com"
+ *     "id": "<INSTANCE_ID>",
+ *     "customerDomain": "<DOMAIN>.domo.com"
  * }
  */
 async function provisionInstance(customerName,
