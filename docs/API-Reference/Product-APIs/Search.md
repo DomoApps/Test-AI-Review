@@ -1,6 +1,6 @@
 # Search Product API
 
-This API reference is useful if you are trying to use the search API for find entities.
+This API reference is useful if you are trying to use the search API to find entities.
 
 ### Query
 
