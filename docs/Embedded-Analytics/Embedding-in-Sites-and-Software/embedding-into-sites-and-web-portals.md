@@ -5,7 +5,7 @@ stoplight-id: 5ueroz175c0jl
 # Embedding Into Sites and Web Portals
 
 <h3><strong>Turn your data into an asset, everywhere.</strong></h3>
-Embed Domo Cards privately in SSO-enabled websites, portals, and applications, or publicly on public websites, blogs, and social media platforms. Use the policies you already have set up externally with Programmatic filters in server-side code. Enhance your sites and web portals with live data. Leverage your customer portal logins for each individual user and through filters you can create a personalized experience for each individual user. Foster self- service exploration with filter, drill, and link interactions.
+Embed Domo Cards privately in SSO-enabled websites, portals, and applications, or publicly on public websites, blogs, and social media platforms. Use the policies you already have set up externally with Programmatic filters in server-side code. Enhance your sites and web portals with live data. Leverage your customer portal logins for each individual user and through filters you can create a personalized experience for each individual user. Foster self-service exploration with filter, drill, and link interactions.
 
 <strong>The Domo Everywhere: Domo Embed feature allows you to:</strong>
 <ul>
