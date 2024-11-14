@@ -6,7 +6,7 @@ stoplight-id: kspv2orr3oi30
 
 This API reference is useful if you are trying to hit workflows from:
 1. An external Domo Instance
-2. A environment from outside of Domo
+2. An environment from outside of Domo
 3. A script running in Domo's Jupyter Workspaces
 
 If you are looking to hit a workflow from a Domo App, see the [App Framework API Reference for Workflows](../Domo-App-APIs/Workflows-API.md) and the [guide on how to hit a workflow from a Domo App](https://developer.domo.com/portal/81056f6209bfc-start-a-workflow-from-an-app).
@@ -75,7 +75,7 @@ A simple example of a workflow that takes two numerical inputs, might look like 
   "url": "https://{instance}.domo.com/api/workflow/v1/instances/message",
   "headers": {
     "X-DOMO-Developer-Token": "",
-    "Content-Type": "application/json",
+    "Content-Type": "application/json"
   },
   "body": {
     "messageName": "Start {{workflow_name}}",

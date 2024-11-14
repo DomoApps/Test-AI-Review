@@ -132,7 +132,7 @@ Retrieves a list of migration candidate datasources matching the provided Federa
         "name": "MySQL Table 2",
         "migrated": false,
         "migrationDate": null
-    },
+    }
 ]
 ```
 
@@ -198,7 +198,7 @@ Response Sample
     "direction": "V1_TO_V2",
     "startTime": "2024-04-15T19:48:00.073+00:00",
     "state": "COMPLETE",
-    "errorMessage:" null,
+    "errorMessage:": null,
     "endTime": "2024-04-15T19:48:02.410+00:00"
 }
 ```
@@ -251,7 +251,7 @@ Reverses the migration of the provided Federated V1 datasource to V2.
     "direction": "V2_TO_V1",
     "startTime": "2024-04-15T19:48:00.073+00:00",
     "state": "COMPLETE",
-    "errorMessage:" null,
+    "errorMessage:": null,
     "endTime": "2024-04-15T19:48:02.410+00:00"
 }
 ```
