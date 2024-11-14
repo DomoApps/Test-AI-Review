@@ -14,7 +14,7 @@ Custom Apps provides a convenient access point to the Domo Data File Service, a 
 
 
 ### Uploading a file
-
+---
 Uploading a file can be accomplished through the following POST request. The `file` is a multipart upload file that you can select from your computer and add to a `FormData` object. The `name` query parameter is mandatory. The `description` query parameter takes a text-based description and is optional and the `public` query parameter takes a Boolean value and is also optional.
 
 #### Code Example
@@ -58,7 +58,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 
 ### Uploading a file revision
-
+---
 The Files API provides versioning support for files that have been uploaded. You may add another version of a file by sending a `PUT` request to the files endpoint referencing the `fileId` of the file in which you wish to add a revision.
 
 #### Code Example
@@ -97,7 +97,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 
 ### Get a list of files metadata
-
+---
 Each file that you upload has corresponding metadata. This endpoint allows you to list all the metadata for each file you have access to. If you want to limit the files to just those that you uploaded you can provide a limitToOwned boolean flag as a query parameter.
 
 #### Code Example
@@ -157,7 +157,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 
 ### Get an individual file's metadata
-
+---
 Given a known file ID, this endpoint allows you to list the metadata for that specific file.
 
 #### Code Example
@@ -214,7 +214,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 
 ### Download a file
-
+---
 Below is the basic request for downloading a file. Depending on the type of file, this endpoint can be referenced inline in your application or called via an HTTP request. In this example, the `responseType` of the XHR request is being set to `blob` so that our code can reference it as a binary large object when passing the response to the Download method.
 
 #### Code Example
@@ -261,7 +261,7 @@ Content-Type: {mime-type of the file}
 ```
 
 ### Delete a file
-
+---
 Permanently deletes a File from your instance.
 
 <!-- theme: danger -->
@@ -300,7 +300,7 @@ HTTP/1.1 200 OK
 ```
 
 ### Get file permissions
-
+---
 #### Code Example
 
 ```js
@@ -341,7 +341,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 
 ### Update file permissions
-
+---
 #### Code Example
 
 ```js
