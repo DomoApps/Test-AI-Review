@@ -4,10 +4,12 @@
 
 Use the following script to delete all the files from a collection.
 
-<strong>Note</strong>: This action is destructive and is not reversible.  </br>
-<strong>Note</strong>: If you <i><strong>really</strong></i> need to reverse this action please contact Domo Support 
+<!-- theme: warning -->
+> #### Danger!
+> **Note**: This action is destructive and is not reversible.<br/>
+> **Note**: If you ***really*** need to reverse this action please contact Domo Support
 
-Just copy this code to your console, set up your collection id and press enter
+Just copy this code to your browser console, set up your collection id and press enter.
 
 ---
 ```js
@@ -48,3 +50,4 @@ const getCollectionContent = async(collectionId)=>{
 purgeRecords(collectionToDeleteId);
 }
 ```
+
