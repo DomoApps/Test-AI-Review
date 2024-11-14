@@ -6,7 +6,7 @@ stoplight-id: 6a5d7a2870145
 
 Custom Apps can request data by making an HTTP GET or POST request. The manifest.json file helps manage the data that your app is using.
 
-Learn more in the manifest [reference]()<a href="manifest.md">reference</a> documentation.
+Learn more in the manifest [reference](manifest.md) documentation.
 
 &nbsp;
 
