@@ -62,7 +62,7 @@ In order to enable proxying for advanced requests (like AppDB or the Files API),
 
 The app Id can be found as part of the URL for the iframe in which your app is displayed. It will be of the form XXXXXXXX-XXXX-4XXX-XXXX-XXXXXXXXXXXX. To find the ID:
 
-* Make sure the app has been published at least once with domo publish
+* Make sure the app has been published at least once with `domo publish`
 * Publish a new card based on your app design, or navigate to an existing card made from your app design
 * Right-click anywhere in the card and choose "Inspect element"
 * Find the `<iframe>` that contains your app's code. The URL should be of the form //{HASH}.domoapps.prodX.domo.com?userId=...
