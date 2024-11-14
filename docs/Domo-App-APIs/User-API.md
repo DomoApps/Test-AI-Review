@@ -5,7 +5,7 @@ stoplight-id: n7f7swo7h29wg
 # User API
 
 ### All Users
-
+---
 Information for all users can retrieved using the following endpoint:
 
 ```text
@@ -72,7 +72,7 @@ GET /domo/users/v1?includeDetails={true|false}&limit={int}&offset={int}
 ```
 
 ### Single User
-
+---
 Information for a single user can retrieved using the following endpoint:
 
 ```text
@@ -113,7 +113,7 @@ GET /domo/users/v1/:userId?includeDetails={true|false}
 ```
 
 ### User Avatar
-
+---
 User avatars are available at the avatars endpoint
 
 ```text
