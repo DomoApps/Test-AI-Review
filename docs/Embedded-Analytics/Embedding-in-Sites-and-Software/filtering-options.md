@@ -51,7 +51,7 @@ All these filter types are layered in the sequence below:
 	<li>Controls: The code above can be triggered by any external menu in the host page </li>
 </ul>
 
-<strong>Events:<strong> currently the following events are supported.
+<strong>Events:</strong> currently the following events are supported.
 
 <table>
 	<tr>
