@@ -89,10 +89,10 @@ Create a single document in a collection.
 
 #### Code Example
 
-The `document` variable in this post request is equal to the sample request body.
+The `documentContent` variable in this post request is equal to the sample request body.
 
 ```text
-domo.post(`/domo/datastores/v1/collections/Users/documents/`, document)
+domo.post(`/domo/datastores/v1/collections/Users/documents/`, documentContent)
     .then(data => console.log(data));
   ```
 
@@ -253,9 +253,9 @@ Content-Type: application/json;charset=UTF-8
 Update an existing document in a collection given its document ID.
 
 #### Code Example
-The document variable in this put request is equal to the sample request body.
+The `documentContent` variable in this put request is equal to the sample request body.
 ```text
-domo.put(`/domo/datastores/v1/collections/Users/documents/b3ea3d2d-86c5-44e6-a2f4-985136bbbce1`, document)
+domo.put(`/domo/datastores/v1/collections/Users/documents/b3ea3d2d-86c5-44e6-a2f4-985136bbbce1`, documentContent)
     .then(data => console.log(data));
 ```
 
