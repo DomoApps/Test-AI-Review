@@ -110,7 +110,7 @@ design-name
 * dataset id: can be found in the URL of the dataset detail page in the Domo instance. `https://[customer].domo.com/datasources/[dataset id]/details/overview`
 * dataset alias: the alias your app will use when requesting data from Domo. Make sure it has no spaces or special characters.
 
-**Note**: Be sure to complete the field mapping portion in the `manifest.json`. Refer to the [manifest](../Guides/manifest.md#mapping) reference docs for more details on data mapping.
+**Note**: Be sure to complete the field mapping portion in the `manifest.json`. Refer to the [manifest](/docs/Apps/App-Framework/Guides/manifest.md#mapping) reference docs for more details on data mapping.
 
 ### login [options]
 
@@ -142,7 +142,7 @@ $ domo owner [options] [add|rm|ls] joe.bob@mycompany.com
 
 Uploads all the assets of your current working directory as a Custom App design.
 
-You can choose to ignore certain files, meaning domo publish will not upload those files. Any node_modules directories are ignored by default. Refer to the [manifest](../Guides/manifest.md#ignore) reference docs for more details on ignoring files.
+You can choose to ignore certain files, meaning domo publish will not upload those files. Any node_modules directories are ignored by default. Refer to the [manifest](/docs/Apps/App-Framework/Guides/manifest.md#ignore) reference docs for more details on ignoring files.
 
 If an existing ID is not found in the manifest then a new design will be created and the manifest file will be updated with the newly created design Id. Existing designs will be updated.
 
