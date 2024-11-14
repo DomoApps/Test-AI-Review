@@ -151,6 +151,13 @@ https://player.vimeo.com/video/515861680
 
 <img src="https://web-assets.domo.com/blog/wp-content/uploads/2022/08/FilteringOptions7.png"/>
 
+<h3><strong>Additional App Studio URL parameter </strong></h3>
+
+<strong>Definition:</strong> For additional control over an embedded App Studio app, the URL param <em>overrideFilters</em> can be added to provide more control over whether or not an app should load up its saved default filters. When <em>overrideFilters=true</em>, the App Studio app will not load up any filters, instead, it will wait for a filter event from the parent before loading filters. When <em>overrideFilters=false</em> or when not provided, the filters saved to the default filter view of an App Studio app will load.
+
+<strong>Use Case:</strong> If you are actively applying filters to an embeded App Studio app, this parameter will help prevent getting in a mixed filtered state where the nested app may load up its own and get out of sync with the parent OR change the intended filters meant to be passed to the app.
+
+<strong>Warning:</strong> If setting <em>overrideFilters=true</em>, filters will not load up <strong>UNTIL</strong> the parent communicates a filter state using the <em>/v1/filters/apply</em> event. Even if it is an empty filter state, the parent must communicate it to the embeded App Studio App.
 
 ## DOMO INTERACTIONS
 
