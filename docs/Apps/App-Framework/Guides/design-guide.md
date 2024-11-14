@@ -2,7 +2,7 @@
 
 Domo adheres to Material Design principles and we highly encourage you to consider these same principles when building a Domo app as it will ensure a seamless experience from transitioning from Domo to your app.
 
-Please be familiar with the following principles and guidelines as you design your app.
+Please be familiar with the following principles and guidelines as you design your app:
 <ul>
  	<li><a href="https://material.io/guidelines/">Material Design Guidelines</a></li>
  	<li><a href="https://developer.apple.com/design/">App iOS Design Principles</a></li>
@@ -10,7 +10,7 @@ Please be familiar with the following principles and guidelines as you design yo
 
 ## Domo Color Palette
 
-You're welcome to use the color palette of your choice when designing your app; however, designers will often want to design the app to look and feel more like native Domo. If that's the route you want to take we've provided the basic Domo color palette for your reference.
+You're welcome to use the color palette of your choice when designing your app; however, designers will often want to design the app to look and feel more like native Domo. If that's the route you want to take, we've provided the basic Domo color palette for your reference.
 
 #### Domo Blue Palette
 
