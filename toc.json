@@ -483,6 +483,26 @@
     },
     {
       "type": "divider",
+      "title": "Global Code Engine Packages"
+    },
+    {
+      "type": "item",
+      "title": "Overview",
+      "uri": ""
+    },
+    {
+      "type": "group",
+      "title": "Guides",
+      "items": [
+        {
+          "type": "item",
+          "title": "DOMO AppDB Documents",
+          "uri": ""
+        }
+      ]
+    },
+    {
+      "type": "divider",
       "title": "AI Resources Guide"
     },
     {
