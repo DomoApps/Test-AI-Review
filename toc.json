@@ -478,6 +478,11 @@
           "type": "item",
           "title": "Getting Data Overview",
           "uri": "docs/Partner-Developers/Guides/getting-data-overview.md"
+        },
+        {
+          "type": "item",
+          "title": "Start a Remote Workflow",
+          "uri": "docs/Partner-Developers/Guides/start-a-remote-workflow.md"
         }
       ]
     },
