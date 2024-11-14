@@ -30,8 +30,8 @@
   {
     "attributes": [
       {
-          "key": string,
-          "values": number|string[]
+        "key": string,
+        "values": number|string[]
       },
     ],
     "id": number,
@@ -94,17 +94,17 @@
 {
   "users": [
     {
-        "attributes": [
-            {
-                "key": string,
-                "values": number|string[]
-            },
-        ],
-        "id": number,
-        "displayName": string,
-        "userName": string,
-        "roleId": number,
-        "emailAddress": string
+      "attributes": [
+        {
+          "key": string,
+          "values": number|string[]
+        },
+      ],
+      "id": number,
+      "displayName": string,
+      "userName": string,
+      "roleId": number,
+      "emailAddress": string
     }
   ]
 }
@@ -148,17 +148,17 @@
 {
   "users": [
     {
-        "attributes": [
-            {
-                "key": string,
-                "values": number|string[]
-            },
-        ],
-        "id": number,
-        "displayName": string,
-        "userName": string,
-        "roleId": number,
-        "emailAddress": string
+      "attributes": [
+        {
+          "key": string,
+          "values": number|string[]
+        },
+      ],
+      "id": number,
+      "displayName": string,
+      "userName": string,
+      "roleId": number,
+      "emailAddress": string
     }
   ]
 }
@@ -196,19 +196,19 @@
 
 ```json
 200:
-{
+  {
     "attributes": [
-        {
-            "key": string,
-            "values": number|string[]
-        },
+      {
+        "key": string,
+        "values": number|string[]
+      },
     ],
     "id": number,
     "displayName": string,
     "userName": string,
     "roleId": number,
     "emailAddress": string
-}
+  }
 ```
 
 ---
@@ -247,8 +247,8 @@
 404:
   {
       "status": 404,
-      "statusReason": string,
-      "message": string
-      "toe": string
+      "statusReason": "string",
+      "message": "string"
+      "toe": "string"
   }
 ```
