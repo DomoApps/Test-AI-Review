@@ -46,7 +46,7 @@ These commands will create your project in a `my-app` folder with the followin
 - Upload the boilerplate app to your Domo instance using `yarn upload` or `npm run upload`
 - The project will build, add all assets to the `build` folder, and then upload the assets to Domo
 - The `manifest.json` file in the `build` folder will be modified by the domoapps cli to include an `id` property - you will want to copy this `id` into the manifest in your `public` folder so that it doesn't continue to create a new `id` on each upload
-- If you intend to use ednpoints provided by the App Platform (e.g. datasets, AppDB, etc), make sure to also add a `proxyId` to the `manifest.json` file in your `public` folder. See [proxy documentation](../Guides/manifest.md#getting-a-proxyid-advanced) for more info.</li>
+- If you intend to use endpoints provided by the App Platform (e.g. datasets, AppDB, etc), make sure to also add a `proxyId` to the `manifest.json` file in your `public` folder. See [proxy documentation](../Guides/manifest.md#getting-a-proxyid-advanced) for more info.</li>
 
 #### Local Development
 
