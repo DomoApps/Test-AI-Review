@@ -40,7 +40,7 @@ Once you are in the Domo Appstore select the <strong>+</strong> icon in the left
 
 &nbsp;
 
-<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-start.png" width="1828" height="1033" />
+<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-start.png" width="1100" height="" />
 
 &nbsp;
 
@@ -58,7 +58,7 @@ Select the type of app you are offering from the dropdown:
 - <strong>Service.</strong> Advertise any other service that can help a company or provide functionality for other apps to use.
 
 
-<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-select-1.png" width="1602" height="799" />
+<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-select-1.png" width="1602"  />
 
 &nbsp;
 
@@ -71,7 +71,7 @@ You will then need to indicate if your app will be paid, free, public, or only v
 If you are submitting a paid app, please refer to the [Paid Apps](../Guides/paid-apps.md) and [Getting Paid](../Guides/getting-paid.md) guides for more information.
 
 
-<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-select-2.png" width="1600" height="800" />
+<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-select-2.png" width="1600" />
 
 ## Selecting content
 
@@ -81,18 +81,18 @@ marketplace-submission.md
 <h3><strong>Dashboards: </strong></h3>
 Select the page you would like to publish. Your dashboard will then be validated to be sure it is meeting all requirements.
 
-<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-page-select-dashboard.png" width="1600" height="795" />
+<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-page-select-dashboard.png" width="1600"  />
 
 <h3><strong>Code Blocks</strong></h3>
 Select your code type and paste in your code selection.
 
-<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-select-code-1.png" width="1608" height="810" />
+<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-select-code-1.png" width="1608" />
 
 &nbsp;
 
 This is an example of a Beast Mode Code Block:
 
-<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-select-code-2.png" width="1592" height="800" />
+<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-select-code-2.png" width="1592"  />
 
 ## Name and Info
 
@@ -102,7 +102,7 @@ This information should let people identify your submission in the Domo Appstore
  	<li>Add a subtitle and description</li>
  	<li>Upload an app icon. Recommended size: 200 x 200 pixels</li>
 </ul>
-<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-name-info-1.png" width="1599" height="799" />
+<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-name-info-1.png" width="1599"  />
 
 &nbsp;
 
@@ -114,7 +114,7 @@ This section allows you to determine who will be able to find your app and make 
  	<li>Input who this app is for, setup effort, and benefits</li>
  	<li>Enter up to 4 benefits for your submission</li>
 </ul>
-<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-publishing-details.png" width="1604" height="802" />
+<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-publishing-details.png" width="1604"/>
 
 ## Appstore Discovery
 Add capabilities and tags to allow users to find your submission more easily. 
@@ -133,7 +133,7 @@ Select from the following capabilities:
 
 You can also add up to 10 tags. Be sure to take a look at the [Appstore supported tags](marketplace-requirements.md#supported-tags) if you are unsure what tags to use.
 
-<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-appstore-discovery.png" width="1598" height="799" />
+<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-appstore-discovery.png" width="1598" />
 
 &nbsp;
 
@@ -143,7 +143,7 @@ Knowing which tags to use and how many to use is always a challenge but it is wo
 ## Add Media
 Upload screenshots or add a link to a YouTube video of your submission. The recommended dimensions of screenshots is 1920x1080 pixels.
 
-<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-media.png" width="1599" height="798" />
+<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-media.png" width="1599"  />
 
 
 The screenshot is one of the most common poorly executed steps we see from publishers. By spending just a little more time, you will have a screenshot that gives the customers a great first impression rather than a poor first impression. Follow these steps to take a great screenshot:
@@ -156,7 +156,7 @@ The screenshot is one of the most common poorly executed steps we see from publi
 ## Preview
 This allows you to see your app listing. After you review it and everything looks good, click the Submit for Approval button in the bottom right.
 
-<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-preview.png" width="1601" height="801" />
+<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-preview.png" width="1601"  />
 
 
 ## Submission status and approval
@@ -168,14 +168,14 @@ After submission, you can check the status of your app approval by emailing<a hr
 
 You can now manage your submissions to the Domo Appstore by status. After logging in, you can access your Store Manager by clicking on the Manage/Gear Icon on the left side of the page.
 
-<img src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-manage-apps-1.png" width="2073" height="737" class="alignnone size-full" />
+<img src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-manage-apps-1.png" width="2073" class="alignnone size-full" />
 &nbsp;
 
 On the Store Manager page, you can see your different submissions. Using the status indicators at the top, you can sort by apps that are drafts, pending (from your company), pending Domo approval, live, or denied. You can also select the dropdown menu on each app to see options for deleting an app.
 
-<img src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-manage-apps-2.png" width="1577" height="757" class="alignnone size-full" />
+<img src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-manage-apps-2.png" width="1577" class="alignnone size-full" />
 
-<img src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-manage-apps-3.png" width="326" height="267" class="alignnone size-full" />
+<img src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-manage-apps-3.png" width="326" class="alignnone size-full" />
 
 
 ## Resubmission
