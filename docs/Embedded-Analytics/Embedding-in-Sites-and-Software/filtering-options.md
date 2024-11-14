@@ -73,7 +73,7 @@ All these filter types are layered in the sequence below:
 		<td>Output</td>
 		<td>Event communicating filter changes</td>
 		<td></td>
-		<td>App Studio<br> Dashboard<br> Card</td>
+		<td>App Studio,<br> Dashboard,<br> Card</td>
 	</tr>
 	<tr>
 		<td>/v1/onAppData</td>
