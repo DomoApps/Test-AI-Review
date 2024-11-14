@@ -57,7 +57,7 @@ $ domo dev [options]
 * `-u, --userId`: Use a specific user. Helpful for testing app states where user Id is important
 * `-e, --external`: exposes the dev server on a public IP address
 
-**Advanced Data Proxy**
+#### Advanced Data Proxy
 In order to enable proxying for advanced requests (like AppDB or the Files API), you must provide the Id of an app in your instance that the CLI can proxy to. You can add this app Id to your manifest under the property `proxyId` and, assuming that the Id is valid, proxying advanced requests with `domo dev` will automatically start working.
 
 The app Id can be found as part of the URL for the iframe in which your app is displayed. It will be of the form XXXXXXXX-XXXX-4XXX-XXXX-XXXXXXXXXXXX. To find the ID:
