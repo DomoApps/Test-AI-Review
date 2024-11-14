@@ -108,7 +108,7 @@ design-name
 
 #### DATASET MAPPING PROMPTS
 * dataset id: can be found in the URL of the dataset detail page in the Domo instance. `https://[customer].domo.com/datasources/[dataset id]/details/overview`
-* dataset alias: the alias your app will use when requesting data from Domo
+* dataset alias: the alias your app will use when requesting data from Domo. Make sure it has no spaces or special characters.
 
 **Note**: Be sure to complete the field mapping portion in the `manifest.json`. Refer to the [manifest](../Guides/manifest.md#mapping) reference docs for more details on data mapping.
 
