@@ -27,7 +27,7 @@ If you are unfamiliar with how to authenticate against Product APIs, [please see
     "displayName": string,
     "emailAddress": string,
     "roleId": number
-}
+  }
 }
 ```
 
@@ -246,13 +246,7 @@ If you are unfamiliar with how to authenticate against Product APIs, [please see
 **Response**:
 
 ```json
-200: 1 (represents number of deleted records)
-
-404:
-  {
-      "status": 404,
-      "statusReason": "string",
-      "message": "string"
-      "toe": "string"
-  }
+  HTTP/1.1 200 OK
+  Content-Type: application/json;charset=UTF-8
+  1
 ```
