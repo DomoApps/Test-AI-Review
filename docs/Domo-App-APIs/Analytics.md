@@ -12,6 +12,8 @@ To authenticate to this service you will need to include the token in your reque
 const token = window.__RYUU_AUTHENTICATION_TOKEN__;
 ```
 
+Here are three common examples of events to track in your application.
+
 #### Report an App Load Code Example
 ```js
 /**
