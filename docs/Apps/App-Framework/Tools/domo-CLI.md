@@ -25,9 +25,10 @@ $ domo [command] -h
 ```
 
 **OPTIONS**
+* `-v, --version`: output the version number
+* `-s, --ssl`: disable SSL
+* `-m, --manifest <filename>`: specify a manifest file. Defaults to `manifest.json` in the current working directory.
 * `-h, --help`: output usage information
-* `-vb, --verbose`: log more details, including XHR responses.
-* `-m, --manifest`: specify a manifest file. Defaults to `manifest.json` in the current working directory.
 
 
 ### Common Commands
