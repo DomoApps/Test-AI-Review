@@ -49,7 +49,77 @@ All these filter types are layered in the sequence below:
 	<li>Outputs: The JS API listens for click events on the embedded content and passes them back up to the host page for cross-system links and interaction analytics. </li>
 	<li>Inputs: The JS API also completes the bi-directional passing of context by letting the host page push filters down into the embedded content </li>
 	<li>Controls: The code above can be triggered by any external menu in the host page </li>
-<ul>
+</ul>
+
+<strong>Events:</strong> currently the following events are supported.
+
+<table>
+	<tr>
+		<th>Event</th>
+		<th>Type</th>
+		<th>Description</th>
+		<th>Message</th>
+		<th>Support</th>
+	</tr>
+	<tr>
+		<td>/v1/onFrameSizeChange</td>
+		<td>Output</td>
+		<td>Event communicating the content size of the embed asset. Use when wanting to make sure the iframe is the exact size of the content so no scroll bars appear. </td>
+		<td></td>
+		<td>App Studio,<br> Dashboard,<br> Card</td>
+	</tr>
+	<tr>
+		<td>/v1/onFiltersChange</td>
+		<td>Output</td>
+		<td>Event communicating filter changes</td>
+		<td></td>
+		<td>App Studio,<br> Dashboard,<br> Card</td>
+	</tr>
+	<tr>
+		<td>/v1/onAppData</td>
+		<td>Output</td>
+		<td>Event communicating "appData" between an app in an embedded asset and the embedding website</td>
+		<td></td>
+		<td>App Studio,<br> Dashboard,<br> Card</td>
+	</tr>
+	<tr>
+		<td>/v1/onAppReady</td>
+		<td>Output</td>
+		<td>Event communicated by App Studio app to indicate the app finished loading</td>
+		<td></td>
+		<td>App Studio</td>
+	</tr>
+	<tr>
+		<td>/v1/filters/apply</td>
+		<td>Input</td>
+		<td>Event to communicate filters for an asset to apply</td>
+		<td>{<br>
+	                id: 'setFilters123',<br>
+        		jsonrpc: '2.0',<br>
+        		method: '/v1/filters/apply',<br>
+        		params: {<br>
+        			filters: [{'column': 'name', 'operand': 'IN', 'values': ['ABC']}]<br>
+                	}<br>
+		}</td>
+		<td>App Studio,<br> Dashboard,<br> Card</td>
+	</tr>
+	<tr>
+		<td>/v1/appData/apply</td>
+		<td>Input</td>
+		<td>Event to communicate "appData" to an app within the embed asset</td>
+		<td>{ <br>
+			id: 'appData',<br>
+			jsonrpc: '2.0',<br>
+			method: '/v1/appData/apply',<br>
+			params: {<br>
+ 				appData: appData <br>
+			}<br>
+		}</td>
+		<td>App Studio</td>
+	</tr>
+</table>
+
+<strong>Example</strong>
 
 Here are some <a href="https://github.com/STEEZENS/domo-pfilters" rel="noopener" target="_blank">examples</a> of external drop-down filter controls we used while building <a href="https://www.domo.com/covid19/daily-pulse/" rel="noopener" target="_blank">Domo’s COVID-19 Tracker</a>:  
 
@@ -81,6 +151,13 @@ https://player.vimeo.com/video/515861680
 
 <img src="https://web-assets.domo.com/blog/wp-content/uploads/2022/08/FilteringOptions7.png"/>
 
+<h3><strong>Additional App Studio URL parameter </strong></h3>
+
+<strong>Definition:</strong> For additional control over an embedded App Studio app, the URL param <em>overrideFilters</em> can be added to provide more control over whether or not an app should load up its saved default filters. When <em>overrideFilters=true</em>, the App Studio app will not load up any filters, instead, it will wait for a filter event from the parent before loading filters. When <em>overrideFilters=false</em> or when not provided, the filters saved to the default filter view of an App Studio app will load.
+
+<strong>Use Case:</strong> If you are actively applying filters to an embeded App Studio app, this parameter will help prevent getting in a mixed filtered state where the nested app may load up its own and get out of sync with the parent OR change the intended filters meant to be passed to the app.
+
+<strong>Warning:</strong> If setting <em>overrideFilters=true</em>, filters will not load up <strong>UNTIL</strong> the parent communicates a filter state using the <em>/v1/filters/apply</em> event. Even if it is an empty filter state, the parent must communicate it to the embeded App Studio App.
 
 ## DOMO INTERACTIONS
 

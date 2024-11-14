@@ -35,7 +35,7 @@ If an existing Connector doesn't fit your needs, Domo provides the ability to bu
 ### Connect via API
 ---
 
-You can programatically interact with Domo DataSets through the DataSet API or the Streams API (for larger DataSets).
+You can programmatically interact with Domo DataSets through the DataSet API or the Streams API (for larger DataSets).
 
 Common use-cases:
 - [**Import and Export Data**](API-Data-Connection/import-and-export-data.md) into DataSets

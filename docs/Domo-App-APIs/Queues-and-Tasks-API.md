@@ -2,11 +2,11 @@
 stoplight-id: k2vv2vir3c8ry
 ---
 
-# Queues and Tasks API
+# Task Center API
 
-Queues allow you to organize manual tasks into different buckets of work and control who can access them. They are often used in concert with [Workflows](https://domo-support.domo.com/s/article/000005108?language=en_US).
+Task Center allows you to organize manual tasks into different queues of work and control who can access them. They are often used in concert with [Workflows](https://domo-support.domo.com/s/article/000005108?language=en_US).
 
-For more [background on Queues, please see the Knowledge Base](https://domo-support.domo.com/s/article/000005172?language=en_US).
+For more [background on Task Center, please see the Knowledge Base](https://domo-support.domo.com/s/article/000005172?language=en_US).
 
 
 ### Get Queues
