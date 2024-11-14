@@ -344,7 +344,6 @@ Returns a status indicating whether the share operation was successful
 
 ```json
 200:
-{
-}
+undefined
 
 ```
