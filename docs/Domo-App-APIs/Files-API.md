@@ -622,11 +622,6 @@ export const abort = async (sessionId) => {
 ```json
 POST /domo/data-files/v1/multipart/{sessionId}/abort HTTP/1.1
 Accept: application/json
-Request Body
-The request body accepts the file data chunk.
-{
-    "sessionId": "1234567890"
-}
 ```
 
 #### HTTP Response
