@@ -4,6 +4,12 @@ This API reference is useful if you are trying to use the search API to find ent
 
 ### Query
 
+Limits:
+
+- The maximum number of records that can be returned is 10,000.
+- Rate limited. The rate will vary depending on the instance, but it is recommended to not exceed 120 requests per
+  minute.
+
 #### HTTP Request
 
 ```text
@@ -130,10 +136,10 @@ Example
 
 #### wildcard
 
-| Property Name | Type    | Required | Description                               |
-|---------------|---------|----------|-------------------------------------------|
-| field	        | String	 | yes	     | The field to query                        |
-| query	        | String	 | yes 	    | The query to match. User `*` for wildcard |
+| Property Name | Type    | Required | Description                              |
+|---------------|---------|----------|------------------------------------------|
+| field	        | String	 | yes	     | The field to query                       |
+| query	        | String	 | yes 	    | The query to match. Use `*` for wildcard |
 
 #### queryString
 
