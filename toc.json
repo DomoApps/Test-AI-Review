@@ -148,6 +148,16 @@
 			"items": [
 				{
 					"type": "item",
+					"title": "Search API",
+					"uri": "docs/API-Reference/Product-APIs/Search.md"
+				},
+				{
+					"type": "item",
+					"title": "Users API",
+					"uri": "docs/API-Reference/Product-APIs/Users.md"
+				},
+				{
+					"type": "item",
 					"title": "Workflows API",
 					"uri": "docs/API-Reference/Product-APIs/Workflows.yaml"
 				},
@@ -291,6 +301,11 @@
 					"type": "group",
 					"title": "Guides",
 					"items": [
+						{
+							"type": "item",
+							"title": "Managing, Editing, and Saving Your App in the Pro-Code Editor",
+							"uri": "/docs/Apps/App-Framework/Guides/manage-save-pro-code.md"
+						},
 						{
 							"type": "item",
 							"title": "The Manifest File",
