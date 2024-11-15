@@ -78,6 +78,11 @@
           "type": "item",
           "title": "Workflows API",
           "uri": "docs/Domo-App-APIs/Workflows-API.md"
+        },
+        {
+          "type": "item",
+          "title": "Scheduled Reports API",
+          "uri": "docs/Domo-App-APIs/Scheduled-Reports-API"
         }
       ]
     },
