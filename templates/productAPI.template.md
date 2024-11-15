@@ -7,7 +7,7 @@
 
 **Example**:
 
-```json http
+```json
 {
   "method": "POST",
   "url": "https://{instance}.domo.com/api/<endpoint>",
@@ -53,7 +53,7 @@ Description of the Response with an example of the data
 
 **Example**:
 
-```json http
+```json
 {
   "method": "GET",
   "url": "https://{instance}.domo.com/api/<endpoint>/{param 1}",
@@ -87,7 +87,7 @@ Description of the Response with an example of the data
 
 **Example**:
 
-```json http
+```json
 {
   "method": "PUT",
   "url": "https://{instance}.domo.com/api/<endpoint>/{param 1}",
@@ -123,7 +123,7 @@ Description of the Response with an example of the data
 
 **Example**:
 
-```json http
+```json
 {
   "method": "DELETE",
   "url": "https://{instance}.domo.com/api/<endpoint>/{param 1}",

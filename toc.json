@@ -153,6 +153,11 @@
         },
         {
           "type": "item",
+          "title": "Users API",
+          "uri": "docs/API-Reference/Product-APIs/Users.md"
+        },
+        {
+          "type": "item",
           "title": "Workflows API",
           "uri": "docs/API-Reference/Product-APIs/Workflows.yaml"
         },

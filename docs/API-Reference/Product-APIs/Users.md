@@ -15,7 +15,7 @@ If you are unfamiliar with how to authenticate against Product APIs, [please see
 
 **Example**:
 
-```json http
+```json
 {
   "method": "POST",
   "url": "https://{instance}.domo.com/api/identity/v1/users",
@@ -77,7 +77,7 @@ If you are unfamiliar with how to authenticate against Product APIs, [please see
 
 **Example**
 
-```json http
+```json
 {
   "method": "GET",
   "url": "https://{instance}.domo.com/api/identity/v1/users/{id}",
@@ -132,7 +132,7 @@ If you are unfamiliar with how to authenticate against Product APIs, [please see
 
 **Example**
 
-```json http
+```json
 {
   "method": "GET",
   "url": "https://{instance}.domo.com/api/identity/v1/users",
@@ -181,7 +181,7 @@ If you are unfamiliar with how to authenticate against Product APIs, [please see
 
 **Example**:
 
-```json http
+```json
 {
   "method": "PATCH",
   "url": "https://{instance}.domo.com/api/identity/v1/users/{id}",
@@ -229,7 +229,7 @@ If you are unfamiliar with how to authenticate against Product APIs, [please see
 
 **Example**:
 
-```json http
+```json
 {
   "method": "DELETE",
   "url": "https://{instance}.domo.com/api/identity/v1/users/{id}",
