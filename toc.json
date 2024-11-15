@@ -157,8 +157,13 @@
             },
             {
               "type": "item",
+              "title": "Start a workflow",
+              "uri": "docs/API-Reference/Product-APIs/Workflows/Workflows.md"
+            },
+            {
+              "type": "item",
               "title": "Canceling a workflow",
-              "uri": "docs/API-Reference/Product-APIs/Canceling-a-workflow.md"
+              "uri": "docs/API-Reference/Product-APIs/Workflows/Canceling-a-workflow.md"
             }
           ]
         },
