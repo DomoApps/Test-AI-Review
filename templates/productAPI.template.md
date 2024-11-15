@@ -23,8 +23,9 @@
 Description of the Response with an example of the data
 
 ```json
-200:
-{}
+  HTTP/1.1 200 OK
+  Content-Type: application/json;charset=UTF-8
+  {}
 
 ```
 
@@ -80,13 +81,15 @@ Description of the Response with an example of the data
 **Endpoint**: `/api/<endpoint>`  
 **Path Parameters**:
 
-- `param 1` - (Param Type [String, Integer, Boolean, etc.], Required or Optional) - Provide description of the param
+- `param 1` - Provide description of the param
+  - Param Type [String, Integer, Boolean, etc.]
+  - Required or Optional
 
 **Example**:
 
 ```json http
 {
-  "method": "GET",
+  "method": "PUT",
   "url": "https://{instance}.domo.com/api/<endpoint>/{param 1}",
   "headers": {
     "X-DOMO-Developer-Token": "",
@@ -100,8 +103,9 @@ Description of the Response with an example of the data
 Description of the Response with an example of the data
 
 ```json
-200:
-{}
+  HTTP/1.1 200 OK
+  Content-Type: application/json;charset=UTF-8
+  {}
 
 ```
 
@@ -134,7 +138,8 @@ Description of the Response with an example of the data
 Description of the Response with an example of the data
 
 ```json
-200:
-{}
+  HTTP/1.1 200 OK
+  Content-Type: application/json;charset=UTF-8
+  {}
 
 ```
