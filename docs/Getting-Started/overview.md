@@ -48,7 +48,7 @@ Domo's Developer Portal gives customers and partners access to all the tools and
 
 ---
 
-Create an app on the Domo Platform for maximum flexiblity in design, data collection, and distribution.
+Create an app on the Domo Platform for maximum flexibility in design, data collection, and distribution.
 
 - **Pre-built apps**: **[Domo’s Appstore](https://www.domo.com/intelligent-apps/about-appstore)** provides a collection of apps built by Domo and our community that you can leverage for fast insights.
 - **[Domo Bricks](../Apps/DDX-Bricks/Quickstart/overview.md) (previously DDX Bricks)**: Domo Bricks are pre-built objects that allow you to create advanced visualizations and apps that can be customized in a simple browser-based code editor.
@@ -58,7 +58,7 @@ Create an app on the Domo Platform for maximum flexiblity in design, data collec
 
 ---
 
-Get data into and out of Domo. Whether data is stored in excel files, databases, cloud tools, on-prem systems, cloud warehouses, or even IoT devices, there is a wide variety of ways to securely multiply the value of data in Domo.
+Get data into and out of Domo. Whether data is stored in Excel files, databases, cloud tools, on-prem systems, cloud warehouses, or even IoT devices, there is a wide variety of ways to securely multiply the value of data in Domo.
 
 - **[Pre-built connectors](https://www.domo.com/appstore/apps?appType=Connector)**: Pull data in from the most common data sources and systems.
 - **[Build your own connector](../Connectors/Custom-Connectors/overview.md)**: Use Domo's **Connector Dev Studio IDE** if a pre-built one doesn't exist yet.
@@ -77,7 +77,7 @@ Leverage Domo in your website, portal, or product. Share your data and content e
 
 - **[Publish to other Domo users](../Embedded-Analytics/publishing-to-other-domo-users.md)**: Share pages and virtual datasets with other organizations in dedicated subscriber environments.
 - **[Embed in sites and software](../Embedded-Analytics/Embedding-in-Sites-and-Software/overview.md)**: Integrate live data experiences in the sites, software, and apps where people already work.
-- **[Embed edit experiences](embedded-edit-experiences.md)**: Deploy the full capabilities of the platform so users can create new content and alerts as a seamless part of your solution.
+- **[Embed edit experiences](../Embedded-Analytics/embedded-edit-experiences.md)**: Deploy the full capabilities of the platform so users can create new content and alerts as a seamless part of your solution.
 
 ### Govern Your Domo Instance
 
