@@ -158,11 +158,6 @@
         },
         {
           "type": "item",
-          "title": "Users API",
-          "uri": "docs/API-Reference/Product-APIs/Users.md"
-        },
-        {
-          "type": "item",
           "title": "Managing Dataset History API",
           "uri": "docs/API-Reference/Product-APIs/Managing-Dataset-History.md"
         }
