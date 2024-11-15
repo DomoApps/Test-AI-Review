@@ -5,6 +5,7 @@ stoplight-id: kspv2orr3oi30
 # Workflows Product API
 
 This API reference is useful if you are trying to hit workflows from:
+
 1. An external Domo Instance
 2. A environment from outside of Domo
 3. A script running in Domo's Jupyter Workspaces
@@ -13,14 +14,13 @@ If you are looking to hit a workflow from a Domo App, see the [App Framework API
 
 If you are unfamiliar with how to authenticate against Product APIs, [please see this overview page](../Getting-Started/api-authentication.md).
 
-For more background on Workflows, check out the [Knowledge Base for an overview](https://domo-support.domo.com/s/article/000005108?language=en_US). 
-
-
+For more background on Workflows, check out the [Knowledge Base for an overview](https://domo-support.domo.com/s/article/000005108?language=en_US).
 
 ### Start a Workflow
----
-Starts a Workflow and returns details about the Workflow Instance.
 
+---
+
+Starts a Workflow and returns details about the Workflow Instance.
 
 #### HTTP Request
 
@@ -30,19 +30,19 @@ POST https://{instance}.domo.com/api/workflow/v1/instances/message
 
 #### Request Body
 
-| Property Name| Type | Required | Description |
-| --- | --- | --- | --- |
-|messageName	|String	|Required	|Message passed to start the Workflow Instance, usually `"Start {workflow_name}`|
-|version	|String	|Required	|The version identifier e.g. `0.0.1`|
-|modelId	|String	|Required	|The id of the Workflow Instance|
-|data	|Object	|Required	|The start parameters required to kick off the Workflow.|
-
+| Property Name | Type   | Required | Description                                                                     |
+| ------------- | ------ | -------- | ------------------------------------------------------------------------------- |
+| messageName   | String | Required | Message passed to start the Workflow Instance, usually `"Start {workflow_name}` |
+| version       | String | Required | The version identifier e.g. `0.0.1`                                             |
+| modelId       | String | Required | The id of the Workflow Instance                                                 |
+| data          | Object | Required | The start parameters required to kick off the Workflow.                         |
 
 > #### Input Parameters
 >
 > For the `data` object containing the start parameters required to run the workflow, be careful to structure this object so it is consistent with the input types that you've already defined in your workflow.
 >
 > The valid input type options are:
+>
 > - `boolean`
 > - `date`
 > - `dateTime`
@@ -58,41 +58,36 @@ POST https://{instance}.domo.com/api/workflow/v1/instances/message
 >
 > You may pass in lists containing the above types and may also nest additional information in `object` type inputs.
 
-
 A simple example of a workflow that takes two numerical inputs, might look like the following:
+
 ```json
-{"parameter1": 13, "parameter2": 7}
+{ "parameter1": 13, "parameter2": 7 }
 ```
-
-
 
 #### Example
 
-
-```json http
+```json
 {
   "method": "POST",
   "url": "https://{instance}.domo.com/api/workflow/v1/instances/message",
   "headers": {
     "X-DOMO-Developer-Token": "",
-    "Content-Type": "application/json",
+    "Content-Type": "application/json"
   },
   "body": {
     "messageName": "Start {{workflow_name}}",
     "version": "{{workflow_version}}",
     "modelId": "{{workflow_id}}",
     "data": {}
-    }
+  }
 }
 ```
 
-
 #### HTTP Response
 
-Returns the information about the instance of the Workflow that was just started. The `status` property can take the values `null`, `IN_PROGRESS`, `CANCELED`,  or `COMPLETED`. 
+Returns the information about the instance of the Workflow that was just started. The `status` property can take the values `null`, `IN_PROGRESS`, `CANCELED`, or `COMPLETED`.
 
 A status of `null` might be valid. It just means the workflow hasn’t reported back as started yet.
-
 
 ```json
 HTTP/1.1 200 OK
@@ -110,8 +105,3 @@ Content-Type: application/json;charset=UTF-8
     "status": "null"
 }
 ```
-
-
-
-
-

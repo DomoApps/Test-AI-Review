@@ -66,7 +66,7 @@
         },
         {
           "type": "item",
-          "title": "Queues and Tasks API",
+          "title": "Task Center API",
           "uri": "docs/Domo-App-APIs/Queues-and-Tasks-API.md"
         },
         {
@@ -146,6 +146,16 @@
       "type": "group",
       "title": "Product APIs",
       "items": [
+        {
+          "type": "item",
+          "title": "Search API",
+          "uri": "docs/API-Reference/Product-APIs/Search.md"
+        },
+        {
+          "type": "item",
+          "title": "Users API",
+          "uri": "docs/API-Reference/Product-APIs/Users.md"
+        },
         {
           "type": "item",
           "title": "Workflows API",
@@ -295,6 +305,11 @@
               "type": "item",
               "title": "Getting started with the Pro-Code Editor",
               "uri": "/docs/Apps/App-Framework/Guides/getting-started-pro-code.md"
+            },
+            {
+              "type": "item",
+              "title": "Managing, Editing, and Saving Your App in the Pro-Code Editor",
+              "uri": "/docs/Apps/App-Framework/Guides/manage-save-pro-code.md"
             },
             {
               "type": "item",

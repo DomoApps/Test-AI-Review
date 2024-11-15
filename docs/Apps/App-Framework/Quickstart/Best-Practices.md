@@ -26,3 +26,4 @@ Because you are creating a custom app from web tech, you need to ensure that you
 #### Use a Bundler Tool
 ---
 Your app size can be significantly reduced if you use a bundler tool like Webpack. Webpack is ideal because of its small runtime and developer productivity.
+
