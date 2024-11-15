@@ -611,7 +611,7 @@ The Tag field in the App submission form currently allows entries from 5 areas: 
  	<li>Check for new line characters (%0d, %0a, r, n)</li>
 </ul>
 </li>
- 	<li>Check for “dot-dot-slash" (../ or ..) path alterations characters. In cases where UTF-8 extended character set encoding is supported, address alternate representation like: %c0%ae%c0%ae/</li>
+ 	<li>Check for "dot-dot-slash" (../ or ..) path alterations characters. In cases where UTF-8 extended character set encoding is supported, address alternate representation like: %c0%ae%c0%ae/</li>
 </ul>
 <h3>Output Encoding</h3>
 <ul>
@@ -632,7 +632,7 @@ The Tag field in the App submission form currently allows entries from 5 areas: 
 <ul>
  	<li>Enforce application logic flows to comply with business rules</li>
  	<li>Limit the number of transactions a single user or device can perform in a given period of time. The transactions/time should be above the actual business requirement, but low enough to deter automated attacks</li>
- 	<li>Use the "referrer" header as a supplemental check only, it should never be the sole authorization check, as it is can be spoofed</li>
+ 	<li>Use the "referrer" header as a supplemental check only, it should never be the sole authorization check, as it can be spoofed</li>
 </ul>
 <h3>Error Handling and Logging</h3>
 <ul>

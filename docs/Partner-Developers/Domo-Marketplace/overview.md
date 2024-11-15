@@ -4,7 +4,7 @@ stoplight-id: 600e2b5914564
 
 # Domo Appstore
 
-Domo’s Appstore enables publishers to build and market their apps to thousands of decision makers in industries including high tech, financial services, media, life sciences, manufacturing, retail, and more. Help business decision makers answer their most pressing questions by submitting your app to Domo’s Appstore today.
+Domo’s Appstore enables publishers to build and market their apps to thousands of decision makers in industries including high-tech, financial services, media, life sciences, manufacturing, retail, and more. Help business decision makers answer their most pressing questions by submitting your app to Domo’s Appstore today.
 
 Note: The ability to publish content is available by request. If you’d like to submit content to publish in Domo’s Appstore, send an email with your name and instance URL to appsubmissions@domo.com.
 
@@ -13,7 +13,7 @@ Note: The ability to publish content is available by request. If you’d like to
 https://player.vimeo.com/video/390832478
 
 ## Quick Guide For Appstore Submission
-1. Ensure that your app meets all of the [Appstore Requirements](marketplace-requirements.md) before submitting it to the Appstore.
+1. Ensure that your app meets all the [Appstore Requirements](marketplace-requirements.md) before submitting it to the Appstore.
 2. Login to your Domo instance and go to the Domo Appstore.
 3. Select the + icon in the left navigation bar (if you don't see this icon, contact **[appsubmissions@domo.com](mailto:appsubmissions@domo.com)** to have it enabled).
 4. Select the type of app you are offering from the dropdown menu.

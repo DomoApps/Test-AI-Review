@@ -13,7 +13,7 @@ Before you get started here is a list of the requirements you will need for your
 <ul>
  	<li>A square icon png or jpg format at a minimum of 100 x 100 pixels</li>
  	<li>3-10 jpg or png screenshots at a minimum of 1920 x 1080 pixels</li>
- 	<li>1 Youtube video. This is optional but highly recommended to show off your app. You'll paste in its URL.</li>
+ 	<li>1 YouTube video. This is optional but highly recommended to show off your app. You'll paste in its URL.</li>
 </ul>
 <strong>What you’ll need to know:</strong>
 <ul>
@@ -106,7 +106,7 @@ This information should let people identify your submission in the Domo Appstore
 
 &nbsp;
 
-The app description is one area that is part of the first impression for customers but often lacks valuable information and structure. The description piece should give the customer enough information to understand what the app is designed to do for them so they can make a good decision as to whether or not this is the right app for them.
+The app description is one area that is part of the first impression for customers but often lacks valuable information and structure. The description piece should give the customer enough information to understand what the app is designed to do for them so they can make a good decision whether this is the right app for them.
 
 ## Publishing details
 This section allows you to determine who will be able to find your app and make it easier to search for your app. You will need to:
@@ -137,7 +137,7 @@ You can also add up to 10 tags. Be sure to take a look at the [Appstore supporte
 
 &nbsp;
 
-Knowing which tags to use and how many to use is always a challenge but it is worth taking the time in choosing the right tags for your app. The tags are used as a filtering system for the Domo Appstore. Make sure you have at least one tag from the industry, department, activity, and role categories when possible. The connector category is optional but does help your app be displayed when the specific connector is searched.
+Knowing which tags to use and how many to use is always a challenge, but it is worth taking the time in choosing the right tags for your app. The tags are used as a filtering system for the Domo Appstore. Make sure you have at least one tag from the industry, department, activity, and role categories when possible. The connector category is optional but does help your app be displayed when the specific connector is searched.
 
 
 ## Add Media
