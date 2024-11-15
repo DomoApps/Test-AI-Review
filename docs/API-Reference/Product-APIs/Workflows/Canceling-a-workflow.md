@@ -16,8 +16,6 @@ POST https://{instance}.domo.com/api/workflow/v1/instances/${instanceId}/cancel`
 | ------------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------- |
 | instanceId    | String | Required | The id of the workflow instance. Note: this is not the model id, but the id generated when the workflow is started. |
 
-> #### Input Parameters
->
 > It is important to note that the instance id is not the model's id, but the id generated when the workflow is started. You will receive this from the api call to start a workflow or it will be available in the list of executions online.
 >
 > There is no body sent with this request.
