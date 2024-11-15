@@ -148,13 +148,13 @@
       "items": [
         {
           "type": "item",
-          "title": "Workflows API",
-          "uri": "docs/API-Reference/Product-APIs/Workflows.yaml"
+          "title": "Search API",
+          "uri": "docs/API-Reference/Product-APIs/Search.md"
         },
         {
           "type": "item",
-          "title": "Users API",
-          "uri": "docs/API-Reference/Product-APIs/Users.md"
+          "title": "Workflows API",
+          "uri": "docs/API-Reference/Product-APIs/Workflows.yaml"
         },
         {
           "type": "item",
