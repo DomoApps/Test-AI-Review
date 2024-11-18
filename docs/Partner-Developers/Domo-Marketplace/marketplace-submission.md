@@ -9,19 +9,17 @@ stoplight-id: d4f8eee792eb6
 ## Checklist
 Before you get started here is a list of the requirements you will need for your submission.
 
-<strong>Resources you'll need:</strong>
-<ul>
- 	<li>A square icon png or jpg format at a minimum of 100 x 100 pixels</li>
- 	<li>3-10 jpg or png screenshots at a minimum of 1920 x 1080 pixels</li>
- 	<li>1 YouTube video. This is optional but highly recommended to show off your app. You'll paste in its URL.</li>
-</ul>
-<strong>What you’ll need to know:</strong>
-<ul>
- 	<li>Will it be public to all Domo customers or shared only with your company?</li>
- 	<li>What kind of app is it? Visualization, service, or code block</li>
- 	<li>What is the pricing model? Free or request a quote</li>
- 	<li>Is it an app that can be implemented in a few minutes or are you promoting a service?</li>
-</ul>
+**Resources you'll need:**
+- A square icon png or jpg format at a minimum of 100 x 100 pixels
+- 3-10 jpg or png screenshots at a minimum of 1920 x 1080 pixels
+- 1 YouTube video. This is optional but highly recommended to show off your app. You'll paste in its URL.
+
+**What you’ll need to know:**
+- Will it be public to all Domo customers or shared only with your company?
+- What kind of app is it? Visualization, service, or code block
+- What is the pricing model? Free or request a quote
+- Is it an app that can be implemented in a few minutes or are you promoting a service?
+
 Please ensure that your app meets all the requirements in the [Appstore Requirements](marketplace-requirements.md) documentation before submitting your app to the Appstore. Apps built using Domo Stories and App Dev Framework will all follow these same procedures.
 
 <span style="color: #ff9900;"><strong>Note:</strong></span> If you are a Domo partner that is building an app, please reference the [Partner App Submission Guide](../Guides/partner-app-submission.md)</strong> before you get started.
@@ -36,7 +34,7 @@ To get started login to your Domo instance and go to the Domo Appstore by select
 <img src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-app-publishing-step-1.png" width="999" height="63" class="alignnone size-full" />
 &nbsp;
 
-Once you are in the Domo Appstore select the <strong>+</strong> icon in the left navigation bar.
+Once you are in the Domo Appstore select the **+** icon in the left navigation bar.
 
 &nbsp;
 
@@ -50,23 +48,21 @@ Once you are in the Domo Appstore select the <strong>+</strong> icon in the left
 
 Select the type of app you are offering from the dropdown:
 
-- <strong>Dashboard.</strong> Publish a comprehensive solutions for solving a specific business question.
-- <strong>Code Block.</strong> Publish a Code Block that will enhance data visualizations with Beast Modes, Jupyter, Python, R, and SQL.
-- <strong>Card.</strong> Publish a single visualization.
-- <strong>Custom Chart.</strong> Publish a chart that will visualize data in a unique way.
-- <strong>Enterprise App.</strong> Publish a set of custom functionality built on top of [Domo’s App Developer Framework](../../Apps/App-Framework/Welcome.md).
-- <strong>Service.</strong> Advertise any other service that can help a company or provide functionality for other apps to use.
+- **Dashboard.** Publish a comprehensive solutions for solving a specific business question.
+- **Code Block.** Publish a Code Block that will enhance data visualizations with Beast Modes, Jupyter, Python, R, and SQL.
+- **Card.** Publish a single visualization.
+- **Custom Chart.** Publish a chart that will visualize data in a unique way.
+- **Enterprise App.** Publish a set of custom functionality built on top of [Domo’s App Developer Framework](../../Apps/App-Framework/Welcome.md).
+- **Service.** Advertise any other service that can help a company or provide functionality for other apps to use.
 
 
-<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-select-1.png" width="1602"  />
+<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-select-1.png" width="1602" />
 
 &nbsp;
 
 You will then need to indicate if your app will be paid, free, public, or only visible to your company, and if it is instant content or a promotional app. 
-<ul>
-	<li><strong>Instant content</strong> can be immediately deployed. Only Dashboards and Code Blocks are supported instant content. 
-	<li><strong>Promotional Apps</strong> require the user to contact you for permission to download. This is used for a more complicated app that also takes some consulting work to install.</li>
-</ul>
+- **Instant content** can be immediately deployed. Only Dashboards and Code Blocks are supported instant content. 
+- **Promotional Apps** require the user to contact you for permission to download. This is used for a more complicated app that also takes some consulting work to install.
 
 If you are submitting a paid app, please refer to the [Paid Apps](../Guides/paid-apps.md) and [Getting Paid](../Guides/getting-paid.md) guides for more information.
 
@@ -78,12 +74,12 @@ If you are submitting a paid app, please refer to the [Paid Apps](../Guides/paid
 <span style="color: #ff9900;"><strong>Note:</strong></span> When submitting cards, custom charts, enterprise apps, and services you skip this step and go directly to [Name and Info](marketplace-submission.md#name-and-info).
 marketplace-submission.md
 
-<h3><strong>Dashboards: </strong></h3>
+### **Dashboards:**
 Select the page you would like to publish. Your dashboard will then be validated to be sure it is meeting all requirements.
 
-<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-page-select-dashboard.png" width="1600"  />
+<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-page-select-dashboard.png" width="1600" />
 
-<h3><strong>Code Blocks</strong></h3>
+### **Code Blocks**
 Select your code type and paste in your code selection.
 
 <img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-select-code-1.png" width="1608" />
@@ -92,17 +88,16 @@ Select your code type and paste in your code selection.
 
 This is an example of a Beast Mode Code Block:
 
-<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-select-code-2.png" width="1592"  />
+<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-select-code-2.png" width="1592" />
 
 ## Name and Info
 
 This information should let people identify your submission in the Domo Appstore. You will need to:
-<ul>
- 	<li>Name your app</li>
- 	<li>Add a subtitle and description</li>
- 	<li>Upload an app icon. Recommended size: 200 x 200 pixels</li>
-</ul>
-<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-name-info-1.png" width="1599"  />
+- Name your app
+- Add a subtitle and description
+- Upload an app icon. Recommended size: 200 x 200 pixels
+
+<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-name-info-1.png" width="1599" />
 
 &nbsp;
 
@@ -110,26 +105,23 @@ The app description is one area that is part of the first impression for custome
 
 ## Publishing details
 This section allows you to determine who will be able to find your app and make it easier to search for your app. You will need to:
-<ul>
- 	<li>Input who this app is for, setup effort, and benefits</li>
- 	<li>Enter up to 4 benefits for your submission</li>
-</ul>
+- Input who this app is for, setup effort, and benefits
+- Enter up to 4 benefits for your submission
+
 <img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-publishing-details.png" width="1604"/>
 
 ## Appstore Discovery
 Add capabilities and tags to allow users to find your submission more easily. 
 
 Select from the following capabilities:
-<ul>
-	<li><strong>Dashboard.</strong> Purpose-built packages of reports, charts, and visualizations.</li>
-	<li><strong>Connector.</strong> Integrated data from another system into Domo.</li>
-	<li><strong>Enterprise App.</strong> Combines data, workflow, alerts, and action into a purpose-built solution.</li>
-	<li><strong>Writeback.</strong> Triggers data updates in third party systems and databases.</li>
-	<li><strong>DataFlow.</strong> Cleans, transforms, calculates, and combines data.</li>
-	<li><strong>Federated Data.</strong> Connects directly to your company data for fast data with no duplication.</li>
-	<li><strong>Data Science.</strong> Leverages advanced data science techniques. </li>
-	<li><strong>Code Block.</strong> Pre-built blocks of code to extend and customize Domo.</li>
-</ul>
+- **Dashboard. Purpose-built packages of reports, charts, and visualizations.
+- **Connector. Integrated data from another system into Domo.
+- **Enterprise App. Combines data, workflow, alerts, and action into a purpose-built solution.
+- **Writeback. Triggers data updates in third party systems and databases.
+- **DataFlow. Cleans, transforms, calculates, and combines data.
+- **Federated Data. Connects directly to your company data for fast data with no duplication.
+- **Data Science. Leverages advanced data science techniques. 
+- **Code Block. Pre-built blocks of code to extend and customize Domo.
 
 You can also add up to 10 tags. Be sure to take a look at the [Appstore supported tags](marketplace-requirements.md#supported-tags) if you are unsure what tags to use.
 
@@ -143,7 +135,7 @@ Knowing which tags to use and how many to use is always a challenge, but it is w
 ## Add Media
 Upload screenshots or add a link to a YouTube video of your submission. The recommended dimensions of screenshots is 1920x1080 pixels.
 
-<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-media.png" width="1599"  />
+<img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appstore-submission-media.png" width="1599" />
 
 
 The screenshot is one of the most common poorly executed steps we see from publishers. By spending just a little more time, you will have a screenshot that gives the customers a great first impression rather than a poor first impression. Follow these steps to take a great screenshot:

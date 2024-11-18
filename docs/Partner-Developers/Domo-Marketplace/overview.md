@@ -28,12 +28,12 @@ https://player.vimeo.com/video/390832478
 
 You can submit the following types of apps to Domo Appstore:
 
-- <strong>Dashboard.</strong> Publish a comprehensive solutions for solving a specific business question.
-- <strong>Code Block.</strong> Publish a Code Block that will enhance data visualizations with Beast Modes, Jupyter, Python, R, and SQL.
-- <strong>Card.</strong> Publish a single visualization.
-- <strong>Custom Chart.</strong> Publish a chart that will visualize data in a unique way.
-- <strong>Enterprise App.</strong> Publish a set of custom functionality built on top of [Domo’s App Dev Framework](../../Apps/App-Framework/Welcome.md).
-- <strong>Service.</strong> Advertise any other service that can help a company or provide functionality for other apps to use.
+- **Dashboard.** Publish a comprehensive solutions for solving a specific business question.
+- **Code Block.** Publish a Code Block that will enhance data visualizations with Beast Modes, Jupyter, Python, R, and SQL.
+- **Card.** Publish a single visualization.
+- **Custom Chart.** Publish a chart that will visualize data in a unique way.
+- **Enterprise App.** Publish a set of custom functionality built on top of [Domo’s App Dev Framework](../../Apps/App-Framework/Welcome.md).
+- **Service.** Advertise any other service that can help a company or provide functionality for other apps to use.
 
 ## Helpful Links
 

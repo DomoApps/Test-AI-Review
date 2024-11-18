@@ -17,12 +17,10 @@ Modocorp, the fictitious company on which the Sample Data Engine reports are bas
 Though fictitious, the datasets you’ll find in the Sample Data Engine maintain compatibility with the real connectors, so your customers will see the same thing you submit to the Domo Appstore when initially installed and their data connection experience is simplified because there is no guesswork on where the data can potentially come from. Summarized – there are no surprises between you and your customers when you use the Sample Data Engine to power your visualizations.
 
 Overall benefits to powering your development with Sample Data Engine reports:
-<ol>
- 	<li>Compatible with the most widely used connectors</li>
- 	<li>Provides real-to-life fictitious data</li>
- 	<li>Complies with sensitive data requirements</li>
- 	<li>Bridges the gap between the one-source requirement and your multiple connector apps</li>
-</ol>
+1. Compatible with the most widely used connectors
+2. Provides real-to-life fictitious data
+3. Complies with sensitive data requirements
+4. Bridges the gap between the one-source requirement and your multiple connector apps
 
 
 ## Data Architecture
