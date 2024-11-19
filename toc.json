@@ -299,6 +299,11 @@
 							"type": "item",
 							"title": "domo.js",
 							"uri": "docs/Apps/App-Framework/Tools/domo.js.md"
+						},
+						{
+							"type": "item",
+							"title": "Toolkit",
+							"uri": "docs/Apps/App-Framework/Tools/toolkit.md"
 						}
 					]
 				},
