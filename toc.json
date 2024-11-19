@@ -163,11 +163,6 @@
             {
               "type": "item",
               "title": "Start a workflow",
-              "uri": "docs/API-Reference/Product-APIs/Workflows.yaml"
-            },
-            {
-              "type": "item",
-              "title": "Start a workflow",
               "uri": "docs/API-Reference/Product-APIs/Workflows/Workflows.md"
             },
             {
