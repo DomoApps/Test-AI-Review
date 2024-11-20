@@ -355,6 +355,17 @@
               "type": "item",
               "title": "Design Guide",
               "uri": "docs/Apps/App-Framework/Guides/design-guide.md"
+            },
+            {
+              "type": "group",
+              "title": "Code Engine",
+              "items": [
+                {
+                  "type": "item",
+                  "title": "Python Packages",
+                  "uri": "docs/Apps/App-Framework/Guides/python-packages.md"
+                }
+              ]
             }
           ]
         },
