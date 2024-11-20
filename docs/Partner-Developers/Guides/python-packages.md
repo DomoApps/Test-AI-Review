@@ -4,7 +4,6 @@ Below is a comprehensive table of available Python packages available for use in
 
 | **Package**  | **Description**                                                   |
 | ------------ | ----------------------------------------------------------------- |
-| abc          | Tools for defining abstract base classes.                         |
 | aifc         | Reads and writes AIFF and AIFF-C audio files.                     |
 | antigravity  | Easter egg module for fun and humor.                              |
 | argparse     | Command-line argument parsing.                                    |
@@ -14,7 +13,6 @@ Below is a comprehensive table of available Python packages available for use in
 | asyncore     | Base classes for asynchronous socket service clients and servers. |
 | audioop      | Manipulates raw audio data.                                       |
 | base64       | Encoding and decoding of Base64 and other encodings.              |
-| bdb          | Debugger framework.                                               |
 | binascii     | Converts binary data to ASCII.                                    |
 | binhex       | Encodes and decodes binhex files.                                 |
 | bisect       | Array bisection algorithms.                                       |
@@ -43,12 +41,10 @@ Below is a comprehensive table of available Python packages available for use in
 | difflib      | Helpers for computing differences between objects.                |
 | dis          | Disassembles Python bytecode.                                     |
 | distutils    | Tools for distributing Python modules.                            |
-| domo         | Interacts with Domo’s data platform.                              |
 | email        | Library for managing email messages.                              |
 | enum         | Implementation of enumerations.                                   |
 | errno        | Standard error codes.                                             |
 | functools    | High-order functions and callable operations.                     |
-| gc           | Interfaces to the garbage collection facility.                    |
 | gzip         | Reads and writes gzip files.                                      |
 | hashlib      | Secure hash and message digest algorithms.                        |
 | heapq        | Implements a heap queue algorithm.                                |
