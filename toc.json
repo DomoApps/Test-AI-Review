@@ -287,6 +287,11 @@
                   "type": "item",
                   "title": "Basic Todo App",
                   "uri": "docs/Apps/App-Framework/Tutorials/React/Todo-App.md"
+                },
+                {
+                  "type": "item",
+                  "title": "Mapbox World App",
+                  "uri": "docs/Apps/App-Framework/Tutorials/React/Mapbox-World-App.md"
                 }
               ]
             }
@@ -305,6 +310,16 @@
               "type": "item",
               "title": "domo.js",
               "uri": "docs/Apps/App-Framework/Tools/domo.js.md"
+            },
+						{
+              "type": "item",
+              "title": "Query",
+              "uri": "docs/Apps/App-Framework/Tools/query.md"
+            },
+						{
+              "type": "item",
+              "title": "Toolkit",
+              "uri": "docs/Apps/App-Framework/Tools/toolkit.md"
             }
           ]
         },
@@ -312,6 +327,11 @@
           "type": "group",
           "title": "Guides",
           "items": [
+            {
+              "type": "item",
+              "title": "Managing, Editing, and Saving Your App in the Pro-Code Editor",
+              "uri": "/docs/Apps/App-Framework/Guides/manage-save-pro-code.md"
+            },
             {
               "type": "item",
               "title": "The Manifest File",
@@ -356,6 +376,17 @@
               "type": "item",
               "title": "Design Guide",
               "uri": "docs/Apps/App-Framework/Guides/design-guide.md"
+            },
+            {
+              "type": "group",
+              "title": "Code Engine",
+              "items": [
+                {
+                  "type": "item",
+                  "title": "Python Packages",
+                  "uri": "docs/Apps/App-Framework/Guides/python-packages.md"
+                }
+              ]
             }
           ]
         },
@@ -499,6 +530,11 @@
           "type": "item",
           "title": "Getting Data Overview",
           "uri": "docs/Partner-Developers/Guides/getting-data-overview.md"
+        },
+        {
+          "type": "item",
+          "title": "Start a Remote Workflow",
+          "uri": "docs/Partner-Developers/Guides/start-a-remote-workflow.md"
         }
       ]
     },

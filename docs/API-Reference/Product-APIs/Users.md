@@ -8,7 +8,7 @@ This API reference is useful if you are trying to manage Domo Users from anywher
 
 If you are unfamiliar with how to authenticate against Product APIs, [please see this overview page](../Getting-Started/api-authentication.md).
 
-## Create
+## Create User
 
 **Method**: `POST`  
 **Endpoint**: `/api/identity/v1/users`
