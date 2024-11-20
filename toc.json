@@ -157,9 +157,20 @@
           "uri": "docs/API-Reference/Product-APIs/Users.md"
         },
         {
-          "type": "item",
-          "title": "Workflows API",
-          "uri": "docs/API-Reference/Product-APIs/Workflows.yaml"
+          "type": "group",
+          "title": "Workflows APIs",
+          "items": [
+            {
+              "type": "item",
+              "title": "Start a workflow",
+              "uri": "docs/API-Reference/Product-APIs/Workflows/Workflows.md"
+            },
+            {
+              "type": "item",
+              "title": "Canceling a workflow",
+              "uri": "docs/API-Reference/Product-APIs/Workflows/Canceling-a-workflow.md"
+            }
+          ]
         },
         {
           "type": "item",
