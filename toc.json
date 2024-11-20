@@ -153,6 +153,11 @@
         },
         {
           "type": "item",
+          "title": "Task Center API",
+          "uri": "docs/API-Reference/Product-APIs/TaskCenter.md"
+        },
+        {
+          "type": "item",
           "title": "Users API",
           "uri": "docs/API-Reference/Product-APIs/Users.md"
         },
@@ -311,12 +316,12 @@
               "title": "domo.js",
               "uri": "docs/Apps/App-Framework/Tools/domo.js.md"
             },
-						{
+            {
               "type": "item",
               "title": "Query",
               "uri": "docs/Apps/App-Framework/Tools/query.md"
             },
-						{
+            {
               "type": "item",
               "title": "Toolkit",
               "uri": "docs/Apps/App-Framework/Tools/toolkit.md"
