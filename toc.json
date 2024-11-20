@@ -302,6 +302,11 @@
             },
 						{
               "type": "item",
+              "title": "Query",
+              "uri": "docs/Apps/App-Framework/Tools/query.md"
+            },
+						{
+              "type": "item",
               "title": "Toolkit",
               "uri": "docs/Apps/App-Framework/Tools/toolkit.md"
             }
