@@ -157,22 +157,6 @@
           "uri": "docs/API-Reference/Product-APIs/Users.md"
         },
         {
-          "type": "group",
-          "title": "Workflows APIs",
-          "items": [
-            {
-              "type": "item",
-              "title": "Start a workflow",
-              "uri": "docs/API-Reference/Product-APIs/Workflows/Workflows.md"
-            },
-            {
-              "type": "item",
-              "title": "Canceling a workflow",
-              "uri": "docs/API-Reference/Product-APIs/Workflows/Canceling-a-workflow.md"
-            }
-          ]
-        },
-        {
           "type": "item",
           "title": "Managing Dataset History API",
           "uri": "docs/API-Reference/Product-APIs/Managing-Dataset-History.md"
@@ -311,12 +295,12 @@
               "title": "domo.js",
               "uri": "docs/Apps/App-Framework/Tools/domo.js.md"
             },
-						{
+            {
               "type": "item",
               "title": "Query",
               "uri": "docs/Apps/App-Framework/Tools/query.md"
             },
-						{
+            {
               "type": "item",
               "title": "Toolkit",
               "uri": "docs/Apps/App-Framework/Tools/toolkit.md"
@@ -376,17 +360,6 @@
               "type": "item",
               "title": "Design Guide",
               "uri": "docs/Apps/App-Framework/Guides/design-guide.md"
-            },
-            {
-              "type": "group",
-              "title": "Code Engine",
-              "items": [
-                {
-                  "type": "item",
-                  "title": "Python Packages",
-                  "uri": "docs/Apps/App-Framework/Guides/python-packages.md"
-                }
-              ]
             }
           ]
         },
@@ -454,6 +427,72 @@
               "uri": "/docs/Apps/DDX-Bricks/Guides/DDX-Pro-Code.md"
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "title": "Automate Actions"
+    },
+    {
+      "type": "item",
+      "title": "Overview",
+      "uri": ""
+    },
+    {
+      "type": "group",
+      "title": "Workflows",
+      "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": ""
+        },
+        {
+          "type": "item",
+          "title": "Workflows API",
+          "uri": "docs/API-Reference/Product-APIs/Workflows.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Start a workflow",
+          "uri": "docs/API-Reference/Product-APIs/Workflows/Workflows.md"
+        },
+        {
+          "type": "item",
+          "title": "Canceling a workflow",
+          "uri": "docs/API-Reference/Product-APIs/Workflows/Canceling-a-workflow.md"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Code Engine",
+      "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": ""
+        },
+        {
+          "type": "item",
+          "title": "Code Engine API",
+          "uri": ""
+        },
+        {
+          "type": "item",
+          "title": "Python Packages",
+          "uri": "docs/Apps/App-Framework/Guides/python-packages.md"
+        },
+        {
+          "type": "item",
+          "title": "JavaScript Packages",
+          "uri": ""
+        },
+        {
+          "type": "item",
+          "title": "Global Code Engine Packages",
+          "uri": ""
         }
       ]
     },
@@ -535,26 +574,6 @@
           "type": "item",
           "title": "Start a Remote Workflow",
           "uri": "docs/Partner-Developers/Guides/start-a-remote-workflow.md"
-        }
-      ]
-    },
-    {
-      "type": "divider",
-      "title": "Global Code Engine Packages"
-    },
-    {
-      "type": "item",
-      "title": "Overview",
-      "uri": ""
-    },
-    {
-      "type": "group",
-      "title": "Guides",
-      "items": [
-        {
-          "type": "item",
-          "title": "DOMO AppDB Documents",
-          "uri": ""
         }
       ]
     },
