@@ -34,7 +34,7 @@ POST https://{instance}.domo.com/api/workflow/v1/instances/message
 | ------------- | ------ | -------- | ------------------------------------------------------------------------------- |
 | messageName   | String | Required | Message passed to start the Workflow Instance, usually `"Start {workflow_name}` |
 | version       | String | Required | The version identifier e.g. `0.0.1`                                             |
-| modelId       | String | Required | The id of the Workflow Instance                                                 |
+| modelId       | String | Required | The id of the Workflow                                                          |
 | data          | Object | Required | The start parameters required to kick off the Workflow.                         |
 
 > #### Input Parameters
@@ -66,7 +66,7 @@ A simple example of a workflow that takes two numerical inputs, might look like 
 
 #### Example
 
-```json
+```json http
 {
   "method": "POST",
   "url": "https://{instance}.domo.com/api/workflow/v1/instances/message",
@@ -94,8 +94,8 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=UTF-8
 
 {
-    "id": "2052e10a-d142-4391-a731-2be1ab1c0188", // id of the workflow
-    "modelId": "a8afdc89-9491-4ee4-b7c3-b9e9b86c0138", // id of the workflow instance
+    "id": "2052e10a-d142-4391-a731-2be1ab1c0188", // id of the newly created workflow instance
+    "modelId": "a8afdc89-9491-4ee4-b7c3-b9e9b86c0138", // id of the workflow
     "modelName": "AddTwoNumbers", // name of the workflow
     "modelVersion": "1.1.0", // workflow version number
     "createdBy": "8811501", // user id of workflow creator

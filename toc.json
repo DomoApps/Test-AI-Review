@@ -157,9 +157,20 @@
           "uri": "docs/API-Reference/Product-APIs/Users.md"
         },
         {
-          "type": "item",
-          "title": "Workflows API",
-          "uri": "docs/API-Reference/Product-APIs/Workflows.yaml"
+          "type": "group",
+          "title": "Workflows APIs",
+          "items": [
+            {
+              "type": "item",
+              "title": "Start a workflow",
+              "uri": "docs/API-Reference/Product-APIs/Workflows/Workflows.md"
+            },
+            {
+              "type": "item",
+              "title": "Canceling a workflow",
+              "uri": "docs/API-Reference/Product-APIs/Workflows/Canceling-a-workflow.md"
+            }
+          ]
         },
         {
           "type": "item",
@@ -299,6 +310,16 @@
               "type": "item",
               "title": "domo.js",
               "uri": "docs/Apps/App-Framework/Tools/domo.js.md"
+            },
+						{
+              "type": "item",
+              "title": "Query",
+              "uri": "docs/Apps/App-Framework/Tools/query.md"
+            },
+						{
+              "type": "item",
+              "title": "Toolkit",
+              "uri": "docs/Apps/App-Framework/Tools/toolkit.md"
             }
           ]
         },
@@ -509,6 +530,11 @@
           "type": "item",
           "title": "Getting Data Overview",
           "uri": "docs/Partner-Developers/Guides/getting-data-overview.md"
+        },
+        {
+          "type": "item",
+          "title": "Start a Remote Workflow",
+          "uri": "docs/Partner-Developers/Guides/start-a-remote-workflow.md"
         }
       ]
     },
