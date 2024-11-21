@@ -153,6 +153,11 @@
         },
         {
           "type": "item",
+          "title": "Task Center API",
+          "uri": "docs/API-Reference/Product-APIs/TaskCenter.md"
+        },
+        {
+          "type": "item",
           "title": "Users API",
           "uri": "docs/API-Reference/Product-APIs/Users.md"
         },
