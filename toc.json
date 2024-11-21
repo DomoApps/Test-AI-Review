@@ -451,17 +451,17 @@
         {
           "type": "item",
           "title": "Workflows API",
-          "uri": "docs/API-Reference/Product-APIs/Workflows.yaml"
+          "uri": "docs/Automate-Actions/Code-Engine/Workflows.yaml"
         },
         {
           "type": "item",
           "title": "Start a workflow",
-          "uri": "docs/API-Reference/Product-APIs/Workflows/Workflows.md"
+          "uri": "docs/Automate-Actions/Code-Engine/Workflows/Workflows.md"
         },
         {
           "type": "item",
           "title": "Canceling a workflow",
-          "uri": "docs/API-Reference/Product-APIs/Workflows/Canceling-a-workflow.md"
+          "uri": "docs/Automate-Actions/Code-Engine/Workflows/Canceling-a-workflow.md"
         }
       ]
     },
@@ -482,7 +482,7 @@
         {
           "type": "item",
           "title": "Python Packages",
-          "uri": "docs/Apps/App-Framework/Guides/python-packages.md"
+          "uri": "docs/Automate-Actions/Code-Engine/python-packages.md"
         },
         {
           "type": "item",
