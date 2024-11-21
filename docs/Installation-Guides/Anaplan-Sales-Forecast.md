@@ -4,7 +4,7 @@ stoplight-id: 64l73jpdnhjlt
 
 # Anaplan Sales Forecast
 
-Thanks for installing and test driving Anaplan Sales Forecast! This guide is intended to help you connect this app with your own data. The first step is to ensure that your data follows the same schema (or structure) of the sample datasets that currently power the App. Fortunately, Domo has created some powerful data transformation tools to help, along with the step-by-step instructions provided below. For help with Dataflows, Magic ETL or BeastModes, please visit [Domo University](https://university.domo.com/) within Domo.
+Thanks for installing and test-driving Anaplan Sales Forecast! This guide is intended to help you connect this app with your own data. The first step is to ensure that your data follows the same schema (or structure) of the sample datasets that currently power the App. Fortunately, Domo has created some powerful data transformation tools to help, along with the step-by-step instructions provided below. For help with Dataflows, Magic ETL or BeastModes, please visit [Domo University](https://university.domo.com/) within Domo.
 
 ### Step 1: Identify Required Data Fields
 

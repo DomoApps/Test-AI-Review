@@ -4,7 +4,7 @@ stoplight-id: wqocqy5hc3bkk
 
 <div class="col-md-12 content-panel">
                 <h2>Google Analytics Insights</h2>
-                <p></p><p>Thank you for installing, test driving, and purchasing Google Analytics Insights! This guide is intended to help you connect this app to your own data. If you have completed the purchasing process for this app then you will be able to go through all of the steps in this guide. Check the prerequisites below to make sure you have everything you need to power up your app.</p>
+                <p></p><p>Thank you for installing, test-driving, and purchasing Google Analytics Insights! This guide is intended to help you connect this app to your own data. If you have completed the purchasing process for this app then you will be able to go through all of the steps in this guide. Check the prerequisites below to make sure you have everything you need to power up your app.</p>
 <h3 class="doc-row-title"><strong>Prerequisites:</strong></h3>
 <ul>
 <li>You will need access to the appropriate Google Analytics sign-in credentials.</li>

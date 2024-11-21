@@ -4,7 +4,7 @@ stoplight-id: qosb8bvjtrepd
 
 <div class="col-md-12 content-panel">
                 <h2>Installation Guide Template</h2>
-                <p></p><p>Thanks for installing and test driving <span id="title">Customer Satisfaction</span>! This guide is intended to help you connect this app with your own data. The first step is to ensure that your data follows the same schema (or structure) of the sample datasets that currently power the App. Fortunately, Domo has created some powerful data transformation tools to help, along with the step-by-step instructions provided below.</p>
+                <p></p><p>Thanks for installing and test-driving <span id="title">Customer Satisfaction</span>! This guide is intended to help you connect this app with your own data. The first step is to ensure that your data follows the same schema (or structure) of the sample datasets that currently power the App. Fortunately, Domo has created some powerful data transformation tools to help, along with the step-by-step instructions provided below.</p>
 <table>
 <tbody>
 <tr>
