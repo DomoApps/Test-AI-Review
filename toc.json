@@ -451,17 +451,17 @@
         {
           "type": "item",
           "title": "Workflows API",
-          "uri": "docs/Automate-Actions/Code-Engine/Workflows.yaml"
+          "uri": "docs/Automate-Actions/Workflows.yaml"
         },
         {
           "type": "item",
           "title": "Start a workflow",
-          "uri": "docs/Automate-Actions/Code-Engine/Workflows/Workflows.md"
+          "uri": "docs/Automate-Actions/Workflows/Workflows.md"
         },
         {
           "type": "item",
           "title": "Canceling a workflow",
-          "uri": "docs/Automate-Actions/Code-Engine/Workflows/Canceling-a-workflow.md"
+          "uri": "docs/Automate-Actions/Workflows/Canceling-a-workflow.md"
         }
       ]
     },
