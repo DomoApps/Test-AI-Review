@@ -437,7 +437,7 @@
     {
       "type": "item",
       "title": "Overview",
-      "uri": ""
+      "uri": "docs/Automate-Actions/overview.md"
     },
     {
       "type": "group",
@@ -446,7 +446,7 @@
         {
           "type": "item",
           "title": "Overview",
-          "uri": ""
+          "uri": "docs/Automate-Actions/Workflows/overview.md"
         },
         {
           "type": "item",
@@ -472,7 +472,7 @@
         {
           "type": "item",
           "title": "Overview",
-          "uri": ""
+          "uri": "docs/Automate-Actions/Code-Engine/overview.md"
         },
         {
           "type": "item",
@@ -491,8 +491,8 @@
         },
         {
           "type": "item",
-          "title": "JavaScript Packages",
-          "uri": ""
+          "title": "JavaScript Libraries",
+          "uri": "docs/Automate-Actions/Code-Engine/javascript-libraries.md"
         },
         {
           "type": "item",
