@@ -481,6 +481,11 @@
         },
         {
           "type": "item",
+          "title": "JavaScript Libraries",
+          "uri": "docs/Automate-Actions/Code-Engine/javascript-libraries.md"
+        },
+        {
+          "type": "item",
           "title": "Python Packages",
           "uri": "docs/Automate-Actions/Code-Engine/python-packages.md"
         },
