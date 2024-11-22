@@ -889,7 +889,7 @@ paths:
                     fromcache: true
   '/v1/datasets/{dataset_id}/data':
     put:
-      summary: Import data into DataSet
+      summary: Replace data in DataSet
       description: Import data into a DataSet in your Domo instance. This request **will replace the data currently in the DataSet**.
       requestBody:
         content:
