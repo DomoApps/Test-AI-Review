@@ -4,6 +4,8 @@ Build beautiful charts using Phoenix, Domo's powerful charting engine.
 
 ## Documentation
 
+This library can be found on [npm](https://www.npmjs.com/package/@domoinc/domo-phoenix)
+
 This README provides a quick overview of how to use Phoenix. For more detailed information, please see the [Documentation](https://domoapps.github.io/domo-phoenix/).
 
 If you are looking to build a Domo Dev Studio app that can query data from Domo and chart with Phoenix, please refer to the official [Starter Kit](https://github.com/DomoApps/StarterKit).
