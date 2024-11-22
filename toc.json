@@ -307,6 +307,11 @@
             },
             {
               "type": "item",
+              "title": "Phoenix (charting)",
+              "uri": "docs/Apps/App-Framework/Tools/phoenix.md"
+            },
+						{
+              "type": "item",
               "title": "Toolkit",
               "uri": "docs/Apps/App-Framework/Tools/toolkit.md"
             }
