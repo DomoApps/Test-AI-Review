@@ -152,6 +152,13 @@ This is the current version of your design, and should follow [semantic versioni
 >
 > PATCH version when you make backwards-compatible bug fixes.
 
+Sometimes it can be helpful to display what version the app is running on. Since the version can be changed between building and deploying it's better to get the version this way:
+
+```js
+const version = await fetch('./manifest.json').then(res => res.json()).then(manifest => manifest.version)
+```
+
+
 ### size
 ---
 The size of the app cannot be defined in pixels. It can only be defined in Domo card sizes. To better understand how card sizing relates to pixels, see the chart below:
