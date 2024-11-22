@@ -1,7 +1,9 @@
 
 # Sync AppDB only once a day
 
-This guide leverages workflows, please make sure you are familiar with Workflows and code engine first. 
+Domo doesn't currently allow you to specify sync intervals. Either AppDB doesn't sync or it syncs every 15 minutes. In order to conserve credits on syncs you can create a workflow to sync on your schedule instead.
+
+This guide leverages workflows, please make sure you are familiar with [Workflows](https://domo-support.domo.com/s/article/000005108?language=en_US) and [Code Engine](https://domo-support.domo.com/s/article/000005173?language=en_US) first. 
 
 <!-- theme: info -->
 > #### Links to documentation
@@ -10,8 +12,8 @@ This guide leverages workflows, please make sure you are familiar with Workflows
 
 
 1. Create a workflow that runs at the time you want to sync the collection
-2. Specify what collection you want to sync.
-2. Create a code engine function that looks like this: 
+2. Specify what collection you want to sync
+3. Create a code engine function that looks like this: 
 ```js
 const codeengine = require("codeengine");
 

@@ -335,6 +335,11 @@
               "type": "item",
               "title": "Design Guide",
               "uri": "docs/Apps/App-Framework/Guides/design-guide.md"
+            },
+            {
+              "type": "item",
+              "title": "How To Sync AppDB Only Once a Day",
+              "uri": "docs/Apps/App-Framework/Guides/workflow-appdb-sync.md"
             }
           ]
         },
