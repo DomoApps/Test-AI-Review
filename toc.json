@@ -501,11 +501,6 @@
         },
         {
           "type": "item",
-          "title": "JavaScript Libraries",
-          "uri": "docs/Automate-Actions/Code-Engine/javascript-libraries.md"
-        },
-        {
-          "type": "item",
           "title": "Global Code Engine Packages",
           "uri": ""
         }
