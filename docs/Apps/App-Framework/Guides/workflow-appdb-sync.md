@@ -13,7 +13,7 @@ This guide leverages Workflows, please make sure you are familiar with [Workflow
 
 1. Create a Workflow that runs at the time you want to sync the collection
 2. Specify what collection you want to sync
-3. Create a code engine function that looks like this: 
+3. Create a Code Engine function that looks like this: 
 ```js
 const codeengine = require("codeengine");
 
@@ -40,4 +40,4 @@ async function syncCollection(collectionId) {
   );
 }
 ```
-4. call the new code engine function in the Workflow
+4. call the new Code Engine function in the Workflow
