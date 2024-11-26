@@ -19,25 +19,32 @@ This guide leverages Workflows, please make sure you are familiar with [Workflow
 const codeengine = require("codeengine");
 
 async function syncCollection(collectionId) {
-  const collection = await codeengine.sendRequest('get', `/api/datastores/v1/collections/${collectionId}`);
-  const putBody = {id: collectionId, syncEnabled: true}
+  // gets the collection
+  const collection = await codeengine.sendRequest(
+    "get",
+    `/api/datastores/v1/collections/${collectionId}`
+  );
+
   // enables collection sync
+  const putBody = { id: collectionId, syncEnabled: true };
   await codeengine.sendRequest(
-    'put',
+    "put",
     `/api/datastores/v1/collections/${collectionId}`,
     JSON.stringify(putBody)
   );
+
   // forces collection sync
   await codeengine.sendRequest(
-    'post',
+    "post",
     `/api/datastores/v1/export/${collection.datastoreId}`,
     ""
   );
+
   // turns off collection sync
   await codeengine.sendRequest(
-    'put',
+    "put",
     `/api/datastores/v1/collections/${collectionId}`,
-    JSON.stringify({...putBody, syncEnabled: false})
+    JSON.stringify({ ...putBody, syncEnabled: false })
   );
 }
 ```
