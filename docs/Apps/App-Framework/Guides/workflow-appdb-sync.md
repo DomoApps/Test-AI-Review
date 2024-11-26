@@ -13,7 +13,8 @@ This guide leverages Workflows, please make sure you are familiar with [Workflow
 
 1. [Create a Workflow](https://domo-support.domo.com/s/article/000005331?language=en_US) that runs at the time you want to sync the collection
 2. Specify what collection you want to sync
-3. Create a Code Engine function to do the sync: 
+    - You can do this as a variable or hardwire it
+3. [Create a Code Engine function](https://domo-support.domo.com/s/article/000005173?language=en_US#create_custom_package) to do the sync. It could look something like this:
 ```js
 const codeengine = require("codeengine");
 
