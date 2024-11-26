@@ -40,4 +40,4 @@ async function syncCollection(collectionId) {
   );
 }
 ```
-4. call the new Code Engine function in the Workflow
+4. Call the new Code Engine function in the Workflow
