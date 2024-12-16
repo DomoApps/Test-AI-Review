@@ -2,21 +2,28 @@
 
 Export a dataset to an S3 bucket.
 
-Export your datasets to an S3 device of your choosing. This is an asynchronous call. You can see the status of your export by calling /api/query/v1/export/{datasetId}. You can have only one actively running export for a given dataset at a time. If you make a request to export a dataset and the data in the dataset hasn’t changed since the last export this endpoint will return the export information for that previous export, a new download will not be created. You should use temporary AWS credentials whenever possible. If the credentials are temporary you must also provide an AWS session token.
+Export your datasets to an S3 device of your choosing. This is an asynchronous call. You can check the status of your export by calling `/api/query/v1/export/{datasetId}`. Only one active export can run per dataset at a time. If the data in the dataset hasn’t changed since the last export, this endpoint returns the export information for the previous export instead of creating a new download. Use temporary AWS credentials whenever possible. If credentials are temporary, provide an AWS session token.
 
-If is important that the customer consider the security of the data they are exporting. In order to export a datasource the consumer must have at least read access to the dataset, also any PDP policies that exist will be applied to the upload. But once the data is uploaded the only security around the data is what is provided by the AWS S3 bucket. This means the customer must carefully consider the security of the upload location. A customer should not upload data to an S3 location that others can view who should not have access to the data that is contained in the upload.
+### Security Considerations
 
-For example, a customer has a dataset that contains compensation information. They have carefully limited those who have access to the dataset in the DOMO system. They have also applied PDP policies so that managers can only see the compensation information in the dataset for their reporting structure. Then an administrator initiates an export to an S3 location. However, the admin provides an S3 location that the entire company has access to. Now the entire company can see the compensation information tracked in this dataset. The security provided by the DOMO system is now voided.
+To export a datasource, consumers must have at least read access to the dataset. Any PDP policies applied will be enforced during the export. Once data is uploaded, security depends on the AWS S3 bucket settings. Ensure secure upload locations to prevent unauthorized access.
 
-Cross region exports are unsupported at this time. The ‘REGION’ setting in the payload must match the region of the S3 bucket you want to copy data to. If your bucket is in the `eu-west-3` region, the region value should be ‘eu-west-3’.
+**Example:** An administrator initiates an export of sensitive compensation data to an S3 location accessible by the entire company, bypassing internal security measures.
 
+### Cross-Region Exports
+
+Cross-region exports are currently unsupported. Ensure that the `REGION` setting in the payload matches the S3 bucket's region.
+
+---
+
+### Create Export
 
 **Method**: `POST`  
-**Endpoint**: `api/query/v1/export/<DATASOURCE_ID>`
+**Endpoint**: `/api/query/v1/export/<DATASOURCE_ID>`
 
-**Example**:
+#### Request Example
 
-```json http
+```json
 {
   "method": "POST",
   "url": "https://{instance}.domo.com/api/query/v1/export/<DATASOURCE_ID>",
@@ -25,176 +32,62 @@ Cross region exports are unsupported at this time. The ‘REGION’ setting in t
     "Content-Type": "application/json",
     "Charset": "UTF-8"
   },
-  "body": { 
-   "awsAccessKey":"<AWS_KEY>",
-   "awsAccessSecret":"<AWS_SECRET>",
-   "bucket":"<BUCKET>",
-   "path":"<PATH>",
-   "region":"<REGION>",
-   "queryRequest":{ 
-      "includeBOM":true,
-      "useCache":true,
-      "query":{ 
-         "columns":[ 
-            { 
-               "column":"Customer ID",
-               "exprType":"COLUMN"
-            },
-            { 
-               "column":"Cardholder ID",
-               "exprType":"COLUMN"
-            },
-            { 
-               "column":"Sex of Patient",
-               "exprType":"COLUMN"
-            },
-            { 
-               "column":"Date Filled",
-               "exprType":"COLUMN"
-            },
-            { 
-               "column":"Label Name",
-               "exprType":"COLUMN"
-            },
-            { 
-               "column":"Metric Quantity",
-               "exprType":"COLUMN"
-            },
-            { 
-               "column":"Days Supply",
-               "exprType":"COLUMN"
-            }
-         ],
-         "groupByColumns":[ 
-
-         ],
-         "orderByColumns":[ 
-
-         ]
+  "body": {
+    "awsAccessKey": "<AWS_KEY>",
+    "awsAccessSecret": "<AWS_SECRET>",
+    "bucket": "<BUCKET>",
+    "path": "<PATH>",
+    "region": "<REGION>",
+    "queryRequest": {
+      "includeBOM": true,
+      "useCache": true,
+      "query": {
+        "columns": [
+          { "column": "Customer ID", "exprType": "COLUMN" },
+          { "column": "Cardholder ID", "exprType": "COLUMN" },
+          { "column": "Sex of Patient", "exprType": "COLUMN" },
+          { "column": "Date Filled", "exprType": "COLUMN" },
+          { "column": "Label Name", "exprType": "COLUMN" },
+          { "column": "Metric Quantity", "exprType": "COLUMN" },
+          { "column": "Days Supply", "exprType": "COLUMN" }
+        ],
+        "groupByColumns": [],
+        "orderByColumns": []
       }
-   }
-}
-
-Responses
-
-200	
-An export job has been successfully created. Note: you must check the status of the export job on the return or when calling the status endpoint. A created export may have an error preventing it from completing the download of data.
-
-Example Value
-Model
-{ 
-   "bucket":"string",
-   "compression":"none",
-   "errorCode":"string",
-   "exportFormat":"csv",
-   "exportId":"97d1244b-8ec4-45f8-a721-ae9602a9fa77",
-   "exportStatus":"none",
-   "finished":"2019-09-19T15:09:10.086Z",
-   "message":"string",
-   "started":"2019-09-19T15:09:10.086Z",
-   "tempUrlRowCountMap":{ 
-      "additionalProp1":0,
-      "additionalProp2":0,
-      "additionalProp3":0
-   },
-   "urlRowCountMap":{ 
-      "additionalProp1":0,
-      "additionalProp2":0,
-      "additionalProp3":0
-   }
-}
-
-201	
-Created
-
-400	
-The request is invalid and an export cannot be created.
-
-401	
-Access is denied. Your token is invalid or expired.
-
-403	
-To access this endpoint you must have READ rights on the dataset, or have dataset administrative authority (dataset.admin).
-
-404	
-If the dataset id cannot be found in the customer instance.
-
-500	
-An unexpected error happened.
-```
-
-**Example Body – Filter by Region column:**
-```
-"body": { 
-   "awsAccessKey":"<AWS_KEY>",
-   "awsAccessSecret":"<AWS_SECRET>",
-   "bucket":"<BUCKET>",
-   "path":"<PATH>",
-   "region":"<REGION>",
-   "queryRequest":{ 
-      "includeBOM":true,
-      "useCache":true,
-      "query":{ 
-         "columns":[ 
-            { 
-               "column":"Product Container",
-               "exprType":"COLUMN"
-            },
-            { 
-               "column":"Product Category",
-               "exprType":"COLUMN"
-            },
-            { 
-               "column":"Order ID",
-               "exprType":"COLUMN"
-            },
-            { 
-               "column":"Order Date",
-               "exprType":"COLUMN"
-            },
-            { 
-               "column":"Order Priority",
-               "exprType":"COLUMN"
-            },
-            { 
-               "column":"Region",
-               "exprType":"COLUMN"
-            },
-            { 
-               "column":"Ship Mode",
-               "exprType":"COLUMN"
-            }
-         ],
-         "groupByColumns":[ 
-
-         ],
-         "orderByColumns":[ 
-
-         ],
-         "where":{ 
-            "exprType":"EQUALS",
-            "leftExpr":{ 
-               "column":"Region",
-               "exprType":"COLUMN"
-            },
-            "rightExpr":{ 
-               "value":"West",
-               "exprType":"STRING_VALUE"
-            }
-         }
-      }
-   }
+    }
+  }
 }
 ```
 
-## Get the export status for all existing exports on this datasource.
+#### Response Examples
+
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+   "bucket": "string",
+   "compression": "none",
+   "errorCode": "string",
+   "exportFormat": "csv",
+   "exportId": "97d1244b-8ec4-45f8-a721-ae9602a9fa77",
+   "exportStatus": "none",
+   "finished": "2019-09-19T15:09:10.086Z",
+   "message": "string",
+   "started": "2019-09-19T15:09:10.086Z",
+   "urlRowCountMap": { "additionalProp1": 0, "additionalProp2": 0 }
+}
+```
+
+---
+
+### Export Status
 
 **Method**: `GET`  
-**Endpoint**: `api/query/v1/export/<DATASOURCE_ID>`
+**Endpoint**: `/api/query/v1/export/<DATASOURCE_ID>`
 
-**Example**:
+#### Request Example
 
-```json http
+```json
 {
   "method": "GET",
   "url": "https://{instance}.domo.com/api/query/v1/export/<DATASOURCE_ID>",
@@ -204,45 +97,41 @@ An unexpected error happened.
     "Charset": "UTF-8"
   },
   "body": {}
-
-Responses
-
-200
-Returns the status of all existing exports on this datasource. A given export is not available for download until the exportStatus is 'success’.
-
-[ 
-   { 
-      "bucket":"string",
-      "compression":"none",
-      "errorCode":"string",
-      "exportFormat":"csv",
-      "exportId":"97d1244b-8ec4-45f8-a721-ae9602a9fa77",
-      "exportStatus":"none",
-      "finished":"2019-09-19T15:06:46.112Z",
-      "message":"string",
-      "started":"2019-09-19T15:06:46.112Z",
-      "tempUrlRowCountMap":{ 
-         "additionalProp1":0,
-         "additionalProp2":0,
-         "additionalProp3":0
-      },
-      "urlRowCountMap":{ 
-         "additionalProp1":0,
-         "additionalProp2":0,
-         "additionalProp3":0
-      }
-   }
-]
-
-401	
-Access is denied. Your token is invalid or expired.
-
-403	
-To access this endpoint you must have READ rights on the dataset, or have dataset administrative authority (dataset.admin).
-
-404	
-If the dataset id cannot be found in the customer instance.
-
-500	
-An unexpected error happened.
+}
 ```
+
+#### Response Example
+
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+[
+  {
+    "bucket": "string",
+    "compression": "none",
+    "errorCode": "string",
+    "exportFormat": "csv",
+    "exportId": "97d1244b-8ec4-45f8-a721-ae9602a9fa77",
+    "exportStatus": "success",
+    "finished": "2019-09-19T15:06:46.112Z",
+    "message": "string",
+    "started": "2019-09-19T15:06:46.112Z",
+    "urlRowCountMap": { "additionalProp1": 0, "additionalProp2": 0 }
+  }
+]
+```
+
+---
+
+### Error Status Codes
+
+| Status Code | Meaning                                           |
+|--------------|---------------------------------------------------|
+| **200**     | Request successful. Export initiated or retrieved.|
+| **201**     | Resource created.                                |
+| **400**     | Invalid request. Export cannot be created.       |
+| **401**     | Access denied. Token is invalid or expired.      |
+| **403**     | Insufficient permissions for export access.      |
+| **404**     | Dataset ID not found in the customer instance.   |
+| **500**     | Unexpected server error.                         |
+
