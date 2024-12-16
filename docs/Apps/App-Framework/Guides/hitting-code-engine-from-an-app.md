@@ -71,8 +71,8 @@ The `packageMapping` property takes an array of package mappings. A package mapp
     - `group`
     - `text`
     - `time`
-  - `nullable` (boolean) - whether or not the input parameter accepts `null` input.
-  - `isList` (boolean) - whether or not the input parameter is a list or not.
+  - `nullable` (boolean) - whether the input parameter accepts `null` input.
+  - `isList` (boolean) - whether the input parameter is a list or not.
   - `children` (package mapping object) - if the parameter is a defined `object`, you can define the nested properties here.
 
 

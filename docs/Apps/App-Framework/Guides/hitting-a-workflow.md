@@ -73,7 +73,7 @@ The `workflowsMapping` property takes an array of workflow mappings. A workflow 
     - `text`
     - `time`
 
-  - `list` (boolean) - whether or not the parameter is a list or not.
+  - `list` (boolean) - whether the parameter is a list or not.
   - `children` (workflow mapping object) - if the parameter is a defined `object`, you can define the nested properties here.
 
 
@@ -99,7 +99,7 @@ After publishing your app, you will need to wire it to the workflow you want to 
 
 ![image.png](../../../../assets/images/image-90.png)
 
-First, choose which workflow you want to wire up. The worklow wiring options that appear in the wiring screen will be the workflows defined in your `workflowMapping` array in your manifest
+First, choose which workflow you want to wire up. The workflow wiring options that appear in the wiring screen will be the workflows defined in your `workflowMapping` array in your manifest
 
 ![image.png](../../../../assets/images/image-92.png)
 

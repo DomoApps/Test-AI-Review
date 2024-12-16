@@ -1,18 +1,18 @@
 # App Studio API
 
-
 ## Admin Summary
 
 **Method**: `POST`  
 **Endpoint**: `/api/content/v1/dataapps/adminsummary`
 
 **Query Parameters**:
+
 - limit - (Integer) Limits how many apps will be returned
 - skip - (Integer) Skips the first n results
 
 **Example**:
 
-```json http
+```json
 {
   "method": "POST",
   "url": "https://{instance}.domo.com/api/content/v1/dataapps/adminsummary",
@@ -61,11 +61,11 @@ Returns a list of app summaries that you have access to
 ## Get Data Apps
 
 **Method**: `GET`  
-**Endpoint**: `/api/content/v1/dataapps/`  
+**Endpoint**: `/api/content/v1/dataapps/`
 
 **Example**:
 
-```json http
+```json
 {
   "method": "GET",
   "url": "https://{instance}.domo.com/api/content/v1/dataapps/",
@@ -131,18 +131,19 @@ Returns a list of all of the data apps associated with your user
 - `dataAppId` - (Integer, Required) - The id of the data app you are requesting
 
 **Query Parameters**:
-- includeHiddenViews - (Boolean) - Determines whether to include any hidden views 
+
+- includeHiddenViews - (Boolean) - Determines whether to include any hidden views
 
 **Example**:
 
-```json http
+```json
 {
   "method": "GET",
   "url": "https://{instance}.domo.com/api/content/v1/dataapps/{dataAppId}",
   "headers": {
     "X-DOMO-Developer-Token": "{access_token}",
     "Content-Type": "application/json"
-  },
+  }
 }
 ```
 
@@ -257,11 +258,12 @@ Returns the data app associated with the given id
 - `dataAppId` - (Integer, Required) The id of the data app you are requesting
 
 **Query Parameters**:
+
 - `expandUsers` - (Boolean, Optional) Determines whether to return the full user object
 
 **Example**:
 
-```json http
+```json
 {
   "method": "GET",
   "url": "https://{instance}.domo.com/api/content/v1/dataapps/{dataAppId}/access",
@@ -314,7 +316,7 @@ Returns a list of users with access to the given data app
 
 **Example**:
 
-```json http
+```json
 {
   "method": "POST",
   "url": "https://{instance}.domo.com/api/content/v1/dataapps/share",
@@ -325,17 +327,17 @@ Returns a list of users with access to the given data app
   "body": {
     "dataAppIds": ["{{data_app_id}}"],
     "recipients": [
-        {
-            "type": "group",
-            "id": "{{group_id}}"
-        },
-        {
-            "type": "user",
-            "id": "{{user_id}}",
-        },
+      {
+        "type": "group",
+        "id": "{{group_id}}"
+      },
+      {
+        "type": "user",
+        "id": "{{user_id}}"
+      }
     ],
     "message": "I thought you might find this page interesting."
-}
+  }
 }
 ```
 

@@ -14,7 +14,7 @@ When an App Platform App is loaded (the `index.html` file is requested), an app 
 Information stored in the app session:
 - Authentication details (customer, user)
 - App execution context (standard, public embed, private embed, oauth)
-- Filters (supplied by headers or query parameters like 'pfilters' or 'analyzer', from the embed token, etc)
+- Filters (supplied by headers or query parameters like 'pfilters' or 'analyzer', from the embed token, etc.)
 - App context override (was the app launched referencing a different app context than what its configuration references)
 
 ### How Sessions are Created
@@ -25,7 +25,7 @@ A new app session is created every time the app is loaded and the session ID is 
 <!-- theme: warning -->
 > #### Warning
 >
-> The existence of the session cookie can cause problems if the more than one copy of same app instance is running in a shared context (loaded on multiple browser tabs/windows, multiple copies of the same card on a page, etc). See an example of this scenario at the bottom of the page.
+> The existence of the session cookie can cause problems if the more than one copy of same app instance is running in a shared context (loaded on multiple browser tabs/windows, multiple copies of the same card on a page, etc.). See an example of this scenario at the bottom of the page.
 >
 > Because of the shared context, the session cookie is shared, and all copies of the app instance will share the same session. If that is a concern, the session ID can be sent in a different way so that the session cookie is not considered.
 
@@ -39,9 +39,9 @@ There are 3 ways to send the session ID. They are used in the following preferen
 2. The `ryuu_sid` query parameter
 3. The `ryuu_sid` cookie
 
-Thus if the session ID is sent as the header or the query parameter, the cookie will be ignored.
+Thus, if the session ID is sent as the header or the query parameter, the cookie will be ignored.
 
-The code for the app can be written such that the session ID is explicitly added as a header or query parameter. This will work to override the session cookie but can be labor intensive. 
+The code for the app can be written such that the session ID is explicitly added as a header or query parameter. This will work to override the session cookie but can be labor-intensive. 
 
 Another option is to use the `domo.js` library. The domo.js library can be included in the app (generally by loading it from the public-assets folder) and then requests that are sent, either as static asset requests or using the functions supplied in `domo.js` (such as `domo.get()`), will be modified to include either the header (on function calls) or the query parameter (static asset requests). See the [`domo.js` documentation here](../Tools/domo.js.md) for more details.
 
@@ -63,7 +63,7 @@ To set the `authentication-cookies-disabled` flag in your `manifest.json` file, 
   "name": "My Sweet App",
   "version": "1.0.1",
   "flags": {
-    "authentication-cookies-disabed": true,
+    "authentication-cookies-disabled": true
   }
 }
 ```

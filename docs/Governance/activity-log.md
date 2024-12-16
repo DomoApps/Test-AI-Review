@@ -11,12 +11,10 @@ Note that the API currently supports lookups for activity by specified users.
 ### Use cases
 ---
 Using the Activity Log API, your program can:
-<ul>
- 	<li>Create a list of most active users in the instance</li>
- 	<li>Discover trends in your Domo instance, such the most popular cards of the week based on card views</li>
- 	<li>Surface suspicious activities, such as logins from unexpected locations or at unusual times</li>
- 	<li>Identify certain problems in your Domo instance, such as failed login attempts and user lockouts</li>
-</ul>
+- Create a list of most active users in the instance
+- Discover trends in your Domo instance, such the most popular cards of the week based on card views
+- Surface suspicious activities, such as logins from unexpected locations or at unusual times
+- Identify certain problems in your Domo instance, such as failed login attempts and user lockouts
 
 
 ## Quickstart

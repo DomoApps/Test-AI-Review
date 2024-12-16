@@ -4,7 +4,7 @@ stoplight-id: 0rss4j81nqj1a
 
 # Buzz API
 
-The Buzz Integration API, allows configuring two way communication between Buzz and a service outside of Domo.
+The Buzz Integration API, allows configuring two-way communication between Buzz and a service outside of Domo.
 
 A Buzz integration is a service hosted outside of Domo’s infrastructure that can receive events from Buzz, and can post messages to Buzz. To use this feature, invoke this API to register an integration, then create one or more event subscriptions for the integration. When a corresponding event occur, Buzz will POST an HTTP request using the configured URL and headers.
 

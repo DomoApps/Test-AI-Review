@@ -66,7 +66,7 @@ The schema object takes a list of columns. Each column has a name and a type. Th
 
 > #### Warning
 >
-> If your app has not yet created a dataset and you provide the wrong data type in the schema section of your manifest, your collection will not be able to create a dataset to export to. If, after adding documents to your collection and waiting the 15 minute period for a normally scheduled export, you do not see your AppDB dataset in your data center, double check to ensure that your schema is setup correctly. Common mistakes are to include a data type like NUMBER or INTEGER.
+> If your app has not yet created a dataset and you provide the wrong data type in the schema section of your manifest, your collection will not be able to create a dataset to export to. If, after adding documents to your collection and waiting the 15-minute period for a normally scheduled export, you do not see your AppDB dataset in your data center, double check to ensure that your schema is set up correctly. Common mistakes are to include a data type like NUMBER or INTEGER.
 
 <!-- theme: danger -->
 
@@ -358,7 +358,7 @@ Permanently deletes a document from your application's collection.
 
 > #### Warning
 >
-> This is destructive and cannot be reversed. Note: Deleting documents in an AppDB collection may have performance implications with regards to syncing to its corresponding dataset in Domo if the `syncEnabled` property is set to `true` for the collection.
+> This is destructive and cannot be reversed. Note: Deleting documents in an AppDB collection may have performance implications with regard to syncing to its corresponding dataset in Domo if the `syncEnabled` property is set to `true` for the collection.
 > Code Example
 > domo.delete(`/domo/datastores/v1/collections/Users/documents/1e61d99d-9885-419a-a33e-3be3941ee720`);
 
@@ -794,7 +794,7 @@ Provide a list of document Ids to be permanently deleted as a comma-separated qu
 
 > #### Warning
 >
-> This is destructive and cannot be reversed. Note: Deleting documents in an AppDB collection may have performance implications with regards to syncing to its corresponding dataset in Domo if the `syncEnabled` property is set to `true` for the collection.
+> This is destructive and cannot be reversed. Note: Deleting documents in an AppDB collection may have performance implications with regard to syncing to its corresponding dataset in Domo if the `syncEnabled` property is set to `true` for the collection.
 
 ```js
 domo.delete(`/domo/datastores/v1/collections/Users/documents/bulk?ids=2bdd6370-85af-4e06-aadb-380839e4de8c,c78ba737-5f84-49c9-8ac9-58615a0f8aa8,1e61d99d-9885-419a-a33e-3be3941ee720`)
@@ -1184,7 +1184,7 @@ const exportCollection = async () => {
 While developing your application, you might find yourself creating specific queries to limit users to see or use only certain data that is stored in your AppDB collections. These queries might be aimed at accomplishing some of the following use-case examples:
 
 - A user should only see data that has been assigned to a certain region or team.
-- A user should only be able update AppDB documents that they themselves created.
+- A user should only be able to update AppDB documents that they themselves created.
 - Only a manager who belongs to a certain Domo group can delete documents from your collection.
 
 While your front-end application code can accomplish these examples in an attempt to secure your app, it is also possible for a user to bypass your client-side code and write their own code that interfaces with the AppDB endpoints directly. In order to secure your documents on the server side, document level filtering rules can be applied to the collection within the manifest of your application. An example of a collection with a document level filter applied is shown below.
@@ -1259,7 +1259,7 @@ In this case, because the user is part of a group defined in the `applyTo` secti
 
 So, although the user requested all documents from the “US” country, only those documents that are both in the “US” and the “West” region will be returned to the user.
 
-- `limitToOwner` – this property takes a boolean that determines whether or not to add an additional query to any request that limits documents to only those created by the current user. So, if this flag were set to `true` then the resulting query on the backend would be transformed still further to add the user’s ID to the request. So, in the case of our previous example, even though the user requested documents from the “US”, they would actually be returned all documents from the “US” that are in the “West” region and created by the existing user.
+- `limitToOwner` – this property takes a boolean that determines whether to add another query to any request that limits documents to only those created by the current user. So, if this flag were set to `true` then the resulting query on the backend would be transformed still further to add the user’s ID to the request. So, in the case of our previous example, even though the user requested documents from the “US”, they would actually be returned all documents from the “US” that are in the “West” region and created by the existing user.
 
 ```json
 { "content.country": "US", "content.region": "West", "owner": "123456" }
