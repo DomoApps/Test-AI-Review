@@ -139,6 +139,11 @@
           "type": "item",
           "title": "User API",
           "uri": "docs/API-Reference/Domo-APIs/User-API.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Cards API",
+          "uri": "docs/API-Reference/Domo-APIs/Card-API.yaml"
         }
       ]
     },
