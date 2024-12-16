@@ -1,4 +1,4 @@
-# Report Schedules API Documentation
+# Scheduled Reports API
 
 ## List Report Schedules
 
