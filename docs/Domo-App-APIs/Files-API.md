@@ -237,14 +237,14 @@ function downloadFile(fileId, filename, revisionId){
 
 #### HTTP Request
 
-For a basic file retreival:
+For a basic file retrieval:
 
 ```text
 GET /domo/data-files/v1/{fileId} HTTP/1.1
 Accept: application/json
 ```
 
-For a file revision retreival:
+For a file revision retrieval:
 
 ```text
 GET /domo/data-files/v1/{fileId}/revisions/{revisionId} HTTP/1.1
