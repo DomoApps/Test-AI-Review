@@ -1,38 +1,4 @@
-# Report Schedules API Documentation - Part 1
-
-## Table of Contents (Part 1)
-
-1. [List Report Schedules](#list-report-schedules)
-2. [Create Report Schedule](#create-report-schedule)
-3. [Delete Report Schedule by Page ID](#delete-report-schedule-by-page-id)
-4. [Get Report Schedule by ID](#get-report-schedule-by-id)
-5. [Update Report Schedule](#update-report-schedule)
-6. [Delete Report Schedule](#delete-report-schedule)
-7. [Enable/Disable Report Schedule](#enabledisable-report-schedule)
-8. [Get Report History by Schedule ID](#get-report-history-by-schedule-id)
-9. [Build and Email Report](#build-and-email-report)
-10. [Queue Build and Email Report](#queue-build-and-email-report)
-11. [Queue Report Now](#queue-report-now)
-12. [Resubscribe to Report](#resubscribe-to-report)
-13. [Send Report Now](#send-report-now)
-14. [Send Resubscribe Email](#send-resubscribe-email)
-15. [Unsubscribe from Report](#unsubscribe-from-report)
-16. [Delete Unsubscribed Recipient](#delete-unsubscribed-recipient)
-17. [Render Card for Email](#render-card-for-email)
-18. [Get Created Report History](#get-created-report-history)
-19. [Enable/Disable Scheduled Report Emails](#enabledisable-scheduled-report-emails)
-20. [Get Extended Report History](#get-extended-report-history)
-21. [Rerun Failed Scheduled Reports](#rerun-failed-scheduled-reports)
-22. [Get Report History](#get-report-history)
-23. [Get Report History by ID](#get-report-history-by-id)
-24. [Search Report History](#search-report-history)
-25. [Get Misconfigured Reports](#get-misconfigured-reports)
-26. [Get Resources with Reports](#get-resources-with-reports)
-27. [Get Report Schedules by Resource ID](#get-report-schedules-by-resource-id)
-28. [Get Report Schedules Map](#get-report-schedules-map)
-29. [Get Report Schedule by View ID](#get-report-schedule-by-view-id)
-30. [Send Report Now by View ID](#send-report-now-by-view-id)
-31. [Send Report Now with Parameters by View ID](#send-report-now-with-parameters-by-view-id)
+# Report Schedules API Documentation
 
 ## List Report Schedules
 
@@ -41,16 +7,17 @@
 
 **Query Parameters**:
 
-| Name | Type | Required | Default | Description | Enum Values |
-|------|------|----------|---------|-------------|-------------|
-| filter | string | false | "USER" | Filter type for the schedules | - |
-| title | string | false | "" | Filter by title | - |
-| limit | integer | false | 0 | Number of items to return | - |
-| skip | integer | false | 0 | Number of items to skip | - |
-| orderBy | string | false | "startDate" | Field to sort by | startDate, nextRunDate, title |
-| isAscending | boolean | false | false | Sort in ascending order | - |
+| Name        | Type    | Required | Default     | Description                   | Enum Values                   |
+| ----------- | ------- | -------- | ----------- | ----------------------------- | ----------------------------- |
+| filter      | string  | false    | "USER"      | Filter type for the schedules | -                             |
+| title       | string  | false    | ""          | Filter by title               | -                             |
+| limit       | integer | false    | 0           | Number of items to return     | -                             |
+| skip        | integer | false    | 0           | Number of items to skip       | -                             |
+| orderBy     | string  | false    | "startDate" | Field to sort by              | startDate, nextRunDate, title |
+| isAscending | boolean | false    | false       | Sort in ascending order       | -                             |
 
 **Example**:
+
 ```json http
 {
   "method": "GET",
@@ -64,6 +31,7 @@
 **Responses**:
 
 `200 OK`
+
 ```json
 [
   {
@@ -103,6 +71,7 @@
 **Request Body**: ReportScheduleInfo object
 
 **Example**:
+
 ```json http
 {
   "method": "POST",
@@ -137,6 +106,7 @@
 **Responses**:
 
 `200 OK`
+
 ```json
 {
   "id": 123457,
@@ -165,11 +135,12 @@
 
 **Query Parameters**:
 
-| Name | Type | Required | Default | Description |
-|------|------|----------|---------|-------------|
-| pageId | integer | true | - | ID of the page to delete schedule for |
+| Name   | Type    | Required | Default | Description                           |
+| ------ | ------- | -------- | ------- | ------------------------------------- |
+| pageId | integer | true     | -       | ID of the page to delete schedule for |
 
 **Example**:
+
 ```json http
 {
   "method": "DELETE",
@@ -195,11 +166,12 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| scheduleId | integer | true | ID of the schedule to retrieve |
+| Name       | Type    | Required | Description                    |
+| ---------- | ------- | -------- | ------------------------------ |
+| scheduleId | integer | true     | ID of the schedule to retrieve |
 
 **Example**:
+
 ```json http
 {
   "method": "GET",
@@ -213,6 +185,7 @@
 **Responses**:
 
 `200 OK`
+
 ```json
 {
   "id": 123456,
@@ -241,13 +214,14 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| scheduleId | integer | true | ID of the schedule to update |
+| Name       | Type    | Required | Description                  |
+| ---------- | ------- | -------- | ---------------------------- |
+| scheduleId | integer | true     | ID of the schedule to update |
 
 **Request Body**: ReportScheduleInfo object
 
 **Example**:
+
 ```json http
 {
   "method": "PUT",
@@ -273,6 +247,7 @@
 **Responses**:
 
 `200 OK`
+
 ```json
 {
   "id": 123456,
@@ -300,11 +275,12 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| scheduleId | integer | true | ID of the schedule to delete |
+| Name       | Type    | Required | Description                  |
+| ---------- | ------- | -------- | ---------------------------- |
+| scheduleId | integer | true     | ID of the schedule to delete |
 
 **Example**:
+
 ```json http
 {
   "method": "DELETE",
@@ -330,13 +306,14 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| scheduleId | integer | true | ID of the schedule |
+| Name       | Type    | Required | Description        |
+| ---------- | ------- | -------- | ------------------ |
+| scheduleId | integer | true     | ID of the schedule |
 
 **Request Body**: boolean
 
 **Example**:
+
 ```json http
 {
   "method": "PUT",
@@ -364,18 +341,19 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| scheduleId | integer | true | ID of the schedule |
+| Name       | Type    | Required | Description        |
+| ---------- | ------- | -------- | ------------------ |
+| scheduleId | integer | true     | ID of the schedule |
 
 **Query Parameters**:
 
-| Name | Type | Required | Default | Description |
-|------|------|----------|---------|-------------|
-| limit | integer | false | 100 | Number of items to return |
-| skip | integer | false | 0 | Number of items to skip |
+| Name  | Type    | Required | Default | Description               |
+| ----- | ------- | -------- | ------- | ------------------------- |
+| limit | integer | false    | 100     | Number of items to return |
+| skip  | integer | false    | 0       | Number of items to skip   |
 
 **Example**:
+
 ```json http
 {
   "method": "GET",
@@ -389,6 +367,7 @@
 **Responses**:
 
 `200 OK`
+
 ```json
 [
   {
@@ -426,13 +405,14 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| scheduleId | integer | true | ID of the schedule |
+| Name       | Type    | Required | Description        |
+| ---------- | ------- | -------- | ------------------ |
+| scheduleId | integer | true     | ID of the schedule |
 
 **Request Body**: Array of ReportRecipient objects
 
 **Example**:
+
 ```json http
 {
   "method": "POST",
@@ -466,13 +446,14 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| scheduleId | integer | true | ID of the schedule |
+| Name       | Type    | Required | Description        |
+| ---------- | ------- | -------- | ------------------ |
+| scheduleId | integer | true     | ID of the schedule |
 
 **Request Body**: Array of ReportRecipient objects
 
 **Example**:
+
 ```json http
 {
   "method": "POST",
@@ -506,13 +487,14 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| scheduleId | integer | true | ID of the schedule |
+| Name       | Type    | Required | Description        |
+| ---------- | ------- | -------- | ------------------ |
+| scheduleId | integer | true     | ID of the schedule |
 
 **Request Body**: Array of ReportScheduleRecipient objects
 
 **Example**:
+
 ```json http
 {
   "method": "POST",
@@ -545,18 +527,19 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| scheduleId | integer | true | ID of the schedule |
+| Name       | Type    | Required | Description        |
+| ---------- | ------- | -------- | ------------------ |
+| scheduleId | integer | true     | ID of the schedule |
 
 **Query Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| userId | integer | false | User ID |
-| emailId | string | false | Email ID |
+| Name    | Type    | Required | Description |
+| ------- | ------- | -------- | ----------- |
+| userId  | integer | false    | User ID     |
+| emailId | string  | false    | Email ID    |
 
 **Example**:
+
 ```json http
 {
   "method": "POST",
@@ -582,13 +565,14 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| scheduleId | integer | true | ID of the schedule |
+| Name       | Type    | Required | Description        |
+| ---------- | ------- | -------- | ------------------ |
+| scheduleId | integer | true     | ID of the schedule |
 
 **Request Body**: Array of ReportScheduleRecipient objects
 
 **Example**:
+
 ```json http
 {
   "method": "POST",
@@ -621,13 +605,14 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| scheduleId | integer | true | ID of the schedule |
+| Name       | Type    | Required | Description        |
+| ---------- | ------- | -------- | ------------------ |
+| scheduleId | integer | true     | ID of the schedule |
 
 **Request Body**: Array of ReportScheduleRecipient objects
 
 **Example**:
+
 ```json http
 {
   "method": "POST",
@@ -660,11 +645,12 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| scheduleId | integer | true | ID of the schedule |
+| Name       | Type    | Required | Description        |
+| ---------- | ------- | -------- | ------------------ |
+| scheduleId | integer | true     | ID of the schedule |
 
 **Example**:
+
 ```json http
 {
   "method": "POST",
@@ -690,18 +676,19 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| scheduleId | integer | true | ID of the schedule |
+| Name       | Type    | Required | Description        |
+| ---------- | ------- | -------- | ------------------ |
+| scheduleId | integer | true     | ID of the schedule |
 
 **Query Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| userId | integer | false | User ID |
-| emailId | string | false | Email ID |
+| Name    | Type    | Required | Description |
+| ------- | ------- | -------- | ----------- |
+| userId  | integer | false    | User ID     |
+| emailId | string  | false    | Email ID    |
 
 **Example**:
+
 ```json http
 {
   "method": "DELETE",
@@ -728,6 +715,7 @@
 **Request Body**: Array of integers (card IDs)
 
 **Example**:
+
 ```json http
 {
   "method": "POST",
@@ -743,6 +731,7 @@
 **Responses**:
 
 `200 OK`
+
 ```json
 {
   "additionalProperties": {
@@ -773,13 +762,14 @@
 
 **Query Parameters**:
 
-| Name | Type | Required | Default | Description |
-|------|------|----------|---------|-------------|
-| filter | string | false | "USER" | Filter type |
-| days | integer | false | 10 | Number of days to look back |
-| isAscending | boolean | false | false | Sort order |
+| Name        | Type    | Required | Default | Description                 |
+| ----------- | ------- | -------- | ------- | --------------------------- |
+| filter      | string  | false    | "USER"  | Filter type                 |
+| days        | integer | false    | 10      | Number of days to look back |
+| isAscending | boolean | false    | false   | Sort order                  |
 
 **Example**:
+
 ```json http
 {
   "method": "GET",
@@ -793,6 +783,7 @@
 **Responses**:
 
 `200 OK`
+
 ```json
 [
   {
@@ -819,6 +810,7 @@
 **Request Body**: boolean
 
 **Example**:
+
 ```json http
 {
   "method": "PUT",
@@ -846,14 +838,15 @@
 
 **Query Parameters**:
 
-| Name | Type | Required | Default | Description | Enum Values |
-|------|------|----------|---------|-------------|-------------|
-| filter | string | false | "USER" | Filter type | - |
-| days | integer | false | 10 | Number of days to look back | - |
-| orderBy | string | false | "startTime" | Field to sort by | reportTitle, startTime, endTime, automated, cardCount, attachmentCount, attachmentSize, emailSize |
-| isAscending | boolean | false | false | Sort order | - |
+| Name        | Type    | Required | Default     | Description                 | Enum Values                                                                                       |
+| ----------- | ------- | -------- | ----------- | --------------------------- | ------------------------------------------------------------------------------------------------- |
+| filter      | string  | false    | "USER"      | Filter type                 | -                                                                                                 |
+| days        | integer | false    | 10          | Number of days to look back | -                                                                                                 |
+| orderBy     | string  | false    | "startTime" | Field to sort by            | reportTitle, startTime, endTime, automated, cardCount, attachmentCount, attachmentSize, emailSize |
+| isAscending | boolean | false    | false       | Sort order                  | -                                                                                                 |
 
 **Example**:
+
 ```json http
 {
   "method": "GET",
@@ -867,6 +860,7 @@
 **Responses**:
 
 `200 OK`
+
 ```json
 [
   {
@@ -902,12 +896,13 @@
 
 **Query Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| start | integer | true | Start timestamp |
-| end | integer | true | End timestamp |
+| Name  | Type    | Required | Description     |
+| ----- | ------- | -------- | --------------- |
+| start | integer | true     | Start timestamp |
+| end   | integer | true     | End timestamp   |
 
 **Example**:
+
 ```json http
 {
   "method": "POST",
@@ -933,16 +928,17 @@
 
 **Query Parameters**:
 
-| Name | Type | Required | Default | Description | Enum Values |
-|------|------|----------|---------|-------------|-------------|
-| filter | string | false | "USER" | Filter type | - |
-| limit | integer | false | 100 | Number of items to return | - |
-| skip | integer | false | 0 | Number of items to skip | - |
-| orderBy | string | false | "startTime" | Field to sort by | reportTitle, startTime, endTime, automated, cardCount, attachmentCount, attachmentSize, emailSize |
-| isAscending | boolean | false | false | Sort order | - |
-| includeRecipientInfo | boolean | false | false | Include recipient information | - |
+| Name                 | Type    | Required | Default     | Description                   | Enum Values                                                                                       |
+| -------------------- | ------- | -------- | ----------- | ----------------------------- | ------------------------------------------------------------------------------------------------- |
+| filter               | string  | false    | "USER"      | Filter type                   | -                                                                                                 |
+| limit                | integer | false    | 100         | Number of items to return     | -                                                                                                 |
+| skip                 | integer | false    | 0           | Number of items to skip       | -                                                                                                 |
+| orderBy              | string  | false    | "startTime" | Field to sort by              | reportTitle, startTime, endTime, automated, cardCount, attachmentCount, attachmentSize, emailSize |
+| isAscending          | boolean | false    | false       | Sort order                    | -                                                                                                 |
+| includeRecipientInfo | boolean | false    | false       | Include recipient information | -                                                                                                 |
 
 **Example**:
+
 ```json http
 {
   "method": "GET",
@@ -956,6 +952,7 @@
 **Responses**:
 
 `200 OK`
+
 ```json
 [
   {
@@ -989,11 +986,12 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| id | integer | true | History entry ID |
+| Name | Type    | Required | Description      |
+| ---- | ------- | -------- | ---------------- |
+| id   | integer | true     | History entry ID |
 
 **Example**:
+
 ```json http
 {
   "method": "GET",
@@ -1007,6 +1005,7 @@
 **Responses**:
 
 `200 OK`
+
 ```json
 {
   "id": 123456,
@@ -1028,17 +1027,18 @@
 
 **Query Parameters**:
 
-| Name | Type | Required | Default | Description | Enum Values |
-|------|------|----------|---------|-------------|-------------|
-| filter | string | false | "USER" | Filter type | - |
-| limit | integer | false | 100 | Number of items to return | - |
-| skip | integer | false | 0 | Number of items to skip | - |
-| orderBy | string | false | "startTime" | Field to sort by | reportTitle, startTime, endTime, automated, cardCount, attachmentCount, attachmentSize, emailSize |
-| isAscending | boolean | false | false | Sort order | - |
+| Name        | Type    | Required | Default     | Description               | Enum Values                                                                                       |
+| ----------- | ------- | -------- | ----------- | ------------------------- | ------------------------------------------------------------------------------------------------- |
+| filter      | string  | false    | "USER"      | Filter type               | -                                                                                                 |
+| limit       | integer | false    | 100         | Number of items to return | -                                                                                                 |
+| skip        | integer | false    | 0           | Number of items to skip   | -                                                                                                 |
+| orderBy     | string  | false    | "startTime" | Field to sort by          | reportTitle, startTime, endTime, automated, cardCount, attachmentCount, attachmentSize, emailSize |
+| isAscending | boolean | false    | false       | Sort order                | -                                                                                                 |
 
 **Request Body**: ReportLogSearchCriteria object
 
 **Example**:
+
 ```json http
 {
   "method": "POST",
@@ -1062,6 +1062,7 @@
 **Responses**:
 
 `200 OK`
+
 ```json
 [
   {
@@ -1086,12 +1087,13 @@
 
 **Query Parameters**:
 
-| Name | Type | Required | Default | Description |
-|------|------|----------|---------|-------------|
-| limit | integer | false | 100 | Number of items to return |
-| skip | integer | false | 0 | Number of items to skip |
+| Name  | Type    | Required | Default | Description               |
+| ----- | ------- | -------- | ------- | ------------------------- |
+| limit | integer | false    | 100     | Number of items to return |
+| skip  | integer | false    | 0       | Number of items to skip   |
 
 **Example**:
+
 ```json http
 {
   "method": "GET",
@@ -1105,6 +1107,7 @@
 **Responses**:
 
 `200 OK`
+
 ```json
 [
   {
@@ -1130,13 +1133,14 @@
 
 **Query Parameters**:
 
-| Name | Type | Required | Default | Description |
-|------|------|----------|---------|-------------|
-| limit | integer | false | 100 | Number of items to return |
-| skip | integer | false | 0 | Number of items to skip |
-| title | string | false | "" | Filter by title |
+| Name  | Type    | Required | Default | Description               |
+| ----- | ------- | -------- | ------- | ------------------------- |
+| limit | integer | false    | 100     | Number of items to return |
+| skip  | integer | false    | 0       | Number of items to skip   |
+| title | string  | false    | ""      | Filter by title           |
 
 **Example**:
+
 ```json http
 {
   "method": "GET",
@@ -1150,6 +1154,7 @@
 **Responses**:
 
 `200 OK`
+
 ```json
 [
   {
@@ -1171,18 +1176,19 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description | Enum Values |
-|------|------|----------|-------------|-------------|
-| resourceType | string | true | Type of resource | OPEN, PAGE, CARD, REPORT |
-| resourceId | integer | true | ID of the resource | - |
+| Name         | Type    | Required | Description        | Enum Values              |
+| ------------ | ------- | -------- | ------------------ | ------------------------ |
+| resourceType | string  | true     | Type of resource   | OPEN, PAGE, CARD, REPORT |
+| resourceId   | integer | true     | ID of the resource | -                        |
 
 **Query Parameters**:
 
-| Name | Type | Required | Default | Description |
-|------|------|----------|---------|-------------|
-| showAll | boolean | false | false | Show all schedules |
+| Name    | Type    | Required | Default | Description        |
+| ------- | ------- | -------- | ------- | ------------------ |
+| showAll | boolean | false    | false   | Show all schedules |
 
 **Example**:
+
 ```json http
 {
   "method": "GET",
@@ -1196,6 +1202,7 @@
 **Responses**:
 
 `200 OK`
+
 ```json
 [
   {
@@ -1220,16 +1227,17 @@
 
 **Query Parameters**:
 
-| Name | Type | Required | Default | Description | Enum Values |
-|------|------|----------|---------|-------------|-------------|
-| filter | string | false | "USER" | Filter type | - |
-| title | string | false | "" | Filter by title | - |
-| limit | integer | false | 0 | Number of items to return | - |
-| skip | integer | false | 0 | Number of items to skip | - |
-| orderBy | string | false | "startDate" | Field to sort by | startDate, nextRunDate, title |
-| isAscending | boolean | false | false | Sort order | - |
+| Name        | Type    | Required | Default     | Description               | Enum Values                   |
+| ----------- | ------- | -------- | ----------- | ------------------------- | ----------------------------- |
+| filter      | string  | false    | "USER"      | Filter type               | -                             |
+| title       | string  | false    | ""          | Filter by title           | -                             |
+| limit       | integer | false    | 0           | Number of items to return | -                             |
+| skip        | integer | false    | 0           | Number of items to skip   | -                             |
+| orderBy     | string  | false    | "startDate" | Field to sort by          | startDate, nextRunDate, title |
+| isAscending | boolean | false    | false       | Sort order                | -                             |
 
 **Example**:
+
 ```json http
 {
   "method": "GET",
@@ -1243,6 +1251,7 @@
 **Responses**:
 
 `200 OK`
+
 ```json
 [
   {
@@ -1267,11 +1276,12 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| viewId | integer | true | ID of the view |
+| Name   | Type    | Required | Description    |
+| ------ | ------- | -------- | -------------- |
+| viewId | integer | true     | ID of the view |
 
 **Example**:
+
 ```json http
 {
   "method": "GET",
@@ -1285,6 +1295,7 @@
 **Responses**:
 
 `200 OK`
+
 ```json
 {
   "id": 123456,
@@ -1307,19 +1318,20 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| viewId | integer | true | ID of the view |
+| Name   | Type    | Required | Description    |
+| ------ | ------- | -------- | -------------- |
+| viewId | integer | true     | ID of the view |
 
 **Query Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| attachmentInclude | boolean | false | Include attachments |
+| Name              | Type    | Required | Description         |
+| ----------------- | ------- | -------- | ------------------- |
+| attachmentInclude | boolean | false    | Include attachments |
 
 **Request Body**: Array of ReportScheduleRecipient objects
 
 **Example**:
+
 ```json http
 {
   "method": "POST",
@@ -1352,19 +1364,20 @@
 
 **Path Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| viewId | integer | true | ID of the view |
+| Name   | Type    | Required | Description    |
+| ------ | ------- | -------- | -------------- |
+| viewId | integer | true     | ID of the view |
 
 **Query Parameters**:
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| attachmentInclude | boolean | false | Include attachments |
+| Name              | Type    | Required | Description         |
+| ----------------- | ------- | -------- | ------------------- |
+| attachmentInclude | boolean | false    | Include attachments |
 
 **Request Body**: ResourceSendNowInfo object
 
 **Example**:
+
 ```json http
 {
   "method": "POST",
