@@ -20,7 +20,7 @@ To do this only requires three steps:
 https://youtu.be/ETGmHX-N9dw
 
 
-## Step 1: Create your Infographic Template
+### Step 1: Create your Infographic Template
 ---
 
 For this example, lets say you're in real estate and want to regularly share key insights on the housing market in your area. You could create an infographic in a great tool like [Canva](https://www.canva.com/), duplicate it for each zip code, and manually update the data for each as it changes as shown below.
@@ -29,7 +29,7 @@ For this example, lets say you're in real estate and want to regularly share key
 
 However, by combining the power of Domo and Canva in a Domo App, you can create one infographic and tie it to data in Domo for a dynamic experience.
 
-### Prepare infographic template
+#### Prepare infographic template
 
 To prepare your infographic template, you'll want to delete all the pieces of the infographic that you want to be dynamic, but before you do that it's important to note the unique styles associated with those components.
 
@@ -60,7 +60,7 @@ Now I can delete the parts of the infographic that I want to make dynamic.
 Finally, export this template infographic as a `.png` file. If you'd like to follow along for the next steps, [you can download this infographic template here](https://github.com/DomoApps/canva-infographic-walkthrough/blob/step-03/make-dynamic-data/infographic.png).
 
 
-## Step 2: Setup Data in Domo
+### Step 2: Setup Data in Domo
 ---
 
 In this example, we will setup data in a Domo Webform that we can edit whenever we would like. However, Domo has a vast array of tools for integrating many different sources of data. A subsequent step in this project -- but not covered in this tutorial -- would be to setup an automatically refreshable data pipeline for the real estate data. 
@@ -92,11 +92,11 @@ Once, you've added this data to Domo, click "Save & Continue".
 
 Now we have the data we need to power our dynamic infographic App!
 
-## Step 3: Build Domo App 
+### Step 3: Build Domo App 
 
 Complete [code for this walkthrough can be found on GitHub here](https://github.com/DomoApps/canva-infographic-walkthrough).
 
-### Initialize App
+#### Initialize App
 
 Before beginning, please be sure you have the Domo App CLI installed sucessfully. See the [Quickstart instructions here](../../Quickstart/Setup-and-Installation.md).
 
@@ -227,7 +227,7 @@ Next, right-click in your browser and click "Inspect", the navigate to the conso
 
 Great! We have a nice development environment ready to go and it's connected directy to data in Domo.
 
-### Add Infographic Template
+#### Add Infographic Template
 
 First of all, let's add to our project the infographic `.png` image that we created in the step 1. Name this file `infographic.png` and place it in the same directory as the rest of your app files.
 
@@ -344,7 +344,7 @@ After styling the application, Let's confirm that this is working by running the
 
 Great! Our application looks much better and reflects all the work we did on the HTML and CSS files.
 
-### Make Our Infographic Dynamic
+#### Make Our Infographic Dynamic
 
 Once we have our static infographic template looking good and displaying our information, we need to make it dynamic. For this, we will pull some data from our dataset and inject this data to our HTML code by using Javascript and adding it to the `app.js` file.
 
@@ -545,8 +545,8 @@ Congrats! The application is working well and adding the data from our infograph
 To complete your App, run the `domo publish` command to deploy the updated code to Domo.
 
 
-## Step 4: Finalize App and Benefits of Building on Domo
-
+### Step 4: Finalize App and Benefits of Building on Domo
+---
 Now that we have our App deployed to Domo, we can display it in an App Studio canvas.
 
 This will make it so we can add:
@@ -555,7 +555,7 @@ This will make it so we can add:
 - a way to share our dynamic embed our infographic with others.
 
 
-### Create App Studio Canvas
+#### Create App Studio Canvas
 
 Let's start by creating an App Studio canvas in Domo, which will provide a place for our new dynamic infographic to live alongside out-of-the-box Domo components like charts and filters.
 
@@ -570,11 +570,11 @@ Click the "+" button on the left navigation menu and drag the "Card" icon to you
 
 ![add component to app studio.gif](<../../../../../assets/images/add component to app studio.gif>)
 
-### Pro-code and No-code Components
+#### Pro-code and No-code Components
 
 One of the great things about both Domo Dashboards and App Studio is that "pro-code" components like our dynamic infographic can easily live along-side out of the box components.
 
-#### Adding a filter component
+**Adding a filter component**
 
 The first out-of-the-box components we'll want to add to make our infographic truly dynamic is a filter card component. This will allow users of our App to toggle between locations to update what data is displayed on the infographic.
 
@@ -589,7 +589,7 @@ To create a filter card, we'll:
 ![adding filter to app.gif](<../../../../../assets/images/adding filter to app.gif>)
 
 
-#### Adding a bar chart
+**Adding a bar chart**
 
 For my app I'd also like to provide additional context around the infographic so people can see what the overall distribution of home prices looks like. For that I'll add a bar chart component.
 
@@ -616,7 +616,7 @@ After those small tweaks, the final app looks like the following:
 ![Screenshot 2024-04-24 at 10.52.29 AM.png](<../../../../../assets/images/Screenshot 2024-04-24 at 10.52.29 AM.png>)
 
 
-### Sharing our App
+#### Sharing our App
 
 One of the major benefits of building our solution on Domo is that we can now easily share our app via an embed or a link.
 

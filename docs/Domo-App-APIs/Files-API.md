@@ -16,12 +16,14 @@ Custom Apps provides a convenient access point to the Domo Data File Service, a 
 
 ## Uploading a File
 
+---
+
 Uploading a file can be accomplished through the following `POST` request. The `file` is a multipart upload file that you can select from your computer and add to a `FormData` object. The `name` query parameter is mandatory. The `description` query parameter takes a text-based description and is optional, and the `public` query parameter takes a Boolean value and is also optional.
 
 ### Code Example
 
 ```javascript
-function uploadFile(name, description="", isPublic=false, file) {
+function uploadFile(name, description = '', isPublic = false, file) {
   const formData = new FormData();
   formData.append('file', file);
   const url = `/domo/data-files/v1?name=${name}&description=${description}&public=${isPublic}`;
@@ -32,11 +34,11 @@ function uploadFile(name, description="", isPublic=false, file) {
 
 ### Arguments
 
-| Property Name | Type   | Required | Description                                                |
-| --------------|--------|----------|------------------------------------------------------------|
-| name          | String | Required | The name to be given to the file in Domo                  |
-| description   | String | Optional | A description of the file                                 |
-| isPublic      | Boolean| Optional | Whether the file permissions are set to public (default: false)|
+| Property Name | Type    | Required | Description                                                     |
+| ------------- | ------- | -------- | --------------------------------------------------------------- |
+| name          | String  | Required | The name to be given to the file in Domo                        |
+| description   | String  | Optional | A description of the file                                       |
+| isPublic      | Boolean | Optional | Whether the file permissions are set to public (default: false) |
 
 ### HTTP Request
 
@@ -62,38 +64,52 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
+<<<<<<< HEAD
+
+### Uploading a file revision
+
+---
+
+=======
 
 ## Uploading a file revision
 
-The Files API provides versioning support for files that have been uploaded. You may add another version of a file by sending a `PUT` request to the files endpoint referencing the `fileId` of the file in which you wish to add a revision.
+> > > > > > > main
+> > > > > > > The Files API provides versioning support for files that have been uploaded. You may add another version of a file by sending a `PUT` request to the files endpoint referencing the `fileId` of the file in which you wish to add a revision.
 
 #### Code Example
+
 ```js
 function uploadRevision(file, fileId) {
-        const formData  = new FormData();
-        formData.append('file', file);
-        const url = `/domo/data-files/v1/${fileId}`;
-        const options = { contentType: 'multipart' };
-        return domo.put(url, formData, options);
+  const formData = new FormData();
+  formData.append('file', file);
+  const url = `/domo/data-files/v1/${fileId}`;
+  const options = { contentType: 'multipart' };
+  return domo.put(url, formData, options);
 }
 ```
 
 #### Arguments
-| Property Name| Type | Required | Description |
-| --- | --- | --- | --- |
-| fileId | Long | Required | The id of the file of which you wish to upload a revision|
+
+| Property Name | Type | Required | Description                                               |
+| ------------- | ---- | -------- | --------------------------------------------------------- |
+| fileId        | Long | Required | The id of the file of which you wish to upload a revision |
 
 #### HTTP Request
+
 ```text
 PUT /domo/data-files/v1/{fileId} HTTP/1.1
 Accept: application/json
 ```
 
 #### Request Body
+
 The request body is a javascript `FormData()` object which supports a multipart upload. The name given to the `File` that is to be appended to the `FormData` object is 'file'.
 
 #### HTTP Response
+
 Returns the revision id of the uploaded revision file.
+
 ```json
 HTTP/1.1 200 OK
 Content-Type: application/json;charset=UTF-8
@@ -102,27 +118,46 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
+<<<<<<< HEAD
+
+### Get a list of files metadata
+
+---
+
+=======
+
 ## Get a list of files metadata
 
-Each file that you upload has corresponding metadata. This endpoint allows you to list all the metadata for each file you have access to. If you want to limit the files to just those that you uploaded you can provide a limitToOwned boolean flag as a query parameter.
+> > > > > > > main
+> > > > > > > Each file that you upload has corresponding metadata. This endpoint allows you to list all the metadata for each file you have access to. If you want to limit the files to just those that you uploaded you can provide a limitToOwned boolean flag as a query parameter.
 
 #### Code Example
-```js
-function getFileDetailsList(idList=null, expandList=null, limitToOwned=false){
-        let url = "/domo/data-files/v1/details/?limitToOwned=${limitToOwned}";
-        if(idList !== null){ url += `&ids=${idList.join()}`;}
-        if(expandList !== null){ url += `&expand=${expandList.join()}`;}
 
-        return domo.get(url);
-    }
+```js
+function getFileDetailsList(
+  idList = null,
+  expandList = null,
+  limitToOwned = false,
+) {
+  let url = '/domo/data-files/v1/details/?limitToOwned=${limitToOwned}';
+  if (idList !== null) {
+    url += `&ids=${idList.join()}`;
+  }
+  if (expandList !== null) {
+    url += `&expand=${expandList.join()}`;
+  }
+
+  return domo.get(url);
+}
 ```
 
 #### Arguments
-| Property Name| Type | Required | Description |
-| --- | --- | --- | --- |
-| ids	| Long	| Optional |	An array of File Ids that you wish to be returned if you only want a subset of files|
-| expand | String	| Optional	| An array of string properties that you wish to see additional details of (either `revisions`, `metadata`, or both)|
-|limitToOwned	| Boolean |	Optional	| Whether or not to limit the result to only files that you uploaded|
+
+| Property Name | Type    | Required | Description                                                                                                        |
+| ------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| ids           | Long    | Optional | An array of File Ids that you wish to be returned if you only want a subset of files                               |
+| expand        | String  | Optional | An array of string properties that you wish to see additional details of (either `revisions`, `metadata`, or both) |
+| limitToOwned  | Boolean | Optional | Whether or not to limit the result to only files that you uploaded                                                 |
 
 #### HTTP Request
 
@@ -162,26 +197,37 @@ Content-Type: application/json;charset=UTF-8
 ]
 ```
 
+<<<<<<< HEAD
+
+### Get an individual file's metadata
+
+---
+
+=======
+
 ## Get an individual file's metadata
 
-Given a known file ID, this endpoint allows you to list the metadata for that specific file.
+> > > > > > > main
+> > > > > > > Given a known file ID, this endpoint allows you to list the metadata for that specific file.
 
 #### Code Example
 
 ```js
-function getFileDetails(fileId, expandList=null){
-        let url = `/domo/data-files/v1/{fileId}/details`;
-        if(expandList !== null){ url += `?expand=${expandList.join()}`;}
+function getFileDetails(fileId, expandList = null) {
+  let url = `/domo/data-files/v1/{fileId}/details`;
+  if (expandList !== null) {
+    url += `?expand=${expandList.join()}`;
+  }
 
-        return domo.get(url);
-    }
+  return domo.get(url);
+}
 ```
 
 #### Arguments
 
-| Property Name| Type | Required | Description |
-| --- | --- | --- | --- |
-|expand	| String |	Optional	|An array of string properties that you wish to see additional details of (either `revisions`, `metadata`, or both)|
+| Property Name | Type   | Required | Description                                                                                                        |
+| ------------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| expand        | String | Optional | An array of string properties that you wish to see additional details of (either `revisions`, `metadata`, or both) |
 
 #### HTTP Request
 
@@ -219,27 +265,40 @@ Content-Type: application/json;charset=UTF-8
     }
 ```
 
+<<<<<<< HEAD
+
+### Download a file
+
+---
+
+=======
+
 ## Download a file
 
-Below is the basic request for downloading a file. Depending on the type of file, this endpoint can be referenced inline in your application or called via an HTTP request. In this example, the `responseType` of the XHR request is being set to `blob` so that our code can reference it as a binary large object when passing the response to the Download method.
+> > > > > > > main
+> > > > > > > Below is the basic request for downloading a file. Depending on the type of file, this endpoint can be referenced inline in your application or called via an HTTP request. In this example, the `responseType` of the XHR request is being set to `blob` so that our code can reference it as a binary large object when passing the response to the Download method.
 
 #### Code Example
 
 ```js
 import Download from 'downloadjs';
-function downloadFile(fileId, filename, revisionId){
-  const options = { responseType: 'blob' };  
-  const url = `/domo/data-files/v1/${fileId}${!!revisionId ? `/revisions/${revisionId}` : ''}`
-  return domo.get(url, options)
-     .then(data => { Download(data, filename); });
+function downloadFile(fileId, filename, revisionId) {
+  const options = { responseType: 'blob' };
+  const url = `/domo/data-files/v1/${fileId}${
+    !!revisionId ? `/revisions/${revisionId}` : ''
+  }`;
+  return domo.get(url, options).then((data) => {
+    Download(data, filename);
+  });
 }
 ```
 
 #### Arguments
-| Property Name| Type | Required | Description |
-| --- | --- | --- | --- |
-|fileId	|Long	|Required	|The id of the file you wish to download|
-|revisionId	|Long	|Optional|	The id of the revision file you wish to download|
+
+| Property Name | Type | Required | Description                                      |
+| ------------- | ---- | -------- | ------------------------------------------------ |
+| fileId        | Long | Required | The id of the file you wish to download          |
+| revisionId    | Long | Optional | The id of the revision file you wish to download |
 
 #### HTTP Request
 
@@ -266,9 +325,18 @@ HTTP/1.1 200 OK
 Content-Type: {mime-type of the file}
 ```
 
+<<<<<<< HEAD
+
+### Delete a file
+
+---
+
+=======
+
 ## Delete a file
 
-Permanently deletes a File from your instance.
+> > > > > > > main
+> > > > > > > Permanently deletes a File from your instance.
 
 <!-- theme: danger -->
 
@@ -279,17 +347,18 @@ Permanently deletes a File from your instance.
 #### Code Example
 
 ```js
-function deleteFile(fileId, revisionId){
-        const url = `/domo/data-files/v1/${fileId}/revisions/${revisionId}`;
-        return domo.delete(url);
+function deleteFile(fileId, revisionId) {
+  const url = `/domo/data-files/v1/${fileId}/revisions/${revisionId}`;
+  return domo.delete(url);
 }
 ```
 
 #### Arguments
-| Property Name| Type | Required | Description |
-| --- | --- | --- | --- |
-|fileId	|Long	|Required	|The id of the file you wish to delete|
-|revisionId	|Long	|Optional	|The id of the revision file you wish to delete|
+
+| Property Name | Type | Required | Description                                    |
+| ------------- | ---- | -------- | ---------------------------------------------- |
+| fileId        | Long | Required | The id of the file you wish to delete          |
+| revisionId    | Long | Optional | The id of the revision file you wish to delete |
 
 #### HTTP Request
 
@@ -299,27 +368,39 @@ Accept: application/json
 ```
 
 #### HTTP Response
+
 Returns the parameter of success or error based on the file Id and the revisionId being valid.
 
 ```text
 HTTP/1.1 200 OK
 ```
 
+<<<<<<< HEAD
+
+### Get file permissions
+
+---
+
+=======
+
 ## Get file permissions
+
+> > > > > > > main
 
 #### Code Example
 
 ```js
-function getFilePermissions(fileId){
-        const url = `/domo/data-files/v1/${fileId}/permissions`;
-        return domo.get(url);
+function getFilePermissions(fileId) {
+  const url = `/domo/data-files/v1/${fileId}/permissions`;
+  return domo.get(url);
 }
 ```
 
 #### Arguments
-| Property Name| Type | Required | Description |
-| --- | --- | --- | --- |
-|fileId	|Long	|Required	|The id of the file you wish to get permission details for|
+
+| Property Name | Type | Required | Description                                               |
+| ------------- | ---- | -------- | --------------------------------------------------------- |
+| fileId        | Long | Required | The id of the file you wish to get permission details for |
 
 #### HTTP Request
 
@@ -346,21 +427,32 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
+<<<<<<< HEAD
+
+### Update file permissions
+
+---
+
+=======
+
 ## Update file permissions
+
+> > > > > > > main
 
 #### Code Example
 
 ```js
-function upadateFilePermissions(fileId, data){
-        const url = `/domo/data-files/v1/${fileId}/permissions`;
-        return domo.put(url, data)
+function upadateFilePermissions(fileId, data) {
+  const url = `/domo/data-files/v1/${fileId}/permissions`;
+  return domo.put(url, data);
 }
 ```
 
 #### Arguments
-| Property Name| Type | Required | Description |
-| --- | --- | --- | --- |
-|fileId	|Long	|Required	|The id of the file you wish to update permission details for|
+
+| Property Name | Type | Required | Description                                                  |
+| ------------- | ---- | -------- | ------------------------------------------------------------ |
+| fileId        | Long | Required | The id of the file you wish to update permission details for |
 
 #### HTTP Request
 
@@ -383,11 +475,14 @@ The request body accepts a permissions object.
 ```
 
 #### HTTP Response
+
 Returns the parameter of success or error based on a valid permission object for the given file Id.
 
 ```text
 HTTP/1.1 200 OK
 ```
+
+# <<<<<<< HEAD
 
 <br/>
 
@@ -414,16 +509,18 @@ export const createSession = async (name, description, contentType) => {
 ```
 
 #### Parameters
+
 - **name** (String): The name of the file.
 - **description** (String): A description of the file.
 - **contentType** (String): The MIME type of the file.
 
 #### Arguments
-| Property Name| Type | Required | Description |
-| --- | --- | --- | --- |
-|name	|String	|Required	|The name of the file|
-|description	|String	|Optional	|A description of the file|
-|contentType	|String	|Required	|The MIME type of the file|
+
+| Property Name | Type   | Required | Description               |
+| ------------- | ------ | -------- | ------------------------- |
+| name          | String | Required | The name of the file      |
+| description   | String | Optional | A description of the file |
+| contentType   | String | Required | The MIME type of the file |
 
 #### HTTP Request
 
@@ -431,7 +528,7 @@ export const createSession = async (name, description, contentType) => {
 POST /domo/data-files/v1/multipart HTTP/1.1
 Accept: application/json
 Request Body
-The request body accepts 
+The request body accepts
 {
     "name": "SampleFile",
     "description": "Sample Description",
@@ -441,6 +538,7 @@ The request body accepts
 ```
 
 #### HTTP Response
+
 Returns the session ID.
 
 ```text
@@ -460,8 +558,13 @@ To update a multi-part file, create an update session by calling `createUpdateSe
 #### Code Example
 
 ```js
-export const createUpdateSession = async (fileId, name, description, contentType) => {
-  const url = `/domo/data-files/v1/${fileId}/multipart`
+export const createUpdateSession = async (
+  fileId,
+  name,
+  description,
+  contentType,
+) => {
+  const url = `/domo/data-files/v1/${fileId}/multipart`;
   return await domo.post(url, {
     fileId,
     name,
@@ -473,17 +576,19 @@ export const createUpdateSession = async (fileId, name, description, contentType
 ```
 
 #### Parameters
+
 - **name** (String): The name of the file.
 - **description** (String): A description of the file.
 - **contentType** (String): The MIME type of the file.
 
 #### Arguments
-| Property Name| Type | Required | Description |
-| --- | --- | --- | --- |
-|fileId	|Long	|Required	|The id of the file you wish to update|
-|name	|String	|Required	|The name of the file|
-|description	|String	|Optional	|A description of the file|
-|contentType	|String	|Required	|The MIME type of the file|
+
+| Property Name | Type   | Required | Description                           |
+| ------------- | ------ | -------- | ------------------------------------- |
+| fileId        | Long   | Required | The id of the file you wish to update |
+| name          | String | Required | The name of the file                  |
+| description   | String | Optional | A description of the file             |
+| contentType   | String | Required | The MIME type of the file             |
 
 #### HTTP Request
 
@@ -491,7 +596,7 @@ export const createUpdateSession = async (fileId, name, description, contentType
 POST /domo/data-files/v1/{fileId}/multipart HTTP/1.1
 Accept: application/json
 Request Body
-The request body accepts 
+The request body accepts
 {
     "fileId": 401,
     "name": "SampleFile",
@@ -502,6 +607,7 @@ The request body accepts
 ```
 
 #### HTTP Response
+
 Returns the session ID.
 
 ```text
@@ -521,13 +627,22 @@ After creating a session, upload the file in chunks. Each chunk is sent with a u
 You can determine the chunk size manually, but a good recommended size is between 10MB and 100MB.
 
 ```javascript
-export const uploadPart = async (sessionId, index, part, contentType, checkSum) => {
-  const url = `/domo/data-files/v1/multipart/${sessionId}/part/${index}${checkSum ? `?[checksum=${checkSum}]` : ''}`;
+export const uploadPart = async (
+  sessionId,
+  index,
+  part,
+  contentType,
+  checkSum,
+) => {
+  const url = `/domo/data-files/v1/multipart/${sessionId}/part/${index}${
+    checkSum ? `?[checksum=${checkSum}]` : ''
+  }`;
   return await domo.put(url, part, { contentType });
 };
 ```
 
 #### Parameters
+
 - **sessionId** (String): The session ID from `createSession` or `createUpdateSession`.
 - **index** (Number): Part number for ordering (1–10,000).
 - **part** (ArrayBuffer | String): File data chunk.
@@ -535,13 +650,14 @@ export const uploadPart = async (sessionId, index, part, contentType, checkSum) 
 - **checkSum** (String, optional): SHA-256 checksum for the chunk.
 
 #### Arguments
-| Property Name| Type | Required | Description |
-| --- | --- | --- | --- |
-|sessionId	|String	|Required	|The session ID from `createSession` or `createUpdateSession`|
-|index	|Number	|Required	|Part number for ordering (1–10,000)|
-|part	|ArrayBuffer | String	|Required	|File data chunk|
-|contentType	|String	|Required	|The content type of the chunk|
-|checkSum	|String	|Optional	|SHA-256 checksum for the chunk|
+
+| Property Name | Type        | Required | Description                                                  |
+| ------------- | ----------- | -------- | ------------------------------------------------------------ | --------------- |
+| sessionId     | String      | Required | The session ID from `createSession` or `createUpdateSession` |
+| index         | Number      | Required | Part number for ordering (1–10,000)                          |
+| part          | ArrayBuffer | String   | Required                                                     | File data chunk |
+| contentType   | String      | Required | The content type of the chunk                                |
+| checkSum      | String      | Optional | SHA-256 checksum for the chunk                               |
 
 #### HTTP Request
 
@@ -556,6 +672,7 @@ The request body accepts the file data chunk.
 ```
 
 #### HTTP Response
+
 Returns the session ID.
 
 ```text
@@ -576,12 +693,15 @@ export const complete = async (sessionId) => {
 ```
 
 #### Parameter
+
 - **sessionId** (String): The session ID to commit.
 
 #### Arguments
-| Property Name| Type | Required | Description |
-| --- | --- | --- | --- |
-|sessionId	|String	|Required	|The session ID to commit|
+
+| Property Name | Type   | Required | Description              |
+| ------------- | ------ | -------- | ------------------------ |
+| sessionId     | String | Required | The session ID to commit |
+
 #### HTTP Request
 
 ```json
@@ -595,6 +715,7 @@ The request body accepts the file data chunk.
 ```
 
 #### HTTP Response
+
 Returns the session ID.
 
 ```text
@@ -620,9 +741,11 @@ export const abort = async (sessionId) => {
 ```
 
 #### Arguments
-| Property Name| Type | Required | Description |
-| --- | --- | --- | --- |
-|sessionId	|String	|Required	|The session ID to abort|
+
+| Property Name | Type   | Required | Description             |
+| ------------- | ------ | -------- | ----------------------- |
+| sessionId     | String | Required | The session ID to abort |
+
 #### HTTP Request
 
 ```json
@@ -631,6 +754,7 @@ Accept: application/json
 ```
 
 #### HTTP Response
+
 Returns the session ID.
 
 ```text
@@ -639,3 +763,4 @@ HTTP/1.1 200 OK
 
 ---
 
+> > > > > > > main

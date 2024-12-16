@@ -3,14 +3,17 @@
 Domo adheres to Material Design principles and we highly encourage you to consider these same principles when building a Domo app as it will ensure a seamless experience from transitioning from Domo to your app.
 
 Please be familiar with the following principles and guidelines as you design your app:
+
 <ul>
  	<li><a href="https://material.io/guidelines/">Material Design Guidelines</a></li>
  	<li><a href="https://developer.apple.com/design/">App iOS Design Principles</a></li>
 </ul>
 
-## Domo Color Palette
+### Domo Color Palette
 
-You're welcome to use the color palette of your choice when designing your app; however, designers will often want to design the app to look and feel more like native Domo. If that's the route you want to take, we've provided the basic Domo color palette for your reference.
+---
+
+You're welcome to use the color palette of your choice when designing your app; however, designers will often want to design the app to look and feel more like native Domo. If that's the route you want to take we've provided the basic Domo color palette for your reference.
 
 #### Domo Blue Palette
 
@@ -137,7 +140,7 @@ You're welcome to use the color palette of your choice when designing your app; 
 
 #### Rules
 
-When coloring multi-series charts, be sure to alternate the color saturation. Choosing colors with the same saturation will eliminate contrasts, creating unnecessary eye strain. 
+When coloring multi-series charts, be sure to alternate the color saturation. Choosing colors with the same saturation will eliminate contrasts, creating unnecessary eye strain.
 
 **Bad Example**
 
@@ -163,7 +166,9 @@ When coloring multi-series charts, be sure to alternate the color saturation. Ch
 
 ## Typography
 
-Domo’s typography foundation lies in traditional typographical measures. It utilizes a 6px baseline grid. All pages are designed using spacing units of 6 between different components. This creates a pleasing and predictable vertical rhythm and extends to our horizontal grid as well. 
+---
+
+Domo’s typography foundation lies in traditional typographical measures. It utilizes a 6px baseline grid. All pages are designed using spacing units of 6 between different components. This creates a pleasing and predictable vertical rhythm and extends to our horizontal grid as well.
 
 Again, you're not required to use Domo styling in your app, but many designers have requested these guides in order to design their app to look and feel more like Domo.
 
@@ -230,5 +235,3 @@ Again, you're not required to use Domo styling in your app, but many designers h
 <div class="typography-category">Label-Field</div>
 <div class="typography-label">Size/Leading: 12/14 • Weight: Semibold 600 • 40% Black</div>
 <div style="color:rgba(0,0,0,.4); font-size:12px; line-height:14px; font-weight:600;">Mea causae impetus ne. Minim fabulas saperet ea pro, eripuit invidunt cum ex. An dicunt platonem duo. Vis at sonet quaeque, fastidii conceptam sea cu, pro choro impetus ea. Et mei tota graece nemore.</div>
-
-

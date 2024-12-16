@@ -5,7 +5,7 @@ Workflows are a powerful way to build action into your apps. You can learn more 
 In order to be able to call a workflow from an app, you need to add a workflow mapping definition to your app’s [manifest file](manifest.md) and then wire up a workflow to the app in the wiring screen. To be able to test your workflow locally, please also make sure that you have [configured your app with a `proxyId`](manifest.md#getting-a-proxyid-advanced).
 
 ### Manifest
-
+---
 Add a `workflowsMapping` property to the manifest.json file that defines the workflow(s) using the following format:
 
 ```json
@@ -78,7 +78,7 @@ The `workflowsMapping` property takes an array of workflow mappings. A workflow 
 
 
 ### Starting a Workflow: Code Example
-
+---
 ```js
 const startWorkflow = (alias, body) => {
   domo.post(`/domo/workflow/v1/models/${alias}/start`, body)
@@ -94,7 +94,7 @@ The `body` parameter is an object where the keys match the `aliasedName` keys de
 
 
 ### Wiring Screen
-
+---
 After publishing your app, you will need to wire it to the workflow you want to start by editing an existing app card, or creating a new one.
 
 ![image.png](../../../../assets/images/image-90.png)
