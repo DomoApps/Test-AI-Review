@@ -78,11 +78,6 @@
           "type": "item",
           "title": "Workflows API",
           "uri": "docs/Domo-App-APIs/Workflows-API.md"
-        },
-        {
-          "type": "item",
-          "title": "Scheduled Reports API",
-          "uri": "docs/Domo-App-APIs/Scheduled-Reports-API"
         }
       ]
     },
@@ -158,6 +153,21 @@
       "items": [
         {
           "type": "item",
+          "title": "Groups API",
+          "uri": "docs/API-Reference/Product-APIs/Groups.md"
+        },
+        {
+          "type": "item",
+          "title": "Managing Dataset History API",
+          "uri": "docs/API-Reference/Product-APIs/Managing-Dataset-History.md"
+        },
+        {
+          "type": "item",
+          "title": "Scheduled Reports API",
+          "uri": "docs/Domo-App-APIs/Scheduled-Reports-API"
+        }
+        {
+          "type": "item",
           "title": "Search API",
           "uri": "docs/API-Reference/Product-APIs/Search.md"
         },
@@ -170,16 +180,6 @@
           "type": "item",
           "title": "Users API",
           "uri": "docs/API-Reference/Product-APIs/Users.md"
-        },
-        {
-          "type": "item",
-          "title": "Groups API",
-          "uri": "docs/API-Reference/Product-APIs/Groups.md"
-        },
-        {
-          "type": "item",
-          "title": "Managing Dataset History API",
-          "uri": "docs/API-Reference/Product-APIs/Managing-Dataset-History.md"
         }
       ]
     },
