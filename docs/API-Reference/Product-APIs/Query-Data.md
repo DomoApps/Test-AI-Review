@@ -1,4 +1,4 @@
-## Create
+## Query Dataset
 
 **Method**: `POST`  
 **Endpoint**: `api/query/v1/execute/export/<DATASET_ID>?includeHeader=true`
