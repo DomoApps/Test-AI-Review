@@ -140,7 +140,7 @@ Check your browser at `localhost:3000`, where your app should be running. You sh
 
 Mapbox provides a way to create custom map styles inside their Mapbox Studio feature. We won't be building one in this tutorial, but you can find out how to do it yourself by following their guide, [Create a custom style](https://docs.mapbox.com/help/tutorials/create-a-custom-style/).
 
-We've created a simple custom style already and we are providing you the json file that will allow you to use it in your app. **Please download the file [here](../../../../../assets/files/map-style.json)**.
+We've created a simple custom style already and we are providing you the json file that will allow you to use it in your app. **Please download the file <a href="../../../../../assets/files/map-style.json" download>here</a>.**
 
 You'll want to add the `map-style.json` file to your `src` folder. Then, bring it into your app by adding this line of code at the top of your `App.js` file:
 
