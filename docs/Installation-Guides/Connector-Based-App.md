@@ -4,7 +4,7 @@ stoplight-id: 0aa7kg1lpq69v
 
 # Connector-Based App Installation Guide
 
-Thanks for installing and test driving this App! Good news, this App is directly powered by one of Domo’s standard connectors so connecting this app to your own data is simple.
+Thanks for installing and test-driving this App! Good news, this App is directly powered by one of Domo’s standard connectors so connecting this app to your own data is simple.
 
 ### Step 1: Gather Credentials
 

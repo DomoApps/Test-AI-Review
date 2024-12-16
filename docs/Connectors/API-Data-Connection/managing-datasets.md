@@ -35,7 +35,7 @@ Authorization: bearer <your-valid-oauth-access-token>
 ```
 Domo will return a response of success or error for the outcome of data being imported into DataSet.
 
-### Sample Response
+#### Sample Response
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json

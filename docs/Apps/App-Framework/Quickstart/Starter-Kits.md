@@ -62,12 +62,11 @@ title: Angular
 -->
 
 #### Prerequisites
----
 
 You'll need the <a href="http://cli.angular.io/">Angular CLI</a> installed in order to run the `ng add` command.
 
 #### Create a new project
----
+
 <pre>
 <code>$ ng new domo-app
 $ cd domo-app
@@ -77,7 +76,7 @@ $ cd domo-app
 Select NO when prompted whether SSR should be enabled for the new project.
 
 #### Add Ryuu Angular
----
+
 <pre><code>$ ng add @domoinc/ryuu-angular
 </code></pre>
 This will add the following:
@@ -87,7 +86,7 @@ This will add the following:
 - `domo:upload` helper script to `package.json` to upload to Domo.
 
 #### Local development
----
+
 In order for the proxy to work in local development you need to have uploaded your app at least once with `npm run domo:upload`
 
 After this you should be able to run `ng serve` like normal and you'll be able to proxy domo requests in your local development.
@@ -98,12 +97,12 @@ title: Vue
 -->
 
 #### Prerequisites
----
+
 Install <a href="https://github.com/vuejs/vue-cli">Vue CLI</a>
 
 
 #### Create new project
----
+
 <pre>
 <code>vue init webpack my-app
 cd my-app
@@ -111,7 +110,7 @@ cd my-app
 </pre>
 
 #### Add Domo Assets
----
+
 Add a `manifest.json` and `thumbnail.png` to a `./domo` directory at the root of the project. Then modify the copy plugin patterns in the `./build/webpack.prod.conf.js` to copy over Domo assets.
 
 <pre>
@@ -123,7 +122,7 @@ Add a `manifest.json` and `thumbnail.png` to a `./domo` directory at the ro
 </pre>
 
 #### Add Domo Dev Proxy
----
+
 <pre>
 <code>npm install --save-dev @domoinc/ryuu-proxy
 </code>

@@ -24,9 +24,9 @@ To build a custom connector, the API you wish to connect to must meet a few requ
 - Use https
 - Use a REST API
 - Either require no authentication, or authenticate using
-- OAuth 2.0
-- An API Key
-- A username and password
+   - OAuth 2.0
+   - An API Key
+   - A username and password
 
 <button class="domo-cta-button">
   <a href="https://api.domo.com/builder/index.html">Build a Custom Connector</a>
@@ -35,7 +35,7 @@ To build a custom connector, the API you wish to connect to must meet a few requ
 <!-- theme: info -->
 
 > #### Note
->Because the IDE is built using the [Java 8.0 Nashorn engine](https://docs.oracle.com/javase/8/docs/technotes/guides/scripting/nashorn/), you need to write your code using JavaScript compatible with [ECMAScript 5 (ES5)](https://www.w3schools.com/js/js_es5.asp). For example, Xmlhttprequest is not supported. Use httprequest in its place:
+>Because the IDE is built using the [Java 17 Graavl engine], you need to write your code using JavaScript compatible with [ECMAScript 5 (ES5)](https://www.w3schools.com/js/js_es5.asp). For example, Xmlhttprequest is not supported. Use httprequest in its place:
 
 ```
 httprequest.get('https://samplecrm.domo.com/samplecrm');

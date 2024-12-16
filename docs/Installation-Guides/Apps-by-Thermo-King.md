@@ -4,7 +4,7 @@ stoplight-id: zru0jsiusn8vb
 
 <div class="col-md-12 content-panel">
                 <h2>Apps by Thermo King</h2>
-                <p></p><p>Thanks for installing and test driving an<span id="title">&nbsp;app from the Domo Appstore</span>! &nbsp;This app was developed and published by Thermo King, a&nbsp;Domo App Publisher.</p>
+                <p></p><p>Thanks for installing and test-driving an<span id="title">&nbsp;app from the Domo Appstore</span>! &nbsp;This app was developed and published by Thermo King, a&nbsp;Domo App Publisher.</p>
 <h3 class="doc-row-title"></h3>
 <div id="Step%201:%20Identify%20Required%20Data%20Fields" class="doc-row">
 <div class="small-pad-bottom">

@@ -17,12 +17,10 @@ Modocorp, the fictitious company on which the Sample Data Engine reports are bas
 Though fictitious, the datasets you’ll find in the Sample Data Engine maintain compatibility with the real connectors, so your customers will see the same thing you submit to the Domo Appstore when initially installed and their data connection experience is simplified because there is no guesswork on where the data can potentially come from. Summarized – there are no surprises between you and your customers when you use the Sample Data Engine to power your visualizations.
 
 Overall benefits to powering your development with Sample Data Engine reports:
-<ol>
- 	<li>Compatible with the most widely used connectors</li>
- 	<li>Provides real-to-life fictitious data</li>
- 	<li>Complies with sensitive data requirements</li>
- 	<li>Bridges the gap between the one-source requirement and your multiple connector apps</li>
-</ol>
+1. Compatible with the most widely used connectors
+2. Provides real-to-life fictitious data
+3. Complies with sensitive data requirements
+4. Bridges the gap between the one-source requirement and your multiple connector apps
 
 
 ## Data Architecture
@@ -31,7 +29,7 @@ Overall benefits to powering your development with Sample Data Engine reports:
 
 <div class="small-pad-bottom">
 
-One of the most important architectural considerations you will need to make as a publisher is which data sources your app will support. The more data sources you support, the more potential customers you will have. The Domo sample data engine provides data from all of the most popular systems in use today, but it is up to you to decide which of them you want to support. To support more than one data source (or combination of data sources), you will need to choose from one of two high level architectures, each with its own pros and cons. In this section, we will review each architecture and its corresponding powerup experience from both the publisher and customer perspective.
+One of the most important architectural considerations you will need to make as a publisher is which data sources your app will support. The more data sources you support, the more potential customers you will have. The Domo sample data engine provides data from all the most popular systems in use today, but it is up to you to decide which of them you want to support. To support more than one data source (or combination of data sources), you will need to choose from one of two high level architectures, each with its own pros and cons. In this section, we will review each architecture and its corresponding powerup experience from both the publisher and customer perspective.
 
 </div>
 <h3>Architecture 1 - System-specific Data</h3>
