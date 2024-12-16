@@ -47,25 +47,25 @@
 ```json
 200:
 {
-  "id": "string",
-  "background": {
-    "type": "STRING",
-    "dark": {
-      "value": "string",
-      "opacity": "string",
-      "type": "STRING"
-    },
-    "light": {
-      "value": "string",
-      "opacity": "string",
-      "type": "STRING"
-    }
-  },
-  "isDynamic": true,
-  "density": {
-    "compact": 0,
-    "standard": 0
-  }
+    "pageId": 11111111,
+    "parentPageId": 2222222,
+    "ownerId": 123123123,
+    "owners": [
+        {
+            "id": 123123123,
+            "type": "USER",
+            "displayName": null
+        }
+    ],
+    "type": "page",
+    "title": "Test Subpage",
+    "pageName": "Test Subpage",
+    "locked": false,
+    "mobileEnabled": true,
+    "sharedViewPage": true,
+    "metadata": "{\"pageTitle\":\"Test Subpage\",\"title\":\"Test Subpage\",\"type\":\"page\"}",
+    "virtualPage": false,
+    "hasLayout": true
 }
 ```
 
