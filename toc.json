@@ -102,6 +102,11 @@
         },
         {
           "type": "item",
+          "title": "Cards API",
+          "uri": "docs/API-Reference/Domo-APIs/Card-API.yaml"
+        },
+        {
+          "type": "item",
           "title": "DataSet API",
           "uri": "docs/API-Reference/Domo-APIs/DataSet-API.yaml"
         },
