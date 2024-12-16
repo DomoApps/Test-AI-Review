@@ -190,7 +190,7 @@ domo.filterContainer([
     column: "category",
     operator: "IN",
     values: ["ALERT"],
-    dataType: "STRING",
+    dataType: "string",
   },
 ]);
 ```
@@ -220,10 +220,10 @@ This example will programmatically add a page filter for any column that is name
 
 **dataType** the type of data that is contained in the values array. Possible values include:
 
-- 'DATE'
-- 'DATETIME'
-- 'NUMERIC'
-- 'STRING'
+- 'date'
+- 'datetime'
+- 'numeric'
+- 'string'
 
 ### domo.onFiltersUpdate()
 

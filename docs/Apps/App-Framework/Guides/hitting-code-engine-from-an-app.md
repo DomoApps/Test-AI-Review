@@ -19,7 +19,7 @@ You can learn more about [setting up Code Engine functions in Domo's Knowledge B
 In order to be able to hit a Code Engine function from an app, you need to add a `packageMapping` definition to your app’s [manifest file](manifest.md) and then wire up a code engine function to the app in the wiring screen. To be able to test your code engine function locally, please also make sure that you have [configured your app with a `proxyId`](manifest.md#getting-a-proxyid-advanced).
 
 ### Manifest
-
+---
 Add a `packageMapping` property to the manifest.json file that defines the workflow(s) using the following format:
 
 ```json
@@ -71,13 +71,13 @@ The `packageMapping` property takes an array of package mappings. A package mapp
     - `group`
     - `text`
     - `time`
-  - `nullable` (boolean) - whether or not the input parameter accepts `null` input.
-  - `isList` (boolean) - whether or not the input parameter is a list or not.
+  - `nullable` (boolean) - whether the input parameter accepts `null` input.
+  - `isList` (boolean) - whether the input parameter is a list or not.
   - `children` (package mapping object) - if the parameter is a defined `object`, you can define the nested properties here.
 
 
 ### Calling a Code Engine Function: Code Example
-
+---
 ```js
 const startFunction = (functionAlias, inputParameters = {}) => {
     domo.post(`/domo/codeengine/v2/packages/${functionAlias}`, inputParameters
@@ -98,7 +98,7 @@ The `body` parameter is an object where the keys match the `alias` keys defined 
 
 
 ### Wiring Screen
-
+---
 After publishing your app, you will need to wire it to the Code Engine function you want to hit by editing an existing app card, or creating a new one.
 
 ![Screenshot 2024-02-13 at 2.30.40 PM.png](<../../../../assets/images/Screenshot 2024-02-13 at 2.30.40 PM.png>)

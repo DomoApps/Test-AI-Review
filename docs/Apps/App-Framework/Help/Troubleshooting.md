@@ -5,7 +5,7 @@ Domo is committed to answering all of your App development questions, even when 
 
 Try us: Our technical support consultants are there 24/7 to provide world-class service and help you make the most of your Domo experience. Please email <a href="http://support.domo.com/">support.domo.com</a>
 
-<h3>My Collection is not Syncing to my Dataset</h3>
+#### My Collection is not Syncing to my Dataset
 There are a few other things to check if your collection isn't syncing correctly to your Dataset:
 <ol>
  	<li>Check that collection sync is enabled</li>
@@ -19,7 +19,7 @@ Sometimes developers confuse Typescript types (like "Number") with the column ty
 If this is a relative asset (it lives inside of your design) then use a forward slash `/` and make sure you don't have a typo in the path.
 
 If it's an external resource (hosted outside of Domo) then you must load it with the `https://` protocol since Domo runs in that mode.
-<h3>Errors When Installing on Windows</h3>
+#### Errors When Installing on Windows
 
 - Option 1: Install <a href="http://go.microsoft.com/fwlink/?LinkId=691126">Visual C++ Build Tools</a> using the <strong>Default Install</strong> option.
 - Option 2: Install <a href="https://www.visualstudio.com/products/visual-studio-community-vs">Visual Studio 2015</a> (or modify an existing installation) and select <em>Common Tools for Visual C++</em> during setup. This also works with the free Community and Express for Desktop editions.
@@ -27,7 +27,7 @@ If it's an external resource (hosted outside of Domo) then you must load it with
 - Launch cmd, `npm config set msvs_version 2015`
 
 
-<h3>How to Submit a Bug</h3>
+#### How to Submit a Bug
 If you come across a bug while building your app, please follow these steps to make it easier for us to help you:
 <ol>
  	<li>Create a separate app that demonstrates the bug in isolation.</li>

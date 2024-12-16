@@ -4,7 +4,7 @@ stoplight-id: d93cd01e7c739
 
 # API Status
 
-### Check on the lastest status of Domo APIs
+### Check on the latest status of Domo APIs
 
 We maintain transparency on latest status of the Domo platform and provides APIs uptime and performance history.
 

@@ -6,12 +6,10 @@ stoplight-id: 9k5nqhgffv7wq
 
 Domo Everywhere supports three main types of URL parameters in embedded content: 
 
-<ul>
-	<li>Transparent Backgrounds </li>
-	<li>Pfilters </li>
-	<li>AppData </li>
-  <li>Locale</li>
-</ul>
+- Transparent Backgrounds
+- Pfilters
+- AppData
+- Locale
 
 ## Transparent Backgrounds
 ---

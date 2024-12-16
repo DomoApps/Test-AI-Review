@@ -4,7 +4,7 @@ stoplight-id: 28v6sqz9eslb9
 
 # Overview
 
-Create an app on the Domo Platform for maximum flexiblity in design, data collection, and distribution.
+Create an app on the Domo Platform for maximum flexibility in design, data collection, and distribution.
 
 - **Pre-built apps**: [Domo’s Appstore](https://www.domo.com/intelligent-apps/about-appstore) provides a collection of apps built by Domo and our community that you can leverage for fast insights.
 - **[Domo Bricks](../Apps/DDX-Bricks/Quickstart/overview.md) (previously DDX Bricks)**: Domo Bricks are pre-built objects that allow you to create advanced visualizations and apps that can be customized in a simple browser-based code editor.
@@ -19,7 +19,7 @@ In general, the more complex your app solution, the more you'll want to lean on 
 **[Domo Bricks](../Apps/DDX-Bricks/Quickstart/overview.md) (previously DDX Bricks)** are a great tool for quickly customizing Domo if your use-case can be achieved by:
 
 - Tweaking the HTML, CSS, and JavaScript of pre-built Domo Brick in the [Domo Appstore](https://www.domo.com/intelligent-apps/about-appstore).
-- Buidling your application from scratch in the three files of the Domo Bricks browser-based editor: HTML, CSS, and JS.
+- Building your application from scratch in the three files of the Domo Bricks browser-based editor: HTML, CSS, and JS.
 - Leveraging external libraries via [CDN](https://developer.mozilla.org/en-US/docs/Glossary/CDN) (e.g. without the need of a package management tool like [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)).
 
 As the complexity of your app grows, the full **[App Framework](../Apps/App-Framework/Welcome.md)** tooling is the way to go. This may be because:

@@ -4,8 +4,6 @@ stoplight-id: eeoadx67i6h46
 
 # Files API
 
-The Domo Data File Service is a centralized point in your Domo instance to manage, secure, share, and govern all of your files. This enables your applications the ability to upload documents, images, spreadsheets, and many other supported media types for re-use at a later time. The service also provides a version history chain that you can use to track your changes over time.
-
 Domo supports nearly 100 different file types across over 300 file extensions. Please reach out to Domo Support if you have a question about supported file types, as the list changes often.
 
 <!-- theme: info -->
@@ -14,7 +12,7 @@ Domo supports nearly 100 different file types across over 300 file extensions. P
 >
 > Currently, Domo Bricks do not support the Files API.
 
-### Upload a file
+## Upload a file
 
 Uploading a new file can be accomplished through the following request. You will pass in the file to upload, and Domo will store it and generate a unique identifier for the file, which is returned to you.
 
@@ -51,13 +49,13 @@ POST /domo/data-files/v1?name={name}&description={description}&public={public} H
 Accept: application/json
 ```
 
-#### Request Body
+### Request Body
 
-The request body is a javascript `FormData()` object which supports a multipart upload. The name given to the `File` that is to be appended to the `FormData` object is 'file'.
+The request body is a JavaScript `FormData()` object that supports a multipart upload. The name given to the file to be appended to the `FormData` object is `file`.
 
-#### HTTP Response
+### HTTP Response
 
-Returns the id of the created file.
+Returns the ID of the created file.
 
 ```json
 HTTP/1.1 200 OK
@@ -68,7 +66,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-### Upload a file revision
+## Upload a file revision
 
 The Files API provides versioning support for files that have been uploaded. You may add another version of a file by sending a `PUT` request to the files endpoint referencing the `dataFileId` of the file you wish to revise.
 
@@ -89,6 +87,7 @@ function uploadRevision(file, dataFileId) {
 | Property Name | Type    | Required | Description                                               |
 | ------------- | ------- | -------- | --------------------------------------------------------- |
 | dataFileId    | Integer | Required | The id of the file of which you wish to upload a revision |
+
 
 #### HTTP Request
 
@@ -113,7 +112,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-### Get all files metadata
+## Get all files metadata
 
 Each file that you upload has corresponding metadata. This endpoint allows you to list all the metadata for each file you have access to. If you want to limit the files to just those that you uploaded you can provide a `limitToOwned` boolean flag as a query parameter.
 
@@ -140,6 +139,7 @@ function getFileDetailsList(ids = null, expand = null, limitToOwned = false) {
 | ids           | Integer Array | Optional | An array of File Ids that you wish to be returned if you only want a subset of files                               |
 | expand        | String Array  | Optional | An array of string properties that you wish to see additional details of (either `revisions`, `metadata`, or both) |
 | limitToOwned  | Boolean       | Optional | Whether or not to limit the result to only files that you uploaded                                                 |
+
 
 #### HTTP Request
 
@@ -179,8 +179,8 @@ Content-Type: application/json;charset=UTF-8
 ]
 ```
 
-### Get file metadata by ID
-
+## Get file metadata by ID
+---
 Given a known file ID, this endpoint allows you to list the metadata for that specific file.
 
 #### Code Example
@@ -238,7 +238,9 @@ Content-Type: application/json;charset=UTF-8
     }
 ```
 
-### Download a file
+
+
+## Download a file
 
 Below is the basic request for downloading a file. Depending on the type of file, this endpoint can be referenced inline in your application or called via an HTTP request. In this example, the `responseType` of the XHR request is being set to `blob` so that our code can reference it as a binary large object when passing the response to the Download method.
 
@@ -268,6 +270,7 @@ function downloadFile(dataFileId, filename, revisionId) {
 
 To download the current file version:
 
+
 ```text
 GET /domo/data-files/v1/{dataFileId} HTTP/1.1
 Accept: application/json
@@ -289,7 +292,7 @@ HTTP/1.1 200 OK
 Content-Type: {mime-type of the file}
 ```
 
-### Delete a file
+## Delete a file
 
 Permanently deletes a File from your instance.
 
@@ -330,7 +333,8 @@ Returns the parameter of success or error based on the file Id and the revisionI
 HTTP/1.1 200 OK
 ```
 
-### Get file permissions
+## Get file permissions
+---
 
 #### Code Example
 
@@ -372,7 +376,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-### Update file permissions
+## Update file permissions
 
 #### Code Example
 
@@ -417,6 +421,281 @@ The request body accepts a permissions object.
 #### HTTP Response
 
 Returns the parameter of success or error based on a valid permission object for the given file Id.
+
+```text
+HTTP/1.1 200 OK
+```
+
+# Multi-part Files API
+
+The Multi-part Files API allows for efficient upload, update, and management of large files in parts. It uses Domo’s Data File Service, supporting session-based file chunking for fault tolerance and enhanced control.
+
+## Creating a Multi-part Upload Session
+
+To begin a multi-part file upload, create an upload session by calling `createSession`. This will return a session ID that is essential for uploading file parts.
+
+#### Code Example
+
+```js
+export const createSession = async (name, description, contentType) => {
+  const url = '/domo/data-files/v1/multipart';
+  return await domo.post(url, {
+    name,
+    description,
+    contentType,
+    'Cache-Control': 'no-cache',
+  });
+};
+```
+
+#### Parameters
+
+- **name** (String): The name of the file.
+- **description** (String): A description of the file.
+- **contentType** (String): The MIME type of the file.
+
+#### Arguments
+
+| Property Name | Type   | Required | Description               |
+| ------------- | ------ | -------- | ------------------------- |
+| name          | String | Required | The name of the file      |
+| description   | String | Optional | A description of the file |
+| contentType   | String | Required | The MIME type of the file |
+
+#### HTTP Request
+
+```json
+POST /domo/data-files/v1/multipart HTTP/1.1
+Accept: application/json
+Request Body
+The request body accepts
+{
+    "name": "SampleFile",
+    "description": "Sample Description",
+    "contentType": "application/pdf",
+    "Cache-Control": "no-cache",
+}
+```
+
+#### HTTP Response
+
+Returns the session ID.
+
+```text
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+    "sessionId": "1234567890"
+}
+```
+
+---
+
+## Creating a Multi-part Upload Update Session
+
+To update a multi-part file, create an update session by calling `createUpdateSession` and passing in the fileId. This will return a session ID that is essential for uploading file parts.
+
+#### Code Example
+
+```js
+export const createUpdateSession = async (
+  fileId,
+  name,
+  description,
+  contentType,
+) => {
+  const url = `/domo/data-files/v1/${fileId}/multipart`;
+  return await domo.post(url, {
+    fileId,
+    name,
+    description,
+    contentType,
+    'Cache-Control': 'no-cache',
+  });
+};
+```
+
+#### Parameters
+
+- **name** (String): The name of the file.
+- **description** (String): A description of the file.
+- **contentType** (String): The MIME type of the file.
+
+#### Arguments
+
+| Property Name | Type   | Required | Description                           |
+| ------------- | ------ | -------- | ------------------------------------- |
+| fileId        | Long   | Required | The id of the file you wish to update |
+| name          | String | Required | The name of the file                  |
+| description   | String | Optional | A description of the file             |
+| contentType   | String | Required | The MIME type of the file             |
+
+#### HTTP Request
+
+```json
+POST /domo/data-files/v1/{fileId}/multipart HTTP/1.1
+Accept: application/json
+Request Body
+The request body accepts
+{
+    "fileId": 401,
+    "name": "SampleFile",
+    "description": "Sample Description",
+    "contentType": "application/pdf",
+    "Cache-Control": "no-cache",
+}
+```
+
+#### HTTP Response
+
+Returns the session ID.
+
+```text
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+    "sessionId": "1234567890"
+}
+```
+
+---
+
+## Uploading File Parts
+
+After creating a session, upload the file in chunks. Each chunk is sent with a unique `index` and can optionally include a `checksum` for verification. The `checkSum` is used to verify the integrity of the uploaded chunk.
+
+You can determine the chunk size manually, but a good recommended size is between 10MB and 100MB.
+
+```javascript
+export const uploadPart = async (
+  sessionId,
+  index,
+  part,
+  contentType,
+  checkSum,
+) => {
+  const url = `/domo/data-files/v1/multipart/${sessionId}/part/${index}${
+    checkSum ? `?[checksum=${checkSum}]` : ''
+  }`;
+  return await domo.put(url, part, { contentType });
+};
+```
+
+#### Parameters
+
+- **sessionId** (String): The session ID from `createSession` or `createUpdateSession`.
+- **index** (Number): Part number for ordering (1–10,000).
+- **part** (ArrayBuffer | String): File data chunk.
+- **contentType** (String): The content type of the chunk.
+- **checkSum** (String, optional): SHA-256 checksum for the chunk.
+
+#### Arguments
+
+| Property Name | Type        | Required | Description                                                  |
+| ------------- | ----------- | -------- | ------------------------------------------------------------ | --------------- |
+| sessionId     | String      | Required | The session ID from `createSession` or `createUpdateSession` |
+| index         | Number      | Required | Part number for ordering (1–10,000)                          |
+| part          | ArrayBuffer | String   | Required                                                     | File data chunk |
+| contentType   | String      | Required | The content type of the chunk                                |
+| checkSum      | String      | Optional | SHA-256 checksum for the chunk                               |
+
+#### HTTP Request
+
+```json
+PUT /domo/data-files/v1/multipart/{sessionId}/part/{index}$?checksum={checkSum} HTTP/1.1
+Accept: application/json
+Request Body
+The request body accepts the file data chunk.
+{
+    "contentType": "application/pdf",
+}
+```
+
+#### HTTP Response
+
+Returns the session ID.
+
+```text
+HTTP/1.1 200 OK
+```
+
+---
+
+## Completing a Multi-part Upload
+
+Once all parts are uploaded, finalize the process with `complete`:
+
+```javascript
+export const complete = async (sessionId) => {
+  const url = `/domo/data-files/v1/multipart/${sessionId}/commit`;
+  return await domo.post(url, { sessionId });
+};
+```
+
+#### Parameter
+
+- **sessionId** (String): The session ID to commit.
+
+#### Arguments
+
+| Property Name | Type   | Required | Description              |
+| ------------- | ------ | -------- | ------------------------ |
+| sessionId     | String | Required | The session ID to commit |
+
+#### HTTP Request
+
+```json
+POST /domo/data-files/v1/multipart/{sessionId}/commit HTTP/1.1
+Accept: application/json
+Request Body
+The request body accepts the file data chunk.
+{
+    "sessionId": "1234567890"
+}
+```
+
+#### HTTP Response
+
+Returns the session ID.
+
+```text
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+    "dataFileId": "1234567890",
+    "revisionId": "1234567890"
+}
+```
+
+---
+
+## Error Handling and Retry Mechanism
+
+If a part upload fails, a retry mechanism limits the attempts per chunk, aborting the session after a specified count.
+
+```javascript
+export const abort = async (sessionId) => {
+  const url = `/domo/data-files/v1/multipart/${sessionId}/abort`;
+  return await domo.post(url);
+};
+```
+
+#### Arguments
+
+| Property Name | Type   | Required | Description             |
+| ------------- | ------ | -------- | ----------------------- |
+| sessionId     | String | Required | The session ID to abort |
+
+#### HTTP Request
+
+```json
+POST /domo/data-files/v1/multipart/{sessionId}/abort HTTP/1.1
+Accept: application/json
+```
+
+#### HTTP Response
+
+Returns the session ID.
 
 ```text
 HTTP/1.1 200 OK
