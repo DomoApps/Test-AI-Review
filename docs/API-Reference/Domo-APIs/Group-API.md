@@ -1,248 +1,230 @@
-# Group API
+# Group Documentation
 
-Fetch Group
------------
+## Fetch Group
 
-**Method**: `GET`  
-**Endpoint**: `/api/content/v2/groups/{group}`
+### Overview
+Retrieve details of a specific group by its ID.
 
-**Path Parameters**:
+### Endpoint
+**GET** `/api/content/v2/groups/{group}`
 
-*   `group` - The ID of the group to fetch
-    *   Param Type: String
-    *   Required
+### Path Parameters
+| Parameter | Type   | Required | Description               |
+|-----------|--------|----------|---------------------------|
+| `group`   | String | Yes      | The ID of the group to fetch |
 
-**Example**:
+### Request Example
+```http
+GET https://{instance}.domo.com/api/content/v2/groups/{group}
+Headers:
+  X-DOMO-Developer-Token: <token>
+  Content-Type: application/json
+```
 
+### Response Example
+**Status Code**: 200
 ```json
 {
-  "method": "GET",
-  "url": "https://{instance}.domo.com/api/content/v2/groups/{group}",
-  "headers": {
-    "X-DOMO-Developer-Token": "",
-    "Content-Type": "application/json"
+  "id": 6789456782,
+  "name": "Group Name",
+  "type": "closed",
+  "userIds": [
+    123123123,
+    342342344,
+    555543423,
+    432423423
+  ],
+  "creatorId": 4421231232,
+  "memberCount": 4,
+  "guid": "guid-goes-here",
+  "description": "",
+  "hidden": false,
+  "default": false,
+  "active": true
+}
+```
+
+---
+
+## Fetch User Details
+
+### Overview
+Fetch detailed information for a specific user by their ID.
+
+### Endpoint
+**GET** `/api/identity/v1/users/{userId}`
+
+### Path Parameters
+| Parameter | Type   | Required | Description        |
+|-----------|--------|----------|--------------------|
+| `userId`  | String | Yes      | The ID of the user |
+
+### Query Parameters
+| Parameter | Type   | Required | Description               |
+|-----------|--------|----------|---------------------------|
+| `parts`   | String | No       | Specifies the detail level, e.g., `detailed` |
+
+### Request Example
+```http
+GET https://{instance}.domo.com/api/identity/v1/users/{userId}?parts=detailed
+Headers:
+  X-DOMO-Developer-Token: <token>
+  Content-Type: application/json
+```
+
+### Response Example
+**Status Code**: 200
+```json
+[
+  {
+    "name": "Domo User",
+    "id": 3817263817,
+    "location": "",
+    "manager": "",
+    "phoneNumber": "+phone number",
+    "title": "Software Engineer"
   }
+]
+```
+
+---
+
+## Create a Group
+
+### Overview
+Create a new group with the specified details.
+
+### Endpoint
+**POST** `/api/content/v2/groups`
+
+### Body Parameters
+| Parameter     | Type   | Required | Description                       |
+|---------------|--------|----------|-----------------------------------|
+| `name`        | String | Yes      | Name of the group                 |
+| `description` | String | No       | Description of the group          |
+| `type`        | String | Yes      | Group type: `closed`, `open`, or `dynamic` |
+
+### Request Example
+```http
+POST https://{instance}.domo.com/api/content/v2/groups
+Headers:
+  X-DOMO-Developer-Token: <token>
+  Content-Type: application/json
+body:
+{
+  "name": "New Group",
+  "description": "This is a new group",
+  "type": "closed"
 }
 ```
 
-**Response**:  
-The group object containing group details.
-
+### Response Example
+**Status Code**: 200
 ```json
-200:
 {
-    "id": 6789456782,
-    "name": "Group Name",
-    "type": "closed",
-    "userIds": [
-        123123123,
-        342342344,
-        555543423,
-        432423423
-    ],
-    "creatorId": 4421231232,
-    "memberCount": 4,
-    "guid": "guid-goes-here",
-    "description": "",
-    "hidden": false,
-    "default": false,
-    "active": true
+  "id": "123123123"
 }
 ```
 
-* * *
+---
 
-Fetch User Details
-------------------------
+## Add People to a Group
 
-Please use the Fetch Group API to get the list of members in a group, and use that same list of user ids to fetch the details for each member.
+### Overview
+Add a user to a specific group.
 
-**Method**: `GET`  
-**Endpoint**: `/api/identity/v1/users/{userId}?parts=detailed`
+### Endpoint
+**PUT** `/api/content/v2/groups/{group}/user/{userId}`
 
-**Path Parameters**:
+### Path Parameters
+| Parameter | Type   | Required | Description                            |
+|-----------|--------|----------|----------------------------------------|
+| `group`   | String | Yes      | The ID of the group                   |
+| `userId`  | String | Yes      | The ID of the user to add to the group |
 
-*   `userId` - The ID of each user to fetch details for
-    *   Param Type: String
-    *   Required
+### Request Example
+```http
+PUT https://{instance}.domo.com/api/content/v2/groups/{group}/user/{userId}
+Headers:
+  X-DOMO-Developer-Token: <token>
+  Content-Type: application/json
+```
 
-**Query Parameters**:
-
-*   `parts`
-    *   Param Type: String
-    *   Param Options:
-        *   `detailed`
-
-**Example**:
-
+### Response Example
+**Status Code**: 200
 ```json
-{
-  "method": "GET",
-  "url": "https://{instance}.domo.com/api/identity/v1/users/{userId}?parts=detailed",
-  "headers": {
-    "X-DOMO-Developer-Token": "",
-    "Content-Type": "application/json"
+true
+```
+
+---
+
+## Remove a Person from a Group
+
+### Overview
+Remove a user from a specific group.
+
+### Endpoint
+**DELETE** `/api/content/v2/groups/{group}/removeuser/{userId}`
+
+### Path Parameters
+| Parameter | Type   | Required | Description                            |
+|-----------|--------|----------|----------------------------------------|
+| `group`   | String | Yes      | The ID of the group                   |
+| `userId`  | String | Yes      | The ID of the user to remove           |
+
+### Request Example
+```http
+DELETE https://{instance}.domo.com/api/content/v2/groups/{group}/removeuser/{userId}
+Headers:
+  X-DOMO-Developer-Token: <token>
+  Content-Type: application/json
+```
+
+### Response Example
+**Status Code**: 200
+```json
+true
+```
+
+---
+
+## Remove Multiple People from a Group
+
+### Overview
+Remove multiple users from a specific group.
+
+### Endpoint
+**PUT** `/api/content/v2/groups/access`
+
+### Body Parameters
+| Parameter         | Type    | Required | Description                                    |
+|-------------------|---------|----------|------------------------------------------------|
+| `groupId`         | String  | Yes      | The ID of the group                          |
+| `removeMembers`   | Array   | Yes      | List of members to remove, with `type` and `id` |
+
+### Request Example
+```http
+PUT https://{instance}.domo.com/api/content/v2/groups/access
+Headers:
+  X-DOMO-Developer-Token: <token>
+  Content-Type: application/json
+body:
+[
+  {
+    "groupId": "1231231232",
+    "removeMembers": [
+      {
+        "type": "USER",
+        "id": "112321221"
+      }
+    ]
   }
-}
+]
 ```
 
-**Response**:  
-Detailed user information for each user. 
-
+### Response Example
+**Status Code**: 200
 ```json
-200:
-{
-  [
-    {
-      "name": "Domo User",
-      "id": 3817263817,
-      "location": "",
-      "manager": "",
-      "phoneNumber": "+phone number",
-      "title": "Software Engineer",
-    },
-  ]
-}
+true
 ```
 
-* * *
-
-Create a Group
---------------
-
-**Method**: `POST`  
-**Endpoint**: `/api/content/v2/groups`
-
-**body Parameters**:
-
-*   `name` - Name for the group
-*   `description` - Description for the group
-*   `type` - can be 'closed', 'open', or 'dynamic'
-
-**Example**:
-
-```json
-{
-  "method": "POST",
-  "url": "https://{instance}.domo.com/api/content/v2/groups",
-  "headers": {
-    "X-DOMO-Developer-Token": "",
-    "Content-Type": "application/json"
-  },
-  "body": {
-    "name": "New Group",
-    "description": "This is a new group",
-    "type": "closed"
-  }
-}
-```
-
-**Response**:  
-The created group’s ID.
-
-```json
-200:
-{
-  "id": "123123123",
-}
-```
-
-* * *
-
-Add People to a Group
----------------------
-
-**Method**: `PUT`  
-**Endpoint**: `/api/content/v2/groups/{group}/user/{userId}`
-
-**Path Parameters**:
-
-*   `group` - The ID of the group to which people will be added
-    *   Param Type: String
-    *   Required
-*   `userId` - The ID of the person to add to the group
-    *   Param Type: String
-    *   Required
-
-**Example**:
-
-```json
-{
-  "method": "PUT",
-  "url": "https://{instance}.domo.com/api/content/v2/groups/{group}/user/{userId}",
-  "headers": {
-    "X-DOMO-Developer-Token": "",
-    "Content-Type": "application/json"
-  },
-}
-```
-
-**Response**:  
-Returns `true` if the call was successful.
-
-* * *
-Remove a Person from a Group
-----------------------------
-
-**Method**: `DELETE`  
-**Endpoint**: `/api/content/v2/groups/{group}/removeuser/{userId}`
-
-**Path Parameters**:
-
-*   `group` - The ID of the group
-    *   Param Type: String
-    *   Required
-*   `userId` - The ID of the person to remove
-    *   Param Type: String
-    *   Required
-
-**Example**:
-
-```json
-{
-  "method": "DELETE",
-  "url": "https://{instance}.domo.com/api/content/v2/groups/{group}/removeuser/{userId}",
-  "headers": {
-    "X-DOMO-Developer-Token": "",
-    "Content-Type": "application/json"
-  }
-}
-```
-
-**Response**:  
-Returns `true` if the call was successful.
-
-* * *
-
-Remove Multiple People from a Group
------------------------------------
-
-**Method**: `PUT`  
-**Endpoint**: `/api/content/v2/groups/access`
-
-**Example**:
-
-```json
-{
-  "method": "PUT",
-  "url": "https://{instance}.domo.com/api/content/v2/groups/access",
-  "headers": {
-    "X-DOMO-Developer-Token": "",
-    "Content-Type": "application/json"
-  },
-  "body": [
-    {
-      "groupId": "1231231232",
-      "removeMembers": [
-        {
-          "type": "USER",
-          "id": "112321221"
-        }
-      ]
-    }
-  ]
-}
-```
-
-**Response**:  
-Returns `true` if the call was successful.
