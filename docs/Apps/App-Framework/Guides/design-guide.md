@@ -13,7 +13,7 @@ Please be familiar with the following principles and guidelines as you design yo
 
 ---
 
-You're welcome to use the color palette of your choice when designing your app; however, designers will often want to design the app to look and feel more like native Domo. If that's the route you want to take we've provided the basic Domo color palette for your reference.
+You're welcome to use the color palette of your choice when designing your app; however, designers will often want to design the app to look and feel more like native Domo. If that's the route you want to take, we've provided the basic Domo color palette for your reference.
 
 #### Domo Blue Palette
 
