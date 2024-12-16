@@ -11,7 +11,7 @@ To upload data in CSV format, the Domo specification used for representing data 
 </ol>
 All data uploaded in this format must comply with a schema that is supplied separately from the upload. For example the CSV must comply with the correct number of columns and field types.
 
-<strong>Specifications:</strong>
+#### Specifications:
 <ul>
  	<li><strong>file</strong> = [header CRLF] record *(CRLF record) [CRLF]</li>
  	<li><strong>header</strong> = name *(COMMA name)</li>
@@ -30,7 +30,7 @@ All data uploaded in this format must comply with a schema that is supplied sepa
 </ul>
 &nbsp;
 
-<strong>Examples</strong>
+#### Examples
 <table class="confluenceTable">
 <tbody>
 <tr>
@@ -83,7 +83,7 @@ All data uploaded in this format must comply with a schema that is supplied sepa
 
 &nbsp;
 
-<strong>Examples of Invalid CSV:</strong>
+#### Examples of Invalid CSV:
 <table class="confluenceTable">
 <tbody>
 <tr>

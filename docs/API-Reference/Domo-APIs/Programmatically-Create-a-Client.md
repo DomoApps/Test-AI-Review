@@ -4,19 +4,19 @@ stoplight-id: 3c6pp23q82y90
 
 # Programmatically Create a Client
 
-Creating a Client ID and Secret using developer.domo.com in the browser is outlined in the [API Overview](../docs/API-Reference/Domo-APIs/API-Authentication.yaml).
+Creating a Client ID and Secret using developer.domo.com in the browser is outlined in the [API Overview](../../../docs/API-Reference/Domo-APIs/API-Authentication.yaml).
 
 For scenarios that require programmatic creation of Clients, the following guide may be used.
 
 ### Obtain a Customer Instance Session Identifier
 
-Using the [authenticate](../Instance-Authetication.json/paths/~1api~1content~1v2~1authentication/post) customer instance API, you are able to obtain a session identifier using multiple methods of authentication based upon the instance's sign on options.
+Using the [authenticate](Instance-Authentication.json/paths/~1api~1content~1v2~1authentication/post) customer instance API, you are able to obtain a session identifier using multiple methods of authentication based upon the instance's sign on options.
 
 #### Password Authentication
 
 Customer instances with direct sign on are able to use the `password` method to create a session token.
 
-Call the [authenticate](../Instance-Authetication.json/paths/~1api~1content~1v2~1authentication/post) endpoint using `"method": "password"` and including the appriate `"emailAddress"` and `"password"`
+Call the [authenticate](Instance-Authentication.json/paths/~1api~1content~1v2~1authentication/post) endpoint using `"method": "password"` and including the appropriate `"emailAddress"` and `"password"`
 
 ```bash
 curl --request POST \
@@ -34,9 +34,9 @@ For instances that don't use direct sign on cookie authentication may be used wi
 To obtain the necessary cookie value, you may extract it using browser Developer Tools after logging into your instance.
 Locate and copy the `_dsidv1` cookie value
 
-![image.png](../assets/images/image-98.png)
+![image.png](../../../assets/images/image-98.png)
 
-Call the [authenticate](../Instance-Authetication.json/paths/~1api~1content~1v2~1authentication/post) endpoint with the matching `_dsidv1` cookie set and `"method": "exptoken"` in the request body.
+Call the [authenticate](Instance-Authentication.json/paths/~1api~1content~1v2~1authentication/post) endpoint with the matching `_dsidv1` cookie set and `"method": "exptoken"` in the request body.
 
 ```bash
 curl --request POST \

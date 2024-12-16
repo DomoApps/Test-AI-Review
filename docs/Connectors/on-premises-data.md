@@ -29,7 +29,7 @@ The process is simple:
 ---
 Domo allows you to connect to your data no matter where it resides. The Workbench Developer Platform gives you control to determine all aspects of your data acquisition, ingestion, and normalization.
 
-<strong>Data Transport Methods</strong>
+#### Data Transport Methods
 
 The first question is what will you connect to. Using a Data Transport Method plugin you will be able to explicitly define how you will connect to your Data Source. Regardless of whether you are connecting to a database, a file system or a service you will need to define how you will connect Workbench to the system that has the data. This may include URLs, authentication information, or proxy settings. The Data Transport Methods plugin is where you define your connection information.
 
@@ -38,14 +38,14 @@ Workbench provides basic database, local file, remote file, and SFTP/FTP connect
 Once you have gathered the information you need to make your connection you are ready to move onto the plugin creation step.
 
 
-<strong>Data Source Connection</strong>
+#### Data Source Connection
 
 All data is unique and you need to be able to read and understand the data before it can be sent to Domo. The Data Source Connection plugin allows you to create a custom reader that can pull the data into Workbench in a readable manner. For example it may not be enough to pull all the data from an Excel workbook, maybe you need to be more specific and pull only a single sheet or even a specific set of cells from a specific sheet.
 
 With data source connection plugins you can take the raw data source and pick out the specific data points that you need to run your business.
 
 
-<strong>Data Transforms</strong>
+#### Data Transforms
 
 Data never comes quite the way that you want it. Maybe a column name from the report is incorrect, or maybe you need to run some specific algorithm to prepare the data for use by your end customer. The Workbench Developer Platform allows you to build these custom transforms to ensure your data are normalized and ready for use as soon as it gets to Domo.
 
@@ -55,7 +55,7 @@ To build your transforms you will need to know what actions must be taken each t
 ---
 We understand that developers have a preference before starting to work with Domo. We are using DLLs as the delivery vehicle for the three plugin types we support. This allows you to select from a wide range of base languages to write your plugin. It also means that your plugin will be supported on all the platforms supported by Workbench, meaning your plugin will be useful well beyond your own use.
 
-<strong>The Workbench SDK</strong>
+#### The Workbench SDK
 
 The Workbench SDK is a library that helps you build your Workbench Plugin. This robust set of programming classes provides everything you need from how to work with accounts and authenticate to your data source to logging the execution steps that your plugin takes when executed.
 
@@ -63,7 +63,7 @@ After installing Workbench, the directory <code>C:\Program Files\Domo\Workbench\
 
 The best way to get started though is following the example that we have included with this getting started document.
 
-<strong>Install your Plugin</strong>
+#### Install your Plugin
 
 Once you have built your plugin and produced a DLL file you simply need to install it into the Workbench environment.
 

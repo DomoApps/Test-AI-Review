@@ -28,7 +28,7 @@ $ domo [command] -h
 
 ### Common Commands
 ---
-### dev
+#### dev
 
 Spins up a local development server with the following features:
 
@@ -57,7 +57,7 @@ The app Id can be found as part of the URL for the iframe in which your app is d
 
 App Ids tie apps to cards. If you delete the card from which you retrieved the appContextId, you will have to get a new one from another card created from your app design.
 
-### init
+#### init
 
 Starts a prompter to initialize a new Custom App design template. Once complete be sure to follow the "Next Steps" provided.
 
@@ -86,7 +86,7 @@ design-name
 
 **Note**: Be sure to complete the field mapping portion in the `manifest.json`. Refer to the [manifest](../Guides/manifest.md#mapping) reference docs for more details on data mapping.
 
-### login [options]
+#### login [options]
 
 Authenticate to your Domo instance from the CLI. This is a requirement before doing other commands like `publish`, and for fetching data during `domo dev`. If no options are provided then you'll be prompted to choose from a list of previous instances or a "new instance", at which point you'll be prompted for instance name, username, and password.
 
@@ -99,7 +99,7 @@ $ domo login [options]
 * `u, --user-email`: user email
 * `--no-upgrade-check`: prevent the CLI from checking for new versions and prompting for user input to upgrade or not
 
-### owner <add|rm|ls>
+#### owner <add|rm|ls>
 
 Manage the owners of the Custom App design. Only owners of a design are able to manage that design from the CLI or the Asset Library within the Domo instance. Additionally, only owners of a design are authorized to deploy new apps based on said design.
 
@@ -110,7 +110,7 @@ $ domo owner [options] [add|rm|ls] joe.bob@mycompany.com
 **OPTIONS**
 * `-i, --design_id`: specify a design Id or defaults to the Id from the manifest file in the current working directory
 
-### publish 
+#### publish 
 
 Uploads all the assets of your current working directory as a Custom App design. You can choose to ignore certain files, meaning domo publish will not upload those files. Any node_modules directories are ignored by default. Refer to the [manifest](../Guides/manifest.md#ignore) reference docs for more details on ignoring files.
 
@@ -123,7 +123,7 @@ $ domo publish [options]
 **OPTIONS**
 * `-g, --go`: open the design in the Asset Library after publishing
 
-### release
+#### release
 
 Locks a design version for submitting to the Domo Appstore. Once a version is released you can't make further changes to it. You can, however, work on a new version by bumping the version in the manifest file. 
 

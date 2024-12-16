@@ -12,12 +12,11 @@ You can check out [complete code examples of the To-do App on Github](https://gi
 We will go through how to create a basic React app, use Domo's AppDB to implement CRUD functionality, and deploy the application on the Domo platform.
 
 ### Step 1: Setup and Installation
-
 ---
 
 For this tutorial, we will use yarn as a node package manager, but you can follow the instructions from the <a href="https://create-react-app.dev/docs/getting-started#creating-an-app">create-react-app documentation</a> to install a new react app with the `@domoinc` template based on the package manager of your choice (`npx`, `yarn`, or `npm`). Before starting, make sure you've successfully [installed the Domo Apps CLI](Setup-and-Installation.md) and completed the `domo login` command to authenticate against your instance of Domo.
 
-<strong>Create Basic React App</strong>
+#### Create Basic React App
 
 ```
 yarn create react-app todo-app --template @domoinc
@@ -73,12 +72,11 @@ You can see more details on the dependencies and utility scripts setup in this t
 ```
 
 ### Step 2: Create an AppDB collection to store tasks
-
 ---
 
 [AppDB](../../../../Domo-App-APIs/AppDB-API.md) is a nosql database for storing arbitrary JSON documents, we can use it to persist data in our app.
 
-<strong>Define a collection</strong>
+#### Define a collection
 
 The collections reference has to be specified in the `manifest.json` file, by adding the `collections` attribute array, for this tutorial we will add a collection named TasksCollection using the following code.
 
@@ -128,14 +126,13 @@ Your manifest.json will look like the following.
 ```
 
 ### Step 3: Wire the local instance to Domo
-
 ---
 
 Now that we have our `manifest.json` ready, we can publish the initial design of our app, which will allow us to wire our app to resources in our Domo instance like AppDB.
 
 To publish the app, you need to be authenticated in the terminal first; you can run `domo login` if you are not. As mentioned in the first step of this tutorial, an `upload` script was added to the `package.json` for easy upload. We will use that command to build and upload the app.
 
-<strong>Upload command</strong>
+#### Upload command
 
 ```
 yarn upload
@@ -145,7 +142,7 @@ After running the command, you will get an output like the following with the in
 
 ![yarn_upload_output.png](../../../../../assets/images/yarn_upload_output.png)
 
-<strong>Create a new card for the app</strong>
+#### Create a new card for the app
 
 Let's create the card that we will wire to the AppDB collection. To do this, we need to open the created design in the link that we got from the command output and click the "New Card" option.
 
@@ -209,7 +206,6 @@ Your manifest.json will now look similar to this:
 ```
 
 ### Step 4: Create a tasks collection service
-
 ---
 
 With our App connected to the Domo card and the collection created, you are ready to start making requests to appDB, for this we will use the `AppDBClient` that can be found in `@domoinc/toolkit` package, add this package by running the following command. See more on the [Domo Toolkit library here](https://domoapps.github.io/toolkit/).
@@ -271,7 +267,6 @@ export const TaskService = {
 The code above implements simple functions for interacting with our tasks in AppDB. These functions cover CREATE, READ (FETCH), UPDATE, and DELETE capabilities and should be relatively self-explanatory.
 
 ### Step 5: Create App UI
-
 ---
 
 Now that the app is able to interact with AppDB, let's add some React components to display and manage our tasks.
@@ -295,10 +290,9 @@ One of the best parts of working with the React framework is how it makes [Compo
 For each of our components, we'll create a separate file within `src/components/TasksContainer/`
 
 #### TasksContainer
-
 App content section, this is the wrapper where all the tasks will be listed.
 
-#### Code
+**Code**
 
 For this parent component, we'll place the following Javascript code in `src/components/TasksContainer/index.jsx`.
 
@@ -464,7 +458,7 @@ Next, we'll add the Javascript and CSS for our `TaskListItem` component which is
 
 Add the following Javascript in a new directory inside of the `TasksContainer` with the following path: `/src/components/TasksContainer/TaskListItem/index.jsx`.
 
-#### Code
+**Code**
 
 ```js
 import React from "react";
@@ -559,7 +553,7 @@ The CSS specific to this component can then go in: `src/components/TasksContaine
 
 Finally, let's add the form that we can use to create new tasks.
 
-#### Code
+**Code**
 
 We'll add the following Javascript to a new directory in `TaskContainer` with the following path: `src/components/TasksContainer/TaskForm/index.jsx`;
 

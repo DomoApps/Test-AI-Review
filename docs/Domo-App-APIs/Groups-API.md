@@ -7,7 +7,7 @@ stoplight-id: 2hwa98wx7kdm4
 The Groups API is a Read Only set of endpoints available to retrieve information about the various groups that belong to the instance in which a Custom App is published. This enables your application to take advantage of knowing the groups that individual users could potentially belong to and alter their user experience accordingly.
 
 ### All Groups
-
+---
 Retrieve a list of details for all groups of an instance.
 
 #### Code Example
@@ -54,7 +54,7 @@ HTTP/1.1 200 OK
 ```
 
 ### Group by Id
-
+---
 Retrieve the details for an individual group given its Id.
 
 #### Code Example
@@ -95,7 +95,7 @@ HTTP/1.1 200 OK
 ```
 
 ### Group by Name
-
+---
 Retrieve the details for an individual group given its name.
 
 #### Code Example
@@ -136,7 +136,7 @@ HTTP/1.1 200 OK
 ```
 
 ### Groups by User
-
+---
 Retrieve the details for an all groups that an individual user belongs to, given a user Id. You can obtain the user Id of the current user using the `domo` object (provided via the `domo.js` javascript file that is included with all apps initialized by the Domo Apps CLI) as demonstrated in the code example below.
 
 #### Code Example

@@ -38,48 +38,59 @@ Now there is a seamless path for business users to progress from out-of-the box 
 ### Available Domo Bricks
 ---
 
-- <strong>[Form Input](https://www.domo.com/appstore/app/ddx-form-and-dataset/overview) </strong>: Makes it easy to gather input from your teams in one place.
+#### [Form Input](https://www.domo.com/appstore/app/ddx-form-and-dataset/overview): 
+Makes it easy to gather input from your teams in one place.
 
 ![domo-form-brick.png](../../../../assets/images/domo-form-brick-3.png)
 
 
-- <strong>[Todo](https://www.domo.com/appstore/app/to-do-brick/overview)</strong>: Allows you to build and share a to-do list that all can update.
+#### [Todo](https://www.domo.com/appstore/app/to-do-brick/overview): 
+Allows you to build and share a to-do list that all can update.
 ![todo-brick.png](../../../../assets/images/todo-brick-2.png)
 
 
-- <strong>[Calendar](https://www.domo.com/appstore/app/calendar-with-input/overview)</strong>: Helps you visualize and share a dynamic calendar with your team.
+#### [Calendar](https://www.domo.com/appstore/app/calendar-with-input/overview): 
+Helps you visualize and share a dynamic calendar with your team.
 ![calendar-brick.png](../../../../assets/images/calendar-brick-2.png)
 
 
-- <strong>[Gantt chart](https://www.domo.com/appstore/app/gantt-brick/overview)</strong>: Enables on-the-fly changes to keep your projects on track
+#### [Gantt chart](https://www.domo.com/appstore/app/gantt-brick/overview): 
+Enables on-the-fly changes to keep your projects on track
 
 ![gantt-brick.png](../../../../assets/images/gantt-brick-2.png)
 
 
-- <strong>[D3.js pie, line and bar charts](https://www.domo.com/appstore/apps?q=d3):</strong> Use the D3 library to add custom visualizations tied to your Domo data</li>
+#### [D3.js pie, line and bar charts](https://www.domo.com/appstore/apps?q=d3):
+Use the D3 library to add custom visualizations tied to your Domo data</li>
 
 <img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-ddx-bricks-3.png" width="2202" height="1160" />
 
 
-- <strong>[Mapbox](https://www.domo.com/appstore/apps?q=mapbox):</strong> Build beautiful and powerful street-level maps and interactions tied to your Domo data using the MapBox library
+#### [Mapbox](https://www.domo.com/appstore/apps?q=mapbox):
+Build beautiful and powerful street-level maps and interactions tied to your Domo data using the MapBox library
 
 <img class="alignnone size-full" src="https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-ddx-bricks-4.png" width="2238" height="838" />
 
-- <strong>[Images](https://www.domo.com/appstore/app/ddx-top-10-images/overview)</strong>: Bring images to liven up your Dashboards.
+#### [Images](https://www.domo.com/appstore/app/ddx-top-10-images/overview): 
+Bring images to liven up your Dashboards.
 
 ![top10imagebrick.png](../../../../assets/images/top10imagebrick.png)
 
-- <strong>[Voronoi map](https://www.domo.com/appstore/app/ddx-d3-world-voronoi/overview):</strong> A 3D world map that allows you to interact and scroll in all directions.
+#### [Voronoi map](https://www.domo.com/appstore/app/ddx-d3-world-voronoi/overview):
+A 3D world map that allows you to interact and scroll in all directions.
 
 ![voronoibrick.png](../../../../assets/images/voronoibrick.png)
 
-- <strong>Data Exploration</strong>: If you like raw SQL to explore data there are two bricks that show a chart or just the csv results of your SQL query
+#### Data Exploration</strong>: 
+If you like raw SQL to explore data there are two bricks that show a chart or just the csv results of your SQL query
 
 ![sqlchartbrick.png](../../../../assets/images/sqlchartbrick.png)
 
-- <strong>SugarForce CRM</strong>: A sample CRM brick that is used throughout app documentation.
+#### SugarForce CRM: 
+A sample CRM brick that is used throughout app documentation.
 ![sugarforcebrick.png](../../../../assets/images/sugarforcebrick-2.png)
 
+#### More available Domo Bricks:
 - <strong>[Custom HTML](https://www.domo.com/appstore/apps?q=html):</strong> See how to create a card using HTML from examples you find on the web
 - <strong>[Leaflet map](https://www.domo.com/appstore/app/ddx-leaflet-openstreetmaps-app/overview):</strong> Choose from one of over 30 map looks to instantly see modern maps with flare using the leaflet library
 - <strong>[Phoenix pie, line and bar charts](https://www.domo.com/appstore/apps?q=phoenix): </strong>Customize a card with HTML, CSS and JS while maintaining a consistent Domo chart experience by using the Phoenix library
@@ -94,6 +105,7 @@ Now there is a seamless path for business users to progress from out-of-the box 
 - <strong>[Play a chart](https://www.domo.com/appstore/apps?q=play&appType=Card)</strong>: Push the play button to see how your data changes over time
 
 ### Prerequisites
+---
 To start using Domo Bricks you will need:
 
 - A Domo account
@@ -102,4 +114,5 @@ To start using Domo Bricks you will need:
 - Basic understanding of HTML, CSS and JS are useful to fully customize Domo Bricks
 
 ### Next Steps
+---
 Follow our walkthroughs for [Getting Started with Domo Bricks](getting-started.md).

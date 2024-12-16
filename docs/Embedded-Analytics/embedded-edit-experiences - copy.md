@@ -8,18 +8,14 @@ Provide more functionality to your external customers by empowering them to crea
 
 The most advanced companies integrate the full power of the platform. Domo Everywhere allows you to share the rich data experience of the entire Domo platform -- any data, application, or visualization -- packaged together for your customers and partners that aligns with your brand and while maintaining the ability to easily govern and distribute at scale. You decide what tools and capabilities to enable. Start with the majority of your functionality already built so you can focus on your expertise.
 
-
 https://player.vimeo.com/video/530952420?badge=0&amp;autopause=0&amp;player_id=0&amp
 
-
 Your most strategic customers and partners demand more than dashboards. OEM all of Domo in your interface so your partners and customers can:
-<ul>
- 	<li>Create totally new content</li>
- 	<li>Create their own alerts</li>
- 	<li>Schedule their own reports</li>
- 	<li>Connect their own data</li>
- 	<li>Transform both sides together</li>
-</ul>
+- Create totally new content
+- Create their own alerts
+- Schedule their own reports
+- Connect their own data
+- Transform both sides together
 
 ## Domo Identity Broker
 ---
@@ -46,26 +42,26 @@ The minimum items required in the payload are:
 - JTI (Unique string or number to identify this JWT. Recommended to use a UUID.)
 
 
-In addition to the required items you can also include the any of the following optional attributes which can be used by Domo. Any SAML2 accepted attributes will work. These can be used in dynamic PDP policies, for group assignments and to complete the users profile within Domo:
+In addition to the required items you can also include any of the following optional attributes which can be used by Domo. Any SAML2 accepted attributes will work. These can be used in dynamic PDP policies, for group assignments and to complete the users profile within Domo:
 
-| Attribute       | XML attribute name | Description |
-|-----------------|--------------------|-------------|
-| Name            | name               | The display name for the user in Domo. This is the only name field displayed in Domo. |
-| Email           | email              | The user's email address. Domo uses this value as the unique identifier for the person's account, so any value included for Email will overwrite the SAML Subject value in the SAML assertion. Domo also uses this email address to send any notifications and alerts to the user. |
-| Alternate email | email.secondary    | A secondary contact email for the user. Domo does not use this email address for any communications. |
-| Role            | role               | The IdP can set the role of the user at each login. The role must match exactly (including case sensitivity) a valid role in your Domo instance. |
-| Employee ID     | employee.id        | Must be alphanumeric |
-| Hire date       | hire.date          | Format: YYYY-MM-DD |
-| Title           | title              | Example: Software Engineer |
-| Department      | department         | Example: Sales |
-| Location        | location           | Example: Utah |
-| Mobile Phone    | user.phone         | Accepts any combination of numbers and the characters +()-x. For example: +1 (555) 555-5555 x 5555 |
-| Desk phone      | desk.phone         | Accepts any combination of numbers and the characters +()-x. For example: +1 (555) 555-5555 x 5555 |
+| Attribute       | XML attribute name | Description                                                                                                                                                                                                                                                                                                                         |
+|-----------------|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Name            | name               | The display name for the user in Domo. This is the only name field displayed in Domo.                                                                                                                                                                                                                                               |
+| Email           | email              | The user's email address. Domo uses this value as the unique identifier for the person's account, so any value included for Email will overwrite the SAML Subject value in the SAML assertion. Domo also uses this email address to send any notifications and alerts to the user.                                                  |
+| Alternate email | email.secondary    | A secondary contact email for the user. Domo does not use this email address for any communications.                                                                                                                                                                                                                                |
+| Role            | role               | The IdP can set the role of the user at each login. The role must match exactly (including case sensitivity) a valid role in your Domo instance.                                                                                                                                                                                    |
+| Employee ID     | employee.id        | Must be alphanumeric                                                                                                                                                                                                                                                                                                                |
+| Hire date       | hire.date          | Format: YYYY-MM-DD                                                                                                                                                                                                                                                                                                                  |
+| Title           | title              | Example: Software Engineer                                                                                                                                                                                                                                                                                                          |
+| Department      | department         | Example: Sales                                                                                                                                                                                                                                                                                                                      |
+| Location        | location           | Example: Utah                                                                                                                                                                                                                                                                                                                       |
+| Mobile Phone    | user.phone         | Accepts any combination of numbers and the characters +()-x. For example: +1 (555) 555-5555 x 5555                                                                                                                                                                                                                                  |
+| Desk phone      | desk.phone         | Accepts any combination of numbers and the characters +()-x. For example: +1 (555) 555-5555 x 5555                                                                                                                                                                                                                                  |
 | Locale          | locale             | Sets the preferred language, metrics, and formatting in Domo. Valid values: de-DE, de-AT, de-CH, en-AU, en-CA, en-150, en-HK, en-IE, en-IN, en-IL, en-MO, en-NZ, en-SG, en-GB, en-US, en-001, es-ES, es-US, es-419, es-MX, fr-BE, fr-CA, fr-FR, fr-CH, nl-BE, nl-NL, pt-BR, pt-PT, ja-JP, zh-CN, zh-Hans-HK, zh-Hans-MO, zh-Hans-SG |
-| Timezone        | timezone           | For example: America/Denver or Asia/Tokyo. For a full list of valid timezone settings, see this article: timezones |
-| Group           | group              | A list of XML escaped strings |
+| Timezone        | timezone           | For example: America/Denver or Asia/Tokyo. For a full list of valid timezone settings, see this article: timezones                                                                                                                                                                                                                  |
+| Group           | group              | A list of XML escaped strings                                                                                                                                                                                                                                                                                                       |
 
-The payload must signed using the provided secret and be encoded using an HS algorithm (we encourage HS256). A great site for learning more about JWT’s, creating them for testing purposes and finding access to different code repositories for creating and signing JWT’s is <a href="http://jwt.io" target="_blank" rel="noopener">jwt.io</a>.
+The payload must be signed using the provided secret and be encoded using an HS algorithm (we encourage HS256). A great site for learning more about JWT’s, creating them for testing purposes and finding access to different code repositories for creating and signing JWT’s is <a href="http://jwt.io" target="_blank" rel="noopener">jwt.io</a>.
 
 Sample JWT payload:
 
