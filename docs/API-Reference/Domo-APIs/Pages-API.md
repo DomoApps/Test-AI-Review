@@ -1,26 +1,19 @@
-
 # Pages API
 
-**Create Subpage**
-----------------------
+## Create Subpage
 
-**Method**: `POST`  
-**Endpoint**: `/api/content/v1/pages`
+**Method:** `POST`  
+**Endpoint:** `/api/content/v1/pages`
 
-**Request Parameters**:
+### Request Parameters
 
-*   `parentPageId` - The ID of the parent page where the new subpage will be created.
-    *   Param Type: String
-    *   Required
-*   `title` - The title of the subpage.
-    *   Param Type: String
-    *   Required
-*   `hasLayout` - Specifies if the page should have a layout.
-    *   Param Type: Boolean
-    *   Optional
-    *   Default: true
+| Property Name | Type   | Required | Description                        |
+| --------------|--------|----------|------------------------------------|
+| parentPageId  | String | yes      | ID of the parent page              |
+| title         | String | yes      | Title of the subpage               |
+| hasLayout     | Boolean| no, default is true | Whether the page should have a layout |
 
-**Example**:
+### Example
 
 ```json
 {
@@ -38,59 +31,56 @@
 }
 ```
 
-**Response**:  
+### Response
 
-*   **Success (200)**: Page created successfully.
-*   **Forbidden (403)**: Operation not permitted.
-*   **Conflict (409)**: Conflict encountered, such as a duplicate title.
+**Success (200):** Page created successfully.  
+**Forbidden (403):** Operation not permitted.  
+**Conflict (409):** Conflict encountered (e.g., duplicate title).
 
 ```json
 200:
 {
-    "pageId": 11111111,
-    "parentPageId": 2222222,
-    "ownerId": 123123123,
-    "owners": [
-        {
-            "id": 123123123,
-            "type": "USER",
-            "displayName": null
-        }
-    ],
-    "type": "page",
-    "title": "Test Subpage",
-    "pageName": "Test Subpage",
-    "locked": false,
-    "mobileEnabled": true,
-    "sharedViewPage": true,
-    "metadata": "{\"pageTitle\":\"Test Subpage\",\"title\":\"Test Subpage\",\"type\":\"page\"}",
-    "virtualPage": false,
-    "hasLayout": true
+  "pageId": 11111111,
+  "parentPageId": 2222222,
+  "ownerId": 123123123,
+  "owners": [
+    {
+      "id": 123123123,
+      "type": "USER",
+      "displayName": null
+    }
+  ],
+  "type": "page",
+  "title": "Test Subpage",
+  "pageName": "Test Subpage",
+  "locked": false,
+  "mobileEnabled": true,
+  "sharedViewPage": true,
+  "metadata": "{\"pageTitle\":\"Test Subpage\",\"title\":\"Test Subpage\",\"type\":\"page\"}",
+  "virtualPage": false,
+  "hasLayout": true
 }
 ```
 
 ---
-**Bulk Move Pages**
------------------------
 
-**Method**: `PUT`  
-**Endpoint**: `/api/content/v1/pages/bulk/move`
+## Bulk Move Pages
 
-**Request Parameters**:
+**Method:** `PUT`  
+**Endpoint:** `/api/content/v1/pages/bulk/move`
 
-*   `pageIds` - IDs of pages to move.
-    *   Param Type: Array of Numbers
-    *   Required
-*   `parentPageId` - ID of the new parent page.
-    *   Param Type: Number
-    *   Required
-*   `pagePermission` - Permission for the pages.
-    *   Param Type: String
-    *   Required
-    *   Param Options:
-        *   `"ORIGINAL"`
+### Request Parameters
 
-**Example**:
+| Property Name  | Type              | Required | Description              |
+|----------------|-------------------|----------|--------------------------|
+| pageIds        | Array of Numbers | yes      | IDs of pages to move     |
+| parentPageId   | Number            | yes      | ID of the new parent page|
+| pagePermission | String            | yes      | Permission for the pages |
+
+**Valid Options for `pagePermission`:**
+- `"ORIGINAL"`
+
+### Example
 
 ```json
 {
@@ -108,29 +98,27 @@
 }
 ```
 
-**Response**:  
+### Response
 
-*   **Success (200)**: Pages moved successfully.
-*   **Forbidden (403)**: Permission denied.
-*   **Conflict (409)**: Conflict encountered, such as permission constraints.
+**Success (200):** Pages moved successfully.  
+**Forbidden (403):** Permission denied.  
+**Conflict (409):** Conflict encountered (e.g., permission constraints).
 
 ---
-**Revoke Page Access**
---------------------------
 
-**Method**: `DELETE`  
-**Endpoint**: `/api/content/v1/share/page/{pageId}/user/{personId}`
+## Revoke Page Access
 
-**Path Parameters**:
+**Method:** `DELETE`  
+**Endpoint:** `/api/content/v1/share/page/{pageId}/user/{personId}`
 
-*   `pageId` - ID of the page for access revocation.
-    *   Param Type: Number
-    *   Required
-*   `personId` - ID of the user whose access is being revoked.
-    *   Param Type: Number
-    *   Required
+### Path Parameters
 
-**Example**:
+| Property Name | Type   | Required | Description                        |
+|---------------|--------|----------|------------------------------------|
+| pageId        | Number | yes      | ID of the page                    |
+| personId      | Number | yes      | ID of the user                    |
+
+### Example
 
 ```json
 {
@@ -143,10 +131,9 @@
 }
 ```
 
-**Response**:  
+### Response
 
-*   **Success (200)**: Access revoked successfully.
-*   **Forbidden (403)**: Operation not permitted.
-*   **Conflict (409)**: Conflict encountered while attempting to revoke access.
+**Success (200):** Access revoked successfully.  
+**Forbidden (403):** Operation not permitted.  
+**Conflict (409):** Conflict encountered while attempting to revoke access.
 
----
