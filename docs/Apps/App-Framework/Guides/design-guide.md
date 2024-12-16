@@ -164,7 +164,7 @@ When coloring multi-series charts, be sure to alternate the color saturation. Ch
     <span style="background:#e45621;">#e45621</span>
 </div>
 
-## Typography
+### Typography
 
 ---
 
