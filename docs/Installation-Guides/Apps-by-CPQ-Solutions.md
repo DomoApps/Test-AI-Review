@@ -4,7 +4,7 @@ stoplight-id: s0d3jnjv57vb5
 
 <div class="col-md-12 content-panel">
                 <h2>Apps by CPQ Solutions</h2>
-                <p></p><p>Thanks for installing and test driving an<span id="title">&nbsp;app from the Domo Appstore</span>! &nbsp;This app was developed and published by CPQ Solutions, a&nbsp;Domo App Publisher.</p>
+                <p></p><p>Thanks for installing and test-driving an<span id="title">&nbsp;app from the Domo Appstore</span>! &nbsp;This app was developed and published by CPQ Solutions, a&nbsp;Domo App Publisher.</p>
 <div id="Step%201:%20Identify%20Required%20Data%20Fields" class="doc-row">
 <div class="small-pad-bottom">
 <h3>Next Steps</h3>

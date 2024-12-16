@@ -148,8 +148,18 @@
       "items": [
         {
           "type": "item",
-          "title": "Workflows API",
-          "uri": "docs/API-Reference/Product-APIs/Workflows.yaml"
+          "title": "Search API",
+          "uri": "docs/API-Reference/Product-APIs/Search.md"
+        },
+        {
+          "type": "item",
+          "title": "Task Center API",
+          "uri": "docs/API-Reference/Product-APIs/TaskCenter.md"
+        },
+        {
+          "type": "item",
+          "title": "Users API",
+          "uri": "docs/API-Reference/Product-APIs/Users.md"
         },
         {
           "type": "item",
@@ -266,6 +276,11 @@
                   "type": "item",
                   "title": "Basic Todo App",
                   "uri": "docs/Apps/App-Framework/Tutorials/React/Todo-App.md"
+                },
+                {
+                  "type": "item",
+                  "title": "Mapbox World App",
+                  "uri": "docs/Apps/App-Framework/Tutorials/React/Mapbox-World-App.md"
                 }
               ]
             }
@@ -284,6 +299,21 @@
               "type": "item",
               "title": "domo.js",
               "uri": "docs/Apps/App-Framework/Tools/domo.js.md"
+            },
+            {
+              "type": "item",
+              "title": "Query",
+              "uri": "docs/Apps/App-Framework/Tools/query.md"
+            },
+            {
+              "type": "item",
+              "title": "Phoenix (charting)",
+              "uri": "docs/Apps/App-Framework/Tools/phoenix.md"
+            },
+            {
+              "type": "item",
+              "title": "Toolkit",
+              "uri": "docs/Apps/App-Framework/Tools/toolkit.md"
             }
           ]
         },
@@ -291,6 +321,11 @@
           "type": "group",
           "title": "Guides",
           "items": [
+            {
+              "type": "item",
+              "title": "Managing, Editing, and Saving Your App in the Pro-Code Editor",
+              "uri": "/docs/Apps/App-Framework/Guides/manage-save-pro-code.md"
+            },
             {
               "type": "item",
               "title": "The Manifest File",
@@ -407,6 +442,72 @@
     },
     {
       "type": "divider",
+      "title": "Automate Actions"
+    },
+    {
+      "type": "item",
+      "title": "Overview",
+      "uri": "docs/Automate-Actions/overview.md"
+    },
+    {
+      "type": "group",
+      "title": "Workflows",
+      "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/Automate-Actions/Workflows/overview.md"
+        },
+        {
+          "type": "item",
+          "title": "Workflows API",
+          "uri": "docs/Automate-Actions/Workflows.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Start a workflow",
+          "uri": "docs/Automate-Actions/Workflows/Workflows.md"
+        },
+        {
+          "type": "item",
+          "title": "Canceling a workflow",
+          "uri": "docs/Automate-Actions/Workflows/Canceling-a-workflow.md"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Code Engine",
+      "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/Automate-Actions/Code-Engine/overview.md"
+        },
+        {
+          "type": "item",
+          "title": "Code Engine API",
+          "uri": "docs/Automate-Actions/Code-Engine/api.md"
+        },
+        {
+          "type": "item",
+          "title": "JavaScript Libraries",
+          "uri": "docs/Automate-Actions/Code-Engine/javascript-libraries.md"
+        },
+        {
+          "type": "item",
+          "title": "Python Packages",
+          "uri": "docs/Automate-Actions/Code-Engine/python-packages.md"
+        },
+        {
+          "type": "item",
+          "title": "Global Code Engine Packages",
+          "uri": ""
+        }
+      ]
+    },
+    {
+      "type": "divider",
       "title": "Partner Developers"
     },
     {
@@ -478,6 +579,11 @@
           "type": "item",
           "title": "Getting Data Overview",
           "uri": "docs/Partner-Developers/Guides/getting-data-overview.md"
+        },
+        {
+          "type": "item",
+          "title": "Start a Remote Workflow",
+          "uri": "docs/Partner-Developers/Guides/start-a-remote-workflow.md"
         }
       ]
     },
