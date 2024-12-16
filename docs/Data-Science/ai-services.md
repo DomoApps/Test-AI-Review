@@ -8,9 +8,9 @@ Empower your enterprise with AI-guided experiences, chat-style data exploration,
 
 See [ai.domo.com](https://ai.domo.com/) for the latest product updates. See below for help resources.
 
-## Tools and Capabilities
-
-### Data Prep & Analysis 
+### Tools and Capabilities
+---
+#### Data Prep & Analysis 
 - [**AI Readiness**](https://domo-support.domo.com/s/article/000005561?language=en_US): To get the most value from Domo.AI, we recommend preparing your data using AI Readiness. AI Readiness is available in the Details view of every DataSet in the Data Center.
 - [**AI Chat**](https://domo-support.domo.com/s/article/000005539?language=en_US): Domo.AI Chat lets you talk with your data from inside Domo using a familiar chat interface. AI Chat is context-aware, referencing DataSets and cards hosted either by an App Studio app or by the dashboard you are currently viewing. You can access a detailed breakdown of each step the model took to answer your question, and AI Chat also suggests additional questions to help you go deeper. AI Chat is session-specific, storing chats from past sessions that you can view in the chat history. See a [live demo](https://www.youtube.com/live/hUpEM9VZUFg?si=qA_2jsEzBR6FRyl6&t=185) or [tips for using AI Chat](https://www.youtube.com/live/hUpEM9VZUFg?t=857s).
   *Note: AI Chat is currently available for all consumption customers*
@@ -30,7 +30,7 @@ See [ai.domo.com](https://ai.domo.com/) for the latest product updates. See belo
     - [Text-to-SQL Query Brick](https://www.domo.com/appstore/app/explain-sql-with-ai/overview): Use ChatGPT to generate SQL ([live demo](https://www.youtube.com/live/zaCSgsjjp7M?si=pbkNwTgaKqccQeTz&t=1087)).
 
 
-### Modeling
+#### Modeling
 
 - [**AI Models**](https://domo-support.domo.com/s/article/000005502?language=en_US): AI Models is the place to store and manage models ([live demo](https://www.youtube.com/live/f4L7bc52snE?si=PHf0BWkeKrCkC8GU&t=620)); see details about your models and compare their performance ([live demo](https://www.youtube.com/live/f4L7bc52snE?si=yDqC7YA9R01KzhyW&t=248)); and deploy your models for use with other Domo tools ([live demo](https://www.youtube.com/live/zaCSgsjjp7M?si=Z9co1efM3E7W2MMD&t=1988)).
   
@@ -41,32 +41,33 @@ See [ai.domo.com](https://ai.domo.com/) for the latest product updates. See belo
 - [**AI Service Layer Settings**](https://domo-support.domo.com/s/article/000005279?language=en_US): View details about and change the Domo Default Model associated with various  Domo.AI tools and services through the AI Service Layer Settings.
   
 
-## Security and Privacy
+### Security and Privacy
+---
 [Frequently Asked Questions](https://web-assets.domo.com/blog/wp-content/uploads/2024/07/Domo.AI-and-DomoGPT-Security-and-Privacy-FAQ-2.pdf)
 
 
-## Videos and Webinars
-
+### Videos and Webinars
+---
 [**Preview of Universal Models (July 2024)**](https://www.youtube.com/live/v6t0ldqC5b0?si=Dijrr1mflyX0wtUA&t=208
 )
 
 *Universal Models are pre-built AI models crafted for wide accessibility, providing significant benefits to low-code users. Multiple Universal Models, including Forecasting, Personal Data Protection, and Sentiment Analysis, will be available in the coming months. See the slide deck shared in the webinar [here](https://github.com/domoinc/domo-data-science-resources/blob/main/webinars/Domo_Universal_Models_240725.pdf).* 
 
 
-**Demos of NEW Domo AI Tools (Nov 2023)**
+#### Demos of NEW Domo AI Tools (Nov 2023)
 
 https://www.youtube.com/watch?v=zaCSgsjjp7M&t=392s
 
 *Learn about Advanced Dataset Views, Text-to-Beast-Mode in Analyzer, using Large Language Models (LLMs) in Domo Bricks, Model Management, and Model Comparisons*
 
 
-**Q&A Panel Session With Domo AI Experts**
+#### Q&A Panel Session With Domo AI Experts
 
 https://youtu.be/Mk83Dk7QEvg?si=_DKO057i8F99M5fh&t=25
 
 *AI experts from Domo share insights on how to adopt & integrate AI into your company effectively & responsibly*
 
-**AI Ready: Is Your Data Clean Enough?**
+#### AI Ready: Is Your Data Clean Enough?
 
 https://youtu.be/JCFkPcwMZY0?si=02cD_OzUc8bbZPZr&t=1226
 
@@ -75,13 +76,13 @@ https://youtu.be/JCFkPcwMZY0?si=02cD_OzUc8bbZPZr&t=1226
 - [Data cleanliness checklist](https://github.com/domoinc/domo-data-science-resources/blob/main/webinars/Data_Cleanliness_Checklist.pdf)
 
 
-**[Considerations When Choosing a Large Language Model (LLM)](https://www.youtube.com/live/JixQtwvp-2o?si=iBSKcW8I4EQQJ2Fn&t=743)**
+#### [Considerations When Choosing a Large Language Model (LLM)](https://www.youtube.com/live/JixQtwvp-2o?si=iBSKcW8I4EQQJ2Fn&t=743)
 
 *Learn how to expertly select and apply LLMs to match your specific AI needs*
 
 
-## Other Resources
-
+### Other Resources
+---
 - [AI Service Layer App Framework APIs](../Domo-App-APIs/AI-Service-Layer-API.md)
 - [Domo.AI Knowledge Base Articles](https://domo-support.domo.com/s/topic/0TO5w000000ZmGPGA0/domoai?language=en_US)
 - Blog: [Domo’s AI Service Layer—A New Way to Use AI that Connects Innovation to Impact](https://www.domo.com/blog/domos-ai-service-layer/) by Domo CTO Daren Thayne

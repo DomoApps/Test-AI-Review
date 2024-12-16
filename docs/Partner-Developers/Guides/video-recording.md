@@ -5,7 +5,7 @@ The Domo Appstore allows all apps published to have a short video presentation o
 ## Requirements
 Before starting to record a video, it is important to understand the requirements. Make sure the following is in order before starting:
 <ul>
- 	<li>Download a screen recording software (ScreenFlow, Camtasia, etc)</li>
+ 	<li>Download a screen recording software (ScreenFlow, Camtasia, etc.)</li>
  	<li>Make sure you have a microphone</li>
  	<li>Videos must be in a .mp4 format</li>
  	<li>Videos must be 55 seconds long</li>
@@ -38,7 +38,7 @@ Creating a storyboard helps you describe each visual effectively while recording
 The video recording should run very smooth if the previous preparation steps were followed correctly. Follow these next steps to start recording.
 <ul>
  	<li>Step 1: Create a screenshot or icon of your app to be the cover photo for your video. You will either add this to the template yourself or send it with video fill to Domo to compile.</li>
- 	<li>Step 2: Create the 55 second app show case video. We recommend completing the audio portion first and then using the finalized audio to record the visual presentation of the app. Then compile the audio and visual recordings into one video using video editing software (ScreenFlow, Camtasia, etc).</li>
+ 	<li>Step 2: Create the 55-second app showcase video. We recommend completing the audio portion first and then using the finalized audio to record the visual presentation of the app. Then compile the audio and visual recordings into one video using video editing software (ScreenFlow, Camtasia, etc).</li>
  	<li>Step 3: Add the video to the <a href="https://s3.amazonaws.com/development.domo.com/wp-content/uploads/2016/02/16114731/New-Appstore-Template.aep_.zip"> Adobe After Effects Template</a> and follow the template instructional video below.</li>
  	<li>Step 4: Export file using the H.264 format to produce an .mp4</li>
 </ul>
@@ -59,9 +59,9 @@ In this section, we provide some of the best practices for recording your app.
 <ul>
  	<li><span class="s1"> </span><span class="s1">A hook/quick explanation of the problem</span></li>
  	<li>“Salesy” and compelling language aimed to get the viewer excited about buying your app</li>
- 	<li>Talk about things that can easily correspond to what is going on on the screen to avoid dead time in the video</li>
+ 	<li>Talk about things that can easily correspond to what is going on the screen to avoid dead time in the video</li>
  	<li>Restating the problem at the end</li>
- 	<li>Ending with a call to action (e.g. “Go to the Domo Appstore and try this app today!")</li>
+ 	<li>Ending with a call to action (e.g. "Go to the Domo Appstore and try this app today!")</li>
 </ul>
 </li>
 </ul>

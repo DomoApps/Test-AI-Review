@@ -2,8 +2,7 @@
 stoplight-id: pg9t2vdbix5un
 ---
 
-## Data Science Accelerators
----
+# Data Science Accelerators
 <!-- theme: info -->
 
 > Accelerators are packaged automation tools using Jupyter Workspaces that simplify and streamline different parts of the data science process to remove speed bumps and accelerate results.
@@ -12,7 +11,7 @@ stoplight-id: pg9t2vdbix5un
 
 
 ### Data Profiler
-
+---
 https://www.youtube.com/watch?v=9CXoYW-wG-g&t=2588s
 
 *Conducts an automated exploratory analysis of all variables in your dataset; creates a Domo dashboard with a correlation matrix card that shows the correlations between variables, histogram and bar chart cards that show the distribution of variables, and scatterplot and bar chart cards that show the relationships between variables* 
@@ -21,7 +20,7 @@ For files and instructions to set up the Data Profiler Accelerator, see the [Dat
 
 
 ### Data Anonymizer
-
+---
 https://www.youtube.com/watch?v=Hymy521A7l4&t=705s
 
 *Creates an anonymized version of your dataset. The anonymized dataset maintains the aggregate characteristics of your dataset (i.e., correlations between and distributions of variables) without revealing information about observations within your dataset*
@@ -31,7 +30,7 @@ For files and instructions to set up the Data Anonymizer Accelerator, see the [D
 
 
 ### Model Insights Tool (Beta)
-
+---
 Creates a comprehensive Model Insights dashboard that includes the following.
 - Live model performance evaluation.
 - Model monitoring (monitors overall and feature drift as well as proper model pipeline function)

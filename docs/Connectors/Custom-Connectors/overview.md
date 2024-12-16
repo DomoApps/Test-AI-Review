@@ -35,7 +35,7 @@ Icons allow users to quickly identify your connector. The four images you need f
 
 ### Configure User Authentication
 ---
-The Connector Builder provides four different authentication methods:
+The Connector Builder supports four different authentication methods:
 <ul>
  	<li>No authentication</li>
  	<li>Username and password</li>
@@ -43,14 +43,14 @@ The Connector Builder provides four different authentication methods:
  	<li>OAuth 2.0</li>
 </ul>
 
-Here is an example of the authentication process for <strong>username and password</strong>. For a detailed description of the different methods, see the [Configure Authentication](configure-authentication.md) section. For code examples, see [Examples](examples.md).
+Here is an example of writing authentication code for an API that uses <strong>username and password</strong>. For a detailed description of the different methods, see the [Configure Authentication](configure-authentication.md) section. For code examples, see [Examples](examples.md).
 
-After selecting an authentication method and filling out the authentication fields, write a code block to validate the API's credentials.
+Selecting an authentication method determines the metadata available to use in your authentication script.  After selecting an authentication method and filling out the authentication fields, write a code block to validate the API's credentials.
 
 <!-- theme: info -->
 
 > #### Note
->The code block needs to determine and set the authentication to either <em>`auth.authenticationSuccess()`</em> or <em>`auth.authenticationFailed('Insert your message')`</em>.
+>The code block needs to determine and set the status of the API credential validation code to either <em>`auth.authenticationSuccess()`</em> or <em>`auth.authenticationFailed('Insert your message')`</em>.  The messsage provided to the <em>auth.authenticationFailed</em> method will be displayed to users when the connector is run if the authentication fails.
 
 <img class="alignnone size-full wp-image-3975" src="https://web-assets.domo.com/blog/wp-content/uploads/2022/02/UserAuth.png" alt="" width="1160" height="523" />
 

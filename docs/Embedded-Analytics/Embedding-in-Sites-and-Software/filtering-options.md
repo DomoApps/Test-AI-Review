@@ -47,7 +47,7 @@ All these filter types are layered in the sequence below:
 <strong>Documentation:</strong> <a href="https://github.com/domoinc/domo-node-embed-filters/blob/master/public/jsapi.js" rel="noopener" target="_blank">JS API Sample Code Repo </a>
 <ul>
 	<li>Outputs: The JS API listens for click events on the embedded content and passes them back up to the host page for cross-system links and interaction analytics. </li>
-	<li>Inputs: The JS API also completes the bi-directional passing of context by letting the host page push filters down into the embedded content </li>
+	<li>Inputs: The JS API also completes the bidirectional passing of context by letting the host page push filters down into the embedded content </li>
 	<li>Controls: The code above can be triggered by any external menu in the host page </li>
 </ul>
 
@@ -127,11 +127,11 @@ Here are some <a href="https://github.com/STEEZENS/domo-pfilters" rel="noopener"
 
 <strong>Definition:</strong> Client-side approach here contrasts from server-side approach above because these are meant to be visible and editable for viewers. The filters applied via the embed API through event ports and listeners.  
 
-<strong>Use case:</strong> Newer approach to applying external filter controls from the host page (like drop down menus outside of the iframe). Changes can be applied faster to multiple pieces of embedded content <strong><em>without forcing iframe refresh</em></strong>. Also supports bi-directional context passing (where click events on the embedded content can also be passed back to the home page for cross-iframe or cross-page drills, links, and interactions.) 
+<strong>Use case:</strong> Newer approach to applying external filter controls from the host page (like drop down menus outside of the iframe). Changes can be applied faster to multiple pieces of embedded content <strong><em>without forcing iframe refresh</em></strong>. Also supports bidirectional context passing (where click events on the embedded content can also be passed back to the home page for cross-iframe or cross-page drills, links, and interactions.) 
 
 <strong>Warning:</strong> JS API (here) and Pfilters (below) are not a secure replacement for Programmatic Filters because the client-side parameters can be seen and changed by viewers by either glancing at the URL or inspecting the content. These should only be used for filters that aid exploration. 
 
-<strong>Note:</strong> The <strong><em>main pre-requisite</em></strong> is population of the “Embed Authorized Domains” whitelist. This whitelist drives a CSP (content security policy) which ensures these bi-directional signals are only sent in ports for sites you approve:
+<strong>Note:</strong> The <strong><em>main pre-requisite</em></strong> is population of the “Embed Authorized Domains” whitelist. This whitelist drives a CSP (content security policy) which ensures these bidirectional signals are only sent in ports for sites you approve:
 
 <img src="https://web-assets.domo.com/blog/wp-content/uploads/2022/08/FilteringOptions5.png" />
 
@@ -153,11 +153,11 @@ https://player.vimeo.com/video/515861680
 
 <h3><strong>Additional App Studio URL parameter </strong></h3>
 
-<strong>Definition:</strong> For additional control over an embedded App Studio app, the URL param <em>overrideFilters</em> can be added to provide more control over whether or not an app should load up its saved default filters. When <em>overrideFilters=true</em>, the App Studio app will not load up any filters, instead, it will wait for a filter event from the parent before loading filters. When <em>overrideFilters=false</em> or when not provided, the filters saved to the default filter view of an App Studio app will load.
+<strong>Definition:</strong> For additional control over an embedded App Studio app, the URL param <em>overrideFilters</em> can be added to provide more control over whether an app should load up its saved default filters. When <em>overrideFilters=true</em>, the App Studio app will not load up any filters, instead, it will wait for a filter event from the parent before loading filters. When <em>overrideFilters=false</em> or when not provided, the filters saved to the default filter view of an App Studio app will load.
 
-<strong>Use Case:</strong> If you are actively applying filters to an embeded App Studio app, this parameter will help prevent getting in a mixed filtered state where the nested app may load up its own and get out of sync with the parent OR change the intended filters meant to be passed to the app.
+<strong>Use Case:</strong> If you are actively applying filters to an embedded App Studio app, this parameter will help prevent getting in a mixed filtered state where the nested app may load up its own and get out of sync with the parent OR change the intended filters meant to be passed to the app.
 
-<strong>Warning:</strong> If setting <em>overrideFilters=true</em>, filters will not load up <strong>UNTIL</strong> the parent communicates a filter state using the <em>/v1/filters/apply</em> event. Even if it is an empty filter state, the parent must communicate it to the embeded App Studio App.
+<strong>Warning:</strong> If setting <em>overrideFilters=true</em>, filters will not load up <strong>UNTIL</strong> the parent communicates a filter state using the <em>/v1/filters/apply</em> event. Even if it is an empty filter state, the parent must communicate it to the embedded App Studio App.
 
 ## DOMO INTERACTIONS
 

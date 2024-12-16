@@ -10,7 +10,7 @@ User management API is a fast and convenient way for people to create and manage
 ---
 Domo User Management API is used to enable the following experiences:
 
- - **User Creation:** User management allows you to quickly add, update, or delete users within your Domo instance with minimal effort by each individual effort.
+- **User Creation:** User management allows you to quickly add, update, or delete users within your Domo instance with minimal effort by each individual effort.
 - **Personalization:** Personalizing user profile information creates a more social and personal experience within Domo. Every time a user interacts inside Domo, having more personalized information about that user helps provide the context for others to know their position in the company, contact information, or their locale.
 - **Scaled Synchronization:** As more individuals leverage Domo within an organization, the User API enables you to keep user information up-to-date at an enterprise scale.
 

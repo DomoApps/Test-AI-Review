@@ -155,7 +155,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 
 ### Next steps
-
+---
 Congrats!  You’ve learned how to manage data permissions in Domo with Personalized Data Permission (PDP) policies. Learn about other ways you can leverage the DataSet API:
 
 - [DataSet Quickstart](quickstart.md)
@@ -164,6 +164,6 @@ Congrats!  You’ve learned how to manage data permissions in Domo with Personal
 - [DataSet API Reference](../../API-Reference/Domo-APIs/DataSet-API.yaml)
 
 ### Have additional questions?
-
+---
 No problem, we'd love to help. Explore our [documentation](https://knowledge.domo.com), answers to [frequently asked questions](https://dojo.domo.com/main), or join other developers in Domo's [Developer Forum](https://dojo.domo.com/t5/Domo-Developer/bd-p/DeveloperForum).  For further help, feel free to [email us](mailto:support@domo.com) or [contact our sales team](mailto:sales@domo.com).
 

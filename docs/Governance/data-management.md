@@ -77,7 +77,7 @@ Content-Type: application/json
 ### Updating a DataSet schema
 ---
 
-At times it is necessary to update the DataSet's schema.<!-- Please note that if a DataSet's schema. This sentence was not finished in original docs-->
+At times, it is necessary to update the DataSet's schema.<!-- Please note that if a DataSet's schema. This sentence was not finished in original docs-->
 
 #### Sample Request
 
