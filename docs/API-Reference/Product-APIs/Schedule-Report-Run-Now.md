@@ -1,4 +1,4 @@
-## Schedule Report Run Now 
+## Schedule Report and Send Now
 
 **Method**: `POST`  
 **Endpoint**: `api/content/v1/reportschedules/<REPORT_ID>/sendnow`
