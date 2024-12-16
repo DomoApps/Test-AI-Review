@@ -8,7 +8,7 @@ The Domo Data File Service is a centralized point in your Domo instance to manag
 
 Domo supports nearly 100 different file types across over 300 file extensions. Please reach out to Domo Support if you have a question about supported file types, as the list changes often.
 
-### Upload a file
+## Upload a file
 
 Uploading a new file can be accomplished through the following request. You will pass in the file to upload, and Domo will store it and generate a unique identifier for the file, which is returned to you.
 
@@ -60,7 +60,7 @@ Content-Type: application/json
 }
 ```
 
-### Upload a file revision
+## Upload a file revision
 
 The Files API provides versioning support for files that have been uploaded. You may add another version of a file by sending a `PUT` request to the files endpoint referencing the `fileId` of the file you wish to revise.
 
@@ -104,7 +104,7 @@ Content-Type: application/json
 }
 ```
 
-### Get all files metadata
+## Get all files metadata
 
 Each file that you upload has corresponding metadata. This endpoint allows you to list all the metadata for each file you have access to. If you want to limit the files returned, you can include query parameters that filter the response.
 
@@ -175,7 +175,7 @@ Content-Type: application/json
 ]
 ```
 
-### Get file metadata by ID
+## Get file metadata by ID
 
 Given a known file ID, this endpoint allows you to list the metadata for that specific file.
 
@@ -224,7 +224,7 @@ Content-Type: application/json
 }
 ```
 
-### Get revision metadata by ID
+## Get revision metadata by ID
 
 Given a known file revision ID, this endpoint allows you to list the metadata for that specific revision.
 
@@ -278,7 +278,7 @@ Content-Type: application/json
 }
 ```
 
-### Get all file revisions by ID
+## Get all file revisions by ID
 
 Given a known file ID, this endpoint fetches the revisions of the file.
 
@@ -334,7 +334,7 @@ Content-Type: application/json
 ]
 ```
 
-### Download a file
+## Download a file
 
 This endpoint fetches the file contents of a previously uploaded file, which can then be downloaded to the user's machine. You can optionally include a revisionId as a query parameter to fetch the contents of a specific revision.
 
@@ -421,7 +421,7 @@ Content-Type: application/json
 }
 ```
 
-### Duplicate a file
+## Duplicate a file
 
 This endpoint will create a new file object in Domo from an existing one.
 
@@ -478,7 +478,7 @@ Content-Type: application/json
 }
 ```
 
-### Delete a file
+## Delete a file
 
 Permanently deletes a File from your instance.
 
@@ -513,7 +513,7 @@ Returns the parameter of success or error based on the file Id being valid.
 HTTP/1.1 200 OK
 ```
 
-### Delete a file revision
+## Delete a file revision
 
 Deletes a specific revision of a file.
 
@@ -549,7 +549,7 @@ Returns the parameter of success or error based on the file Id being valid.
 HTTP/1.1 200 OK
 ```
 
-### Get file permissions
+## Get file permissions
 
 #### Code Example
 
@@ -592,7 +592,7 @@ Content-Type: application/json
 }
 ```
 
-### Update file permissions
+## Update file permissions
 
 #### Code Example
 
