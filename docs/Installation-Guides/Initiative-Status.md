@@ -4,7 +4,7 @@ stoplight-id: hk112ojvqp84v
 
 <div class="col-md-12 content-panel">
                 <h2>Initiative Status</h2>
-                <p></p><p>Thanks for installing and test driving&nbsp;Initiative Status! This guide is intended to help you connect this app to your own data. The first step is to ensure that your data follows the same schema (or structure) of the sample datasets that are currently powering the app. Fortunately, Domo has created some powerful data transformation tools to help, along with the step-by-step instructions provided below.</p>
+                <p></p><p>Thanks for installing and test-driving&nbsp;Initiative Status! This guide is intended to help you connect this app to your own data. The first step is to ensure that your data follows the same schema (or structure) of the sample datasets that are currently powering the app. Fortunately, Domo has created some powerful data transformation tools to help, along with the step-by-step instructions provided below.</p>
 <h3>Step 1: Prepare Your Data</h3>
 <p>This app requires creating the following custom datasets. To do this, you’ll need to ensure that you have each of these fields in Domo. Then you’ll need to use transforms to create datasets that follow the exact structure or schema of the datasets below. For help with Dataflows, Magic ETL, or BeastModes, please visit&nbsp;<a href="https://university.domo.com/">Domo University</a>.</p>
 <p><strong>SAMPLE_Project Tracker – Meta Data</strong></p>

@@ -79,7 +79,7 @@ these APIs require creating and managing clients (which include a `client id`, `
 
 ---
 
-Product APIs allow you to programatically do anything you could do as your user in the Domo UI. It requires [generating an access token in Domo](https://domo-support.domo.com/s/article/360042934494?language=en_US) that you pass to each request via the `X-DOMO-Developer-Token` header, which simulates the same request that the Domo product makes.
+Product APIs allow you to programmatically do anything you could do as your user in the Domo UI. It requires [generating an access token in Domo](https://domo-support.domo.com/s/article/360042934494?language=en_US) that you pass to each request via the `X-DOMO-Developer-Token` header, which simulates the same request that the Domo product makes.
 
 <!-- theme: warning -->
 

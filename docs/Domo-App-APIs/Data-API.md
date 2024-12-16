@@ -218,7 +218,7 @@ In this example, the `beastModeAlias` field is the alias provided to the column 
 > #### Warning
 > By adding the `useBeastMode=true` query string parameter to your data calls, some built-in query functionality is disabled.
 
-Traditionally, when not using beast modes in your request, if you provide a groupby operator but don't specify an aggregation operator, Domo will automatically sum the other columns for you (if they are numbers) or count them (if they are strings or dates). When beast mode is enabled, you must explicitly provide some sort of aggregation any time you use a groupby operator. That can either be by using an aggregation operator in the query string or by providing an aggregation function in the formula of your beast mode calculation. It must be thought of as structuring a SQL query, wherein if you create a SQL query that has a group by but not all of the fields in the SELECT statement were aggregated or included in the group by, SQL will throw an error. It might look something like this:
+Traditionally, when not using beast modes in your request, if you provide a groupby operator but don't specify an aggregation operator, Domo will automatically sum the other columns for you (if they are numbers) or count them (if they are strings or dates). When beast mode is enabled, you must explicitly provide some sort of aggregation any time you use a groupby operator. That can either be by using an aggregation operator in the query string or by providing an aggregation function in the formula of your beast mode calculation. It must be thought of as structuring a SQL query, wherein if you create a SQL query that has a group by but not all fields in the SELECT statement were aggregated or included in the group by, SQL will throw an error. It might look something like this:
 
 ```text
 ERROR: column “MY_TABLE.MY_COLUMN” must appear in the GROUP BY clause or be used in an aggregate function
@@ -250,7 +250,7 @@ domo.get('/data/v1/dataAlias?useBeastMode=true&fields=beastModeAlias,reps&groupb
 > You cannot use the filter operator on a beast mode that contains an aggregate function (the equivalent of a having clause which is not supported in Domo today).
 
 ### SQL API
-You can now use SQL to query your Domo DataSet as an alternative to using the Data API. You can use all of the same SQL you're used to with the exception of JOINs and trigonometric functions. For example:
+You can now use SQL to query your Domo DataSet as an alternative to using the Data API. You can use the same SQL you're used to except JOINs and trigonometric functions. For example:
 
 ```js
 domo.post('/sql/v1/dataAlias', 'SELECT * FROM dataAlias limit 100', {contentType: 'text/plain'})

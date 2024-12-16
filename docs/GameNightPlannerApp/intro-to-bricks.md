@@ -25,21 +25,19 @@ We're going to be building a powerful custom table application that can help us 
 To get started let's add a blank Domo Brick template to a Dashboard or App Studio canvas.
 
 1. Edit your Dashboard.
-![Screenshot 2024-03-22 at 10.05.58 AM.png](<../../assets/images/Screenshot 2024-03-22 at 10.05.58 AM.png>)
-
+![Screenshot 2024-03-22 at 10.05.58 AM.png](../../assets/images/Screenshot%202024-03-22%20at%2010.05.58%20AM.png)
 
 2. Drag the "App" Icon on to your Dashboard.
-![Screenshot 2024-03-22 at 10.08.39 AM.png](<../../assets/images/Screenshot 2024-03-22 at 10.08.39 AM.png>)
+![Screenshot 2024-03-22 at 10.08.39 AM.png](../../assets/images/Screenshot%202024-03-22%20at%2010.08.39%20AM.png)
 
 3. Search for the "Blank Brick" template to use and click "GET".
-![Screenshot 2024-03-22 at 10.15.40 AM.png](<../../assets/images/Screenshot 2024-03-22 at 10.15.40 AM.png>)
+![Screenshot 2024-03-22 at 10.15.40 AM.png](../../assets/images/Screenshot%202024-03-22%20at%2010.15.40%20AM.png)
 
 4. You should now see your blank brick on the Dashboard. Next you'll want to click "Edit Card" to enter the Brick Code Editor.
-![Screenshot 2024-03-22 at 10.19.33 AM.png](<../../assets/images/Screenshot 2024-03-22 at 10.19.33 AM.png>)
+![Screenshot 2024-03-22 at 10.19.33 AM.png](../../assets/images/Screenshot%202024-03-22%20at%2010.19.33%20AM.png)
 
 5. Explore the Bricks Editor and "Wiring Screen"
-
-![Screenshot 2024-03-22 at 10.23.07 AM.png](<../../assets/images/Screenshot 2024-03-22 at 10.23.07 AM.png>)
+![Screenshot 2024-03-22 at 10.23.07 AM.png](../../assets/images/Screenshot%202024-03-22%20at%2010.23.07%20AM.png)
 
 
 <!-- theme: warning -->
@@ -54,14 +52,14 @@ To get started let's add a blank Domo Brick template to a Dashboard or App Studi
 
 In this brick template, you can wire up to three different datasets. However, the sample code provided is only technically reading from `dataset0`.
 
-![Screenshot 2024-03-22 at 10.31.59 AM.png](<../../assets/images/Screenshot 2024-03-22 at 10.31.59 AM.png>)
+![Screenshot 2024-03-22 at 10.31.59 AM.png](../../assets/images/Screenshot%202024-03-22%20at%2010.31.59%20AM.png)
 
 The dropdown provides the `alias` used to refer to a particular wired Dataset. This is the name you'll use in your code when connecting to data.
 
 <!-- theme: warning -->
 > #### Bricks Limitation
 >
-> Each brick has it's own template that defines how many Datasets you can connect and what the aliases are named. You don't have control over this template for Domo Bricks, but do with Custom Apps.
+> Each brick has its own template that defines how many Datasets you can connect and what the aliases are named. You don't have control over this template for Domo Bricks, but do with Custom Apps.
 
 In the brick code, you will automatically have access to the `domo.js` library via the `domo` global variable as well as a list of the dataset aliases via the `datasets` global variable.
 
@@ -93,24 +91,24 @@ function handleResult(data){
 
 You can define the fields that you need access to, any aggregation logic, as well as the query to send to the Data API itself. Once the data is returned from Domo, the `handleResult` function is run and the data is printed in the console.
 
-If you right click and open the developer console, you should see the data printed out.
+If you right-click and open the developer console, you should see the data printed out.
 
-![Screenshot 2024-03-22 at 10.41.34 AM.png](<../../assets/images/Screenshot 2024-03-22 at 10.41.34 AM.png>)
+![Screenshot 2024-03-22 at 10.41.34 AM.png](../../assets/images/Screenshot%202024-03-22%20at%2010.41.34%20AM.png)
 
 2. Connect to a new dataset
 
-You can [download the data used in this tutorial at the following github repo here](https://github.com/DomoApps/game-night-planner-walkthrough/blob/main/data/Board_Game_Details_Dataset.csv). Once you've downloaded the data, you can use Domo's csv upload connector to get the data in Domo.
+You can [download the data used in this tutorial at the following GitHub repo here](https://github.com/DomoApps/game-night-planner-walkthrough/blob/main/data/Board_Game_Details_Dataset.csv). Once you've downloaded the data, you can use Domo's csv upload connector to get the data in Domo.
 
 Now lets wire up `dataset0` to a new Dataset. Select the button under "Select Dataset" and search for the name of the Dataset you just uploaded.
 
 You should now see a new Dataset displayed for `dataset0`. Note: you may need to click 
 "Save and Finish" and re-enter the Brick wiring screen to persist the new Dataset connection.
 
-![Screenshot 2024-03-22 at 2.41.29 PM.png](<../../assets/images/Screenshot 2024-03-22 at 2.41.29 PM.png>)
+![Screenshot 2024-03-22 at 2.41.29 PM.png](../../assets/images/Screenshot%202024-03-22%20at%202.41.29%20PM.png)
 
 But, if you click "Run" you'll notice that the default code in the brick not pulling the data correctly!
 
-![Screenshot 2024-03-22 at 2.43.43 PM.png](<../../assets/images/Screenshot 2024-03-22 at 2.43.43 PM.png>)
+![Screenshot 2024-03-22 at 2.43.43 PM.png](../../assets/images/Screenshot%202024-03-22%20at%202.43.43%20PM.png)
 
 
 There are a few things that we need to fix. First, we're requesting fields (`state` and `revenue`) and an aggregation (groupby `state`) in the Data API query. We can simplify our code to request all fields in the Dataset and remove the aggregation.
@@ -128,7 +126,7 @@ domo.get(query).then(handleResult);
 
 When you click "Run", you should now see ~21.6k records printed in the console.
 
-![Screenshot 2024-03-22 at 2.48.42 PM.png](<../../assets/images/Screenshot 2024-03-22 at 2.48.42 PM.png>)
+![Screenshot 2024-03-22 at 2.48.42 PM.png](../../assets/images/Screenshot%202024-03-22%20at%202.48.42%20PM.png)
 
 Congrats! You've successfully connected our brick to a new Dataset.
 
@@ -138,7 +136,7 @@ Next we want to actually display our data in a new table visual. We'll be using 
 
 You can check out more about the [Tabulator library in their documentation](https://tabulator.info/).
 
-![Screenshot 2024-03-22 at 2.52.49 PM.png](<../../assets/images/Screenshot 2024-03-22 at 2.52.49 PM.png>)
+![Screenshot 2024-03-22 at 2.52.49 PM.png](../../assets/images/Screenshot%202024-03-22%20at%202.52.49%20PM.png)
 
 
 <!-- theme: warning -->
@@ -208,7 +206,7 @@ As you can see by our basic setup, customizing our table is as simple as adjusti
       layout:"fitColumns",
       pagination:"local",
       paginationSize:10,
-      paginationSizeSelector:[10, 25, 50, 100],
+      paginationSizeSelector:[10, 25, 50, 100]
   }
 ```
 
@@ -252,23 +250,23 @@ This update added the columns to our table, but we'd like them formatted to look
 To turn our thumnail link into an image, let's update the columns configuration object that corresponds to `thumbnail` as follows:
 
 ```js
-{title:"Image", field:"thumbnail", formatter: "image"},
+{title:"Image", field:"thumbnail", formatter: "image"}
 ```
 
 If you click "Save and Finish", your table should now look like this:
 
 
-![Screenshot 2024-03-22 at 4.36.15 PM.png](<../../assets/images/Screenshot 2024-03-22 at 4.36.15 PM.png>)
+![Screenshot 2024-03-22 at 4.36.15 PM.png](../../assets/images/Screenshot%202024-03-22%20at%204.36.15%20PM.png)
 
 Adding start formatting is just as easy. Update the columns configuration object that corresponds to `average` as follows:
 
 ```js
-{title:"Stars", field:"average", formatter: "star"},
+{title:"Stars", field:"average", formatter: "star"}
 ```
 
 Looking much better already!
 
-![Screenshot 2024-03-22 at 4.38.39 PM.png](<../../assets/images/Screenshot 2024-03-22 at 4.38.39 PM.png>)
+![Screenshot 2024-03-22 at 4.38.39 PM.png](../../assets/images/Screenshot%202024-03-22%20at%204.38.39%20PM.png)
 
 #### Improve theming
 
@@ -284,7 +282,7 @@ For reference, the color scheme we will use is the follow:
 - **Tertiary Color:** Dark Gray `#555555`
 - **Accent Color:** Orange `#FF9922` (not using for now)
 
-![Screenshot 2024-03-22 at 4.45.22 PM.png](<../../assets/images/Screenshot 2024-03-22 at 4.45.22 PM.png>)
+![Screenshot 2024-03-22 at 4.45.22 PM.png](../../assets/images/Screenshot%202024-03-22%20at%204.45.22%20PM.png)
 
 To apply our new color scheme, all we need to do is add the following CSS to the CSS file:
 
@@ -328,7 +326,7 @@ To apply our new color scheme, all we need to do is add the following CSS to the
 ```
 Your "Domo-fied" table should look like the below:
 
-![Screenshot 2024-03-22 at 4.53.57 PM.png](<../../assets/images/Screenshot 2024-03-22 at 4.53.57 PM.png>)
+![Screenshot 2024-03-22 at 4.53.57 PM.png](../../assets/images/Screenshot%202024-03-22%20at%204.53.57%20PM.png)
 
 #### Create an editable column to mark ownership
 
@@ -363,7 +361,7 @@ function handleResult(data){
 
 Now you should be able to adjust the check mark in the `Own` column but clicking it.
 
-![Screenshot 2024-03-22 at 5.01.27 PM.png](<../../assets/images/Screenshot 2024-03-22 at 5.01.27 PM.png>)
+![Screenshot 2024-03-22 at 5.01.27 PM.png](../../assets/images/Screenshot%202024-03-22%20at%205.01.27%20PM.png)
 
 But wait! If we refresh the page, this edit doesn't persist anywhere...that's because we aren't storing the change anywhere in Domo. That's where AppDB will come in.
 

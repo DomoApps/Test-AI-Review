@@ -4,7 +4,7 @@ stoplight-id: 600e2b5914564
 
 # Domo Appstore
 
-Domo’s Appstore enables publishers to build and market their apps to thousands of decision makers in industries including high tech, financial services, media, life sciences, manufacturing, retail, and more. Help business decision makers answer their most pressing questions by submitting your app to Domo’s Appstore today.
+Domo’s Appstore enables publishers to build and market their apps to thousands of decision makers in industries including high-tech, financial services, media, life sciences, manufacturing, retail, and more. Help business decision makers answer their most pressing questions by submitting your app to Domo’s Appstore today.
 
 Note: The ability to publish content is available by request. If you’d like to submit content to publish in Domo’s Appstore, send an email with your name and instance URL to appsubmissions@domo.com.
 
@@ -13,7 +13,7 @@ Note: The ability to publish content is available by request. If you’d like to
 https://player.vimeo.com/video/390832478
 
 ## Quick Guide For Appstore Submission
-1. Ensure that your app meets all of the [Appstore Requirements](marketplace-requirements.md) before submitting it to the Appstore.
+1. Ensure that your app meets all the [Appstore Requirements](marketplace-requirements.md) before submitting it to the Appstore.
 2. Login to your Domo instance and go to the Domo Appstore.
 3. Select the + icon in the left navigation bar (if you don't see this icon, contact **[appsubmissions@domo.com](mailto:appsubmissions@domo.com)** to have it enabled).
 4. Select the type of app you are offering from the dropdown menu.
@@ -28,12 +28,12 @@ https://player.vimeo.com/video/390832478
 
 You can submit the following types of apps to Domo Appstore:
 
-- <strong>Dashboard.</strong> Publish a comprehensive solutions for solving a specific business question.
-- <strong>Code Block.</strong> Publish a Code Block that will enhance data visualizations with Beast Modes, Jupyter, Python, R, and SQL.
-- <strong>Card.</strong> Publish a single visualization.
-- <strong>Custom Chart.</strong> Publish a chart that will visualize data in a unique way.
-- <strong>Enterprise App.</strong> Publish a set of custom functionality built on top of [Domo’s App Dev Framework](../../Apps/App-Framework/Welcome.md).
-- <strong>Service.</strong> Advertise any other service that can help a company or provide functionality for other apps to use.
+- **Dashboard.** Publish a comprehensive solutions for solving a specific business question.
+- **Code Block.** Publish a Code Block that will enhance data visualizations with Beast Modes, Jupyter, Python, R, and SQL.
+- **Card.** Publish a single visualization.
+- **Custom Chart.** Publish a chart that will visualize data in a unique way.
+- **Enterprise App.** Publish a set of custom functionality built on top of [Domo’s App Dev Framework](../../Apps/App-Framework/Welcome.md).
+- **Service.** Advertise any other service that can help a company or provide functionality for other apps to use.
 
 ## Helpful Links
 
