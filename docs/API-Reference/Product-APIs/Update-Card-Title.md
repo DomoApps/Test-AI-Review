@@ -5,7 +5,7 @@
 
 **Example**:
 
-```json http
+```json
 {
   "method": "PUT",
   "url": "https://{instance}.domo.com/api/content/v1/cards/<CARD_ID>/title",
