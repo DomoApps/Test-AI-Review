@@ -4,7 +4,7 @@ stoplight-id: eeoadx67i6h46
 
 # Files API
 
-Custom Apps provides a convenient access point to the Domo Data File Service, a centralized point in your Domo instance to manage, secure, share, and govern all of your files. This enables your applications the ability to upload documents, images, spreadsheets, and many other supported media types for re-use at a later time. The service also provides a version history chain that you can use to track your changes over time for use in collaborating with your peers.
+Custom Apps provides a convenient access point to the Domo Data File Service, a centralized point in your Domo instance to manage, secure, share, and govern all of your files. This enables your applications to upload documents, images, spreadsheets, and many other supported media types for reuse at a later time. The service also provides a version history chain that you can use to track changes over time for collaboration with peers.
 
 <!-- theme: info -->
 
@@ -12,41 +12,46 @@ Custom Apps provides a convenient access point to the Domo Data File Service, a 
 >
 > Currently, Domo Bricks do not support the Files API.
 
+---
 
-### Uploading a file
+## Uploading a File
 
-Uploading a file can be accomplished through the following POST request. The `file` is a multipart upload file that you can select from your computer and add to a `FormData` object. The `name` query parameter is mandatory. The `description` query parameter takes a text-based description and is optional and the `public` query parameter takes a Boolean value and is also optional.
+Uploading a file can be accomplished through the following `POST` request. The `file` is a multipart upload file that you can select from your computer and add to a `FormData` object. The `name` query parameter is mandatory. The `description` query parameter takes a text-based description and is optional, and the `public` query parameter takes a Boolean value and is also optional.
 
-#### Code Example
-```js
-function uploadFile(name, description="", isPublic=false, file){
-  const formData  = new FormData();
+### Code Example
+
+```javascript
+function uploadFile(name, description="", isPublic=false, file) {
+  const formData = new FormData();
   formData.append('file', file);
-  const url = `/domo/data-files/v1?name=
-             ${name}&description=${description}&public=${isPublic}`;
+  const url = `/domo/data-files/v1?name=${name}&description=${description}&public=${isPublic}`;
   const options = { contentType: 'multipart' };
   return domo.post(url, formData, options);
 }
 ```
 
-#### Arguments
-| Property Name| Type | Required | Description |
-| --- | --- | --- | --- |
-|name | String | Required | The name to be given to the file in Domo|
-|description | String | Optional | A description of the file|
-|isPublic | Boolean | Optional | Whether the permissions of the file are set to public - this is false by default in the App Framework|
+### Arguments
 
-#### HTTP Request
+| Property Name | Type   | Required | Description                                                |
+| --------------|--------|----------|------------------------------------------------------------|
+| name          | String | Required | The name to be given to the file in Domo                  |
+| description   | String | Optional | A description of the file                                 |
+| isPublic      | Boolean| Optional | Whether the file permissions are set to public (default: false)|
+
+### HTTP Request
+
 ```text
 POST /domo/data-files/v1?name={name}&description={description}&public={isPublic} HTTP/1.1
 Accept: application/json
 ```
 
-#### Request Body
-The request body is a javascript `FormData()` object which supports a multipart upload. The name given to the `File` that is to be appended to the `FormData` object is 'file'.
+### Request Body
 
-#### HTTP Response
-Returns the id of the created file.
+The request body is a JavaScript `FormData()` object that supports a multipart upload. The name given to the file to be appended to the `FormData` object is `file`.
+
+### HTTP Response
+
+Returns the ID of the created file.
 
 ```json
 HTTP/1.1 200 OK
@@ -57,7 +62,8 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-### Uploading a file revision
+
+## Uploading a file revision
 
 The Files API provides versioning support for files that have been uploaded. You may add another version of a file by sending a `PUT` request to the files endpoint referencing the `fileId` of the file in which you wish to add a revision.
 
@@ -96,7 +102,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-### Get a list of files metadata
+## Get a list of files metadata
 
 Each file that you upload has corresponding metadata. This endpoint allows you to list all the metadata for each file you have access to. If you want to limit the files to just those that you uploaded you can provide a limitToOwned boolean flag as a query parameter.
 
@@ -156,7 +162,7 @@ Content-Type: application/json;charset=UTF-8
 ]
 ```
 
-### Get an individual file's metadata
+## Get an individual file's metadata
 
 Given a known file ID, this endpoint allows you to list the metadata for that specific file.
 
@@ -213,7 +219,7 @@ Content-Type: application/json;charset=UTF-8
     }
 ```
 
-### Download a file
+## Download a file
 
 Below is the basic request for downloading a file. Depending on the type of file, this endpoint can be referenced inline in your application or called via an HTTP request. In this example, the `responseType` of the XHR request is being set to `blob` so that our code can reference it as a binary large object when passing the response to the Download method.
 
@@ -260,7 +266,7 @@ HTTP/1.1 200 OK
 Content-Type: {mime-type of the file}
 ```
 
-### Delete a file
+## Delete a file
 
 Permanently deletes a File from your instance.
 
@@ -299,7 +305,7 @@ Returns the parameter of success or error based on the file Id and the revisionI
 HTTP/1.1 200 OK
 ```
 
-### Get file permissions
+## Get file permissions
 
 #### Code Example
 
@@ -340,7 +346,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-### Update file permissions
+## Update file permissions
 
 #### Code Example
 
@@ -389,7 +395,7 @@ HTTP/1.1 200 OK
 
 The Multi-part Files API allows for efficient upload, update, and management of large files in parts. It uses Domo’s Data File Service, supporting session-based file chunking for fault tolerance and enhanced control.
 
-### Creating a Multi-part Upload Session
+## Creating a Multi-part Upload Session
 
 To begin a multi-part file upload, create an upload session by calling `createSession`. This will return a session ID that is essential for uploading file parts.
 
@@ -447,7 +453,7 @@ Content-Type: application/json;charset=UTF-8
 
 ---
 
-### Creating a Multi-part Upload Update Session
+## Creating a Multi-part Upload Update Session
 
 To update a multi-part file, create an update session by calling `createUpdateSession` and passing in the fileId. This will return a session ID that is essential for uploading file parts.
 
@@ -508,7 +514,7 @@ Content-Type: application/json;charset=UTF-8
 
 ---
 
-### Uploading File Parts
+## Uploading File Parts
 
 After creating a session, upload the file in chunks. Each chunk is sent with a unique `index` and can optionally include a `checksum` for verification. The `checkSum` is used to verify the integrity of the uploaded chunk.
 
@@ -558,7 +564,7 @@ HTTP/1.1 200 OK
 
 ---
 
-### Completing a Multi-part Upload
+## Completing a Multi-part Upload
 
 Once all parts are uploaded, finalize the process with `complete`:
 
@@ -602,7 +608,7 @@ Content-Type: application/json;charset=UTF-8
 
 ---
 
-### Error Handling and Retry Mechanism
+## Error Handling and Retry Mechanism
 
 If a part upload fails, a retry mechanism limits the attempts per chunk, aborting the session after a specified count.
 
