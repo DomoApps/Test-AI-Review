@@ -323,6 +323,11 @@
           "items": [
             {
               "type": "item",
+              "title": "Getting started with the Pro-Code Editor",
+              "uri": "/docs/Apps/App-Framework/Guides/getting-started-pro-code.md"
+            },
+            {
+              "type": "item",
               "title": "Managing, Editing, and Saving Your App in the Pro-Code Editor",
               "uri": "/docs/Apps/App-Framework/Guides/manage-save-pro-code.md"
             },
