@@ -53,7 +53,7 @@ Create a Role based on an existing role's authorities
     "id": 1234567,
     "name": "",
     "description": ""
-}
+  }
 ```
 
 ---
@@ -133,18 +133,18 @@ Fetch a all Roles in an instance
 ```json
   HTTP/1.1 200 OK
   Content-Type: application/json;charset=UTF-8
-    [
-      {
-        "id": 1,
-        "name": "Admin",
-        "description": "Full access to everything",
-        "authorityCount": 94,
-        "userCount": 358,
-        "created": 1550093701000,
-        "modified": 1550093701000
-      },
-      ...
-    ]
+  [
+    {
+      "id": 1,
+      "name": "Admin",
+      "description": "Full access to everything",
+      "authorityCount": 94,
+      "userCount": 358,
+      "created": 1550093701000,
+      "modified": 1550093701000
+    },
+    ...
+  ]
 ```
 
 ---
