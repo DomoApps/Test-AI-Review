@@ -1,817 +1,948 @@
 {
-	"collapseTableOfContents": true,
-	"items": [
-		{
-			"type": "divider",
-			"title": "Getting Started"
-		},
+  "collapseTableOfContents": true,
+  "items": [
+    {
+      "type": "divider",
+      "title": "Getting Started"
+    },
 
-		{
-			"type": "item",
-			"title": "Overview",
-			"uri": "/docs/Getting-Started/overview.md"
-		},
-		{
-			"type": "item",
-			"title": "APIs",
-			"uri": "/docs/Getting-Started/api-authentication.md"
-		},
-		{
-			"type": "item",
-			"title": "SDKs",
-			"uri": "/docs/Getting-Started/sdks.md"
-		},
-		{
-			"type": "divider",
-			"title": "API Reference"
-		},
-		{
-			"type": "item",
-			"title": "Overview",
-			"uri": "docs/Getting-Started/api-authentication.md"
-		},
-		{
-			"type": "group",
-			"title": "Platform (OAuth) APIs",
-			"items": [
-				{
-					"type": "item",
-					"title": "API Authentication",
-					"uri": "docs/API-Reference/Domo-APIs/API-Authentication.yaml"
-				},
-				{
-					"type": "item",
-					"title": "Account API",
-					"uri": "docs/API-Reference/Domo-APIs/Account-API.yaml"
-				},
-				{
-					"type": "item",
-					"title": "Activity Log API",
-					"uri": "docs/API-Reference/Domo-APIs/Activity-Log-API.yaml"
-				},
-				{
-					"type": "item",
-					"title": "DataSet API",
-					"uri": "docs/API-Reference/Domo-APIs/DataSet-API.yaml"
-				},
-				{
-					"type": "item",
-					"title": "Embed Token API",
-					"uri": "docs/API-Reference/Embed-APIs/Embed-Token-API.yaml"
-				},
-				{
-					"type": "item",
-					"title": "Group API",
-					"uri": "docs/API-Reference/Domo-APIs/Group-API.yaml"
-				},
-				{
-					"type": "item",
-					"title": "Page API",
-					"uri": "docs/API-Reference/Domo-APIs/Page-API.yaml"
-				},
-				{
-					"type": "item",
-					"title": "Projects and Tasks API",
-					"uri": "docs/API-Reference/Domo-APIs/Projects-And-Tasks-API.yaml"
-				},
-				{
-					"type": "item",
-					"title": "Simple API",
-					"uri": "docs/API-Reference/Domo-APIs/Simple-API.yaml"
-				},
-				{
-					"type": "item",
-					"title": "Stream API",
-					"uri": "docs/API-Reference/Domo-APIs/Stream-API.yaml"
-				},
-				{
-					"type": "item",
-					"title": "User API",
-					"uri": "docs/API-Reference/Domo-APIs/User-API.yaml"
-				}
-			]
-		},
-		{
-			"type": "group",
-			"title": "App Framework APIs",
-			"items": [
-				{
-					"type": "item",
-					"title": "AI Service Layer API",
-					"uri": "docs/Domo-App-APIs/AI-Service-Layer-API.md"
-				},
-				{
-					"type": "item",
-					"title": "AppDB API",
-					"uri": "docs/Domo-App-APIs/AppDB-API.md"
-				},
-				{
-					"type": "item",
-					"title": "Code Engine API",
-					"uri": "docs/Domo-App-APIs/Code-Engine-API.md"
-				},
-				{
-					"type": "item",
-					"title": "Data API",
-					"uri": "docs/Domo-App-APIs/Data-API.md"
-				},
-				{
-					"type": "item",
-					"title": "Files API",
-					"uri": "docs/Domo-App-APIs/Files-API.md"
-				},
-				{
-					"type": "item",
-					"title": "Groups API",
-					"uri": "docs/Domo-App-APIs/Groups-API.md"
-				},
-				{
-					"type": "item",
-					"title": "Queues and Tasks API",
-					"uri": "docs/Domo-App-APIs/Queues-and-Tasks-API.md"
-				},
-				{
-					"type": "item",
-					"title": "User API",
-					"uri": "docs/Domo-App-APIs/User-API.md"
-				},
-				{
-					"type": "item",
-					"title": "Workflows API",
-					"uri": "docs/Domo-App-APIs/Workflows-API.md"
-				}
-			]
-		},
-		{
-			"type": "group",
-			"title": "Product APIs",
-			"items": [
-				{
-					"type": "item",
-					"title": "Workflows API",
-					"uri": "docs/API-Reference/Product-APIs/Workflows.yaml"
-				},
-				{
-					"type": "item",
-					"title": "Managing Dataset History API",
-					"uri": "docs/API-Reference/Product-APIs/Managing-Dataset-History.md"
-				}
-			]
-		},
-		{
-			"type": "divider",
-			"title": "Build Apps"
-		},
-		{
-			"type": "item",
-			"title": "Overview",
-			"uri": "docs/Apps/Overview.md"
-		},
-		{
-			"type": "group",
-			"title": "App Framework",
-			"items": [
-				{
-					"type": "item",
-					"title": "Welcome",
-					"uri": "/docs/Apps/App-Framework/Welcome.md"
-				},
-				{
-					"type": "group",
-					"title": "Quickstart",
-					"items": [
-						{
-							"type": "item",
-							"title": "Prerequisites",
-							"uri": "/docs/Apps/App-Framework/Quickstart/Prerequisites.md"
-						},
-						{
-							"type": "item",
-							"title": "Key Terminology",
-							"uri": "docs/Apps/App-Framework/Quickstart/Key-Terminology.md"
-						},
-						{
-							"type": "item",
-							"title": "Setup and Installation",
-							"uri": "/docs/Apps/App-Framework/Quickstart/Setup-and-Installation.md"
-						},
-						{
-							"type": "item",
-							"title": "Starter Kits",
-							"uri": "/docs/Apps/App-Framework/Quickstart/Starter-Kits.md"
-						},
-						{
-							"type": "item",
-							"title": "Tools",
-							"uri": "/docs/Apps/App-Framework/Quickstart/Tools.md"
-						},
-						{
-							"type": "item",
-							"title": "Best Practices",
-							"uri": "/docs/Apps/App-Framework/Quickstart/Best-Practices.md"
-						}
-					]
-				},
-				{
-					"type": "group",
-					"title": "Tutorials",
-					"items": [
-						{
-							"type": "group",
-							"title": "Vanilla Javascript",
-							"items": [
-								{
-									"type": "item",
-									"title": "Sugar Force",
-									"uri": "docs/Apps/App-Framework/Tutorials/Vanilla-Javascript/SugarForce.md"
-								},
-								{
-									"type": "item",
-									"title": "Return Flow",
-									"uri": "docs/Apps/App-Framework/Tutorials/Vanilla-Javascript/ReturnFlow.md"
-								},
-								{
-									"type": "item",
-									"title": "Creating Dynamic Infographics",
-									"uri": "docs/Apps/App-Framework/Tutorials/Vanilla-Javascript/DynamicInfographic.md"
-								},
-								{
-									"type": "group",
-									"title": "Game Night Planner App",
-									"items": [
-										{
-											"type": "item",
-											"title": "Intro to Bricks",
-											"uri": "docs/GameNightPlannerApp/intro-to-bricks.md"
-										},
-										{
-											"type": "item",
-											"title": "Migrating from Brick to App",
-											"uri": "docs/GameNightPlannerApp/going-from-brick-to-app.md"
-										},
-										{
-											"type": "item",
-											"title": "Adding AI to Our App",
-											"uri": "docs/GameNightPlannerApp/adding-advanced-capabilities-to-your-app.md"
-										}
-									]
-								}
-							]
-						},
-						{
-							"type": "group",
-							"title": "React",
-							"items": [
-								{
-									"type": "item",
-									"title": "Basic Todo App",
-									"uri": "docs/Apps/App-Framework/Tutorials/React/Todo-App.md"
-								}
-							]
-						}
-					]
-				},
-				{
-					"type": "group",
-					"title": "Tools",
-					"items": [
-						{
-							"type": "item",
-							"title": "Domo Apps CLI",
-							"uri": "docs/Apps/App-Framework/Tools/domo-CLI.md"
-						},
-						{
-							"type": "item",
-							"title": "domo.js",
-							"uri": "docs/Apps/App-Framework/Tools/domo.js.md"
-						}
-					]
-				},
-				{
-					"type": "group",
-					"title": "Guides",
-					"items": [
-						{
-							"type": "item",
-							"title": "The Manifest File",
-							"uri": "/docs/Apps/App-Framework/Guides/manifest.md"
-						},
-						{
-							"type": "item",
-							"title": "Public Assets",
-							"uri": "/docs/Apps/App-Framework/Guides/public-assets.md"
-						},
-						{
-							"type": "item",
-							"title": "App Sessions",
-							"uri": "/docs/Apps/App-Framework/Guides/app-sessions.md"
-						},
-						{
-							"type": "item",
-							"title": "Getting Data",
-							"uri": "/docs/Apps/App-Framework/Guides/getting-data.md"
-						},
-						{
-							"type": "item",
-							"title": "Querying Data",
-							"uri": "/docs/Apps/App-Framework/Guides/querying-data.md"
-						},
-						{
-							"type": "item",
-							"title": "Handling Data Updates",
-							"uri": "/docs/Apps/App-Framework/Guides/handling-data-updates.md"
-						},
-						{
-							"type": "item",
-							"title": "Hitting a Workflow from an App",
-							"uri": "/docs/Apps/App-Framework/Guides/hitting-a-workflow.md"
-						},
-						{
-							"type": "item",
-							"title": "Hitting Code Engine from an App",
-							"uri": "docs/Apps/App-Framework/Guides/hitting-code-engine-from-an-app.md"
-						},
-						{
-							"type": "item",
-							"title": "Design Guide",
-							"uri": "docs/Apps/App-Framework/Guides/design-guide.md"
-						}
-					]
-				},
-				{
-					"type": "group",
-					"title": "Help",
-					"items": [
-						{
-							"type": "item",
-							"title": "Troubleshooting",
-							"uri": "docs/Apps/App-Framework/Help/Troubleshooting.md"
-						},
-						{
-							"type": "item",
-							"title": "FAQ",
-							"uri": "docs/Apps/App-Framework/Help/faq.md"
-						}
-					]
-				}
-			]
-		},
-		{
-			"type": "group",
-			"title": "Domo Bricks",
-			"items": [
-				{
-					"type": "group",
-					"title": "Quickstart",
-					"items": [
-						{
-							"type": "item",
-							"title": "Domo Bricks Overview",
-							"uri": "/docs/Apps/DDX-Bricks/Quickstart/overview.md"
-						},
-						{
-							"type": "item",
-							"title": "Getting Started Using Domo Bricks",
-							"uri": "/docs/Apps/DDX-Bricks/Quickstart/getting-started.md"
-						}
-					]
-				},
-				{
-					"type": "group",
-					"title": "Tutorials",
-					"items": [
-						{
-							"type": "item",
-							"title": "Intro Video Tutorials",
-							"uri": "/docs/Apps/DDX-Bricks/Tutorials/Intro-to-DDX-Bricks/intro.md"
-						}
-					]
-				},
-				{
-					"type": "group",
-					"title": "Guides",
-					"items": [
-						{
-							"type": "item",
-							"title": "Getting Data in Domo Bricks",
-							"uri": "/docs/Apps/DDX-Bricks/Guides/getting-data.md"
-						}
-					]
-				}
-			]
-		},
-		{
-			"type": "divider",
-			"title": "Partner Developers"
-		},
-		{
-			"type": "group",
-			"title": "Domo Appstore",
-			"items": [
-				{
-					"type": "item",
-					"title": "Overview",
-					"uri": "docs/Partner-Developers/Domo-Marketplace/overview.md"
-				},
-				{
-					"type": "item",
-					"title": "Appstore Submission",
-					"uri": "docs/Partner-Developers/Domo-Marketplace/marketplace-submission.md"
-				},
-				{
-					"type": "item",
-					"title": "Appstore Requirements",
-					"uri": "docs/Partner-Developers/Domo-Marketplace/marketplace-requirements.md"
-				},
-				{
-					"type": "item",
-					"title": "Data Resources",
-					"uri": "docs/Partner-Developers/Domo-Marketplace/marketplace-data-resources.md"
-				},
-				{
-					"type": "item",
-					"title": "Help & Support",
-					"uri": "docs/Partner-Developers/Domo-Marketplace/marketplace-support.md"
-				}
-			]
-		},
-		{
-			"type": "group",
-			"title": "Guides",
-			"items": [
-				{
-					"type": "item",
-					"title": "Submission Checklist",
-					"uri": "docs/Partner-Developers/Guides/submission-checklist.md"
-				},
-				{
-					"type": "item",
-					"title": "Video Recording Guide",
-					"uri": "docs/Partner-Developers/Guides/video-recording.md"
-				},
-				{
-					"type": "item",
-					"title": "Partner App Submission Guide",
-					"uri": "docs/Partner-Developers/Guides/partner-app-submission.md"
-				},
-				{
-					"type": "item",
-					"title": "Paid Apps Guide",
-					"uri": "docs/Partner-Developers/Guides/paid-apps.md"
-				},
-				{
-					"type": "item",
-					"title": "Getting Paid Guide",
-					"uri": "docs/Partner-Developers/Guides/getting-paid.md"
-				},
-				{
-					"type": "item",
-					"title": "Building an App Overview",
-					"uri": "docs/Partner-Developers/Guides/building-an-app-overview.md"
-				},
-				{
-					"type": "item",
-					"title": "Getting Data Overview",
-					"uri": "docs/Partner-Developers/Guides/getting-data-overview.md"
-				}
-			]
-		},
-		{
-			"type": "divider",
-			"title": "Domo AI"
-		},
-		{
-			"type": "item",
-			"title": "Overview",
-			"uri": "docs/Data-Science/overview.md"
-		},
-		{
-			"type": "item",
-			"title": "AI Services",
-			"uri": "docs/Data-Science/ai-services.md"
-		},
-		{
-			"type": "item",
-			"title": "Jupyter Workspaces",
-			"uri": "docs/Data-Science/jupyter.md"
-		},
-		{
-			"type": "item",
-			"title": "Data Science Accelerators",
-			"uri": "docs/Data-Science/accelerators.md"
-		},
-		{
-			"type": "item",
-			"title": "Magic ETL Scripting Tiles",
-			"uri": "docs/Data-Science/scripting-tiles.md"
-		},
-		{
-			"type": "item",
-			"title": "Magic ETL Data Science Tiles",
-			"uri": "docs/Data-Science/data-science-tiles.md"
-		},
-		{
-			"type": "item",
-			"title": "AutoML",
-			"uri": "docs/Data-Science/autoML.md"
-		},
-		{
-			"type": "item",
-			"title": "Webinars",
-			"uri": "docs/Data-Science/webinars.md"
-		},
-		{
-			"type": "divider",
-			"title": "Connect Data"
-		},
-		{
-			"type": "item",
-			"title": "Overview",
-			"uri": "docs/Connectors/Overview.md"
-		},
-		{
-			"type": "group",
-			"title": "Custom Connectors",
-			"items": [
-				{
-					"type": "group",
-					"title": "Standard Connectors",
-					"items": [
-						{
-							"type": "item",
-							"title": "Overview",
-							"uri": "docs/Connectors/Custom-Connectors/overview.md"
-						},
-						{
-							"type": "item",
-							"title": "Connector Dev Studio",
-							"uri": "docs/Connectors/Custom-Connectors/connector-dev-studio.md"
-						},
-						{
-							"type": "item",
-							"title": "Configure Authentication",
-							"uri": "docs/Connectors/Custom-Connectors/configure-authentication.md"
-						},
-						{
-							"type": "item",
-							"title": "Configure Reports",
-							"uri": "docs/Connectors/Custom-Connectors/configure-reports.md"
-						},
-						{
-							"type": "item",
-							"title": "Process Data",
-							"uri": "docs/Connectors/Custom-Connectors/process-data.md"
-						},
-						{
-							"type": "item",
-							"title": "Publish Connector",
-							"uri": "docs/Connectors/Custom-Connectors/publish-connector.md"
-						},
-						{
-							"type": "item",
-							"title": "Examples",
-							"uri": "docs/Connectors/Custom-Connectors/examples.md"
-						}
-					]
-				},
-				{
-					"type": "item",
-					"title": "Writeback Connectors",
-					"uri": "docs/Connectors/Writeback-Connectors/writeback-connectors.md"
-				},
-				{
-					"type": "item",
-					"title": "Reference",
-					"uri": "docs/Connectors/Custom-Connectors/reference.md"
-				},
-				{
-					"type": "item",
-					"title": "IDE Limitations",
-					"uri": "docs/Connectors/Custom-Connectors/ide-limitations.md"
-				},
-				{
-					"type": "item",
-					"title": "Help & Support",
-					"uri": "docs/Connectors/Custom-Connectors/help-and-support.md"
-				}
-			]
-		},
-		{
-			"type": "group",
-			"title": "Connect via API",
-			"items": [
-				{
-					"type": "item",
-					"title": "Overview",
-					"uri": "docs/Connectors/API-Data-Connection/overview.md"
-				},
-				{
-					"type": "item",
-					"title": "Quickstart",
-					"uri": "docs/Connectors/API-Data-Connection/quickstart.md"
-				},
-				{
-					"type": "item",
-					"title": "Format Data to Import",
-					"uri": "docs/Connectors/API-Data-Connection/format-data-to-import.md"
-				},
-				{
-					"type": "item",
-					"title": "Import and Export Data",
-					"uri": "docs/Connectors/API-Data-Connection/import-and-export-data.md"
-				},
-				{
-					"type": "item",
-					"title": "Managing Datasets",
-					"uri": "docs/Governance/data-management.md"
-				},
-				{
-					"type": "item",
-					"title": "Personalized Data Permissions (PDP)",
-					"uri": "docs/Governance/pdp.md"
-				}
-			]
-		},
-		{
-			"type": "group",
-			"title": "Other Connection Approaches",
-			"items": [
-				{
-					"type": "item",
-					"title": "On-Premises Data",
-					"uri": "/docs/Connectors/on-premises-data.md"
-				},
-				{
-					"type": "item",
-					"title": "Federated Queries",
-					"uri": "/docs/Connectors/federated-queries.md"
-				},
-				{
-					"type": "item",
-					"title": "Jupyter Workspaces",
-					"uri": "https://domo-support.domo.com/s/article/36004740075?language=en_US"
-				},
-				{
-					"type": "item",
-					"title": "Domo CLI",
-					"uri": "https://domo-support.domo.com/s/article/360043437733?language=en_US"
-				},
-				{
-					"type": "item",
-					"title": "Cloud Amplifier",
-					"uri": "https://domo-support.domo.com/s/article/4412849158167?language=en_US"
-				}
-			]
-		},
-		{
-			"type": "divider",
-			"title": "Embed Domo Everywhere"
-		},
-		{
-			"type": "item",
-			"title": "Overview",
-			"uri": "docs/Embedded-Analytics/overview.md"
-		},
-		{
-			"type": "item",
-			"title": "Publish To Other Domo Users",
-			"uri": "/docs/Embedded-Analytics/publishing-to-other-domo-users.md"
-		},
-		{
-			"type": "group",
-			"title": "Embed In Sites And Software",
-			"items": [
-				{
-					"type": "item",
-					"title": "Overview",
-					"uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/overview.md"
-				},
-				{
-					"type": "item",
-					"title": "Programmatic Filtering",
-					"uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/programmatic-filtering.md"
-				},
-				{
-					"type": "item",
-					"title": "App Embed Authentication",
-					"uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/app-embed-authentication.md"
-				},
-				{
-					"type": "item",
-					"title": "Dataset Switching",
-					"uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/dataset-switching.md"
-				},
-				{
-					"type": "item",
-					"title": "Filtering Options",
-					"uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/filtering-options.md"
-				},
-				{
-					"type": "item",
-					"title": "URL Parameters in Embedded Content",
-					"uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/url-parameters-in-embedded-content.md"
-				},
-				{
-					"type": "item",
-					"title": "Dynamic IFrame Height",
-					"uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/dynamic-iframe-height.md"
-				},
-				{
-					"type": "item",
-					"title": "Code Examples",
-					"uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/code-examples.md"
-				},
-				{
-					"type": "item",
-					"title": "Necessary dependencies",
-					"uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/necessary-dependencies.md"
-				},
-				{
-					"type": "item",
-					"title": "Embedding Into Sites and Web Portals",
-					"uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/embedding-into-sites-and-web-portals.md"
-				}
-			]
-		},
-		{
-			"type": "item",
-			"title": "Embed Edit Experiences",
-			"uri": "/docs/Embedded-Analytics/embedded-edit-experiences.md"
-		},
-		{
-			"type": "divider",
-			"title": "Govern Your Domo Instance"
-		},
-		{
-			"type": "item",
-			"title": "Overview",
-			"uri": "docs/Governance/overview.md"
-		},
-		{
-			"type": "group",
-			"title": "Security",
-			"items": [
-				{
-					"type": "item",
-					"title": "Personalized Data Permissions (PDP)",
-					"uri": "docs/Governance/pdp.md"
-				},
-				{
-					"type": "item",
-					"title": "Groups",
-					"uri": "/docs/Governance/security.md"
-				},
-				{
-					"type": "item",
-					"title": "SSO",
-					"uri": "docs/Governance/sso.md"
-				}
-			]
-		},
-		{
-			"type": "group",
-			"title": "Administration",
-			"items": [
-				{
-					"type": "item",
-					"title": "Managing Datasets",
-					"uri": "/docs/Governance/data-management.md"
-				},
-				{
-					"type": "item",
-					"title": "Managing Content",
-					"uri": "/docs/Governance/content-management.md"
-				},
-				{
-					"type": "item",
-					"title": "Managing Users",
-					"uri": "/docs/Governance/user-management.md"
-				},
-				{
-					"type": "item",
-					"title": "Activity Log",
-					"uri": "docs/Governance/activity-log.md"
-				}
-			]
-		},
-		{
-			"type": "divider",
-			"title": "Other Resources"
-		},
-		{
-			"type": "item",
-			"title": "API Status",
-			"uri": "/docs/Other-Resources/api-status.md"
-		},
-		{
-			"type": "item",
-			"title": "Community Forums",
-			"uri": "docs/Other-Resources/Developer-Forum.md"
-		},
-		{
-			"type": "item",
-			"title": "Sample Projects",
-			"uri": "/docs/Other-Resources/sample-projects.md"
-		}
-	]
+    {
+      "type": "item",
+      "title": "Overview",
+      "uri": "/docs/Getting-Started/overview.md"
+    },
+    {
+      "type": "item",
+      "title": "APIs",
+      "uri": "/docs/Getting-Started/api-authentication.md"
+    },
+    {
+      "type": "item",
+      "title": "SDKs",
+      "uri": "/docs/Getting-Started/sdks.md"
+    },
+    {
+      "type": "divider",
+      "title": "API Reference"
+    },
+    {
+      "type": "item",
+      "title": "Overview",
+      "uri": "docs/Getting-Started/api-authentication.md"
+    },
+    {
+      "type": "group",
+      "title": "App Framework APIs",
+      "items": [
+        {
+          "type": "item",
+          "title": "AI Service Layer API",
+          "uri": "docs/Domo-App-APIs/AI-Service-Layer-API.md"
+        },
+        {
+          "type": "item",
+          "title": "AppDB API",
+          "uri": "docs/Domo-App-APIs/AppDB-API.md"
+        },
+        {
+          "type": "item",
+          "title": "Code Engine API",
+          "uri": "docs/Domo-App-APIs/Code-Engine-API.md"
+        },
+        {
+          "type": "item",
+          "title": "Data API",
+          "uri": "docs/Domo-App-APIs/Data-API.md"
+        },
+        {
+          "type": "item",
+          "title": "Files API",
+          "uri": "docs/Domo-App-APIs/Files-API.md"
+        },
+        {
+          "type": "item",
+          "title": "Groups API",
+          "uri": "docs/Domo-App-APIs/Groups-API.md"
+        },
+        {
+          "type": "item",
+          "title": "Task Center API",
+          "uri": "docs/Domo-App-APIs/Queues-and-Tasks-API.md"
+        },
+        {
+          "type": "item",
+          "title": "User API",
+          "uri": "docs/Domo-App-APIs/User-API.md"
+        },
+        {
+          "type": "item",
+          "title": "Workflows API",
+          "uri": "docs/Domo-App-APIs/Workflows-API.md"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Platform (OAuth) APIs",
+      "items": [
+        {
+          "type": "item",
+          "title": "API Authentication",
+          "uri": "docs/API-Reference/Domo-APIs/API-Authentication.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Account API",
+          "uri": "docs/API-Reference/Domo-APIs/Account-API.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Activity Log API",
+          "uri": "docs/API-Reference/Domo-APIs/Activity-Log-API.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Cards API",
+          "uri": "docs/API-Reference/Domo-APIs/Card-API.yaml"
+        },
+        {
+          "type": "item",
+          "title": "DataSet API",
+          "uri": "docs/API-Reference/Domo-APIs/DataSet-API.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Embed Token API",
+          "uri": "docs/API-Reference/Embed-APIs/Embed-Token-API.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Group API",
+          "uri": "docs/API-Reference/Domo-APIs/Group-API.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Page API",
+          "uri": "docs/API-Reference/Domo-APIs/Page-API.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Projects and Tasks API",
+          "uri": "docs/API-Reference/Domo-APIs/Projects-And-Tasks-API.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Simple API",
+          "uri": "docs/API-Reference/Domo-APIs/Simple-API.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Stream API",
+          "uri": "docs/API-Reference/Domo-APIs/Stream-API.yaml"
+        },
+        {
+          "type": "item",
+          "title": "User API",
+          "uri": "docs/API-Reference/Domo-APIs/User-API.yaml"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Product APIs",
+      "items": [
+        {
+          "type": "item",
+          "title": "Groups API",
+          "uri": "docs/API-Reference/Product-APIs/Groups.md"
+        },
+        {
+          "type": "item",
+          "title": "Managing Dataset History API",
+          "uri": "docs/API-Reference/Product-APIs/Managing-Dataset-History.md"
+        },
+        {
+          "type": "item",
+          "title": "Scheduled Reports API",
+          "uri": "docs/Domo-App-APIs/Scheduled-Reports-API"
+        }
+        {
+          "type": "item",
+          "title": "Search API",
+          "uri": "docs/API-Reference/Product-APIs/Search.md"
+        },
+        {
+          "type": "item",
+          "title": "Task Center API",
+          "uri": "docs/API-Reference/Product-APIs/TaskCenter.md"
+        },
+        {
+          "type": "item",
+          "title": "Users API",
+          "uri": "docs/API-Reference/Product-APIs/Users.md"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "title": "Build Apps"
+    },
+    {
+      "type": "item",
+      "title": "Overview",
+      "uri": "docs/Apps/Overview.md"
+    },
+    {
+      "type": "group",
+      "title": "App Framework",
+      "items": [
+        {
+          "type": "item",
+          "title": "Welcome",
+          "uri": "/docs/Apps/App-Framework/Welcome.md"
+        },
+        {
+          "type": "group",
+          "title": "Quickstart",
+          "items": [
+            {
+              "type": "item",
+              "title": "Prerequisites",
+              "uri": "/docs/Apps/App-Framework/Quickstart/Prerequisites.md"
+            },
+            {
+              "type": "item",
+              "title": "Key Terminology",
+              "uri": "docs/Apps/App-Framework/Quickstart/Key-Terminology.md"
+            },
+            {
+              "type": "item",
+              "title": "Setup and Installation",
+              "uri": "/docs/Apps/App-Framework/Quickstart/Setup-and-Installation.md"
+            },
+            {
+              "type": "item",
+              "title": "Starter Kits",
+              "uri": "/docs/Apps/App-Framework/Quickstart/Starter-Kits.md"
+            },
+            {
+              "type": "item",
+              "title": "Tools",
+              "uri": "/docs/Apps/App-Framework/Quickstart/Tools.md"
+            },
+            {
+              "type": "item",
+              "title": "Best Practices",
+              "uri": "/docs/Apps/App-Framework/Quickstart/Best-Practices.md"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "title": "Tutorials",
+          "items": [
+            {
+              "type": "group",
+              "title": "Vanilla Javascript",
+              "items": [
+                {
+                  "type": "item",
+                  "title": "Sugar Force",
+                  "uri": "docs/Apps/App-Framework/Tutorials/Vanilla-Javascript/SugarForce.md"
+                },
+                {
+                  "type": "item",
+                  "title": "Return Flow",
+                  "uri": "docs/Apps/App-Framework/Tutorials/Vanilla-Javascript/ReturnFlow.md"
+                },
+                {
+                  "type": "item",
+                  "title": "Creating Dynamic Infographics",
+                  "uri": "docs/Apps/App-Framework/Tutorials/Vanilla-Javascript/DynamicInfographic.md"
+                },
+                {
+                  "type": "group",
+                  "title": "Game Night Planner App",
+                  "items": [
+                    {
+                      "type": "item",
+                      "title": "Intro to Bricks",
+                      "uri": "docs/GameNightPlannerApp/intro-to-bricks.md"
+                    },
+                    {
+                      "type": "item",
+                      "title": "Migrating from Brick to App",
+                      "uri": "docs/GameNightPlannerApp/going-from-brick-to-app.md"
+                    },
+                    {
+                      "type": "item",
+                      "title": "Adding AI to Our App",
+                      "uri": "docs/GameNightPlannerApp/adding-advanced-capabilities-to-your-app.md"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "title": "React",
+              "items": [
+                {
+                  "type": "item",
+                  "title": "Basic Todo App",
+                  "uri": "docs/Apps/App-Framework/Tutorials/React/Todo-App.md"
+                },
+                {
+                  "type": "item",
+                  "title": "Mapbox World App",
+                  "uri": "docs/Apps/App-Framework/Tutorials/React/Mapbox-World-App.md"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "title": "Tools",
+          "items": [
+            {
+              "type": "item",
+              "title": "Domo Apps CLI",
+              "uri": "docs/Apps/App-Framework/Tools/domo-CLI.md"
+            },
+            {
+              "type": "item",
+              "title": "domo.js",
+              "uri": "docs/Apps/App-Framework/Tools/domo.js.md"
+            },
+            {
+              "type": "item",
+              "title": "Query",
+              "uri": "docs/Apps/App-Framework/Tools/query.md"
+            },
+            {
+              "type": "item",
+              "title": "Phoenix (charting)",
+              "uri": "docs/Apps/App-Framework/Tools/phoenix.md"
+            },
+            {
+              "type": "item",
+              "title": "Toolkit",
+              "uri": "docs/Apps/App-Framework/Tools/toolkit.md"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "title": "Guides",
+          "items": [
+            {
+              "type": "item",
+              "title": "Getting started with the Pro-Code Editor",
+              "uri": "/docs/Apps/App-Framework/Guides/getting-started-pro-code.md"
+            },
+            {
+              "type": "item",
+              "title": "Managing, Editing, and Saving Your App in the Pro-Code Editor",
+              "uri": "/docs/Apps/App-Framework/Guides/manage-save-pro-code.md"
+            },
+            {
+              "type": "item",
+              "title": "The Manifest File",
+              "uri": "/docs/Apps/App-Framework/Guides/manifest.md"
+            },
+            {
+              "type": "item",
+              "title": "Public Assets",
+              "uri": "/docs/Apps/App-Framework/Guides/public-assets.md"
+            },
+            {
+              "type": "item",
+              "title": "App Sessions",
+              "uri": "/docs/Apps/App-Framework/Guides/app-sessions.md"
+            },
+            {
+              "type": "item",
+              "title": "Getting Data",
+              "uri": "/docs/Apps/App-Framework/Guides/getting-data.md"
+            },
+            {
+              "type": "item",
+              "title": "Querying Data",
+              "uri": "/docs/Apps/App-Framework/Guides/querying-data.md"
+            },
+            {
+              "type": "item",
+              "title": "Handling Data Updates",
+              "uri": "/docs/Apps/App-Framework/Guides/handling-data-updates.md"
+            },
+            {
+              "type": "item",
+              "title": "Hitting a Workflow from an App",
+              "uri": "/docs/Apps/App-Framework/Guides/hitting-a-workflow.md"
+            },
+            {
+              "type": "item",
+              "title": "Hitting Code Engine from an App",
+              "uri": "docs/Apps/App-Framework/Guides/hitting-code-engine-from-an-app.md"
+            },
+            {
+              "type": "item",
+              "title": "Design Guide",
+              "uri": "docs/Apps/App-Framework/Guides/design-guide.md"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "title": "Help",
+          "items": [
+            {
+              "type": "item",
+              "title": "Troubleshooting",
+              "uri": "docs/Apps/App-Framework/Help/Troubleshooting.md"
+            },
+            {
+              "type": "item",
+              "title": "FAQ",
+              "uri": "docs/Apps/App-Framework/Help/faq.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Domo Bricks",
+      "items": [
+        {
+          "type": "group",
+          "title": "Quickstart",
+          "items": [
+            {
+              "type": "item",
+              "title": "Domo Bricks Overview",
+              "uri": "/docs/Apps/DDX-Bricks/Quickstart/overview.md"
+            },
+            {
+              "type": "item",
+              "title": "Getting Started Using Domo Bricks",
+              "uri": "/docs/Apps/DDX-Bricks/Quickstart/getting-started.md"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "title": "Tutorials",
+          "items": [
+            {
+              "type": "item",
+              "title": "Intro Video Tutorials",
+              "uri": "/docs/Apps/DDX-Bricks/Tutorials/Intro-to-DDX-Bricks/intro.md"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "title": "Guides",
+          "items": [
+            {
+              "type": "item",
+              "title": "Getting Data in Domo Bricks",
+              "uri": "/docs/Apps/DDX-Bricks/Guides/getting-data.md"
+            },
+            {
+              "type": "item",
+              "title": "Converting a Brick into a Pro-Code App",
+              "uri": "/docs/Apps/DDX-Bricks/Guides/DDX-Pro-Code.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "title": "Automate Actions"
+    },
+    {
+      "type": "item",
+      "title": "Overview",
+      "uri": "docs/Automate-Actions/overview.md"
+    },
+    {
+      "type": "group",
+      "title": "Workflows",
+      "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/Automate-Actions/Workflows/overview.md"
+        },
+        {
+          "type": "item",
+          "title": "Workflows API",
+          "uri": "docs/Automate-Actions/Workflows.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Start a workflow",
+          "uri": "docs/Automate-Actions/Workflows/Workflows.md"
+        },
+        {
+          "type": "item",
+          "title": "Canceling a workflow",
+          "uri": "docs/Automate-Actions/Workflows/Canceling-a-workflow.md"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Code Engine",
+      "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/Automate-Actions/Code-Engine/overview.md"
+        },
+        {
+          "type": "item",
+          "title": "Code Engine API",
+          "uri": "docs/Automate-Actions/Code-Engine/api.md"
+        },
+        {
+          "type": "item",
+          "title": "JavaScript Libraries",
+          "uri": "docs/Automate-Actions/Code-Engine/javascript-libraries.md"
+        },
+        {
+          "type": "item",
+          "title": "Python Packages",
+          "uri": "docs/Automate-Actions/Code-Engine/python-packages.md"
+        },
+        {
+          "type": "item",
+          "title": "Global Code Engine Packages",
+          "uri": ""
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "title": "Partner Developers"
+    },
+    {
+      "type": "group",
+      "title": "Domo Appstore",
+      "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/Partner-Developers/Domo-Marketplace/overview.md"
+        },
+        {
+          "type": "item",
+          "title": "Appstore Submission",
+          "uri": "docs/Partner-Developers/Domo-Marketplace/marketplace-submission.md"
+        },
+        {
+          "type": "item",
+          "title": "Appstore Requirements",
+          "uri": "docs/Partner-Developers/Domo-Marketplace/marketplace-requirements.md"
+        },
+        {
+          "type": "item",
+          "title": "Data Resources",
+          "uri": "docs/Partner-Developers/Domo-Marketplace/marketplace-data-resources.md"
+        },
+        {
+          "type": "item",
+          "title": "Help & Support",
+          "uri": "docs/Partner-Developers/Domo-Marketplace/marketplace-support.md"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Guides",
+      "items": [
+        {
+          "type": "item",
+          "title": "Submission Checklist",
+          "uri": "docs/Partner-Developers/Guides/submission-checklist.md"
+        },
+        {
+          "type": "item",
+          "title": "Video Recording Guide",
+          "uri": "docs/Partner-Developers/Guides/video-recording.md"
+        },
+        {
+          "type": "item",
+          "title": "Partner App Submission Guide",
+          "uri": "docs/Partner-Developers/Guides/partner-app-submission.md"
+        },
+        {
+          "type": "item",
+          "title": "Paid Apps Guide",
+          "uri": "docs/Partner-Developers/Guides/paid-apps.md"
+        },
+        {
+          "type": "item",
+          "title": "Getting Paid Guide",
+          "uri": "docs/Partner-Developers/Guides/getting-paid.md"
+        },
+        {
+          "type": "item",
+          "title": "Building an App Overview",
+          "uri": "docs/Partner-Developers/Guides/building-an-app-overview.md"
+        },
+        {
+          "type": "item",
+          "title": "Getting Data Overview",
+          "uri": "docs/Partner-Developers/Guides/getting-data-overview.md"
+        },
+        {
+          "type": "item",
+          "title": "Start a Remote Workflow",
+          "uri": "docs/Partner-Developers/Guides/start-a-remote-workflow.md"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "title": "AI Resources Guide"
+    },
+    {
+      "type": "item",
+      "title": "Overview",
+      "uri": "docs/Data-Science/overview.md"
+    },
+    {
+      "type": "item",
+      "title": "Domo.AI",
+      "uri": "docs/Data-Science/ai-services.md"
+    },
+    {
+      "type": "item",
+      "title": "Jupyter Workspaces",
+      "uri": "docs/Data-Science/jupyter.md"
+    },
+    {
+      "type": "item",
+      "title": "Data Science Accelerators",
+      "uri": "docs/Data-Science/accelerators.md"
+    },
+    {
+      "type": "item",
+      "title": "Magic ETL Scripting Tiles",
+      "uri": "docs/Data-Science/scripting-tiles.md"
+    },
+    {
+      "type": "item",
+      "title": "Magic ETL Data Science Tiles",
+      "uri": "docs/Data-Science/data-science-tiles.md"
+    },
+    {
+      "type": "item",
+      "title": "AutoML",
+      "uri": "docs/Data-Science/autoML.md"
+    },
+    {
+      "type": "item",
+      "title": "Webinars",
+      "uri": "docs/Data-Science/webinars.md"
+    },
+    {
+      "type": "divider",
+      "title": "Connect Data"
+    },
+    {
+      "type": "item",
+      "title": "Overview",
+      "uri": "docs/Connectors/Overview.md"
+    },
+    {
+      "type": "group",
+      "title": "Custom Connectors",
+      "items": [
+        {
+          "type": "group",
+          "title": "Standard Connectors",
+          "items": [
+            {
+              "type": "item",
+              "title": "Overview",
+              "uri": "docs/Connectors/Custom-Connectors/overview.md"
+            },
+            {
+              "type": "item",
+              "title": "Connector Dev Studio",
+              "uri": "docs/Connectors/Custom-Connectors/connector-dev-studio.md"
+            },
+            {
+              "type": "item",
+              "title": "Configure Authentication",
+              "uri": "docs/Connectors/Custom-Connectors/configure-authentication.md"
+            },
+            {
+              "type": "item",
+              "title": "Configure Reports",
+              "uri": "docs/Connectors/Custom-Connectors/configure-reports.md"
+            },
+            {
+              "type": "item",
+              "title": "Process Data",
+              "uri": "docs/Connectors/Custom-Connectors/process-data.md"
+            },
+            {
+              "type": "item",
+              "title": "Publish Connector",
+              "uri": "docs/Connectors/Custom-Connectors/publish-connector.md"
+            },
+            {
+              "type": "item",
+              "title": "Examples",
+              "uri": "docs/Connectors/Custom-Connectors/examples.md"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "title": "Writeback Connectors",
+          "uri": "docs/Connectors/Writeback-Connectors/writeback-connectors.md"
+        },
+        {
+          "type": "item",
+          "title": "Reference",
+          "uri": "docs/Connectors/Custom-Connectors/reference.md"
+        },
+        {
+          "type": "item",
+          "title": "IDE Limitations",
+          "uri": "docs/Connectors/Custom-Connectors/ide-limitations.md"
+        },
+        {
+          "type": "item",
+          "title": "Help & Support",
+          "uri": "docs/Connectors/Custom-Connectors/help-and-support.md"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Connect via API",
+      "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/Connectors/API-Data-Connection/overview.md"
+        },
+        {
+          "type": "item",
+          "title": "Quickstart",
+          "uri": "docs/Connectors/API-Data-Connection/quickstart.md"
+        },
+        {
+          "type": "item",
+          "title": "Format Data to Import",
+          "uri": "docs/Connectors/API-Data-Connection/format-data-to-import.md"
+        },
+        {
+          "type": "item",
+          "title": "Import and Export Data",
+          "uri": "docs/Connectors/API-Data-Connection/import-and-export-data.md"
+        },
+        {
+          "type": "item",
+          "title": "Managing Datasets",
+          "uri": "docs/Governance/data-management.md"
+        },
+        {
+          "type": "item",
+          "title": "Personalized Data Permissions (PDP)",
+          "uri": "docs/Governance/pdp.md"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Other Connection Approaches",
+      "items": [
+        {
+          "type": "item",
+          "title": "On-Premises Data",
+          "uri": "/docs/Connectors/on-premises-data.md"
+        },
+        {
+          "type": "item",
+          "title": "Federated Queries",
+          "uri": "/docs/Connectors/federated-queries.md"
+        },
+        {
+          "type": "item",
+          "title": "Jupyter Workspaces",
+          "uri": "https://domo-support.domo.com/s/article/36004740075?language=en_US"
+        },
+        {
+          "type": "item",
+          "title": "Domo CLI",
+          "uri": "https://domo-support.domo.com/s/article/360043437733?language=en_US"
+        },
+        {
+          "type": "item",
+          "title": "Cloud Amplifier",
+          "uri": "https://domo-support.domo.com/s/article/4412849158167?language=en_US"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "title": "Embed Domo Everywhere"
+    },
+    {
+      "type": "item",
+      "title": "Overview",
+      "uri": "docs/Embedded-Analytics/overview.md"
+    },
+    {
+      "type": "item",
+      "title": "Publish To Other Domo Users",
+      "uri": "/docs/Embedded-Analytics/publishing-to-other-domo-users.md"
+    },
+    {
+      "type": "group",
+      "title": "Embed In Sites And Software",
+      "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/overview.md"
+        },
+        {
+          "type": "item",
+          "title": "Programmatic Filtering",
+          "uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/programmatic-filtering.md"
+        },
+        {
+          "type": "item",
+          "title": "App Embed Authentication",
+          "uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/app-embed-authentication.md"
+        },
+        {
+          "type": "item",
+          "title": "Dataset Switching",
+          "uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/dataset-switching.md"
+        },
+        {
+          "type": "item",
+          "title": "Filtering Options",
+          "uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/filtering-options.md"
+        },
+        {
+          "type": "item",
+          "title": "URL Parameters in Embedded Content",
+          "uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/url-parameters-in-embedded-content.md"
+        },
+        {
+          "type": "item",
+          "title": "Dynamic IFrame Height",
+          "uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/dynamic-iframe-height.md"
+        },
+        {
+          "type": "item",
+          "title": "Code Examples",
+          "uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/code-examples.md"
+        },
+        {
+          "type": "item",
+          "title": "Necessary dependencies",
+          "uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/necessary-dependencies.md"
+        },
+        {
+          "type": "item",
+          "title": "Embedding Into Sites and Web Portals",
+          "uri": "docs/Embedded-Analytics/Embedding-in-Sites-and-Software/embedding-into-sites-and-web-portals.md"
+        }
+      ]
+    },
+    {
+      "type": "item",
+      "title": "Embed Edit Experiences",
+      "uri": "/docs/Embedded-Analytics/embedded-edit-experiences.md"
+    },
+    {
+      "type": "divider",
+      "title": "Govern Your Domo Instance"
+    },
+    {
+      "type": "item",
+      "title": "Overview",
+      "uri": "docs/Governance/overview.md"
+    },
+    {
+      "type": "group",
+      "title": "Security",
+      "items": [
+        {
+          "type": "item",
+          "title": "Personalized Data Permissions (PDP)",
+          "uri": "docs/Governance/pdp.md"
+        },
+        {
+          "type": "item",
+          "title": "Groups",
+          "uri": "/docs/Governance/security.md"
+        },
+        {
+          "type": "item",
+          "title": "SSO",
+          "uri": "docs/Governance/sso.md"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Administration",
+      "items": [
+        {
+          "type": "item",
+          "title": "Managing Datasets",
+          "uri": "/docs/Governance/data-management.md"
+        },
+        {
+          "type": "item",
+          "title": "Managing Content",
+          "uri": "/docs/Governance/content-management.md"
+        },
+        {
+          "type": "item",
+          "title": "Managing Users",
+          "uri": "/docs/Governance/user-management.md"
+        },
+        {
+          "type": "item",
+          "title": "Activity Log",
+          "uri": "docs/Governance/activity-log.md"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "title": "Other Resources"
+    },
+    {
+      "type": "item",
+      "title": "API Status",
+      "uri": "/docs/Other-Resources/api-status.md"
+    },
+    {
+      "type": "item",
+      "title": "Community Forums",
+      "uri": "docs/Other-Resources/Developer-Forum.md"
+    },
+    {
+      "type": "item",
+      "title": "Sample Projects",
+      "uri": "/docs/Other-Resources/sample-projects.md"
+    }
+  ]
 }

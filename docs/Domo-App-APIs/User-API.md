@@ -6,7 +6,9 @@ stoplight-id: n7f7swo7h29wg
 
 ### All Users
 
-Information for all users can retrieved using the following endpoint:
+---
+
+Information for all users can be retrieved using the following endpoint:
 
 ```text
 GET /domo/users/v1?includeDetails={true|false}&limit={int}&offset={int}
@@ -73,7 +75,9 @@ GET /domo/users/v1?includeDetails={true|false}&limit={int}&offset={int}
 
 ### Single User
 
-Information for a single user can retrieved using the following endpoint:
+---
+
+Information for a single user can be retrieved using the following endpoint:
 
 ```text
 GET /domo/users/v1/:userId?includeDetails={true|false}
@@ -87,10 +91,10 @@ GET /domo/users/v1/:userId?includeDetails={true|false}
 
 ```json
 {
-    "id": 1,
-    "displayName": "User One",
-    "avatarKey": "/domo/avatars/v1/avatars/dev/86/420BB31EE19FDDBA8096F19ACD4C4D.jpg",
-    "role": "Admin"
+  "id": 1,
+  "displayName": "User One",
+  "avatarKey": "/domo/avatars/v1/avatars/dev/86/420BB31EE19FDDBA8096F19ACD4C4D.jpg",
+  "role": "Admin"
 }
 ```
 
@@ -98,21 +102,23 @@ GET /domo/users/v1/:userId?includeDetails={true|false}
 
 ```json
 {
-    "id": 1,
-    "displayName": "User One",
-    "avatarKey": "/domo/avatars/v1/avatars/dev/86/420BB31EE19FDDBA8096F19ACD4C4D.jpg",
-    "role": "Admin",
-    "detail": {
-       "title": "",
-       "email": "userone@domo.com",
-       "phoneNumber": "",
-       "employeeNumber": 1,
-       "pending": false
-   }
+  "id": 1,
+  "displayName": "User One",
+  "avatarKey": "/domo/avatars/v1/avatars/dev/86/420BB31EE19FDDBA8096F19ACD4C4D.jpg",
+  "role": "Admin",
+  "detail": {
+    "title": "",
+    "email": "userone@domo.com",
+    "phoneNumber": "",
+    "employeeNumber": 1,
+    "pending": false
+  }
 }
 ```
 
 ### User Avatar
+
+---
 
 User avatars are available at the avatars endpoint
 
@@ -121,6 +127,7 @@ GET /domo/avatars/v2/{entityType}/{entityId}?size={size}&defaultForeground={colo
 ```
 
 Valid sizes (pixels)
+
 - 100: 100 X 100
 - 300: 300 X 300
 
@@ -133,5 +140,8 @@ GET /domo/avatars/v2/USER/846578099?size=300&defaultForeground=fff&defaultBackgr
 #### Code Example
 
 ```html
-<img src="/domo/avatars/v2/USER/846578099?size=300&defaultForeground=fff&defaultBackground=000&defaultText=D" alt="User Avatar" />
+<img
+  src="/domo/avatars/v2/USER/846578099?size=300&defaultForeground=fff&defaultBackground=000&defaultText=D"
+  alt="User Avatar"
+/>
 ```

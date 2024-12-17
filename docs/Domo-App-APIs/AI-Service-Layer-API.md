@@ -9,7 +9,6 @@ Domo's AI Service Layer enables developers to build AI capabilities into their D
 1. Text Generation
 2. Text-to-SQL
 
-
 Domo allows you to configure which models power each of the services. For more on how that works, [see this video](https://www.youtube.com/live/f4L7bc52snE?feature=share&t=549).
 
 You can also see example usage of the the Text Generation and the Text-to-SQL in the AI Domo Bricks currently available to download for free in the Domo AppStore.
@@ -18,9 +17,10 @@ You can also see example usage of the the Text Generation and the Text-to-SQL in
 - [ChatGPT Dataset Description Brick](https://www.domo.com/appstore/app/chatgpt-dataset-description-brick/overview)
 - [ChatGPT Text-To-SQL Query Brick](https://www.domo.com/appstore/app/explain-sql-with-ai/overview)
 
-
 ### Text Generation
+
 ---
+
 Generates a text response from a text prompt.
 
 #### Code Example
@@ -30,25 +30,25 @@ The `body` variable in this post request is an example of a sample request body.
 ```javascript
 const prompt = "Tell me a joke about data.";
 const body = {
-  "input": prompt
-}
+	input: prompt,
+};
 
-domo.post(`/domo/ai/v1/text/generation`, body)
-    .then(response => console.log(response));
-
+domo
+	.post(`/domo/ai/v1/text/generation`, body)
+	.then((response) => console.log(response));
 ```
 
 #### Arguments
 
-| Property Name| Type | Required | Description |
-| --- | --- | --- | --- |
-|input	|String	|Required	|The prompt you are sending to the model|
-|promptTemplate	|Object	|Optional| An override for the prompt template used in the service. It has one property `template`, which expects a string.|
-|parameters	|Object	|Optional| Used with the `promptTemplate` for additional customization. You can pass any key, value pair of strings. See examples below.|
-|model	|String	|Optional| The id of the model you'd like to use if you don't want to use the default model.|
-
+| Property Name  | Type   | Required | Description                                                                                                                   |
+| -------------- | ------ | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| input          | String | Required | The prompt you are sending to the model                                                                                       |
+| promptTemplate | Object | Optional | An override for the prompt template used in the service. It has one property `template`, which expects a string.              |
+| parameters     | Object | Optional | Used with the `promptTemplate` for additional customization. You can pass any key, value pair of strings. See examples below. |
+| model          | String | Optional | The id of the model you'd like to use if you don't want to use the default model.                                             |
 
 #### HTTP Request
+
 ```text
 POST /domo/ai/v1/text/generation HTTP/1.1
 Content-Type: application/json
@@ -60,15 +60,15 @@ Accept: application/json
 The only required field in the request body is the `input` string, but you can provide additional properties in the request body to futher customize the text generation service. If you choose to use the `promptTemplate` property to override the default prompt template, you'll need to use `${input}` into the template string to pass through the input of your prompt.
 
 ```json
-{ 
-    "input": "Recap the 2021 superbowl",
-    "promptTemplate": {
-      "template": "${input}. You are a helpful assistant that gives answers in ${max_words} words or less"
-    },
-    "parameters": {
-      "max_words": "30"
-    },
-    "model": "8dc5737d-0bc8-425b-ad0d-5d6ec1a99e72"
+{
+	"input": "Recap the 2021 superbowl",
+	"promptTemplate": {
+		"template": "${input}. You are a helpful assistant that gives answers in ${max_words} words or less"
+	},
+	"parameters": {
+		"max_words": "30"
+	},
+	"model": "8dc5737d-0bc8-425b-ad0d-5d6ec1a99e72"
 }
 ```
 
@@ -89,58 +89,57 @@ Content-Type: application/json;charset=UTF-8
     ],
     "modelId": "8dc5737d-0bc8-425b-ad0d-5d6ec1a99e72",
     "isCustomerModel": true
-    
+
 }
 ```
 
 ### Text-to-SQL
----
-Generates a SQL query based on a prompt and a DataSet's schema.
 
+---
+
+Generates a SQL query based on a prompt and a DataSet's schema.
 
 #### Code Example
 
 The `body` variable in this post request is an example of a sample request body.
 
 ```javascript
-
 const exampleDataSourceSchema = {
-  dataSourceName: "Sales",
-  description: "Sales Data",
-  columns: [
-    {
-      name: "Date",
-      type: "date",
-    },
-    {
-      name: "Sales",
-      type: "number",
-    }
-  ]
-
-}
+	dataSourceName: "Sales",
+	description: "Sales Data",
+	columns: [
+		{
+			name: "Date",
+			type: "date",
+		},
+		{
+			name: "Sales",
+			type: "number",
+		},
+	],
+};
 const body = {
-  "input": "Show me the sales for the last 3 months.",
-  dataSourceSchemas: [exampleDataSourceSchema]
-}
+	input: "Show me the sales for the last 3 months.",
+	dataSourceSchemas: [exampleDataSourceSchema],
+};
 
-domo.post(`/domo/ai/v1/text/sql`, body)
-    .then(response => console.log(response));
-
+domo
+	.post(`/domo/ai/v1/text/sql`, body)
+	.then((response) => console.log(response));
 ```
 
 #### Arguments
 
-| Property Name| Type | Required | Description |
-| --- | --- | --- | --- |
-|input	|String	|Required	|The prompt you are sending to the model|
-|promptTemplate	|Object	|Optional| An override for the prompt template used in the service. It has one property `template`, which expects a string.|
-|parameters	|Object	|Optional| Used with the `promptTemplate` for additional customization. You can pass any key, value pair of strings. See examples below.|
-|model	|String	|Optional| The id of the model you'd like to use if you don't want to use the default model.|
-|dataSourceSchemas	|Array of Objects	|Optional| The schemas of datasets that they service should take into account when generating the SQL query from the input prompt.|
-
+| Property Name     | Type             | Required | Description                                                                                                                   |
+| ----------------- | ---------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| input             | String           | Required | The prompt you are sending to the model                                                                                       |
+| promptTemplate    | Object           | Optional | An override for the prompt template used in the service. It has one property `template`, which expects a string.              |
+| parameters        | Object           | Optional | Used with the `promptTemplate` for additional customization. You can pass any key, value pair of strings. See examples below. |
+| model             | String           | Optional | The id of the model you'd like to use if you don't want to use the default model.                                             |
+| dataSourceSchemas | Array of Objects | Optional | The schemas of datasets that they service should take into account when generating the SQL query from the input prompt.       |
 
 #### HTTP Request
+
 ```text
 POST /domo/ai/v1/text/sql HTTP/1.1
 Content-Type: application/json
@@ -152,32 +151,32 @@ Accept: application/json
 The only required field in the request body is the `input` string, but you can provide additional properties in the request body to futher customize the text generation service. If you choose to use the `promptTemplate` property to override the default prompt template, you'll need to use `${input}` into the template string to pass through the input of your prompt.
 
 ```json
-{ 
-    "input": "Create a sql query to show me total sales.",
-    "promptTemplate": {
-      "template": "${input}. Show me the ${measure} for the last ${timeframe}"
-    },
-    "parameters": {
-      "measure": "sales",
-      "timeframe": "3 months"
-    },
-    "model": "8dc5737d-0bc8-425b-ad0d-5d6ec1a99e72",
-    "dataSourceSchemas": [
-      {
-        "dataSourceName": "Sales",
-        "description": "Sales Data",
-        "columns": [
-          {
-            "name": "Date",
-            "type": "date",
-          },
-          {
-            "name": "Sales",
-            "type": "number",
-          }
-        ]
-      }
-    ]
+{
+	"input": "Create a sql query to show me total sales.",
+	"promptTemplate": {
+		"template": "${input}. Show me the ${measure} for the last ${timeframe}"
+	},
+	"parameters": {
+		"measure": "sales",
+		"timeframe": "3 months"
+	},
+	"model": "8dc5737d-0bc8-425b-ad0d-5d6ec1a99e72",
+	"dataSourceSchemas": [
+		{
+			"dataSourceName": "Sales",
+			"description": "Sales Data",
+			"columns": [
+				{
+					"name": "Date",
+					"type": "date"
+				},
+				{
+					"name": "Sales",
+					"type": "number"
+				}
+			]
+		}
+	]
 }
 ```
 
@@ -200,7 +199,3 @@ Content-Type: application/json;charset=UTF-8
     "isCustomerModel": true
 }
 ```
-
-
-
-

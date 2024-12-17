@@ -75,7 +75,7 @@ This diagram summarizes the flow of tokens and data through the service account 
 
 **D.** Create a file with a blank name and .env extension
 - Customize the configuration settings with your own values
-<img class=" wp-image-3544 aligncenter" src="https://s3.amazonaws.com/development.domo.com/wp-content/uploads/2020/01/17134743/env.png" alt="" />
+<img class="wp-image-3544 aligncenter" src="https://s3.amazonaws.com/development.domo.com/wp-content/uploads/2020/01/17134743/env.png" alt="" />
 
 - Include "USE_XHR=true" only if cookie based authentication won't work for the endpoint on your server.
 - The CLIENT_ID and CLIENT_SECRET is used to create the access token which will be used to then create an embed token for use with the private embed.
@@ -88,8 +88,7 @@ This diagram summarizes the flow of tokens and data through the service account 
 > This ID is NOT the one you can see in the URL of the Domo instance. It is the 5-character embed ID you can only copy from the embed dialog for that card or dashboard.
 
 - The `EMBED_TYPE` must be either the word 'dashboard' or 'card' (without the quotes).
- 	<li>Save the .env file in the same directory as the sample code</li>
-</ul>
+- Save the .env file in the same directory as the sample code
 
 ### Step 3: Get embed token
 ---
@@ -111,7 +110,7 @@ Deeper details on the possible requests and responses for the Embed API can be f
 ---
 **A.** Open the file users.js in a text editor and modify the filter settings for each user to customize the filtering that each user will have applied to them.
 
-Currently each user has an empty filter being applied to them `[]`.
+Currently, each user has an empty filter being applied to them `[]`.
 
 - There are some example filters in the file that are commented out that you can use that give you an idea of the format expected for the filters.
 - Once you make filter changes to the users.js file, you will need to save the file, restart the express server, refresh the page, and then log back in.
@@ -149,9 +148,9 @@ SQL filters allow you to use a familiar SQL syntax to define powerful and concis
 
 `sqlFilter`: (required) A SQL string that describes your filter. This should look like a "WHERE" clause in a typical SQL query. You can use "OR" and "AND" to create complex filters. Column names should be wrapped in backticks, and values should be wrapped in single quotes.
 
-`datasourceId`: (optional) An optional value of a datasource ID to apply this filter on. If this is not supplied, the filter will be applied to all datasets on the page. <b>If the specified column does not exist on a dataset, cards using that dataset will fail to render. Specifying the dataset will ensure that only cards on this dataset will have the filter applied.</b>
+`datasourceIds`: (optional) An array of datasource IDs to apply this filter on. If this is not supplied, the filter will be applied to all datasets on the page. <b>If the specified column does not exist on a dataset, cards using that dataset will fail to render. Specifying the dataset will ensure that only cards on this dataset will have the filter applied.</b>
 
-e.g. ```"sqlFilters": [{"sqlFilter": "`Region` IN ('WEST')", "datasourceId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"}]```
+e.g. ```"sqlFilters": [{"sqlFilter": "`Region` IN ('WEST')", "datasourceIds": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]}]```
 
 
 <!-- theme: info -->
@@ -172,7 +171,7 @@ e.g. ```"sqlFilters": [{"sqlFilter": "`Region` IN ('WEST')", "datasourceId": "xx
 - Install yarn: <a href="https://yarnpkg.com/en/docs/install" target="_blank" rel="noopener">Yarn installer</a>
 
 **B.** Start the express server by running the `yarn start` or `node express` command from the base folder of the project in Terminal / Command line.
-- Go to the url localhost:3001 in your browser and verify that you are able to see the card or dashboard after you login.
+- Go to the url localhost:3001 in your browser and verify that you are able to see the card or dashboard after you log in.
 - The available usernames are listed in the express.js file ("mike", "susan", "tom", and "rachael").
 - The password is not verified and so any will work.
 

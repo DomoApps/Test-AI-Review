@@ -3,7 +3,7 @@
 Today we'll be exploring Domo's Code Engine capabilities and complete multiple exercises to get a sense for how Code engine can unlock new functionality to drive action and automation in Domo.
 
 **Objectives:**
-Learn how to implement CodeEngine functions and build basic Workflows (we will writing scripts against Domo APIs to facilitate automation)
+Learn how to implement CodeEngine functions and build basic Workflows (we will be writing scripts against Domo APIs to facilitate automation)
 Understand correct way to pass authentication in CodeEngine
  
 **Target Audience:**

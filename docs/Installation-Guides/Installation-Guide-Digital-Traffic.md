@@ -4,7 +4,7 @@ stoplight-id: l297mtf2k8wrm
 
 <div class="col-md-12 content-panel">
                 <h2>Installation Guide - Digital Traffic</h2>
-                <p></p><p>Thanks for installing, test driving, and purchasing Digital Traffic! This guide is intended to help you connect this app to your own data. If you have completed the purchasing process for this app then you will be able to go through all of the steps in this guide.</p>
+                <p></p><p>Thanks for installing, test-driving, and purchasing Digital Traffic! This guide is intended to help you connect this app to your own data. If you have completed the purchasing process for this app then you will be able to go through all of the steps in this guide.</p>
 <h3 class="doc-row-title">Prerequisites:</h3>
 <p>To speed up the connection process for your data, this&nbsp;app utilizes Domo’s Grid Builder. If you are not already familiar with Grid Builder,&nbsp;please visit our&nbsp;<a href="http://player.ooyala.com/iframe.html?ec=xiY3hrNDE66fk814mw5EG4qPCAooAOGl&amp;pbid=b986320eb2af428485644819b233d43c" target="_blank">Grid Builder Training</a>.</p>
 <p>Though not required – if your customer uses Google Analytics, generating the input datasets for the app will be easier.</p>
