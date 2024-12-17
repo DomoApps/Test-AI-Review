@@ -102,7 +102,3 @@ Returns status of 200 if successful.
 ```json
 HTTP/1.1 200 OK
 ```
-
-## Share App Design
-
-/api/apps/v1/designs/e3ae3309-bd37-4622-8e97-4aac8fb4060b/permissions/ADMIN
