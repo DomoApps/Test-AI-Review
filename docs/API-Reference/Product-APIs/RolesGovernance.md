@@ -79,7 +79,7 @@ Fetch a single Role by role id
 ```json
 {
   "method": "GET",
-  "url": "https://{instance}.domo.com/api/identity/v1/users/{id}",
+  "url": "https://{instance}.domo.com/api/authorization/v1/roles/{roleId}",
   "headers": {
     "X-DOMO-Developer-Token": "",
     "Content-Type": "application/json"
