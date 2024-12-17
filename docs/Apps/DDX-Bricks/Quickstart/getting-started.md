@@ -38,19 +38,19 @@ After selecting “Edit Card” from the wrench menu, you can:
 
 ### Import Libraries
 ---
-<strong>Using a CDN (Content Delivery Network)</strong>
+#### Using a CDN (Content Delivery Network)
 Use a CDN to pull in your favorite libraries and frameworks (jQuery, d3, Vega, Phoenix, etc.)
 - <a href="https://cdnjs.com/" target="_blank" rel="noopener">https://cdnjs.com/</a>
 - <a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">https://www.jsdelivr.com/</a>
 
-<strong>Using fonts</strong>
+#### Using fonts
 Using custom fonts in your app, by loading them in the HTML tab:
 
 <img class="alignnone size-full" src="https://web-assets.domo.com/blog/wp-content/uploads/2021/07/DDXBricks-Install1.png" width="913" height="71" />
 
 More info about using fonts from Google: <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" rel="noopener">https://developers.google.com/fonts/docs/getting_started</a>
 
-<strong>Charting examples</strong>
+#### Charting examples
 <ul>
  	<li>Easy to use d3 examples can be found <a href="https://www.d3-graph-gallery.com/" target="_blank" rel="noopener">here</a>.</li>
  	<li>Vega chart examples can be found <a href="https://vega.github.io/vega/examples/" target="_blank" rel="noopener">here</a>.</li>
@@ -69,7 +69,7 @@ function makeSafeText (text){
    return element.innerHTML;
 }
 ```
-Read more about sanitizing data here:### 
+Read more about sanitizing data here:
 <ul>
  	<li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Safely_inserting_external_content_into_a_page" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Safely_inserting_external_content_into_a_page</a></li>
  	<li><a href="https://owasp.org/www-community/xss-filter-evasion-cheatsheet" target="_blank" rel="noopener">https://owasp.org/www-community/xss-filter-evasion-cheatsheet</a></li>
@@ -93,9 +93,8 @@ Read more about sanitizing data here:###
 ```
 
 ### Get the Data
-
-**Method 1 – Using the SQL Endpoint**
-
+---
+#### Method 1 – Using the SQL Endpoint
 This method allows you to use traditional SQL to query. This method currently only returns an “array-of-arrays” (see output formats below):
 
 ``` text
@@ -109,7 +108,7 @@ To use a column name with spaces in your query, wrap the column name with back-t
 var query = 'SELECT SUM(`Store Sales`) as Sales FROM dataset0';
 ```
 
-**Method 2 – Using the Data Endpoint**
+#### Method 2 – Using the Data Endpoint
 
 This is the traditional method for getting data out of Domo:
 
@@ -123,7 +122,7 @@ Here are some references and examples to get you started:
 - [Data Queries example code](../../App-Framework/Guides/querying-data.md)
 - [Data API deep dive](../../../Domo-App-APIs/Data-API.md)
 
-**Output formats**
+#### Output formats
 The default data endpoint output format may not always be the format you need. Supported formats are:
 ``` text
 array-of-objects (default)

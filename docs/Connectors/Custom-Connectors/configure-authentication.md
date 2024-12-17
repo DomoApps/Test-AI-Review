@@ -24,7 +24,7 @@ The Dev Studio does not support any other authentication methods at this time. 
 ---
 
 <p class="p1">If your REST API endpoint does not require any authentication, select <b>None</b>.</p>
-<img class="alignnone size-full wp-image-3957" src="https://web-assets.domo.com/blog/wp-content/uploads/2022/02/AuthNone.png" alt="" width="1138" height="571" />
+<img class="alignnone size-full wp-image-3957" src="https://web-assets.domo.com/blog/wp-content/uploads/2022/02/AuthNone.png" alt="" width="1138" />
 
 ````js
 auth.authenticationSuccess();

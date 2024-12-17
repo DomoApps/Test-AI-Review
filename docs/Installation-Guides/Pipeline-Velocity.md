@@ -4,7 +4,7 @@ stoplight-id: xs4ipft93fc3o
 
 <div class="col-md-12 content-panel">
                 <h2>Pipeline Velocity</h2>
-                <p></p><p>Thanks for installing, test driving, and purchasing Pipeline Velocity! This guide is intended to help you connect this app to your own data. If you have completed the purchasing process for this app then you will be able to go through all of the steps in this guide.</p>
+                <p></p><p>Thanks for installing, test-driving, and purchasing Pipeline Velocity! This guide is intended to help you connect this app to your own data. If you have completed the purchasing process for this app then you will be able to go through all of the steps in this guide.</p>
 <h3 class="doc-row-title">Prerequisites:</h3>
 <p>To speed up the connection process for your data, this&nbsp;app utilizes Domo’s Grid Builder. If you are not already familiar with Grid Builder,&nbsp;please visit our&nbsp;<a href="http://player.ooyala.com/iframe.html?ec=xiY3hrNDE66fk814mw5EG4qPCAooAOGl&amp;pbid=b986320eb2af428485644819b233d43c" target="_blank" rel="noopener noreferrer">Grid Builder Training</a>.</p>
 <p>Though not required – if your customer uses Salesforce, generating the input datasets for the app will be easier.</p>

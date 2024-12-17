@@ -62,7 +62,7 @@ Authorization: bearer <your-valid-oauth-access-token>
 
 Domo will return a response of success or error for the outcome of data being imported into DataSet.
 
-### Sample Response
+#### Sample Response
 ```HTTP
 HTTP/1.1 204 No Content
 ```
@@ -90,7 +90,8 @@ Streams in Domo allow you to import data for multiple use cases:
  	<li>Updates to existing data on a frequent basis</li>
  	<li>Accelerating the time required to import large DataSets</li>
 </ul>
-<h3>Quickstart:</h3>
+### Quickstart:
+---
 Creating a stream to then upload data to a DataSet only requires these steps:
 <ol>
  	<li>Create a stream</li>
@@ -105,7 +106,7 @@ After creating a stream, you can create multiple executions to upload batches 
 > #### Note
 >In order to utilize this Quickstart you will need to obtain an [access token](../../API-Reference/Embed-APIs/Embed-Token-API.yaml) or you can leverage any of [Domo's SDKs](../../Getting-Started/sdks.md) which will also handle authentication.
 
-<strong>Step 1: Create a stream</strong>
+### Step 1: Create a stream
 
 The first step required to upload data to your Domo instance is to create a Stream.  Include a DataSet and an update method in your request body.
 
@@ -165,7 +166,7 @@ Content-Length: 470
 }
 ```
 
-<strong>Step 2: Create a stream execution</strong>
+### Step 2: Create a stream execution
 
 After creating a Stream, you now need to create an Execution.  An Execution does a few things.  It creates a line item in the DataSet history, it triggers all animations in the product (for example, the data importing arc in the Data Warehouse UI), and it also tells Domo that you're about to start sending data.
 
@@ -196,7 +197,7 @@ Content-Length: 227
 }
 ```
 
-<strong>Step 3: Upload your data</strong>
+### Step 3: Upload your data
 
 As previously mentioned, this step can be parallelized.  How small should you make each part?  That depends on a couple factors.  Generally, the smaller the part, the less likely it is to make it to your Domo instance without a network disruption.  However, there is a lot of overhead incurred by creating too many requests.  We've found that for narrow DataSets (those with around 100 columns or less), somewhere between 10,000 and 100,000 rows works well.
 
@@ -232,7 +233,7 @@ Content-Length: 227
 
 If you receive a status code of 200, your data has been received and it is stored until you finish the execution where it is then reassembled prior to indexing.  If you receive a non 200 response, something has happened and you'll need to upload that part again.
 
-<strong>Step 4: Finalize your execution</strong>
+### Step 4: Finalize your execution
 
 When you are done uploading all your parts (or chunks of data).  Send a final request that tells your Domo instance that you're done.
 
@@ -271,7 +272,7 @@ Parallel uploading is generally used for massive DataSets, and this guide effect
 <p class="doc-row-title"><strong>Data Division and Part Size</strong></p>
 In this example, we divide one billion rows into ten parts of 100 million rows. In reality, data parts should be at least 50mb in size. The row count for each part varies depending on the number of columns in the datasource, as well as the general length of cell contents. Experimentation with row count per part may be required for each datasource.
 
-<h3>Parallel Upload Overview</h3>
+#### Parallel Upload Overview
 <strong>Data Preparation (one billion row example)</strong>
 <ol>
  	<li>Query your database or datasource for the desired result set</li>
@@ -288,7 +289,7 @@ In this example, we divide one billion rows into ten parts of 100 million rows. 
  	<li>When all parts have been uploaded, commit the Stream Execution to finalize the upload job</li>
 </ol>
 
-<h3>Parallel Upload Tutorial - Java SDK</h3>
+#### Parallel Upload Tutorial - Java SDK
 
 The following tutorial features code snippets from a fully executable project, which can be downloaded here.
 

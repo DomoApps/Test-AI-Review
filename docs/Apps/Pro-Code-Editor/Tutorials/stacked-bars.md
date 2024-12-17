@@ -1,4 +1,5 @@
 ---
+---
 
 ### Tutorial: Building a Stacked Bar Chart with a Trended Line in Domo's Pro-Code Editor
 
@@ -21,7 +22,7 @@ Ensure that Pro-Code Editor is enabled in your Domo instance.
 Navigate to your Asset Library.
 
 <p align="center">
-   <img src="../../../../assets/images/more-asset-library.png" width="500">
+   <img src="../../../../assets/images/asset-library-tutorial.png" width="500">
 </p>
    
 Click on 'Pro-Code Editor' in the top right corner of your screen to open the editor in your browser.
@@ -137,26 +138,26 @@ The `index.html` file contains the structure of your app, including the canvas e
 
 ```html
 <html>
-  <head>
-    <link rel="stylesheet" href="app.css" />
-    <link
-      href="//fonts.googleapis.com/css?family=Roboto+Mono:600,400,300"
-      rel="stylesheet"
-      type="text/css"
-    />
-  </head>
-  <body>
-    <div class="chartAreaWrapper">
-      <canvas id="chart" height="400" width="1500"> </canvas>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Importing Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-    <!-- Importing Datalabels -->
-    <script src="https://unpkg.com/ryuu.js"></script>
-    <!-- Importing Ryuu.js -->
-    <script src="app.js"></script>
-  </body>
+	<head>
+		<link rel="stylesheet" href="app.css" />
+		<link
+			href="//fonts.googleapis.com/css?family=Roboto+Mono:600,400,300"
+			rel="stylesheet"
+			type="text/css"
+		/>
+	</head>
+	<body>
+		<div class="chartAreaWrapper">
+			<canvas id="chart" height="400" width="1500"> </canvas>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<!-- Importing Chart.js -->
+		<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+		<!-- Importing Datalabels -->
+		<script src="https://unpkg.com/ryuu.js"></script>
+		<!-- Importing Ryuu.js -->
+		<script src="app.js"></script>
+	</body>
 </html>
 ```
 
@@ -170,12 +171,12 @@ The `app.css` file will control the appearance of your chart container, includin
 
 ```css
 body {
-  width: 100vw;
+	width: 100vw;
 }
 
 .chartAreaWrapper {
-  width: 3000px; /* Extend the width for scrolling */
-  overflow-x: scroll;
+	width: 3000px; /* Extend the width for scrolling */
+	overflow-x: scroll;
 }
 ```
 
@@ -189,15 +190,15 @@ This section covers the main logic of the app. To modularize the code and improv
 
 ```javascript
 // Fetch data using domo.get() method
-const query = domo.get('/data/v1/dataset').then((res) => prepareData(res));
+const query = domo.get("/data/v1/dataset").then((res) => prepareData(res));
 
 function prepareData(data) {
-  const labels = [...new Set(data.map((item) => item['Date']))];
-  const stacks = [...new Set(data.map((item) => item['Stacks']))];
-  const categories = Object.keys(data[0]).filter((key) =>
-    key.startsWith('Bar'),
-  );
-  createDatasets(data, labels, stacks, categories);
+	const labels = [...new Set(data.map((item) => item["Date"]))];
+	const stacks = [...new Set(data.map((item) => item["Stacks"]))];
+	const categories = Object.keys(data[0]).filter((key) =>
+		key.startsWith("Bar")
+	);
+	createDatasets(data, labels, stacks, categories);
 }
 ```
 
@@ -208,40 +209,40 @@ function prepareData(data) {
 
 ```javascript
 function createDatasets(data, labels, stacks, categories) {
-  const colorPalette = [
-    '#4e79a7',
-    '#f28e2b',
-    '#e15759',
-    '#76b7b2',
-    '#59a14f',
-    '#edc949',
-  ];
+	const colorPalette = [
+		"#4e79a7",
+		"#f28e2b",
+		"#e15759",
+		"#76b7b2",
+		"#59a14f",
+		"#edc949",
+	];
 
-  const stackColors = stacks.reduce((acc, stack, index) => {
-    acc[stack] = colorPalette[index % colorPalette.length];
-    return acc;
-  }, {});
+	const stackColors = stacks.reduce((acc, stack, index) => {
+		acc[stack] = colorPalette[index % colorPalette.length];
+		return acc;
+	}, {});
 
-  const datasets = categories.flatMap((category) =>
-    stacks.map((stack) => ({
-      label: stack,
-      data: labels.map((label) => {
-        const filteredData = data.filter(
-          (item) =>
-            item['Date'] === label &&
-            item[category] > 0 &&
-            item['Stacks'] === stack,
-        );
-        return filteredData.length > 0
-          ? filteredData.reduce((sum, item) => sum + item[category], 0)
-          : 0;
-      }),
-      backgroundColor: stackColors[stack],
-      stack: category,
-    })),
-  );
+	const datasets = categories.flatMap((category) =>
+		stacks.map((stack) => ({
+			label: stack,
+			data: labels.map((label) => {
+				const filteredData = data.filter(
+					(item) =>
+						item["Date"] === label &&
+						item[category] > 0 &&
+						item["Stacks"] === stack
+				);
+				return filteredData.length > 0
+					? filteredData.reduce((sum, item) => sum + item[category], 0)
+					: 0;
+			}),
+			backgroundColor: stackColors[stack],
+			stack: category,
+		}))
+	);
 
-  calculateTrendedLine(data, labels, datasets);
+	calculateTrendedLine(data, labels, datasets);
 }
 ```
 
@@ -251,30 +252,30 @@ function createDatasets(data, labels, stacks, categories) {
 
 ```javascript
 function calculateTrendedLine(data, labels, datasets) {
-  const trendedPercentageData = labels.map((label) => {
-    const billableHours = data
-      .filter((item) => item['Date'] === label)
-      .reduce((sum, item) => sum + (item['Bar1'] || 0), 0);
-    const extra1 = data
-      .filter((item) => item['Date'] === label)
-      .reduce((sum, item) => sum + item['Extra1'], 0);
-    const extra2 = data
-      .filter((item) => item['Date'] === label)
-      .reduce((sum, item) => sum + item['Extra2'], 0);
-    return extra1 - extra2 > 0 ? (billableHours / (extra1 - extra2)) * 100 : 0;
-  });
+	const trendedPercentageData = labels.map((label) => {
+		const billableHours = data
+			.filter((item) => item["Date"] === label)
+			.reduce((sum, item) => sum + (item["Bar1"] || 0), 0);
+		const extra1 = data
+			.filter((item) => item["Date"] === label)
+			.reduce((sum, item) => sum + item["Extra1"], 0);
+		const extra2 = data
+			.filter((item) => item["Date"] === label)
+			.reduce((sum, item) => sum + item["Extra2"], 0);
+		return extra1 - extra2 > 0 ? (billableHours / (extra1 - extra2)) * 100 : 0;
+	});
 
-  const lineData = {
-    label: 'Trend %',
-    data: trendedPercentageData,
-    borderColor: 'rgba(255, 99, 132, 1)',
-    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-    type: 'line',
-    yAxisID: 'percentLine',
-  };
+	const lineData = {
+		label: "Trend %",
+		data: trendedPercentageData,
+		borderColor: "rgba(255, 99, 132, 1)",
+		backgroundColor: "rgba(255, 99, 132, 0.2)",
+		type: "line",
+		yAxisID: "percentLine",
+	};
 
-  datasets.push(lineData);
-  createChart(labels, datasets);
+	datasets.push(lineData);
+	createChart(labels, datasets);
 }
 ```
 
@@ -284,96 +285,96 @@ function calculateTrendedLine(data, labels, datasets) {
 
 ```javascript
 function createChart(labels, datasets) {
-  const ctx = document.getElementById('chart').getContext('2d');
-  Chart.register(ChartDataLabels);
+	const ctx = document.getElementById("chart").getContext("2d");
+	Chart.register(ChartDataLabels);
 
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: labels,
-      datasets: datasets,
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        x: { position: 'top' },
-        y: { beginAtZero: true, offset: true },
-        percentLine: {
-          type: 'linear',
-          position: 'left',
-          beginAtZero: true,
-          grid: { drawOnChartArea: false },
-          ticks: {
-            callback: (value) => `${value}%`,
-            z: 1,
-          },
-          min: 0,
-          max: 120,
-        },
-      },
-      plugins: {
-        datalabels: {
-          labels: {
-            value: {
-              color: 'white',
-              font: { size: 12 },
-              textStrokeWidth: 2,
-              textStrokeColor: 'black',
-              formatter: (value, context) =>
-                context.dataset.label === 'Trend %'
-                  ? `${value.toFixed(1)}%`
-                  : value > 0
-                  ? value
-                  : '',
-            },
-            legend: {
-              display: true,
-              color: 'black',
-              anchor: 'start',
-              align: 'start',
-              rotation: -90,
-              font: { size: '10px', weight: 'bold' },
-              formatter: (value, context) => {
-                const { datasets } = context.chart.data;
-                const dataset = datasets[context.datasetIndex];
-                const stack = dataset.stack;
+	new Chart(ctx, {
+		type: "bar",
+		data: {
+			labels: labels,
+			datasets: datasets,
+		},
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			scales: {
+				x: { position: "top" },
+				y: { beginAtZero: true, offset: true },
+				percentLine: {
+					type: "linear",
+					position: "left",
+					beginAtZero: true,
+					grid: { drawOnChartArea: false },
+					ticks: {
+						callback: (value) => `${value}%`,
+						z: 1,
+					},
+					min: 0,
+					max: 120,
+				},
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						value: {
+							color: "white",
+							font: { size: 12 },
+							textStrokeWidth: 2,
+							textStrokeColor: "black",
+							formatter: (value, context) =>
+								context.dataset.label === "Trend %"
+									? `${value.toFixed(1)}%`
+									: value > 0
+									? value
+									: "",
+						},
+						legend: {
+							display: true,
+							color: "black",
+							anchor: "start",
+							align: "start",
+							rotation: -90,
+							font: { size: "10px", weight: "bold" },
+							formatter: (value, context) => {
+								const { datasets } = context.chart.data;
+								const dataset = datasets[context.datasetIndex];
+								const stack = dataset.stack;
 
-                const stackLabels = categories.reduce(
-                  (acc, category, index) => {
-                    acc[category] = `Bar ${index + 1}`;
-                    return acc;
-                  },
-                  {},
-                );
+								const stackLabels = categories.reduce(
+									(acc, category, index) => {
+										acc[category] = `Bar ${index + 1}`;
+										return acc;
+									},
+									{}
+								);
 
-                return datasets
-                  .filter((ds) => ds.stack === stack)
-                  .indexOf(dataset) === 0 && stack !== undefined
-                  ? stackLabels[stack]
-                  : '';
-              },
-            },
-          },
-        },
-        legend: {
-          position: 'bottom',
-          title: { display: true, padding: 40 },
-          labels: {
-            font: { size: 12 },
-            boxHeight: 4,
-            boxWidth: 8,
-            generateLabels: () =>
-              stacks.map((item, datasetIndex) => ({
-                text: item,
-                fillStyle: stackColors[item],
-              })),
-          },
-          maxHeight: 300,
-        },
-      },
-    },
-  });
+								return datasets
+									.filter((ds) => ds.stack === stack)
+									.indexOf(dataset) === 0 && stack !== undefined
+									? stackLabels[stack]
+									: "";
+							},
+						},
+					},
+				},
+				legend: {
+					position: "bottom",
+					title: { display: true, padding: 40 },
+					labels: {
+						font: { size: 12 },
+						boxHeight: 4,
+						boxWidth: 8,
+						generateLabels: () =>
+							stacks.map((item, datasetIndex) => ({
+								text: item,
+								fillStyle: stackColors[item],
+							})),
+					},
+					maxHeight: 300,
+				},
+			},
+		},
+	});
 }
 ```
 

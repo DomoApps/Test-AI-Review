@@ -65,7 +65,7 @@ security:
 paths:
   '/v1/datasets/{dataset_id}':
     get:
-      summary: Retrieve a DataSet
+      summary: Retrieve DataSet Details
       description: Retrieves the details of an existing DataSet.
       parameters:
         - name: dataset_id
@@ -208,7 +208,7 @@ paths:
                   value: '[object Object]'
       operationId: ''
     put:
-      summary: Update a DataSet
+      summary: Update DataSet Details
       description: "Updates the specified DataSet’s metadata\_by providing\_values to\_parameters passed."
       requestBody:
         content:
@@ -889,7 +889,7 @@ paths:
                     fromcache: true
   '/v1/datasets/{dataset_id}/data':
     put:
-      summary: Import data into DataSet
+      summary: Replace data in DataSet
       description: Import data into a DataSet in your Domo instance. This request **will replace the data currently in the DataSet**.
       requestBody:
         content:

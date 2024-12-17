@@ -4,7 +4,7 @@ stoplight-id: 30k53h135rkdr
 
 <div class="col-md-12 content-panel">
                 <h2>Apps by Search Discovery</h2>
-                <p></p><p>Thanks for installing and test driving an<span id="title">&nbsp;app from the Domo Appstore</span>! &nbsp;This app was developed and published by Search Discovery, a&nbsp;Domo App Publisher.</p>
+                <p></p><p>Thanks for installing and test-driving an<span id="title">&nbsp;app from the Domo Appstore</span>! &nbsp;This app was developed and published by Search Discovery, a&nbsp;Domo App Publisher.</p>
 <h3 class="doc-row-title">Publisher Information</h3>
 <table>
 <tbody>
