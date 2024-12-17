@@ -165,6 +165,10 @@ Updates the authorities or grants which a role is capable of utilizing
 | --------- | ------- | -------- | ----------------------------- |
 | `roleId`  | Integer | Yes      | The ID of the role to updated |
 
+### Body
+
+The body for this query is a string array containing the complete list of authorities the role should have after the update
+
 ### Example
 
 ```json
