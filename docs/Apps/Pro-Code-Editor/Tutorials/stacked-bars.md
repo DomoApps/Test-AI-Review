@@ -1,4 +1,5 @@
 ---
+---
 
 ### Tutorial: Building a Stacked Bar Chart with a Trended Line in Domo's Pro-Code Editor
 
