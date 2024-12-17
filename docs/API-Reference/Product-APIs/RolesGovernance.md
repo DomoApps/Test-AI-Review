@@ -50,18 +50,10 @@ Create a Role based on an existing role's authorities
   HTTP/1.1 200 OK
   Content-Type: application/json;charset=UTF-8
   {
-    "attributes": [
-      {
-        "key": string,
-        "values": number|string[]
-      },
-    ],
-    "id": number,
-    "displayName": string,
-    "userName": string,
-    "roleId": number,
-    "emailAddress": string
-  }
+    "id": 1234567,
+    "name": "",
+    "description": ""
+}
 ```
 
 ---
