@@ -57,18 +57,12 @@ $ domo dev [options]
 * `-u, --userId`: Use a specific user. Helpful for testing app states where user Id is important
 * `-e, --external`: exposes the dev server on a public IP address
 
-#### Advanced Data Proxy
-In order to enable proxying for advanced requests (like AppDB or the Files API), you must provide the Id of an app in your instance that the CLI can proxy to. You can add this app Id to your manifest under the property `proxyId` and, assuming that the Id is valid, proxying advanced requests with `domo dev` will automatically start working.
+#### Advanced Data Proxy for Developing Locally
+In order to enable proxying for advanced requests (like the AppDB, Files, Code Engine, and Workflows APIs), you must provide the Id of an app in your instance that the CLI can proxy to (e.g. impersonate a particular card). You can add this app Id to your manifest under the property `proxyId` and, assuming that the Id is valid, proxying advanced requests with `domo dev` will automatically start working.
 
-The app Id can be found as part of the URL for the iframe in which your app is displayed. It will be of the form XXXXXXXX-XXXX-4XXX-XXXX-XXXXXXXXXXXX. To find the ID:
+All proxy ids for your app can be found on the App Design page under the "Cards" tab.
 
-* Make sure the app has been published at least once with `domo publish`
-* Publish a new card based on your app design, or navigate to an existing card made from your app design
-* Right-click anywhere in the card and choose "Inspect element"
-* Find the `<iframe>` that contains your app's code. The URL should be of the form `//{ID}.domoapps.prodX.domo.com?userId=...`
-* Copy the ID found between `//` and `.domoapps`. That is your app's id.
-
-App ids tie apps to cards. If you delete the card from which you retrieved the id, you will have to get a new one from another card created from your app design.
+Proxy ids tie apps to cards. If you delete the card from which you retrieved the id, you will have to get a new one from another card created from your app design.
 
 ### init
 
