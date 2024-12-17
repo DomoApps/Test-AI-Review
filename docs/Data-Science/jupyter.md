@@ -11,19 +11,20 @@ stoplight-id: 4cjt7r72bnwlf
 
 
 ### Knowledge Base articles
+---
 - **[Jupyter Workspaces User Guide](https://domo-support.domo.com/s/article/36004740075?language=en_US)**
 - **[Jupyter Troubleshooting Guide](https://domo-support.domo.com/s/article/7440921035671?language=en_US)**
 - **[Use Jupyter Workpaces with GitHub](https://domo-support.domo.com/s/article/000005166?language=en_US)**
 
 ### Videos/Webinars
-
-**New Features in Jupyter Workspaces (from Domopalooza 2023)**
+---
+#### New Features in Jupyter Workspaces (from Domopalooza 2023)
 
 https://www.youtube.com/watch?v=4KFYQpa6tqM
 
 *Shared workspaces, File sharing, Update a dataset using append, upsert, or partition*
 
-**Overview of Jupyter Workspaces (from Domopalooza 2022)**
+#### Overview of Jupyter Workspaces (from Domopalooza 2022)
 
 https://www.youtube.com/watch?v=04AgOGkN0A0
 
@@ -31,13 +32,13 @@ https://www.youtube.com/watch?v=04AgOGkN0A0
 
     
   
-**Forecasting using Jupyter** 
+#### Forecasting using Jupyter
 
 https://www.youtube.com/watch?v=60LNo7Nzoe8&t=2103s
 
 *Walkthrough of how to forecast using Jupyter and visualize your results*
 
-**Creating a Correlation Matrix with Jupyter** 
+#### Creating a Correlation Matrix with Jupyter
 
 https://www.youtube.com/watch?v=9CXoYW-wG-g&t=1115s
 

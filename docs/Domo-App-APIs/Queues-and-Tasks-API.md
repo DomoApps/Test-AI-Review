@@ -2,15 +2,15 @@
 stoplight-id: k2vv2vir3c8ry
 ---
 
-# Queues and Tasks API
+# Task Center API
 
-Queues allow you to organize manual tasks into different buckets of work and control who can access them. They are often used in concert with [Workflows](https://domo-support.domo.com/s/article/000005108?language=en_US).
+Task Center allows you to organize manual tasks into different queues of work and control who can access them. They are often used in concert with [Workflows](https://domo-support.domo.com/s/article/000005108?language=en_US).
 
-For more [background on Queues, please see the Knowledge Base](https://domo-support.domo.com/s/article/000005172?language=en_US).
+For more [background on Task Center, please see the Knowledge Base](https://domo-support.domo.com/s/article/000005172?language=en_US).
 
 
 ### Get Queues
-
+---
 Returns all queues the user has access to.
 
 
@@ -57,7 +57,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 
 ### Get Queue by ID
-
+---
 Returns a queue by ID.
 
 #### Code Example
@@ -101,7 +101,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 
 ### Get Tasks
-
+---
 Returns tasks based on the filters provided in the body. If the body is an empty object, it returns all tasks the user has access to.
 
 
@@ -415,7 +415,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### Get Task by ID
 Returns a task by its id.
-
+---
 #### Code Example
 
 ```js
@@ -568,7 +568,7 @@ Content-Type: application/json;charset=UTF-8
 
 
 ### Save Task Progress
-
+---
 Saves current task values given in the body, which contains the key value pairs for each input property of the task in question.
 
 #### Code Example

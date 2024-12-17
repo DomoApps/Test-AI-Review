@@ -9,11 +9,11 @@ Get data into and out of Domo. Whether data is stored in excel files, databases,
 - **Pre-built connectors**: [Connectors](https://www.domo.com/appstore/apps?appType=Connector) covering the most common data sources and systems.
 - **Build your own connector**: Use Domo's [Connector Dev Studio IDE](../Connectors/Custom-Connectors/overview.md) if a pre-built one doesn't exist yet.
 - **[Connect via API](../Connectors/API-Data-Connection/overview.md)**: Leverage the DataSet or Streams APIs.
+- **[Cloud Amplifier](https://domo-support.domo.com/s/article/4412849158167?language=en_US)**: Native integrations with cross-cloud systems like Snowflake and Databricks.
 - **[Federated data queries](../Connectors/federated-queries.md)**: Use federated adapters to query data directly from where you've already hosted it.
 - **[Connect to on-prem data](../Connectors/on-premises-data.md)**: Securely upload your on-prem data to Domo using Workbench.
 - **[Jupyter Workspaces](https://domo-support.domo.com/s/article/36004740075?language=en_US)**: Domo offers Jupyter Workspaces with both Python and R kernels, which can be used to move data in and out of Domo.
 - **[Domo CLI](https://domo-support.domo.com/s/article/360043437733?language=en_US)**: Often useful to ingest massive DataSets.
-- **[Cloud Amplifier](https://domo-support.domo.com/s/article/4412849158167?language=en_US)**: Native integrations with cross-cloud systems like Snowflake.
 
 
 ### Pre-built connectors
@@ -35,7 +35,7 @@ If an existing Connector doesn't fit your needs, Domo provides the ability to bu
 ### Connect via API
 ---
 
-You can programatically interact with Domo DataSets through the DataSet API or the Streams API (for larger DataSets).
+You can programmatically interact with Domo DataSets through the DataSet API or the Streams API (for larger DataSets).
 
 Common use-cases:
 - [**Import and Export Data**](API-Data-Connection/import-and-export-data.md) into DataSets

@@ -4,7 +4,7 @@ stoplight-id: t96yq1sjeh4br
 
 <div class="col-md-12 content-panel">
                 <h2>Google Maps Pinboard</h2>
-                <p></p><p>Thanks for installing and test driving Google Maps Pinboard! This guide is intended to help you connect this app to your own data. The first step is to ensure that your data follows the same schema (or structure) of the sample datasets that are currently powering the app. Fortunately, Domo has created some powerful data transformation tools to help, along with the step-by-step instructions provided below.</p>
+                <p></p><p>Thanks for installing and test-driving Google Maps Pinboard! This guide is intended to help you connect this app to your own data. The first step is to ensure that your data follows the same schema (or structure) of the sample datasets that are currently powering the app. Fortunately, Domo has created some powerful data transformation tools to help, along with the step-by-step instructions provided below.</p>
 <h3 class="doc-row-title">Prerequisites:</h3>
 <p>To speed up the connection process for your data, this&nbsp;app utilizes Domo’s Grid Builder. If you are not already familiar with Grid Builder,&nbsp;please visit our&nbsp;<a href="http://Link to Grid Builder Training" target="_blank">Grid Builder Training</a>.</p>
 <p>Below is a diagram that shows the order in which&nbsp;the customer data will be fed through and output to the App.</p>

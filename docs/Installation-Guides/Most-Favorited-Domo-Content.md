@@ -4,7 +4,7 @@ stoplight-id: 4hjffuapr5e3v
 
 <div class="col-md-12 content-panel">
                 <h2>Most Favorited Domo Content</h2>
-                <p></p><p>Thanks for installing and test driving <span id="title">Most Favorited Domo Content</span>! This guide is intended to help you connect this app to your own data. The first step is to ensure that your data follows the same schema (or structure) of the sample datasets that are currently powering the app. Fortunately, Domo has created some powerful data transformation tools to help, along with the step-by-step instructions provided below.</p>
+                <p></p><p>Thanks for installing and test-driving <span id="title">Most Favorited Domo Content</span>! This guide is intended to help you connect this app to your own data. The first step is to ensure that your data follows the same schema (or structure) of the sample datasets that are currently powering the app. Fortunately, Domo has created some powerful data transformation tools to help, along with the step-by-step instructions provided below.</p>
 <div id="Step%201:%20Identify%20Required%20Data%20Fields" class="doc-row">
 <h3 class="doc-row-title">Step 1: Prepare Your Data</h3>
 <div class="small-pad-bottom">
