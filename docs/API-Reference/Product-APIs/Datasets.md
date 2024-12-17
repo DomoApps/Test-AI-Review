@@ -1,5 +1,7 @@
 # Datasets API
 
+The Domo Datasets API provides a set of endpoints for managing, creating, and updating datasets within Domo. The API allows developers to execute SQL queries on datasets, revoke access to datasets for specific users, retrieve dataset metadata, append rows to datasets, share datasets with access permissions, etc. With these endpoints, developers can build integrations that interact with Domo datasets, enabling data-driven decision-making and automation of business processes.
+
 ## Query with SQL
 
 **Method**: `POST`  
