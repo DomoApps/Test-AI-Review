@@ -2,7 +2,7 @@
 
 Instructions for tracking user interactions and application events within a Domo app or brick. These functions send HTTP requests to a predefined analytics endpoint (/domo/analytics/v1), logging events such as filter changes, application loads, page views, or any user interaction. This enables real-time tracking of user behavior and app usage, which can help enhance the user experience and provide valuable data insights.
 
-Each function makes use of the fetch API to send asynchronous POST requests, passing an authentication token (__RYUU_AUTHENTICATION_TOKEN__) in the headers to authorize the requests. The functions are designed to be easily integrated into the application’s codebase, with simple, clearly defined parameters for each type of event.
+Each function makes use of the fetch API to send asynchronous POST requests, passing an authentication token (__RYUU_AUTHENTICATION_TOKEN__) in the headers to authorize each request. The functions are designed to be easily integrated into the application’s codebase, with simple, clearly defined parameters for each type of event.
 <!-- theme: info -->
 
 
@@ -11,8 +11,18 @@ To authenticate to this service you will need to include the token in your reque
 ```js
 const token = window.__RYUU_AUTHENTICATION_TOKEN__;
 ```
+Note: Authentication is handled automatically from within the context of a Domo Custom App when you use the `domo.post()` call.
 
 Here are three common examples of events to track in your application.
+
+
+<!-- theme: info -->
+> #### One Analytics Dataset Per Domo Instance
+>
+> It's important to note that the analytics service only creates one Dataset (accessible by admins) for all Custom Apps across instances. To avoid hitting the column limit (1500) for this Dataset, it is best practice to **define your properties generically** and then use a DataFlow or Dataset View to isolate just the rows relevant to a particular app id.
+> 
+> Use property names: "Property 1", "Property 2", etc." to save any related metadata around an analytics call. See the examples defined below.
+
 
 #### Report an App Load Code Example
 ```js
@@ -39,9 +49,9 @@ export const reportAppLoad = function(locale) {
     body: JSON.stringify({
       type: 'LOAD',
       properties: {
-        loadCount: 1,
-        platform: platform,
-        location: locale,
+        'Property 1': 1,
+        'Property 2': platform,
+        'Property 3': locale,
       },
     }),
   })
@@ -81,7 +91,7 @@ export const reportPageView = function(page) {
     body: JSON.stringify({
       type: 'NAVIGATION',
       properties: {
-        pageViewed: page,
+        'Property 1': page,
       },
     }),
   })
@@ -115,7 +125,7 @@ export const reportPageView = function(page) {
  * // Report multiple filter changes
  * reportFilterChange("tags", ["sale", "new arrivals"]);
  */
-export const reportFilterChange = function(type, value) {
+export const reportFilterChange = function(filterType, filterValue) {
   return fetch(`/domo/analytics/v1`, {
     method: 'POST',
     headers: {
@@ -125,8 +135,8 @@ export const reportFilterChange = function(type, value) {
     body: JSON.stringify({
       type: 'ACTION',
       properties: {
-        filterType: type,
-        filterValue: value,
+        'Property 1': filterType,
+        'Property 2': filterValue,
       },
     }),
   })
@@ -150,8 +160,8 @@ For example if I wanted to change an event type from `NAVIGATION` and `{pageView
   body: JSON.stringify({
     type: 'ACTION',
     properties: {
-      actionType: "buttonClicked",
-      actionValue: "custom value"
+      'Property 1': "buttonClicked",
+      'Property 2': "custom value",
     },
   }),
 ```
