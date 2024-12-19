@@ -4,7 +4,73 @@ stoplight-id:
 
 # Alerts API
 
-Summary
+Domo Alerts allow users to subscribe to various events and receive timely notifications as changes occur. Find out more about Alerts by reading [this article](https://domo-support.domo.com/s/article/360043430373?language=en_US). The Alerts API can be used to manage alerts in your Domo instance.
+
+## Get alerts
+
+Query alerts from your Domo instance.
+
+#### Code Example
+
+```js
+function getAlerts() {
+  const url = `/api/social/v4/alerts`;
+  const response = await fetch(url);
+  return await response.json();
+}
+```
+
+#### Query Parameters
+
+| Property Name            | Type    | Required | Default                                                                                                       | Description                                                                             |
+| ------------------------ | ------- | -------- | ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| all                      | Boolean | Optional |                                                                                                               | Whether to fetch all alerts at once                                                     |
+| cardId                   | Integer | Optional |                                                                                                               | A specific card id to fetch alerts for                                                  |
+| currentUserSubscriptions | Boolean | Optional | false                                                                                                         | Whether to fetch the alerts subscribed to by the current user                           |
+| dataSetId                | String  | Optional |                                                                                                               | A specific dataset id to fetch alerts for                                               |
+| disabled                 | Boolean | Optional |                                                                                                               | Whether to fetch only disabled alerts                                                   |
+| fields                   | String  | Optional | id, category, type, name, description, resourceType, resourceId, createdAt, createdBy, modifiedAt, modifiedBy | Which alert fields to include in the response (can be set to 'all' to fetch all fields) |
+| limit                    | Integer | Optional | 100                                                                                                           | The query limit                                                                         |
+| offset                   | Integer | Optional | 0                                                                                                             | The query offset (for pagination)                                                       |
+| ownerId                  | Integer | Optional |                                                                                                               | A specific user id to fetch owned alerts for                                            |
+| pageId                   | Integer | Optional |                                                                                                               | A specific page id to fetch alerts for                                                  |
+| sort                     | String  | Optional | createdAt                                                                                                     | The field to sort by                                                                    |
+| subscriberId             | Integer | Optional |                                                                                                               | A specific user id to fetch subscribed alerts for                                       |
+| subscriptionTypes        | String  | Optional |                                                                                                               | A list of subscription types to filter the alerts by                                    |
+| suggested                | Boolean | Optional |                                                                                                               | Whether to fetch only alerts that are suggested for you                                 |
+| triggered                | String  | Optional |                                                                                                               | Whether to fetch only alerts that have been triggered                                   |
+
+#### HTTP Request
+
+```text
+GET /api/social/v4/alerts?all=true&limit=5 HTTP/1.1
+Accept: application/json
+```
+
+#### HTTP Response
+
+Returns the alerts based on the included query params.
+
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+  [
+    {
+        "id": 358,
+        "name": "Any row has changes for column(s): 'embedURL, metric, src, filesAPINum, docId, userName, title'",
+        "type": "ANY_ROW",
+        "resourceType": "DATASET",
+        "resourceId": "58b3775b-ab03-4f54-9052-a3c5f7cbf426",
+        "createdAt": "2024-12-12 23:37:32",
+        "createdBy": 1341393147,
+        "modifiedAt": "2024-12-13 18:55:17",
+        "modifiedBy": 1341393147,
+        "category": "DATA"
+    }, ...
+  ]
+}
+```
 
 ## Get an alert
 
@@ -28,9 +94,9 @@ function getAlert(alertId) {
 
 #### Query Parameters
 
-| Property Name | Type   | Required | Description |
-| ------------- | ------ | -------- | ----------- |
-| fields        | String | Optional |             |
+| Property Name | Type   | Required | Description                                   |
+| ------------- | ------ | -------- | --------------------------------------------- |
+| fields        | String | Optional | Which alert fields to include in the response |
 
 #### HTTP Request
 
@@ -43,9 +109,34 @@ Accept: application/json
 
 Returns the alert.
 
-```text
+```json
 HTTP/1.1 200 OK
-TODO
+{
+  "actions": [],
+  "active": true,
+  "category": "DATA",
+  "configurations": [],
+  "contextual": true,
+  "createdAt": "2024-01-01 00:00:00",
+  "createdBy": 123456789,
+  "currentUserSubscribed": false,
+  "enabled": true,
+  "error": {},
+  "filterGroups": [],
+  "id": 123,
+  "modifiedAt": "2024-01-01 00:00:00",
+  "modifiedBy": 123456789,
+  "name": "My Favorite Alert",
+  "owner": 123456789,
+  "resourceId": "58b3775b-ab03-4f54-9052-a3c5f7cbf426",
+  "resourceName": "Test Dataset",
+  "resourceType": "DATASET",
+  "rule": "Any row has changes for column(s): 'test'",
+  "subscriptions": [],
+  "triggerFrequency": "Rarely",
+  "triggered": false,
+  "type": "ANY_ROW"
+}
 ```
 
 ## Delete an alert
