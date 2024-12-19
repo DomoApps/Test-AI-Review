@@ -6,8 +6,6 @@ This API reference is useful if you are trying to manage Domo Users from anywher
 1. Code Engine Functions
 1. Custom Java/Node/Python scripts
 
-If you are unfamiliar with how to authenticate against Product APIs, [please see this overview page](../Getting-Started/api-authentication.md).
-
 ## Create User
 
 **Method**: `POST`  
