@@ -222,6 +222,11 @@
         },
         {
           "type": "item",
+          "title": "Pages API",
+          "uri": "docs/API-Reference/Product-APIs/Pages-API.md"
+        },
+        {
+          "type": "item",
           "title": "Query Dataset API",
           "uri": "docs/API-Reference/Product-APIs/Query-Data.md"
         },
