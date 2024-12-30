@@ -68,7 +68,7 @@ Retrieves a list of users and groups with access to the dataset, along with thei
 ```json
 {
   "method": "GET",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v3/datasources/{dataset_id}/permissions",
+  "url": "https://{domo_instance}.domo.com/api/data/v3/datasources/{dataset_id}/permissions",
   "headers": {}
 }
 ```
@@ -271,7 +271,7 @@ Creates a new data stream using a connector and specifies configuration details.
 ```json
 {
   "method": "POST",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v1/streams",
+  "url": "https://{domo_instance}.domo.com/api/data/v1/streams",
   "headers": {
     "Content-Type": "application/json"
   },
@@ -325,7 +325,7 @@ Retrieves configuration details for a specific data stream.
 ```json
 {
   "method": "GET",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v1/streams/{stream_id}",
+  "url": "https://{domo_instance}.domo.com/api/data/v1/streams/{stream_id}",
   "headers": {}
 }
 ```
@@ -588,7 +588,7 @@ Updates the configuration of an existing data stream.
 ```json
 {
   "method": "PUT",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v1/streams/{stream_id}",
+  "url": "https://{domo_instance}.domo.com/api/data/v1/streams/{stream_id}",
   "headers": {
     "Content-Type": "application/json"
   },
@@ -641,7 +641,7 @@ Retrieves the execution history for a specific data stream, including details ab
 ```json
 {
   "method": "GET",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v1/streams/{stream_id}/history/aggregate",
+  "url": "https://{domo_instance}.domo.com/api/data/v1/streams/{stream_id}/history/aggregate",
   "headers": {}
 }
 ```
@@ -901,7 +901,7 @@ Generates an `uploadId` for appending or replacing data in the dataset. The `upl
 ```json
 {
   "method": "POST",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v3/datasources/:dataset_id/uploads",
+  "url": "https://{domo_instance}.domo.com/api/data/v3/datasources/:dataset_id/uploads",
   "headers": {
     "Content-Type": "application/json",
     "Accept": "application/json"
@@ -946,7 +946,7 @@ Uploads the CSV file data. The dataset is divided into parts for uploading multi
 ```json
 {
   "method": "PUT",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v3/datasources/:dataset_id/uploads/:upload_id/parts/1",
+  "url": "https://{domo_instance}.domo.com/api/data/v3/datasources/:dataset_id/uploads/:upload_id/parts/1",
   "headers": {
     "Content-Type": "text/csv",
     "Accept": "application/json"
@@ -984,7 +984,7 @@ Finalizes the data upload by committing the uploaded parts and indexing the data
 ```json
 {
   "method": "PUT",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v3/datasources/:dataset_id/uploads/:upload_id/commit",
+  "url": "https://{domo_instance}.domo.com/api/data/v3/datasources/:dataset_id/uploads/:upload_id/commit",
   "headers": {
     "Content-Type": "application/json",
     "Accept": "application/json"
@@ -1001,7 +1001,7 @@ Finalizes the data upload by committing the uploaded parts and indexing the data
 ### Stage 1 - Get Partition Tag
 
 **Method**: `POST`  
-**Endpoint**: `/api/data/v3/datasources/{dataset_id}/uploads/?restateDataTag={{dataset_partition_id}}`
+**Endpoint**: `/api/data/v3/datasources/{dataset_id}/uploads/?restateDataTag={dataset_partition_id}`
 
 **Description**:  
 Initializes a data upload with partitioning and generates an `uploadId`. The `uploadId` is required for subsequent upload stages. Note that `restateDataTag` is largely deprecated and retained for backward compatibility.
@@ -1018,7 +1018,7 @@ Initializes a data upload with partitioning and generates an `uploadId`. The `up
 ```json
 {
   "method": "POST",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v3/datasources/{dataset_id}/uploads/?restateDataTag={{dataset_partition_id}}",
+  "url": "https://{domo_instance}.domo.com/api/data/v3/datasources/{dataset_id}/uploads/?restateDataTag={dataset_partition_id}",
   "headers": {
     "Content-Type": "application/json",
     "Accept": "application/json"
@@ -1043,7 +1043,7 @@ Initializes a data upload with partitioning and generates an `uploadId`. The `up
 ### Stage 2 - Upload CSV
 
 **Method**: `PUT`  
-**Endpoint**: `/api/data/v3/datasources/{dataset_id}/uploads/{{dataset_upload_id}}/parts/:part`
+**Endpoint**: `/api/data/v3/datasources/{dataset_id}/uploads/{dataset_upload_id}/parts/:part`
 
 **Description**:  
 Uploads data in CSV format. Multiple parts can be uploaded simultaneously for larger datasets.
@@ -1061,7 +1061,7 @@ Uploads data in CSV format. Multiple parts can be uploaded simultaneously for la
 ```json
 {
   "method": "PUT",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v3/datasources/{dataset_id}/uploads/{{dataset_upload_id}}/parts/1",
+  "url": "https://{domo_instance}.domo.com/api/data/v3/datasources/{dataset_id}/uploads/{dataset_upload_id}/parts/1",
   "headers": {
     "Content-Type": "text/csv",
     "Accept": "application/json"
@@ -1075,7 +1075,7 @@ Uploads data in CSV format. Multiple parts can be uploaded simultaneously for la
 ### Stage 3 - Commit and Index
 
 **Method**: `PUT`  
-**Endpoint**: `/api/data/v3/datasources/{dataset_id}/uploads/{{dataset_upload_id}}/commit`
+**Endpoint**: `/api/data/v3/datasources/{dataset_id}/uploads/{dataset_upload_id}/commit`
 
 **Description**:  
 Finalizes the data upload by committing all parts and optionally indexing the dataset for query access.
@@ -1095,14 +1095,14 @@ Finalizes the data upload by committing all parts and optionally indexing the da
 ```json
 {
   "method": "PUT",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v3/datasources/{dataset_id}/uploads/{{dataset_upload_id}}/commit",
+  "url": "https://{domo_instance}.domo.com/api/data/v3/datasources/{dataset_id}/uploads/{dataset_upload_id}/commit",
   "headers": {
     "Content-Type": "application/json",
     "Accept": "application/json"
   },
   "body": {
     "action": "APPEND",
-    "restateDataTag": "{{dataset_partition_id}}",
+    "restateDataTag": "{dataset_partition_id}",
     "index": true
   }
 }
@@ -1127,7 +1127,7 @@ Retrieves detailed information about all data versions associated with the datas
 ```json
 {
   "method": "GET",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v3/datasources/{dataset_id}/dataversions/details",
+  "url": "https://{domo_instance}.domo.com/api/data/v3/datasources/{dataset_id}/dataversions/details",
   "headers": {}
 }
 ```
@@ -1151,7 +1151,7 @@ Retrieves a list of partitions associated with the dataset. Does not include met
 ```json
 {
   "method": "GET",
-  "url": "https://{{domo_instance}}.domo.com/api/query/v1/datasources/{dataset_id}/partition",
+  "url": "https://{domo_instance}.domo.com/api/query/v1/datasources/{dataset_id}/partition",
   "headers": {}
 }
 ```
@@ -1184,7 +1184,7 @@ Searches for partitions associated with the dataset. Allows pagination, sorting,
 ```json
 {
   "method": "POST",
-  "url": "https://{{domo_instance}}.domo.com/api/query/v1/datasources/{dataset_id}/partition/list",
+  "url": "https://{domo_instance}.domo.com/api/query/v1/datasources/{dataset_id}/partition/list",
   "headers": {
     "Content-Type": "application/json"
   },
@@ -1227,7 +1227,7 @@ Retrieves a list of data versions for datasets processed with the MAGIC engine.
 ```json
 {
   "method": "POST",
-  "url": "https://{{domo_instance}}.domo.com/api/dataprocessing/v2/dataflows/data-version-hydrate?engine=MAGIC&limit=500&offset=0",
+  "url": "https://{domo_instance}.domo.com/api/dataprocessing/v2/dataflows/data-version-hydrate?engine=MAGIC&limit=500&offset=0",
   "headers": {
     "Content-Type": "application/json"
   },
@@ -1246,7 +1246,7 @@ Retrieves a list of data versions for datasets processed with the MAGIC engine.
 ## Delete Data Version
 
 **Method**: `DELETE`  
-**Endpoint**: `/api/query/v1/datasources/{dataset_id}/tag/{{dataset_partition_id}}/data`
+**Endpoint**: `/api/query/v1/datasources/{dataset_id}/tag/{dataset_partition_id}/data`
 
 **Description**:  
 Marks the data version associated with a partition tag as deleted. This does not delete the partition tag itself or remove the association between the partition tag and the data version.
@@ -1263,7 +1263,7 @@ Marks the data version associated with a partition tag as deleted. This does not
 ```json
 {
   "method": "DELETE",
-  "url": "https://{{domo_instance}}.domo.com/api/query/v1/datasources/{dataset_id}/tag/{{dataset_partition_id}}/data",
+  "url": "https://{domo_instance}.domo.com/api/query/v1/datasources/{dataset_id}/tag/{dataset_partition_id}/data",
   "headers": {}
 }
 ```
@@ -1276,7 +1276,7 @@ Marks the data version associated with a partition tag as deleted. This does not
 ## Delete Partition Tag
 
 **Method**: `DELETE`  
-**Endpoint**: `/api/query/v1/datasources/{dataset_id}/partition/{{dataset_partition_id}}`
+**Endpoint**: `/api/query/v1/datasources/{dataset_id}/partition/{dataset_partition_id}`
 
 **Description**:  
 Removes the association of a partition tag with its dataset, ensuring it no longer appears in the partition list.
@@ -1293,7 +1293,7 @@ Removes the association of a partition tag with its dataset, ensuring it no long
 ```json
 {
   "method": "DELETE",
-  "url": "https://{{domo_instance}}.domo.com/api/query/v1/datasources/{dataset_id}/partition/{{dataset_partition_id}}",
+  "url": "https://{domo_instance}.domo.com/api/query/v1/datasources/{dataset_id}/partition/{dataset_partition_id}",
   "headers": {}
 }
 ```
@@ -1323,7 +1323,7 @@ Indexes data versions for a dataset to make them queryable. If no `dataIds` are 
 ```json
 {
   "method": "POST",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v3/datasources/{dataset_id}/indexes",
+  "url": "https://{domo_instance}.domo.com/api/data/v3/datasources/{dataset_id}/indexes",
   "headers": {
     "Content-Type": "application/json"
   },
@@ -1358,7 +1358,7 @@ Creates a new dataset by copying an existing schema and providing user-defined m
 ```json
 {
   "method": "POST",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v2/datasources",
+  "url": "https://{domo_instance}.domo.com/api/data/v2/datasources",
   "headers": {
     "Content-Type": "application/json"
   },
@@ -1401,11 +1401,11 @@ Retrieves the schema of a dataset, including details about columns, their types,
 ```json
 {
   "method": "GET",
-  "url": "https://{{domo_instance}}.domo.com/api/query/v1/datasources/{dataset_id}/schema/indexed?includeHidden=false",
+  "url": "https://{domo_instance}.domo.com/api/query/v1/datasources/{dataset_id}/schema/indexed?includeHidden=false",
   "headers": {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "x-domo-authentication": "{{session_token}}"
+    "x-domo-authentication": "{session_token}"
   }
 }
 ```
@@ -1460,11 +1460,11 @@ Modifies the schema of an existing dataset by adding or altering columns.
 ```json
 {
   "method": "POST",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v2/datasources/{dataset_id}/schemas",
+  "url": "https://{domo_instance}.domo.com/api/data/v2/datasources/{dataset_id}/schemas",
   "headers": {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "x-domo-authentication": "{{session_token}}"
+    "x-domo-authentication": "{session_token}"
   },
   "body": {
     "columns": [
@@ -1516,7 +1516,7 @@ Retrieves a list of cards associated with a dataset. Includes drill paths for ca
 ```json
 {
   "method": "GET",
-  "url": "https://{{domo_instance}}.domo.com/api/content/v1/datasources/{dataset_id}/cards?drill=true",
+  "url": "https://{domo_instance}.domo.com/api/content/v1/datasources/{dataset_id}/cards?drill=true",
   "headers": {}
 }
 ```
@@ -1581,7 +1581,7 @@ Indexes a dataset to make it available for querying. This process is required af
 ```json
 {
   "method": "POST",
-  "url": "https://{{domo_instance}}.domo.com/api/query/v1/datasources/{dataset_id}",
+  "url": "https://{domo_instance}.domo.com/api/query/v1/datasources/{dataset_id}",
   "headers": {}
 }
 ```
@@ -1606,7 +1606,7 @@ Retrieves the status of a dataset indexing operation for the specified index ID.
 ```json
 {
   "method": "GET",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v3/datasources/{dataset_id}/indexes/{index_id}/statuses",
+  "url": "https://{domo_instance}.domo.com/api/data/v3/datasources/{dataset_id}/indexes/{index_id}/statuses",
   "headers": {}
 }
 ```
@@ -1631,7 +1631,7 @@ Updates the properties of a dataset, such as the data provider type.
 ```json
 {
   "method": "PUT",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v3/datasources/{dataset_id}/properties",
+  "url": "https://{domo_instance}.domo.com/api/data/v3/datasources/{dataset_id}/properties",
   "headers": {
     "Content-Type": "application/json"
   },
@@ -1660,7 +1660,7 @@ Retrieves a list of users and groups with access to the dataset, along with thei
 ```json
 {
   "method": "GET",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v3/datasources/{dataset_id}/permissions",
+  "url": "https://{domo_instance}.domo.com/api/data/v3/datasources/{dataset_id}/permissions",
   "headers": {}
 }
 ```
@@ -1702,7 +1702,7 @@ Updates the properties of a dataset, such as the data provider type.
 ```json
 {
   "method": "PUT",
-  "url": "https://{{domo_instance}}.domo.com/api/data/v3/datasources/{dataset_id}/properties",
+  "url": "https://{domo_instance}.domo.com/api/data/v3/datasources/{dataset_id}/properties",
   "headers": {
     "Content-Type": "application/json"
   },
