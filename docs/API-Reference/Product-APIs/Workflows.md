@@ -105,3 +105,117 @@ Content-Type: application/json;charset=UTF-8
     "status": "null"
 }
 ```
+
+### Canceling a Workflow
+
+---
+
+Cancels an in progress Workflow. If you are unfamiliar with how to authenticate against Product APIs, [please see this overview page](../Getting-Started/api-authentication.md).
+
+**Method**: `POST`  
+**Endpoint**: `/api/workflow/v1/instances/${instanceId}/cancel`  
+**Path Parameters**:
+
+- `id` - The ID of the Workflow instance to cancel
+  - String
+  - Required
+
+**Example**
+
+```json http
+{
+  "method": "POST",
+  "url": "https://{instance}.domo.com/api/workflow/v1/instances/${instanceId}/cancel",
+  "headers": {
+    "X-DOMO-Developer-Token": "",
+    "Content-Type": "application/json"
+  }
+}
+```
+
+**Response**:
+
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+  "id": string,
+  "modelId": string,
+  "deploymentId": string,
+  "modelName": string,
+  "modelVersion": string,
+  "bpmnProcessId": string,
+  "bpmnProcessName": string,
+  "createdBy": string,
+  "createdOn": string,
+  "updatedBy": string,
+  "updatedOn": string,
+  "status": string,
+  "isTestRun": boolean
+}
+```
+
+### Changing a Workflow's Permissions
+
+---
+
+Changes the permissions of a workflow.
+
+#### HTTP Request
+
+```text
+POST https://{instance}.domo.com/api/workflow/v1/models/${modelId}/permissions`
+```
+
+#### Request Body
+
+| Property Name | Type   | Required | Description                   |
+| ------------- | ------ | -------- | ----------------------------- |
+| modelId       | String | Required | The id of the workflow model. |
+
+#### Example
+
+```json http
+{
+  "method": "POST",
+  "url": "https://{instance}.domo.com/api/workflow/v1/models/${modelId}/permissions",
+  "headers": {
+    "X-DOMO-Developer-Token": "",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    [
+        {
+            "id": "123456",
+            "permissions": [
+                "ADMIN",
+                "SHARE",
+                "DELETE",
+                "WRITE",
+                "READ",
+                "EXPORT",
+                "EXECUTE",
+                "UPDATE_CONTENT"
+            ],
+            "name": "John Doe",
+            "type": "USER"
+        },
+        {
+            "id": "98765",
+            "name": "John Smith",
+            "type": "USER",
+            "permissions": [
+                "READ"
+            ]
+        }
+    ]
+  }
+}
+```
+
+#### HTTP Response
+
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+```

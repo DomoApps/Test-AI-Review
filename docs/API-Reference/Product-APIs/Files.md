@@ -487,7 +487,9 @@ Permanently deletes a File from your instance.
 ```js
 function deleteFile(dataFileId) {
   const url = `/api/data/v1/data-files/${dataFileId}`;
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    method: 'DELETE'
+  });
   return await response.json();
 }
 ```
@@ -507,7 +509,7 @@ Accept: application/json
 
 #### HTTP Response
 
-Returns the parameter of success or error based on the file Id being valid.
+Returns the parameter of success or error based on the file id being valid.
 
 ```text
 HTTP/1.1 200 OK
@@ -522,7 +524,9 @@ Deletes a specific revision of a file.
 ```js
 function deleteFileRevision(dataFileId, revisionId) {
   const url = `/api/data/v1/data-files/${dataFileId}/revisions/${revisionId}`;
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    method: 'DELETE'
+  });
   return await response.json();
 }
 ```

@@ -6,8 +6,6 @@ This API reference is useful if you are trying to manage Domo Users from anywher
 1. Code Engine Functions
 1. Custom Java/Node/Python scripts
 
-If you are unfamiliar with how to authenticate against Product APIs, [please see this overview page](../Getting-Started/api-authentication.md).
-
 ## Create User
 
 **Method**: `POST`  
@@ -249,4 +247,31 @@ If you are unfamiliar with how to authenticate against Product APIs, [please see
   HTTP/1.1 200 OK
   Content-Type: application/json;charset=UTF-8
   1
+```
+
+## Upload User avatars
+
+**Method**: `POST`  
+**Endpoint**: `/avatar/uploaduserimage/<USER_ID>`
+
+**Example**:
+
+```json
+{
+  "method": "POST",
+  "url": "https://{instance}.domo.com/avatar/uploaduserimage/<USER_ID>",
+  "headers": {
+    "X-DOMO-Developer-Token": "",
+    "Content-Type": "application/json"
+  },
+  "body": <BASE_64_ENCODED_IMAGE>
+}
+```
+
+**Response**:
+
+```json
+200:
+{}
+
 ```
