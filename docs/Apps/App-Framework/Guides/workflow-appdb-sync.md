@@ -1,7 +1,7 @@
 
 # Sync AppDB Only Once a Day
 
-Domo doesn't currently allow you to specify sync intervals. Either AppDB doesn't sync or it syncs every 15 minutes. In order to **conserve credits** on syncs you can create a Workflow to **sync on your schedule** instead.
+Since Domo doesn't currently allow you to specify sync intervals, AppDB can **only** be set to either 1) not sync at all or 2) sync every 15 minutes. If you would like to **conserve credits** on syncs, you can create a Workflow to **sync on your schedule**.
 
 This guide leverages Workflows, please make sure you are familiar with [Workflows](https://domo-support.domo.com/s/article/000005108?language=en_US) and [Code Engine](https://domo-support.domo.com/s/article/000005173?language=en_US) first. 
 
