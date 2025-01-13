@@ -306,6 +306,10 @@ paths:
                                 type: string
                 updateMethod:
                   type: string
+                keyColumnNames:
+                  type: array
+                  items:
+                    type: string
               x-examples:
                 Example 1:
                   dataSet:
