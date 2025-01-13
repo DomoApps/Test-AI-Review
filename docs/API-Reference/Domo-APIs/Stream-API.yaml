@@ -284,6 +284,20 @@ paths:
           application/json:
             schema:
               type: object
+              x-examples:
+                Example 1:
+                  dataSet:
+                    name: Leonhard Euler Party
+                    description: Mathematician Guest List
+                    schema:
+                      columns:
+                        - type: STRING
+                          name: Friend
+                        - type: STRING
+                          name: Attending
+                  updateMethod: APPEND
+              required:
+                - dataSet
               properties:
                 dataSet:
                   type: object
@@ -308,20 +322,9 @@ paths:
                   type: string
                 keyColumnNames:
                   type: array
+                  description: '`keyColumnNames` defines the upsert key for upsert Datasets.'
                   items:
                     type: string
-              x-examples:
-                Example 1:
-                  dataSet:
-                    name: Leonhard Euler Party
-                    description: Mathematician Guest List
-                    schema:
-                      columns:
-                        - type: STRING
-                          name: Friend
-                        - type: STRING
-                          name: Attending
-                  updateMethod: APPEND
             examples:
               Example 1:
                 value:
