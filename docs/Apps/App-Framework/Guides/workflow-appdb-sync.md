@@ -1,9 +1,9 @@
 
 # Sync AppDB Only Once a Day
 
-Domo doesn't currently allow you to specify sync intervals. Either AppDB doesn't sync or it syncs every 15 minutes. In order to **conserve credits** on syncs you can create a Workflow to **sync on your schedule** instead.
+Since Domo doesn't currently allow you to specify sync intervals, AppDB can **only** be set to either 1) not sync at all or 2) sync every 15 minutes. If you would like to **conserve credits** on syncs, you can create a Workflow to **sync on your schedule**.
 
-This guide leverages Workflows, please make sure you are familiar with [Workflows](https://domo-support.domo.com/s/article/000005108?language=en_US) and [Code Engine](https://domo-support.domo.com/s/article/000005173?language=en_US) first. 
+This guide leverages Workflows. Please make sure you are familiar with [Workflows](https://domo-support.domo.com/s/article/000005108?language=en_US) and [Code Engine](https://domo-support.domo.com/s/article/000005173?language=en_US) first. 
 
 <!-- theme: info -->
 > #### Links to documentation
@@ -14,7 +14,7 @@ This guide leverages Workflows, please make sure you are familiar with [Workflow
 1. [Create a Workflow](https://domo-support.domo.com/s/article/000005331?language=en_US) that runs at the time you want to sync the collection
 2. Specify which collection you want to sync
     - You can [specify it as a variable](https://domo-support.domo.com/s/article/000005331?language=en_US#add_a_variable) in the Workflow
-3. [Create a Code Engine function](https://domo-support.domo.com/s/article/000005173?language=en_US#create_custom_package) to do the sync. It could look something like this:
+3. [Create a Code Engine function](https://domo-support.domo.com/s/article/000005173?language=en_US#create_custom_package) to execute a sync, which could be written like this:
 ```js
 const codeengine = require("codeengine");
 
