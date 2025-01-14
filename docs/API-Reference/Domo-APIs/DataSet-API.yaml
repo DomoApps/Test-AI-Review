@@ -215,8 +215,8 @@ paths:
         <!-- theme: info -->
         > #### Appending _Data_
         >
-        > To import *new rows* into an existing DataSet, use the [Simple API](https://developer.domo.com/portal/d984e2fec9b18-import-data-into-data-set).
-        <!-- theme: info -->
+        > To import **new rows** into an existing DataSet, use the [Simple API](https://developer.domo.com/portal/d984e2fec9b18-import-data-into-data-set) instead.
+        
       requestBody:
         content:
           application/json:
@@ -897,7 +897,14 @@ paths:
   '/v1/datasets/{dataset_id}/data':
     put:
       summary: Replace data in DataSet
-      description: Import data into a DataSet in your Domo instance. This request **will replace the data currently in the DataSet**.
+      description: |
+        Replace data into a DataSet in your Domo instance. This request will **replace all data** currently in the DataSet.
+        
+        <!-- theme: info -->
+        > #### Appending _Data_
+        >
+        > To import **new rows** into an existing DataSet, use the [Simple API](https://developer.domo.com/portal/d984e2fec9b18-import-data-into-data-set) instead.
+        
       requestBody:
         content:
           text/csv:
