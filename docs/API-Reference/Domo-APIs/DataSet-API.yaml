@@ -209,7 +209,14 @@ paths:
       operationId: ''
     put:
       summary: Update DataSet Details
-      description: "Updates the specified DataSet’s metadata\_by providing\_values to\_parameters passed."
+      description: |
+        Updates the specified DataSet’s metadata by providing values to parameters passed.
+        
+        <!-- theme: info -->
+        > #### Appending _Data_
+        >
+        > To import *new rows* into an existing DataSet, use the [Simple API](https://developer.domo.com/portal/d984e2fec9b18-import-data-into-data-set).
+        <!-- theme: info -->
       requestBody:
         content:
           application/json:
