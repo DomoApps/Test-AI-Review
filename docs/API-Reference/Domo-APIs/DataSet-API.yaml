@@ -8,7 +8,7 @@ info:
 
     ---
 
-    The DataSet Object allows you to create, import, export, and manage DataSets, as well as manage data permissions for DataSets within Domo.
+    The DataSet Object allows you to create, import, export, and manage DataSets, as well as manage Data Permissions for DataSets within Domo.
 
     <!-- theme: info -->
 
@@ -429,7 +429,7 @@ paths:
   /v1/datasets:
     post:
       summary: Create a DataSet
-      description: "Creates a new DataSet\_in your Domo instance. Once the DataSet has been created, data can then be imported into the DataSet."
+      description: "Creates a new DataSet\_in your Domo instance. Once a DataSet has been created, data can be imported into the DataSet."
       requestBody:
         content:
           application/json:
@@ -495,7 +495,7 @@ paths:
         description: ''
       responses:
         '201':
-          description: Returns a DataSet object when successful. The returned object will have DataSet attributes based on the information that was provided when DataSet was created.
+          description: Returns a DataSet object when successful. The returned object will have DataSet attributes based on information provided when the DataSet was created.
           content:
             application/json:
               schema:
@@ -579,7 +579,7 @@ paths:
           in: query
           schema:
             type: integer
-          description: The amount of DataSets to return in the list. The default is 50 and the maximum is 50.
+          description: The amount of DataSets to return in the list. The default is 50, and the maximum is 50.
           example: 3
         - name: offset
           in: query
@@ -591,7 +591,7 @@ paths:
           in: query
           schema:
             type: string
-          description: The DataSet field to sort by. Fields prefixed with a negative sign reverses the sort (i.e. '-name' does a reverse sort by the name of the DataSets)
+          description: The DataSet field to sort by. Fields prefixed with a negative sign reverses the sort (i.e., '-name' does a reverse sort by the name of the DataSets).
           example: name
         - schema:
             type: string
@@ -927,7 +927,7 @@ paths:
                 Example 1:
                   value: HTTP/1.1 204 No Content
     get:
-      summary: Export data from DataSet
+      summary: Export Data from DataSet
       description: "Export\_data from\_a DataSet in your Domo instance.\n\n> Data types will be exported as they are currently stored in the dataset. In addition, the only supported export type is CSV.\n"
       parameters:
         - name: includeHeader
@@ -1355,7 +1355,7 @@ paths:
                       - 27
                     groups: []
     get:
-      summary: List Personalized Data Permission (PDP) policies
+      summary: List Personalized Data Permission (PDP) Policies
       description: List the Personalized Data Permission (PDP) policies for a specified DataSet.
       parameters:
         - name: dataset_id
