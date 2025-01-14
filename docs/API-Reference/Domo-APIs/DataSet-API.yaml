@@ -20,7 +20,7 @@ info:
 
     > #### Permissions
     >
-    > In order to update or write to a DataSet via API, you must have the Manage Dataset grant enabled.
+    > To update or write to a DataSet via API, you must have the Manage Dataset grant enabled.
 
     ### Attributes
 
