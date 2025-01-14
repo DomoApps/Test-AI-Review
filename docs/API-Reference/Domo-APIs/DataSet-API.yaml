@@ -4,11 +4,11 @@ x-stoplight:
 info:
   title: DataSet API
   description: |
-    ## The DataSet object
+    ## The DataSet Object
 
     ---
 
-    The DataSet objects allows you to create, import, export and manage DataSets and manage data permissions for DataSets within Domo.
+    The DataSet Object allows you to create, import, export, and manage DataSets, as well as manage data permissions for DataSets within Domo.
 
     <!-- theme: info -->
 
@@ -20,7 +20,7 @@ info:
 
     > #### Permissions
     >
-    > To be able to write to or update a DataSet via API, you must have the Manage Dataset grant enabled.
+    > In order to update or write to a DataSet via API, you must have the Manage Dataset grant enabled.
 
     ### Attributes
 
@@ -75,7 +75,7 @@ paths:
           required: true
       responses:
         '200':
-          description: 'Returns a DataSet object if valid `dataset_id` was provided. When requesting, if the `dataset_id` is related to a DataSet that has been deleted, a subset of the DataSet''s information will be returned, including a `deleted` property, which will be `true`.'
+          description: 'Returns a DataSet object if valid `dataset_id` was provided. When requesting, if the `dataset_id` is related to a DataSet that has been deleted, a subset of the DataSet's information will be returned, including a `deleted` property, which will be `true`.'
           content:
             application/json:
               examples:
