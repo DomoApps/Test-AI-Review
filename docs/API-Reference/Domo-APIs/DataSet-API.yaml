@@ -502,7 +502,7 @@ paths:
         description: ''
       responses:
         '201':
-          description: Returns a DataSet object when successful. The returned object will have DataSet attributes based on information provided when the DataSet was created.
+          description: Returns a DataSet object when successful. The returned object will have DataSet attributes based on the information provided when the DataSet was created.
           content:
             application/json:
               schema:
