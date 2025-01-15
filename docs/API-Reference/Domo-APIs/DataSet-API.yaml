@@ -586,7 +586,7 @@ paths:
           in: query
           schema:
             type: integer
-          description: The amount of DataSets to return in the list. The default is 50, and the maximum is 50.
+          description: The amount of DataSets to return in the list. The default is 50 and the maximum is 50.
           example: 3
         - name: offset
           in: query
