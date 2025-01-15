@@ -75,7 +75,7 @@ paths:
           required: true
       responses:
         '200':
-          description: 'Returns a DataSet object if valid `dataset_id` was provided. When requesting, if the `dataset_id` is related to a DataSet that has been deleted, a subset of the DataSet's information will be returned, including a `deleted` property, which will be `true`.'
+          description: 'Returns a DataSet object if a valid `dataset_id` was provided. When requesting, if the `dataset_id` is related to a DataSet that has been deleted, a subset of the DataSet''s information will be returned, including a `deleted` property, which will be `true`.'
           content:
             application/json:
               examples:
