@@ -922,7 +922,7 @@ paths:
         <!-- theme: info -->
         > #### Appending _Data_
         >
-        > To import **new rows** into an existing DataSet, use the [Simple API](https://developer.domo.com/portal/d984e2fec9b18-import-data-into-data-set) instead.
+        > To import **additional rows** into an existing DataSet, use the [Simple API](https://developer.domo.com/portal/d984e2fec9b18-import-data-into-data-set) instead.
         
       requestBody:
         content:
