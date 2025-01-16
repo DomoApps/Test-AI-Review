@@ -8,7 +8,7 @@ info:
 
     ---
 
-    The DataSet Object allows you to create, import, export, and manage DataSets, as well as manage data permissions for DataSets within Domo.
+    The DataSet API allows you to create, replace, export, and manage DataSets, as well as manage data permissions for DataSets within Domo. Most of its calls return a DataSet object.
 
     <!-- theme: info -->
 
