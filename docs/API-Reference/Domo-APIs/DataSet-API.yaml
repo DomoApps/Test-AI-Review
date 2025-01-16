@@ -60,6 +60,25 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
+  schemas:
+    DataSourceListOrderBy:
+      type: string
+      enum:
+        - name
+        - nameDescending
+        - lastTouched
+        - lastTouchedAscending
+        - lastUpdated
+        - lastUpdatedAscending
+        - createdAt
+        - createdAtAscending
+        - cardCount
+        - cardCountAscending
+        - cardViewCount
+        - cardViewCountAscending
+        - errorState
+        - errorStateDescending
+        - dataSourceId
 security:
   - bearerAuth: []
 paths:
@@ -597,9 +616,9 @@ paths:
         - name: sort
           in: query
           schema:
-            type: string
-          description: The DataSet field to sort by. Fields prefixed with a negative sign reverses the sort (i.e., '-name' does a reverse sort by the name of the DataSets).
-          example: name
+            $ref: "#/components/schemas/DataSourceListOrderBy"
+          description: The order to return the DataSets in.
+          example: createdAt
         - schema:
             type: string
           in: query
