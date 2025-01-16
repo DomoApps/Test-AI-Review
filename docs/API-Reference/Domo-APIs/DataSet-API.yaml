@@ -455,7 +455,7 @@ paths:
   /v1/datasets:
     post:
       summary: Create a DataSet
-      description: "Creates a new DataSet\_in your Domo instance. Once a DataSet has been created, data can be imported into the DataSet."
+      description: "Creates a new DataSet in your Domo instance. Once a DataSet has been created, data can be imported into the DataSet."
       requestBody:
         content:
           application/json:
