@@ -43,8 +43,6 @@ Fetch instance-wide statistics on Beast Mode usage.
 
 Gets all Beast Mode objects in the instance.
 
-### Endpoint
-
 **Method:** `POST`  
 **Endpoint:** `/api/query/v1/functions/search`
 
