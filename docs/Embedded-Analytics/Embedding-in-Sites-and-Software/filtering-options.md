@@ -171,8 +171,6 @@ https://player.vimeo.com/video/515861680
 
 <strong>Use Case:</strong> Ad hoc filter creation by the user when the creator does not know all the slices the viewer might want to explore 
 
-<strong>Warning:</strong> Page filters are available in dashboard embed, but saved filter views are still in beta so they are not targeted for support in dashboard embed until later in 2021. 
-
 <strong>Note:</strong> As emphasized in the layer sequence above, these lower priority filters can only return results within the subset of rows made available by PDP or Programmatic Filters. 
 
 <img src="https://web-assets.domo.com/blog/wp-content/uploads/2022/08/FilteringOptions8.png" />
