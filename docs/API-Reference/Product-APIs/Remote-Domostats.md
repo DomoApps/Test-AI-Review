@@ -14,7 +14,7 @@ This API provides access to retrieve information about applications and jobs wit
   "method": "GET",
   "url": "https://{domo_instance}.domo.com/api/executor/v1/applications/",
   "headers": {
-    "x-domo-authentication": "{session_token}"
+    "X-DOMO-Developer-Token": "",
   }
 }
 ```
@@ -74,7 +74,7 @@ This API provides access to retrieve information about applications and jobs wit
   "method": "GET",
   "url": "https://{domo_instance}.domo.com/api/executor/v2/applications/50e7230f-d2f2-42e2-a208-d94c8ae9f64c/jobs?offset=0",
   "headers": {
-    "x-domo-authentication": "{session_token}"
+    "X-DOMO-Developer-Token": "",
   }
 }
 ```
