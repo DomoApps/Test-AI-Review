@@ -8,20 +8,23 @@ The Domo Data File Service is a centralized point in your Domo instance to manag
 
 Domo supports nearly 100 different file types across over 300 file extensions. Please reach out to Domo Support if you have a question about supported file types, as the list changes often.
 
-## Upload a file
+## Upload a File
 
 Uploading a new file can be accomplished through the following request. You will pass in the file to upload, and Domo will store it and generate a unique identifier for the file, which is returned to you.
 
+**Method:** `POST`  
+**Endpoint:** `/api/data/v1/data-files?name={name}&description={description}&public={public}`
+
 <!-- theme: info -->
 
-> #### Default Permissions
+> #### Security Consideration for Default Permissions
 >
 > By default, the `public` param is set to `true`, granting all users in the Domo instance access to the file. Remember to set `public` to `false` if you want to restrict access to the user who originally uploaded the file. File permissions can be updated to give access to specific users and groups, if needed. You can find out how to do that by reviewing the [`Update file permissions`](#update-file-permissions) API.
 
 #### Code Example
 
 ```js
-function uploadFile(name, description = "", public = false, file) {
+async function uploadFile(name, description = '', public = false, file) {
   const url = `/api/data/v1/data-files?name=${name}&description=${description}&public=${public}`;
   const response = await fetch(url, file);
   const { dataFileId } = await response.json();
@@ -36,18 +39,11 @@ function uploadFile(name, description = "", public = false, file) {
 | description   | String  | Optional | A description of the file                             |
 | public        | Boolean | Optional | Whether the permissions of the file are set to public |
 
-#### HTTP Request
-
-```text
-POST /api/data/v1/data-files?name={name}&description={description}&public={public} HTTP/1.1
-Accept: application/json
-```
-
 #### Request Body
 
 The file to upload.
 
-#### HTTP Response
+#### Response
 
 Returns the id of the created file.
 
@@ -60,38 +56,34 @@ Content-Type: application/json
 }
 ```
 
-## Upload a file revision
+## Upload a File Revision
 
 The Files API provides versioning support for files that have been uploaded. You may add another version of a file by sending a `PUT` request to the files endpoint referencing the `fileId` of the file you wish to revise.
+
+**Method:** `PUT`  
+**Endpoint:** `/api/data/v1/data-files/{dataFileId}`
 
 #### Code Example
 
 ```js
-function uploadRevision(dataFileId, file) {
+async function uploadRevision(dataFileId, file) {
   const url = `/api/data/v1/data-files/${dataFileId}`;
   const response = await fetch(url, file);
   const { revisionId } = await response.json();
 }
 ```
 
-#### Arguments
+#### Path Parameters
 
 | Property Name | Type    | Required | Description                                                |
 | ------------- | ------- | -------- | ---------------------------------------------------------- |
 | dataFileId    | Integer | Required | The id of the file for which you wish to upload a revision |
 
-#### HTTP Request
-
-```text
-PUT /api/data/v1/data-files/{dataFileId} HTTP/1.1
-Accept: application/json
-```
-
 #### Request Body
 
 The file to upload as a revision.
 
-#### HTTP Response
+#### Response
 
 Returns the current revision id of the file.
 
@@ -104,46 +96,49 @@ Content-Type: application/json
 }
 ```
 
-## Get all files metadata
+## Get All Files Metadata
 
 Each file that you upload has corresponding metadata. This endpoint allows you to list all the metadata for each file you have access to. If you want to limit the files returned, you can include query parameters that filter the response.
+
+**Method:** `GET`  
+**Endpoint:** `/api/data/v1/data-files/details?userId={userId}&expand={expand}&dataFileIds={dataFileIds}`
 
 #### Code Example
 
 ```js
-function getFileDetailsList(
+async function getFileDetailsList(
   userId = null,
   expand = null,
-  dataFileIds = null
+  dataFileIds = null,
 ) {
   const params = new URLSearchParams();
-  if (userId !== null) params.append("userId", userId);
-  if (expand !== null) params.append("expand", expand);
-  if (dataFileIds !== null) params.append("dataFileIds", dataFileIds);
+  if (userId !== null) params.append('userId', userId);
+  if (expand !== null) params.append('expand', expand);
+  if (dataFileIds !== null) params.append('dataFileIds', dataFileIds);
 
   const queryString = params.toString();
-  const url = `/api/data/v1/data-files/details${queryString !== '' ? `?${queryString}` : ''}`;
+  const url = `/api/data/v1/data-files/details${
+    queryString !== '' ? `?${queryString}` : ''
+  }`;
   const response = await fetch(url);
   const fileDetailsList = await response.json();
 }
 ```
 
-#### Arguments
+#### Path Parameters
 
 | Property Name | Type    | Required | Description                                                                                                                    |
 | ------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | userId        | Integer | Optional | A Domo User Id if you want to limit the files returned by a specific owner                                                     |
 | expand        | String  | Optional | An array of string properties specifying the additional details you want to retrieve (either `revisions`, `metadata`, or both) |
-| dataFileIds   | String  | Optional | An array of File Ids that you wish to be returned if you only want a subset of files                                           |
 
-#### HTTP Request
+#### Query Parameters
 
-```text
-GET /api/data/v1/data-files/details?userId={userId}&expand={expand}&dataFileIds={dataFileIds} HTTP/1.1
-Accept: application/json
-```
+| Property Name | Type   | Required | Description                                                                          |
+| ------------- | ------ | -------- | ------------------------------------------------------------------------------------ |
+| dataFileIds   | String | Optional | An array of File Ids that you wish to be returned if you only want a subset of files |
 
-#### HTTP Response
+#### Response
 
 Returns an array of file objects.
 
@@ -175,14 +170,17 @@ Content-Type: application/json
 ]
 ```
 
-## Get file metadata by ID
+## Get File Metadata by ID
 
 Given a known file ID, this endpoint allows you to list the metadata for that specific file.
+
+**Method:** `GET`  
+**Endpoint:** `/api/data/v1/data-files/{dataFileId}/details?expand={expand}`
 
 #### Code Example
 
 ```js
-function getFileDetails(dataFileId, expand = null) {
+async function getFileDetails(dataFileId, expand = null) {
   let url = `/api/data/v1/data-files/${dataFileId}/details`;
   if (expand !== null) {
     url += `?expand=${expand.join()}`;
@@ -192,21 +190,19 @@ function getFileDetails(dataFileId, expand = null) {
 }
 ```
 
-#### Arguments
+#### Path Parameters
+
+| Property Name | Type    | Required | Description        |
+| ------------- | ------- | -------- | ------------------ |
+| dataFileId    | Integer | Required | The id of the file |
+
+#### Query Parameters
 
 | Property Name | Type         | Required | Description                                                                                                                    |
 | ------------- | ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| dataFileId    | Integer      | Required | The id of the file                                                                                                             |
 | expand        | String Array | Optional | An array of string properties specifying the additional details you want to retrieve (either `revisions`, `metadata`, or both) |
 
-#### HTTP Request
-
-```text
-GET /api/data/v1/data-files/{dataFileId}/details?expand={expand} HTTP/1.1
-Accept: application/json
-```
-
-#### HTTP Response
+#### Response
 
 Returns the file details object.
 
@@ -224,14 +220,17 @@ Content-Type: application/json
 }
 ```
 
-## Get revision metadata by ID
+## Get Revision Metadata by ID
 
 Given a known file revision ID, this endpoint allows you to list the metadata for that specific revision.
+
+**Method:** `GET`  
+**Endpoint:** `/api/data/v1/data-files/{dataFileId}/revisions/{revisionId}/details?expand={expand}`
 
 #### Code Example
 
 ```js
-function getFileDetails(dataFileId, revisionId, expand = null) {
+async function getFileDetails(dataFileId, revisionId, expand = null) {
   let url = `/api/data/v1/data-files/${dataFileId}/revisions/${revisionId}/details`;
   if (expand !== null) {
     url += `?expand=${expand.join()}`;
@@ -241,22 +240,20 @@ function getFileDetails(dataFileId, revisionId, expand = null) {
 }
 ```
 
-#### Arguments
+#### Path Parameters
+
+| Property Name | Type    | Required | Description                 |
+| ------------- | ------- | -------- | --------------------------- |
+| dataFileId    | Integer | Required | The id of the file          |
+| revisionId    | Integer | Required | The id of the file revision |
+
+#### Query Parameters
 
 | Property Name | Type         | Required | Description                                                                                                                    |
 | ------------- | ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| dataFileId    | Integer      | Required | The id of the file                                                                                                             |
-| revisionId    | Integer      | Required | The id of the file revision                                                                                                    |
 | expand        | String Array | Optional | An array of string properties specifying the additional details you want to retrieve (either `revisions`, `metadata`, or both) |
 
-#### HTTP Request
-
-```text
-GET /api/data/v1/data-files/{dataFileId}/revisions/{revisionId}/details?expand={expand} HTTP/1.1
-Accept: application/json
-```
-
-#### HTTP Response
+#### Response
 
 Returns the file revision details object.
 
@@ -278,14 +275,17 @@ Content-Type: application/json
 }
 ```
 
-## Get all file revisions by ID
+## Get All File Revisions by ID
 
-Given a known file ID, this endpoint fetches the revisions of the file.
+Given a known file ID, this endpoint fetches the existing revisions of the file.
+
+**Method:** `GET`  
+**Endpoint:** `/api/data/v1/data-files/${dataFileId}/revisions/details`
 
 #### Code Example
 
 ```js
-function getFileRevisions(dataFileId, expand) {
+async function getFileRevisions(dataFileId, expand) {
   let url = `/api/data/v1/data-files/${dataFileId}/revisions/details`;
   if (expand !== null) {
     url += `?expand=${expand.join()}`;
@@ -295,21 +295,19 @@ function getFileRevisions(dataFileId, expand) {
 }
 ```
 
-#### Arguments
+#### Path Parameters
+
+| Property Name | Type    | Required | Description        |
+| ------------- | ------- | -------- | ------------------ |
+| dataFileId    | Integer | Required | The id of the file |
+
+#### Query Parameters
 
 | Property Name | Type         | Required | Description                                                                                                                    |
 | ------------- | ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| dataFileId    | Integer      | Required | The id of the file                                                                                                             |
 | expand        | String Array | Optional | An array of string properties specifying the additional details you want to retrieve (either `revisions`, `metadata`, or both) |
 
-#### HTTP Request
-
-```text
-GET /api/data/v1/data-files/{dataFileId}/revisions/details?expand={expand} HTTP/1.1
-Accept: application/json
-```
-
-#### HTTP Response
+#### Response
 
 Returns a list of all revisions of the file.
 
@@ -334,44 +332,42 @@ Content-Type: application/json
 ]
 ```
 
-## Download a file
+## Download a File
 
-This endpoint fetches the file contents of a previously uploaded file, which can then be downloaded to the user's machine. You can optionally include a revisionId as a query parameter to fetch the contents of a specific revision.
+This endpoint fetches the file contents of a previously uploaded file, which can then be downloaded to the user's machine. You can optionally include a revisionId as a path parameter to fetch a specific revision of the file.
+
+**Method:** `GET`  
+**Endpoint:** `/api/data/v1/data-files/{fileId}/revision/{revisionId}?filename={fileName}`
 
 #### Code Example
 
 ```js
-function downloadFile(dataFileId, fileName = null) {
-  const url = `/api/data/v1/data-files/${dataFileId}${fileName !== null ? `?fileName=${fileName}` : ''}`;
+async function downloadFile(dataFileId, revisionId = null, fileName = null) {
+  let url = `/api/data/v1/data-files/${dataFileId}${
+    revisionId !== null ? `/revision/${revisionId}` : ''
+  }`;
+  if (fileName !== null) {
+    url += `?fileName=${fileName}`;
+  }
   const response = await fetch(url);
   const { revisionId } = await response.json();
 }
 ```
 
-#### Arguments
+#### Path Parameters
 
-| Property Name | Type    | Required | Description                             |
-| ------------- | ------- | -------- | --------------------------------------- |
-| dataFileId    | Integer | Required | The id of the file you wish to download |
-| fileName      | String  | Optional | The name you want to give the file      |
+| Property Name | Type    | Required | Description                                                                 |
+| ------------- | ------- | -------- | --------------------------------------------------------------------------- |
+| fileId        | Integer | Required | The id of the file you wish to download                                     |
+| revisionId    | Integer | optional | The id of the version you wish to download (remove `/revision` if not used) |
 
-#### HTTP Request
+#### Query Parameters
 
-To download the current file version:
+| Property Name | Type   | Required | Description                        |
+| ------------- | ------ | -------- | ---------------------------------- |
+| fileName      | String | Optional | The name you want to give the file |
 
-```text
-GET /api/data/v1/data-files/{fileId} HTTP/1.1
-Accept: application/json
-```
-
-To download a previous version:
-
-```text
-GET /api/data/v1/data-files/{fileId}/revisions/{revisionId} HTTP/1.1
-Accept: application/json
-```
-
-#### HTTP Response
+#### Response
 
 Returns the File to be downloaded.
 
@@ -380,35 +376,31 @@ HTTP/1.1 200 OK
 Content-Type: {mime-type of the file}
 ```
 
-### Copy/Move a file
+### Copy/Move a File
 
 This endpoint allows you to copy the current revision of a file to another target file. This essentially replaces the target file and leaves the source file intact.
+
+**Method:** `POST`  
+**Endpoint:** `/api/data/v1/data-files/copy/{sourceDataFileId}/revisions/current/{targetDataFileId}`
 
 #### Code Example
 
 ```js
-function copyFile(sourceDataFileId, targetDataFileId) {
+async function copyFile(sourceDataFileId, targetDataFileId) {
   const url = `/api/data/v1/data-files/copy/${sourceDataFileId}/revisions/current/${targetDataFileId}`;
   const response = await fetch(url);
   const { revisionId } = await response.json();
 }
 ```
 
-#### Query Parameters
+#### Path Parameters
 
 | Property Name    | Type    | Required | Description                         |
 | ---------------- | ------- | -------- | ----------------------------------- |
 | sourceDataFileId | Integer | Required | The file id to move (source)        |
 | targetDataFileId | Integer | Required | The file id to be replaced (target) |
 
-#### HTTP Request
-
-```text
-POST /api/data/v1/data-files/copy/{sourceDataFileId}/revisions/current/{targetDataFileId} HTTP/1.1
-Accept: application/json
-```
-
-#### HTTP Response
+#### Response
 
 Returns the current revision id for the target file.
 
@@ -421,34 +413,30 @@ Content-Type: application/json
 }
 ```
 
-## Duplicate a file
+## Duplicate a File
 
 This endpoint will create a new file object in Domo from an existing one.
+
+**Method:** `POST`  
+**Endpoint:** `/api/data/v1/data-files/{dataFileId}/duplicate`
 
 #### Code Example
 
 ```js
-function duplicateFile(dataFileId) {
+async function duplicateFile(dataFileId) {
   const url = `/api/data/v1/data-files/${dataFileId}/duplicate`;
   const response = await fetch(url);
   return await response.json();
 }
 ```
 
-#### Query Parameters
+#### Path Parameters
 
 | Property Name | Type    | Required | Description              |
 | ------------- | ------- | -------- | ------------------------ |
 | dataFileId    | Integer | Required | The file id to duplicate |
 
-#### HTTP Request
-
-```text
-POST /api/data/v1/data-files/{dataFileId}/duplicate HTTP/1.1
-Accept: application/json
-```
-
-#### HTTP Response
+#### Response
 
 Returns the file metadata for the newly created duplicate.
 
@@ -478,36 +466,32 @@ Content-Type: application/json
 }
 ```
 
-## Delete a file
+## Delete a File
 
-Permanently deletes a File from your instance.
+Permanently deletes a File from your instance by ID.
+
+**Method:** `DELETE`  
+**Endpoint:** `/api/data/v1/data-files/{dataFileId}`
 
 #### Code Example
 
 ```js
-function deleteFile(dataFileId) {
+async function deleteFile(dataFileId) {
   const url = `/api/data/v1/data-files/${dataFileId}`;
   const response = await fetch(url, {
-    method: 'DELETE'
+    method: 'DELETE',
   });
   return await response.json();
 }
 ```
 
-#### Arguments
+#### Path Parameters
 
 | Property Name | Type    | Required | Description                           |
 | ------------- | ------- | -------- | ------------------------------------- |
 | dataFileId    | Integer | Required | The id of the file you wish to delete |
 
-#### HTTP Request
-
-```text
-DELETE /api/data/v1/data-files/{dataFileId} HTTP/1.1
-Accept: application/json
-```
-
-#### HTTP Response
+#### Response
 
 Returns the parameter of success or error based on the file id being valid.
 
@@ -515,37 +499,33 @@ Returns the parameter of success or error based on the file id being valid.
 HTTP/1.1 200 OK
 ```
 
-## Delete a file revision
+## Delete a File Revision
 
-Deletes a specific revision of a file.
+Deletes a specific revision of a file by ID.
+
+**Method:** `DELETE`  
+**Endpoint:** `/api/data/v1/data-files/{dataFileId}/revisions/{revisionId}`
 
 #### Code Example
 
 ```js
-function deleteFileRevision(dataFileId, revisionId) {
+async function deleteFileRevision(dataFileId, revisionId) {
   const url = `/api/data/v1/data-files/${dataFileId}/revisions/${revisionId}`;
   const response = await fetch(url, {
-    method: 'DELETE'
+    method: 'DELETE',
   });
   return await response.json();
 }
 ```
 
-#### Arguments
+#### Path Parameters
 
 | Property Name | Type    | Required | Description                               |
 | ------------- | ------- | -------- | ----------------------------------------- |
 | dataFileId    | Integer | Required | The id of the file                        |
 | revisionId    | Integer | Required | The id of the revision you wish to delete |
 
-#### HTTP Request
-
-```text
-DELETE /api/data/v1/data-files/{dataFileId}/revisions/{revisionId} HTTP/1.1
-Accept: application/json
-```
-
-#### HTTP Response
+#### Response
 
 Returns the parameter of success or error based on the file Id being valid.
 
@@ -553,32 +533,30 @@ Returns the parameter of success or error based on the file Id being valid.
 HTTP/1.1 200 OK
 ```
 
-## Get file permissions
+## Get File Permissions
+
+Retrieve existing file permissions for a specific file by ID
+
+**Method:** `GET`  
+**Endpoint:** `/domo/data-files/v1/{fileId}/permissions`
 
 #### Code Example
 
 ```js
-function getFilePermissions(dataFileId) {
+async function getFilePermissions(dataFileId) {
   const url = `/api/data/v1/data-files/${dataFileId}/permissions`;
   const response = await fetch(url);
   return await response.json();
 }
 ```
 
-#### Arguments
+#### Path Parameters
 
 | Property Name | Type    | Required | Description                                               |
 | ------------- | ------- | -------- | --------------------------------------------------------- |
 | dataFileId    | Integer | Required | The id of the file you wish to get permission details for |
 
-#### HTTP Request
-
-```text
-GET /domo/data-files/v1/{fileId}/permissions HTTP/1.1
-Accept: application/json
-```
-
-#### HTTP Response
+#### Response
 
 ```json
 HTTP/1.1 200 OK
@@ -598,28 +576,26 @@ Content-Type: application/json
 
 ## Update file permissions
 
+Updates permissions for a specified file. Useful if needing to provide or expand access to a restricted/non-public file
+
+**Method:** `PUT`  
+**Endpoint:** `/api/data/v1/data-files/{dataFileId}/permissions`
+
 #### Code Example
 
 ```js
-function upadateFilePermissions(dataFileId, permissionData) {
+async function upadateFilePermissions(dataFileId, permissionData) {
   const url = `/api/data/v1/data-files/${dataFileId}/permissions`;
   const response = await fetch(url, permissionData);
   return await response.json();
 }
 ```
 
-#### Arguments
+#### Path Parameters
 
 | Property Name | Type    | Required | Description                                                  |
 | ------------- | ------- | -------- | ------------------------------------------------------------ |
 | dataFileId    | Integer | Required | The id of the file you wish to update permission details for |
-
-#### HTTP Request
-
-```text
-PUT /api/data/v1/data-files/{dataFileId}/permissions HTTP/1.1
-Accept: application/json
-```
 
 #### Request Body
 
@@ -639,7 +615,7 @@ The request body accepts a permissions object.
 }
 ```
 
-#### HTTP Response
+#### Response
 
 Returns the parameter of success or error based on a valid permission object for the given file Id.
 
