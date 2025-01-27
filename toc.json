@@ -187,6 +187,11 @@
         },
         {
           "type": "item",
+          "title": "Data Accounts API",
+          "uri": "docs/API-Reference/Product-APIs/Data-Accounts.md"
+        },
+        {
+          "type": "item",
           "title": "Export to S3 API",
           "uri": "docs/API-Reference/Product-APIs/Export-to-S3.md"
         },
