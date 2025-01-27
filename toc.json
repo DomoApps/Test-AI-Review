@@ -247,6 +247,11 @@
         },
         {
           "type": "item",
+          "title": "Remote Datasets API",
+          "uri": "docs/API-Reference/Product-APIs/Remote-Domostats.md"
+        },
+        {
+          "type": "item",
           "title": "Scheduled Reports API",
           "uri": "docs/Domo-App-APIs/Scheduled-Reports-API.md"
         },
