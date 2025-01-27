@@ -10,6 +10,9 @@ Domo Alerts allow users to subscribe to various events and receive timely notifi
 
 Query alerts from your Domo instance.
 
+**Method:** `GET`  
+**Endpoint:** `/api/social/v4/alerts?all=true&limit=5`
+
 #### Code Example
 
 ```js
@@ -40,13 +43,6 @@ async function getAlerts() {
 | suggested                | Boolean | Optional |                                                                                                               | Whether to fetch only alerts that are suggested for you                                 |
 | triggered                | String  | Optional |                                                                                                               | Whether to fetch only alerts that have been triggered                                   |
 
-#### Request
-
-```text
-GET /api/social/v4/alerts?all=true&limit=5
-Accept: application/json
-```
-
 #### Response
 
 Returns the alerts based on the included query params.
@@ -76,6 +72,9 @@ Content-Type: application/json
 
 Gets an existing alert by id.
 
+**Method:** `GET`  
+**Endpoint:** `/api/social/v4/alerts/{alertId}`
+
 #### Code Example
 
 ```js
@@ -97,13 +96,6 @@ async function getAlert(alertId) {
 | Property Name | Type   | Required | Description                                   |
 | ------------- | ------ | -------- | --------------------------------------------- |
 | fields        | String | Optional | Which alert fields to include in the response |
-
-#### Request
-
-```text
-GET /api/social/v4/alerts/{alertId}
-Accept: application/json
-```
 
 #### Response
 
@@ -143,6 +135,9 @@ HTTP/1.1 200 OK
 
 Deletes an existing alert by id.
 
+**Method:** `DELETE`  
+**Endpoint:** `/api/social/v4/alerts/{alertId}`
+
 #### Code Example
 
 ```js
@@ -161,13 +156,6 @@ async function deleteAlert(alertId) {
 | ------------- | ------- | -------- | -------------------------------------- |
 | alertId       | Integer | Required | The id of the alert you want to delete |
 
-#### Example
-
-```text
-DELETE /api/social/v4/alerts/{alertId}
-Accept: application/json
-```
-
 #### Response
 
 Returns the parameter of success or error based on the alert id being valid.
@@ -179,6 +167,9 @@ HTTP/1.1 200 OK
 ## Subscribe user to an alert
 
 This endpoint subscribes a Domo user to an existing alert.
+
+**Method:** `POST`
+**Endpoint:** `/api/social/v4/alerts/{alertId}/subscriptions`
 
 #### Code Example
 
@@ -197,17 +188,6 @@ async function subscribeToAlert(alertId, userId) {
 | Property Name | Type    | Required | Description                                           |
 | ------------- | ------- | -------- | ----------------------------------------------------- |
 | alertId       | Integer | Required | The id of the alert you want to subscribe the user to |
-
-#### Example
-
-```text
-POST /api/social/v4/alerts/{alertId}/subscriptions
-Accept: application/json
-{
-  "subscriberId": 12345,
-  "type": "USER"
-}
-```
 
 #### Response
 
