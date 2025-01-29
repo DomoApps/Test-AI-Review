@@ -4,7 +4,7 @@ stoplight-id: 6ea9fcd9e478c
 
 # Appstore Data Resources
 
-App visualizations are powered by DataSets that reside in Domo. The architecture of app DataSets is a critical part of building a great app and warrants careful consideration. For example, creating DataSets that can be easily reproduced by Domo customers simplifies app installation and results in an improved customer experience. This page introduces you to data resources and information that will help you create apps with optimal data architectures.
+App visualizations are powered by DataSets that reside in Domo. The architecture of app DataSets is a critical part of building a valuable app and warrants careful consideration. For example, creating DataSets that can be easily reproduced by Domo customers simplifies app installation and results in an improved customer experience. This page introduces you to data resources and information that will help you create apps with optimal data architectures.
 
 ## Sample Data Engine
 
