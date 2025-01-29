@@ -12,7 +12,7 @@ If you don’t have credentials to all the Connectors available on Domo (don’t
 
 The Sample Data Engine is a powerful tool to give you the data you need from the most widely used Connectors so you can focus on building your app rather than producing compatible, fictitious data.
 
-Modocorp, the fictitious company on which the Sample Data Engine reports are based, is a large, technical company with an affinity for using as many applications as possible and, lucky for us, maintaining relationships between applications as much as possible. For example, you’ll see the same employees in their HR system, as well as in their recruiting and hiring systems. Likewise, you’ll see the same customer base in their PM systems, which have already flowed through their CRM systems.
+Modocorp, the fictitious company on which the Sample Data Engine reports are based, is a large, technical company with an affinity for using as many applications as possible and maintaining relationships between those applications. For example, you’ll see the same employees in their HR system, as well as in their recruiting and hiring systems; likewise, you’ll see the same customer base in their PM and CRM systems. 
 
 When you use the Sample Data Engine to power your visualizations, there are no surprises between you and your customers. Though fictitious, the DataSets you’ll find in the Sample Data Engine maintain compatibility with the real Connectors, so your customers will see the same data you submit to the Domo Appstore when initially installed, simplifying their data connection experience by removing the guesswork of data provenance. 
 
