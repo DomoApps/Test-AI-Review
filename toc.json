@@ -197,6 +197,16 @@
         },
         {
           "type": "item",
+          "title": "Datasets API",
+          "uri": "docs/API-Reference/Product-APIs/Datasets.md"
+        },
+        {
+          "type": "item",
+          "title": "Dataset Schema API",
+          "uri": "docs/API-Reference/Product-APIs/Get-Dataset-Schema.md"
+        },
+        {
+          "type": "item",
           "title": "Export to S3 API",
           "uri": "docs/API-Reference/Product-APIs/Export-to-S3.md"
         },
@@ -219,16 +229,6 @@
           "type": "item",
           "title": "Groups API",
           "uri": "docs/API-Reference/Product-APIs/Groups.md"
-        },
-        {
-          "type": "item",
-          "title": "Datasets API",
-          "uri": "docs/API-Reference/Product-APIs/Datasets.md"
-        },
-        {
-          "type": "item",
-          "title": "Dataset Schema API",
-          "uri": "docs/API-Reference/Product-APIs/Get-Dataset-Schema.md"
         },
         {
           "type": "item",
