@@ -25,7 +25,7 @@ Overall benefits to powering your development with Sample Data Engine reports:
 
 ## Data Architecture
 
-<p class="doc-row-title">Data is the lifeblood of your app. It shapes your design, powers your visualizations, and provides the valuable insights your customers are seeking in Domo. As a publisher, you will have access to powerful tools you can use to manipulate your data to provide enriched insights for your customers. The way you choose to architect your data has a significant impact on the usability and value proposition of your app.</p>
+<p class="doc-row-title">Data is the lifeblood of your app. It shapes your design, powers your visualizations, and provides the valuable insights your customers are seeking in Domo. As a publisher, you will have access to powerful tools which you can use to manipulate your data to provide enriched insights for your customers. The way you choose to architect your data has a significant impact on the usability and value proposition of your app.</p>
 
 <div class="small-pad-bottom">
 
