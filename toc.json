@@ -217,6 +217,11 @@
         },
         {
           "type": "item",
+          "title": "Datasets API",
+          "uri": "docs/API-Reference/Product-APIs/Datasets.md"
+        },
+        {
+          "type": "item",
           "title": "Dataset Schema API",
           "uri": "docs/API-Reference/Product-APIs/Get-Dataset-Schema.md"
         },
