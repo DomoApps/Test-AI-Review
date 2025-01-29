@@ -152,6 +152,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Activity Log API",
+          "uri": "docs/API-Reference/Product-APIs/AI-Services.md"
+        },
+        {
+          "type": "item",
           "title": "AI Services API",
           "uri": "docs/API-Reference/Product-APIs/AI-Services.md"
         },
