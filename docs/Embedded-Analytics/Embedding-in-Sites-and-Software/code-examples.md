@@ -4,6 +4,10 @@ stoplight-id: 4soguofca8clp
 
 # Code Examples
 
+## React Code Example
+---
+The React example uses an express server for secure server-side programmatic filtering and for an Edit Embed experience. Download the sample code from the example GitHub repository to access even more detailed instructions in the readme file or check out example code: [React sample code repo](https://github.com/DomoApps/domo-react-embed-filters)
+
 ## Javascript Code Example
 ---
 The JavaScript version uses a Node.js repository for secure server-side programmatic filters. Download the sample code from the example GitHub repository to access even more detailed instructions in the readme file or check out example code: [JS sample code repo](https://github.com/domoinc/domo-node-embed-filters)
