@@ -29,7 +29,7 @@ Overall benefits to powering your development with Sample Data Engine reports:
 
 <div class="small-pad-bottom">
 
-One of the most important architectural considerations you will need to make as a publisher is which data sources your app will support. The more data sources you support, the more potential customers you will have. The Domo Sample Data Engine provides data from the most popular systems in use today, but it is up to you to decide which source you want to support. To support more than one data source (or combination of data sources), you will need to choose from one of two high-level architectures, each with its own pros and cons. In this section, we will review each architecture and its corresponding powerup experience from both the publisher and customer perspectives.
+One of the most important architectural considerations you will need to make as a publisher is which data sources your app will support. The Domo Sample Data Engine provides data from the most popular systems in use today, but it is up to you to decide which sources you want to support. The more data sources you support, the more potential customers you will have. To support more than one data source (or a combination of data sources), you will need to choose from one of two high-level architectures, each with its own pros and cons. In this section, we will review each architecture and its corresponding powerup experience from both the publisher and customer perspectives.
 
 </div>
 <h3>Architecture 1 - System-Specific Data</h3>
