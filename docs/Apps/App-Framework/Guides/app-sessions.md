@@ -54,7 +54,7 @@ Another option is to use the `domo.js` library, which can be included in the app
 
 > #### Note
 >
-> There is also a design version flag that can be used to disable the session cookie. In the flags section of the manifest, set the flag `'authentication-cookies-disabled'` to `true` and the session cookie will not be set. This can be a good way to test if the app is correctly setting the session ID on requests. When this is enabled, you will get a `403` response on any request which is not.
+> There is also a design version flag that can be used to disable the session cookie. In the flags section of the manifest, set the flag `'authentication-cookies-disabled'` to `true` and the session cookie will not be set. This can be a good way to test if the app is correctly setting the session ID on requests. When this is enabled, you will get a `403` response on any request that is not correctly setting the session ID.
 
 To set the `authentication-cookies-disabled` flag in your `manifest.json` file, you can use code similar to the following:
 
