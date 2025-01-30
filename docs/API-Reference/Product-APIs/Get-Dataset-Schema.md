@@ -5,7 +5,7 @@
 
 **Example**:
 
-```json http
+```json
 {
   "method": "GET",
   "url": "https://{instance}.domo.com/api/data/v2/datasources/<DATASET_ID>/schemas/latest",
@@ -13,7 +13,7 @@
     "X-DOMO-Developer-Token": "",
     "Content-Type": "application/json"
   },
-  "body": 
+  "body":
 }
 ```
 
