@@ -152,6 +152,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Activity Log API",
+          "uri": "docs/API-Reference/Product-APIs/AI-Services.md"
+        },
+        {
+          "type": "item",
           "title": "AI Services API",
           "uri": "docs/API-Reference/Product-APIs/AI-Services.md"
         },
@@ -187,6 +192,21 @@
         },
         {
           "type": "item",
+          "title": "Data Accounts API",
+          "uri": "docs/API-Reference/Product-APIs/Data-Accounts.md"
+        },
+        {
+          "type": "item",
+          "title": "Datasets API",
+          "uri": "docs/API-Reference/Product-APIs/Datasets.md"
+        },
+        {
+          "type": "item",
+          "title": "Dataset Schema API",
+          "uri": "docs/API-Reference/Product-APIs/Get-Dataset-Schema.md"
+        },
+        {
+          "type": "item",
           "title": "Export to S3 API",
           "uri": "docs/API-Reference/Product-APIs/Export-to-S3.md"
         },
@@ -212,11 +232,6 @@
         },
         {
           "type": "item",
-          "title": "Dataset Schema API",
-          "uri": "docs/API-Reference/Product-APIs/Get-Dataset-Schema.md"
-        },
-        {
-          "type": "item",
           "title": "Managing Dataset History API",
           "uri": "docs/API-Reference/Product-APIs/Managing-Dataset-History.md"
         },
@@ -239,6 +254,11 @@
           "type": "item",
           "title": "Roles Governance API",
           "uri": "docs/API-Reference/Product-APIs/RolesGovernance.md"
+        },
+        {
+          "type": "item",
+          "title": "Remote Datasets API",
+          "uri": "docs/API-Reference/Product-APIs/Remote-Domostats.md"
         },
         {
           "type": "item",
