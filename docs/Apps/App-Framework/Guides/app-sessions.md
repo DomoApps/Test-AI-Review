@@ -31,7 +31,7 @@ A new app session is created every time the app is loaded, and the session ID is
 
 
 
-**The App Platform needs to receive the session ID on all requests from the app.**
+The App Platform needs to receive the session ID on all requests from the app.
 
 There are 3 ways to send the session ID. They are used in the following preference order:
 
