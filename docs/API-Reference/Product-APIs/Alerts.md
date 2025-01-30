@@ -168,7 +168,7 @@ HTTP/1.1 200 OK
 
 This endpoint subscribes a Domo user to an existing alert.
 
-**Method:** `POST`
+**Method:** `POST`  
 **Endpoint:** `/api/social/v4/alerts/{alertId}/subscriptions`
 
 #### Code Example
@@ -201,6 +201,9 @@ HTTP/1.1 200 OK
 
 This endpoint unsubscribes a Domo user from an existing alert.
 
+**Method:** `POST`  
+**Endpoint:** `/api/social/v4/alerts/{alertId}/subscriptions?subscriberId={subscriberId}&type={type}`
+
 #### Code Example
 
 ```js
@@ -226,13 +229,6 @@ async function unsubscribeFromAlert(alertId, userId) {
 | subscriberId  | Integer | Required | The id of the entity unsubscribing from the alert                 |
 | type          | String  | Required | The entity type, can be USER, GROUP, BUZZ, DAILY, WEEKLY, or AUTO |
 
-#### Request
-
-```text
-POST /api/social/v4/alerts/{alertId}/subscriptions?subscriberId={subscriberId}&type={type}
-Accept: application/json
-```
-
 #### Response
 
 Returns the parameter of success or error based on the alert id being valid.
@@ -244,6 +240,9 @@ HTTP/1.1 200 OK
 ## Share an alert
 
 This endpoint shares an existing alert with a Domo user.
+
+**Method:** `POST`  
+**Endpoint:** `/api/social/v4/alerts/{alertId}/share`
 
 #### Code Example
 
@@ -268,13 +267,6 @@ async function shareAlert(alertId, userId, message, email) {
 | Property Name | Type    | Required | Description                                           |
 | ------------- | ------- | -------- | ----------------------------------------------------- |
 | alertId       | Integer | Required | The id of the alert you want to subscribe the user to |
-
-#### Request
-
-```text
-POST /api/social/v4/alerts/{alertId}/share
-Accept: application/json
-```
 
 #### Request Body
 
