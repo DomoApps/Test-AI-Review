@@ -10,10 +10,13 @@ Domo Alerts allow users to subscribe to various events and receive timely notifi
 
 Query alerts from your Domo instance.
 
+**Method:** `GET`  
+**Endpoint:** `/api/social/v4/alerts?all=true&limit=5`
+
 #### Code Example
 
 ```js
-function getAlerts() {
+async function getAlerts() {
   const url = `/api/social/v4/alerts`;
   const response = await fetch(url);
   return await response.json();
@@ -40,14 +43,7 @@ function getAlerts() {
 | suggested                | Boolean | Optional |                                                                                                               | Whether to fetch only alerts that are suggested for you                                 |
 | triggered                | String  | Optional |                                                                                                               | Whether to fetch only alerts that have been triggered                                   |
 
-#### HTTP Request
-
-```text
-GET /api/social/v4/alerts?all=true&limit=5 HTTP/1.1
-Accept: application/json
-```
-
-#### HTTP Response
+#### Response
 
 Returns the alerts based on the included query params.
 
@@ -76,10 +72,13 @@ Content-Type: application/json
 
 Gets an existing alert by id.
 
+**Method:** `GET`  
+**Endpoint:** `/api/social/v4/alerts/{alertId}`
+
 #### Code Example
 
 ```js
-function getAlert(alertId) {
+async function getAlert(alertId) {
   const url = `/api/social/v4/alerts/${alertId}`;
   const response = await fetch(url);
   return await response.json();
@@ -98,14 +97,7 @@ function getAlert(alertId) {
 | ------------- | ------ | -------- | --------------------------------------------- |
 | fields        | String | Optional | Which alert fields to include in the response |
 
-#### HTTP Request
-
-```text
-GET /api/social/v4/alerts/{alertId} HTTP/1.1
-Accept: application/json
-```
-
-#### HTTP Response
+#### Response
 
 Returns the alert.
 
@@ -143,13 +135,16 @@ HTTP/1.1 200 OK
 
 Deletes an existing alert by id.
 
+**Method:** `DELETE`  
+**Endpoint:** `/api/social/v4/alerts/{alertId}`
+
 #### Code Example
 
 ```js
-function deleteAlert(alertId) {
+async function deleteAlert(alertId) {
   const url = `/api/social/v4/alerts/${alertId}`;
   const response = await fetch(url, {
-    method: 'DELETE'
+    method: 'DELETE',
   });
   return await response.json();
 }
@@ -161,14 +156,7 @@ function deleteAlert(alertId) {
 | ------------- | ------- | -------- | -------------------------------------- |
 | alertId       | Integer | Required | The id of the alert you want to delete |
 
-#### HTTP Request
-
-```text
-DELETE /api/social/v4/alerts/{alertId} HTTP/1.1
-Accept: application/json
-```
-
-#### HTTP Response
+#### Response
 
 Returns the parameter of success or error based on the alert id being valid.
 
@@ -180,13 +168,16 @@ HTTP/1.1 200 OK
 
 This endpoint subscribes a Domo user to an existing alert.
 
+**Method:** `POST`
+**Endpoint:** `/api/social/v4/alerts/{alertId}/subscriptions`
+
 #### Code Example
 
 ```js
-function subscribeToAlert(alertId, userId) {
+async function subscribeToAlert(alertId, userId) {
   const url = `/api/social/v4/alerts/${alertId}/subscriptions`;
   const response = await fetch(url, {
-    body: JSON.stringify({ subscriberId: userId, type: 'USER' })
+    body: JSON.stringify({ subscriberId: userId, type: 'USER' }),
   });
   return await response.json();
 }
@@ -198,25 +189,7 @@ function subscribeToAlert(alertId, userId) {
 | ------------- | ------- | -------- | ----------------------------------------------------- |
 | alertId       | Integer | Required | The id of the alert you want to subscribe the user to |
 
-#### HTTP Request
-
-```text
-POST /api/social/v4/alerts/{alertId}/subscriptions HTTP/1.1
-Accept: application/json
-```
-
-#### Request Body
-
-The request body includes the user id and a 'USER' type param.
-
-```json
-{
-  "subscriberId": 12345,
-  "type": "USER"
-}
-```
-
-#### HTTP Response
+#### Response
 
 Returns the parameter of success or error based on the alert id being valid.
 
@@ -231,10 +204,10 @@ This endpoint unsubscribes a Domo user from an existing alert.
 #### Code Example
 
 ```js
-function unsubscribeFromAlert(alertId, userId) {
+async function unsubscribeFromAlert(alertId, userId) {
   const url = `/api/social/v4/alerts/${alertId}/subscriptions?subscriberId=${userId}&type=USER`;
   const response = await fetch(url, {
-    method: 'DELETE'
+    method: 'DELETE',
   });
   return await response.json();
 }
@@ -253,14 +226,14 @@ function unsubscribeFromAlert(alertId, userId) {
 | subscriberId  | Integer | Required | The id of the entity unsubscribing from the alert                 |
 | type          | String  | Required | The entity type, can be USER, GROUP, BUZZ, DAILY, WEEKLY, or AUTO |
 
-#### HTTP Request
+#### Request
 
 ```text
-POST /api/social/v4/alerts/{alertId}/subscriptions?subscriberId={subscriberId}&type={type} HTTP/1.1
+POST /api/social/v4/alerts/{alertId}/subscriptions?subscriberId={subscriberId}&type={type}
 Accept: application/json
 ```
 
-#### HTTP Response
+#### Response
 
 Returns the parameter of success or error based on the alert id being valid.
 
@@ -275,16 +248,16 @@ This endpoint shares an existing alert with a Domo user.
 #### Code Example
 
 ```js
-function shareAlert(alertId, userId, message, email) {
+async function shareAlert(alertId, userId, message, email) {
   const url = `/api/social/v4/alerts/${alertId}/share`;
   const payload = {
     userMessage: message,
     alertSubscriptions: [{ subscriberId: userId, type: 'USER' }],
     sendEmail,
-    metaData: {}
+    metaData: {},
   };
   const response = await fetch(url, {
-    body: JSON.stringify(payload)
+    body: JSON.stringify(payload),
   });
   return await response.json();
 }
@@ -296,10 +269,10 @@ function shareAlert(alertId, userId, message, email) {
 | ------------- | ------- | -------- | ----------------------------------------------------- |
 | alertId       | Integer | Required | The id of the alert you want to subscribe the user to |
 
-#### HTTP Request
+#### Request
 
 ```text
-POST /api/social/v4/alerts/{alertId}/share HTTP/1.1
+POST /api/social/v4/alerts/{alertId}/share
 Accept: application/json
 ```
 
@@ -321,7 +294,7 @@ Accept: application/json
 }
 ```
 
-#### HTTP Response
+#### Response
 
 Returns the parameter of success or error based on the alert id being valid.
 

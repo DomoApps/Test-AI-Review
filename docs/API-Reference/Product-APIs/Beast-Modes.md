@@ -4,24 +4,21 @@ Beast Modes are run time calculations on Cards or Datasets.
 
 ## Get Statistics
 
-### Overview
+Fetch instance-wide statistics on Beast Mode usage.
 
-Gets instance-wide statistics on Beast Mode usage.
-
-### Endpoint
-
-**GET** `/api/query/v1/functions/statistics`
+**Method:** `GET`  
+**Endpoint:** `/api/query/v1/functions/statistics`
 
 ### Example
 
 ```json
 {
-	"method": "GET",
-	"url": "https://{instance}.domo.com/api/query/v1/functions/statistics",
-	"headers": {
-		"X-DOMO-Developer-Token": "",
-		"Content-Type": "application/json"
-	}
+  "method": "GET",
+  "url": "https://{instance}.domo.com/api/query/v1/functions/statistics",
+  "headers": {
+    "X-DOMO-Developer-Token": "",
+    "Content-Type": "application/json"
+  }
 }
 ```
 
@@ -46,9 +43,8 @@ Gets instance-wide statistics on Beast Mode usage.
 
 Gets all Beast Mode objects in the instance.
 
-### Endpoint
-
-**POST** `/api/query/v1/functions/search`
+**Method:** `POST`  
+**Endpoint:** `/api/query/v1/functions/search`
 
 ### Body Parameters
 
@@ -64,135 +60,73 @@ Gets all Beast Mode objects in the instance.
 
 ```json
 {
-	"method": "POST",
-	"url": "https://{instance}.domo.com/api/query/v1/functions/search",
-	"headers": {
-		"X-DOMO-Developer-Token": "",
-		"Content-Type": "application/json"
-	},
-	"body": {
-		"name": "",
-		"filters": [
-			{
-				"field": "notvariable"
-			}
-		],
-		"sort": {
-			"field": "name",
-			"ascending": true
-		},
-		"limit": 3,
-		"offset": 0
-	}
+  "method": "POST",
+  "url": "https://{instance}.domo.com/api/query/v1/functions/search",
+  "headers": {
+    "X-DOMO-Developer-Token": "",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "name": "",
+    "filters": [
+      {
+        "field": "notvariable"
+      }
+    ],
+    "sort": {
+      "field": "name",
+      "ascending": true
+    },
+    "limit": 3,
+    "offset": 0
+  }
 }
 ```
 
 ### Response
 
 ```json
-  HTTP/1.1 200 OK
-  Content-Type: application/json;charset=UTF-8
-  {
-    "totalHits": 525,
-    "results": [
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+  "totalHits": 525,
+  "results": [
+    {
+      "id": 427,
+      "name": "% Behind Schedule Objects",
+      "owner": 8811501,
+      "lastModified": 1670963682352,
+      "created": 1670963682352,
+      "global": false,
+      "locked": false,
+      "legacyId": "calculation_ab07cd22-2558-4f8f-b692-f39f6869a01a",
+      "status": "VALID",
+      "links": [
         {
-            "id": 427,
-            "name": "% Behind Schedule Objects",
-            "owner": 8811501,
-            "lastModified": 1670963682352,
-            "created": 1670963682352,
-            "global": false,
-            "locked": false,
-            "legacyId": "calculation_ab07cd22-2558-4f8f-b692-f39f6869a01a",
-            "status": "VALID",
-            "links": [
-                {
-                    "resource": {
-                        "type": "CARD",
-                        "id": "dr:1947052903:616023142"
-                    },
-                    "visible": true,
-                    "active": false,
-                    "valid": "VALID"
-                },
-                {
-                    "resource": {
-                        "type": "DATA_SOURCE",
-                        "id": "aa7d9422-9abe-4581-bbf3-4a8cb5d3fc25"
-                    },
-                    "visible": false,
-                    "active": false,
-                    "valid": "ILLEGAL_REFERENCE"
-                }
-            ],
-            "archived": false,
-            "activeLinks": {}
+          "resource": {
+            "type": "CARD",
+            "id": "dr:1947052903:616023142"
+          },
+          "visible": true,
+          "active": false,
+          "valid": "VALID"
         },
         {
-            "id": 423,
-            "name": "% Behind Schedule Objects",
-            "owner": 8811501,
-            "lastModified": 1670963683447,
-            "created": 1670963681299,
-            "global": false,
-            "locked": false,
-            "legacyId": "calculation_562231f0-2afd-49ab-8fec-c4b18e93f2ae",
-            "status": "VALID",
-            "links": [
-                {
-                    "resource": {
-                        "type": "CARD",
-                        "id": "616023142"
-                    },
-                    "visible": true,
-                    "active": true,
-                    "valid": "VALID"
-                },
-                {
-                    "resource": {
-                        "type": "DATA_SOURCE",
-                        "id": "aa7d9422-9abe-4581-bbf3-4a8cb5d3fc25"
-                    },
-                    "visible": false,
-                    "active": false,
-                    "valid": "INVALID_LINK"
-                }
-            ],
-            "archived": false,
-            "activeLinks": {
-                "CARD": [
-                    "616023142"
-                ]
-            }
-        },
-        {
-            "id": 293,
-            "name": "% Change - Average Page Views per Visit",
-            "owner": 27,
-            "lastModified": 1654190890525,
-            "created": 1654190890525,
-            "global": false,
-            "locked": false,
-            "legacyId": "calculation_5fc32341-3088-449c-88b1-2cd53038a1f4",
-            "status": "VALID",
-            "dataType": "DECIMAL",
-            "links": [
-                {
-                    "resource": {
-                        "type": "DATA_SOURCE",
-                        "id": "26a2521c-1aa9-4606-9f60-1c88136c022a"
-                    },
-                    "visible": true,
-                    "active": false,
-                    "valid": "VALID"
-                }
-            ],
-            "archived": false,
-            "activeLinks": {}
+          "resource": {
+            "type": "DATA_SOURCE",
+            "id": "aa7d9422-9abe-4581-bbf3-4a8cb5d3fc25"
+          },
+          "visible": false,
+          "active": false,
+          "valid": "ILLEGAL_REFERENCE"
         }
-    ],
-    "hasMore": true,
-    "degraded": false
+      ],
+      "archived": false,
+      "activeLinks": {}
+    }
+  ],
+  "hasMore": true,
+  "degraded": false
 }
 ```
 
@@ -200,119 +134,89 @@ Gets all Beast Mode objects in the instance.
 
 Gets a specified Beast Mode calculation.
 
-### Endpoint
+**Method:** `GET`  
+**Endpoint:** `api/query/v1/functions/template/<beastmodeId>`
 
-**GET** `api/query/v1/functions/template/:beastmode_id`
+### Path Parameters
+
+| Property Name | Type   | Required | Description         |
+| ------------- | ------ | -------- | ------------------- |
+| beastmodeId   | Number | yes      | ID of the BeastMode |
 
 ### Example
 
 ```json
 {
-	"method": "GET",
-	"url": "https://{instance}.domo.com/api/query/v1/functions/template/{beastmode_id}",
-	"headers": {
-		"X-DOMO-Developer-Token": "",
-		"Content-Type": "application/json"
-	}
+  "method": "GET",
+  "url": "https://{instance}.domo.com/api/query/v1/functions/template/{beastmodeId}",
+  "headers": {
+    "X-DOMO-Developer-Token": "",
+    "Content-Type": "application/json"
+  }
 }
 ```
 
 ### Response
 
 ```json
-  HTTP/1.1 200 OK
-  Content-Type: application/json;charset=UTF-8
- {
-    "id": 232,
-    "name": "% Change - Orders",
-    "owner": 27,
-    "locked": false,
-    "global": false,
-    "expression": "(CASE  WHEN (sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END )) = 0) THEN 0 ELSE ((sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < 28) AND (DateDiff(Current_Date(),`Date`) > 0)) THEN `Orders` END )) - sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END ))) / sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END ))) END )",
-    "checkSum": "4041d1731163b41ae86552ebb46f8a2f1d5aecd5",
-    "links": [
-        {
-            "resource": {
-                "type": "DATA_SOURCE",
-                "id": "32e6af61-c725-487a-8a4a-a46fbfed9fb1"
-            },
-            "visible": true,
-            "active": false,
-            "valid": "VALID"
-        }
-    ],
-    "legacyId": "calculation_6ca6ab70-412a-4394-82d7-d6f648758907",
-    "lastModified": 1654190830737,
-    "created": 1654190830737,
-    "aggregated": true,
-    "analytic": false,
-    "nonAggregatedColumns": [],
-    "dataType": "DECIMAL",
-    "status": "VALID",
-    "cacheWindow": "day",
-    "columnPositions": [
-        {
-            "columnName": "`Date`",
-            "columnPosition": 67
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 123
-        },
-        {
-            "columnName": "`Orders`",
-            "columnPosition": 149
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 238
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 281
-        },
-        {
-            "columnName": "`Orders`",
-            "columnPosition": 300
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 372
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 428
-        },
-        {
-            "columnName": "`Orders`",
-            "columnPosition": 454
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 527
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 583
-        },
-        {
-            "columnName": "`Orders`",
-            "columnPosition": 609
-        }
-    ],
-    "functions": [
-        "DOMO_OP_MULTIPLY",
-        "ADDDATE",
-        "DOMO_OP_ADD",
-        "SUM",
-        "DOMO_OP_SUBTRACT",
-        "DATEDIFF",
-        "DOMO_OP_DIVIDE"
-    ],
-    "functionTemplateDependencies": [],
-    "archived": false,
-    "hidden": false,
-    "variable": false
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+  "id": 232,
+  "name": "% Change - Orders",
+  "owner": 27,
+  "locked": false,
+  "global": false,
+  "expression": "(CASE  WHEN (sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END )) = 0) THEN 0 ELSE ((sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < 28) AND (DateDiff(Current_Date(),`Date`) > 0)) THEN `Orders` END )) - sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END ))) / sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END ))) END )",
+  "checkSum": "4041d1731163b41ae86552ebb46f8a2f1d5aecd5",
+  "links": [
+    {
+      "resource": {
+        "type": "DATA_SOURCE",
+        "id": "32e6af61-c725-487a-8a4a-a46fbfed9fb1"
+      },
+      "visible": true,
+      "active": false,
+      "valid": "VALID"
+    }
+  ],
+  "legacyId": "calculation_6ca6ab70-412a-4394-82d7-d6f648758907",
+  "lastModified": 1654190830737,
+  "created": 1654190830737,
+  "aggregated": true,
+  "analytic": false,
+  "nonAggregatedColumns": [],
+  "dataType": "DECIMAL",
+  "status": "VALID",
+  "cacheWindow": "day",
+  "columnPositions": [
+    {
+      "columnName": "`Date`",
+      "columnPosition": 67
+    },
+    {
+      "columnName": "`Date`",
+      "columnPosition": 123
+    },
+    {
+      "columnName": "`Orders`",
+      "columnPosition": 149
+    }
+    }
+  ],
+  "functions": [
+    "DOMO_OP_MULTIPLY",
+    "ADDDATE",
+    "DOMO_OP_ADD",
+    "SUM",
+    "DOMO_OP_SUBTRACT",
+    "DATEDIFF",
+    "DOMO_OP_DIVIDE"
+  ],
+  "functionTemplateDependencies": [],
+  "archived": false,
+  "hidden": false,
+  "variable": false
 }
 ```
 
@@ -320,15 +224,14 @@ Gets a specified Beast Mode calculation.
 
 Update the formula that consitutes the calculation in the Beast Mode.
 
-### Endpoint
-
-**PUT** `/api/query/v1/functions/template/:beastmode_id?strict=false`
+**Method:** `PUT`  
+**Endpoint:** `/api/query/v1/functions/template/<beastmodeId>?strict=false`
 
 ### Path Parameters
 
-| Parameter      | Type    | Required | Description                        |
-| -------------- | ------- | -------- | ---------------------------------- |
-| `beastmode_id` | Integer | Yes      | The ID of the Beast Mode to update |
+| Parameter     | Type    | Required | Description                        |
+| ------------- | ------- | -------- | ---------------------------------- |
+| `beastmodeId` | Integer | Yes      | The ID of the Beast Mode to update |
 
 ### Body Parameters
 
@@ -340,114 +243,78 @@ Update the formula that consitutes the calculation in the Beast Mode.
 
 ```json
 {
-	"method": "POST",
-	"url": "https://{instance}.domo.com/api/query/v1/functions/template/{beastmode_id}?strict=false",
-	"headers": {
-		"X-DOMO-Developer-Token": "",
-		"Content-Type": "application/json"
-	},
-	"body": {
-		"expression": "(CASE  WHEN (sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END )) = 0) THEN 0 ELSE ((sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < 28) AND (DateDiff(Current_Date(),`Date`) > 0)) THEN `Orders` END )) - sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END ))) / sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END ))) END )"
-	}
+  "method": "POST",
+  "url": "https://{instance}.domo.com/api/query/v1/functions/template/{beastmodeId}?strict=false",
+  "headers": {
+    "X-DOMO-Developer-Token": "",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "expression": "(CASE  WHEN (sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END )) = 0) THEN 0 ELSE ((sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < 28) AND (DateDiff(Current_Date(),`Date`) > 0)) THEN `Orders` END )) - sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END ))) / sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END ))) END )"
+  }
 }
 ```
 
 ### Response
 
 ```json
-  HTTP/1.1 200 OK
-  Content-Type: application/json;charset=UTF-8
-  {
-    "id": 232,
-    "name": "% Change - Orders",
-    "owner": 27,
-    "locked": true,
-    "global": false,
-    "expression": "(CASE  WHEN (sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END )) = 0) THEN 0 ELSE ((sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < 28) AND (DateDiff(Current_Date(),`Date`) > 0)) THEN `Orders` END )) - sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END ))) / sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END ))) END )",
-    "checkSum": "4041d1731163b41ae86552ebb46f8a2f1d5aecd5",
-    "links": [
-        {
-            "resource": {
-                "type": "DATA_SOURCE",
-                "id": "32e6af61-c725-487a-8a4a-a46fbfed9fb1"
-            },
-            "visible": true,
-            "active": false,
-            "valid": "VALID"
-        }
-    ],
-    "legacyId": "calculation_6ca6ab70-412a-4394-82d7-d6f648758907",
-    "lastModified": 1734532686486,
-    "created": 1654190830737,
-    "aggregated": true,
-    "analytic": false,
-    "nonAggregatedColumns": [],
-    "dataType": "DECIMAL",
-    "status": "VALID",
-    "cacheWindow": "day",
-    "columnPositions": [
-        {
-            "columnName": "`Date`",
-            "columnPosition": 67
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 123
-        },
-        {
-            "columnName": "`Orders`",
-            "columnPosition": 149
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 238
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 281
-        },
-        {
-            "columnName": "`Orders`",
-            "columnPosition": 300
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 372
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 428
-        },
-        {
-            "columnName": "`Orders`",
-            "columnPosition": 454
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 527
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 583
-        },
-        {
-            "columnName": "`Orders`",
-            "columnPosition": 609
-        }
-    ],
-    "functions": [
-        "DOMO_OP_MULTIPLY",
-        "ADDDATE",
-        "DOMO_OP_ADD",
-        "SUM",
-        "DOMO_OP_SUBTRACT",
-        "DATEDIFF",
-        "DOMO_OP_DIVIDE"
-    ],
-    "functionTemplateDependencies": [],
-    "archived": false,
-    "hidden": false,
-    "variable": false
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+  "id": 232,
+  "name": "% Change - Orders",
+  "owner": 27,
+  "locked": true,
+  "global": false,
+  "expression": "(CASE  WHEN (sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END )) = 0) THEN 0 ELSE ((sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < 28) AND (DateDiff(Current_Date(),`Date`) > 0)) THEN `Orders` END )) - sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END ))) / sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END ))) END )",
+  "checkSum": "4041d1731163b41ae86552ebb46f8a2f1d5aecd5",
+  "links": [
+    {
+      "resource": {
+        "type": "DATA_SOURCE",
+        "id": "32e6af61-c725-487a-8a4a-a46fbfed9fb1"
+      },
+      "visible": true,
+      "active": false,
+      "valid": "VALID"
+    }
+  ],
+  "legacyId": "calculation_6ca6ab70-412a-4394-82d7-d6f648758907",
+  "lastModified": 1734532686486,
+  "created": 1654190830737,
+  "aggregated": true,
+  "analytic": false,
+  "nonAggregatedColumns": [],
+  "dataType": "DECIMAL",
+  "status": "VALID",
+  "cacheWindow": "day",
+  "columnPositions": [
+    {
+      "columnName": "`Date`",
+      "columnPosition": 67
+    },
+    {
+      "columnName": "`Date`",
+      "columnPosition": 123
+    },
+    {
+      "columnName": "`Orders`",
+      "columnPosition": 149
+    }
+  ],
+  "functions": [
+    "DOMO_OP_MULTIPLY",
+    "ADDDATE",
+    "DOMO_OP_ADD",
+    "SUM",
+    "DOMO_OP_SUBTRACT",
+    "DATEDIFF",
+    "DOMO_OP_DIVIDE"
+  ],
+  "functionTemplateDependencies": [],
+  "archived": false,
+  "hidden": false,
+  "variable": false
 }
 ```
 
@@ -455,15 +322,14 @@ Update the formula that consitutes the calculation in the Beast Mode.
 
 Locks a Beast Mode so it cannot be altered.
 
-### Endpoint
-
-**PUT** `/api/query/v1/functions/template/:beastmode_id`
+**Method:** `PUT`  
+**Endpoint:** `/api/query/v1/functions/template/<beastmodeId>`
 
 ### Path Parameters
 
-| Parameter      | Type    | Required | Description                      |
-| -------------- | ------- | -------- | -------------------------------- |
-| `beastmode_id` | Integer | Yes      | The ID of the Beast Mode to lock |
+| Parameter     | Type    | Required | Description                      |
+| ------------- | ------- | -------- | -------------------------------- |
+| `beastmodeId` | Integer | Yes      | The ID of the Beast Mode to lock |
 
 ### Body Parameters
 
@@ -475,111 +341,75 @@ Locks a Beast Mode so it cannot be altered.
 
 ```json
 {
-	"method": "PUT",
-	"url": "https://{instance}.domo.com/api/query/v1/functions/template/{beastmode_id}",
-	"headers": {
-		"X-DOMO-Developer-Token": "",
-		"Content-Type": "application/json"
-	},
-	"body": {
-		"locked": true
-	}
+  "method": "PUT",
+  "url": "https://{instance}.domo.com/api/query/v1/functions/template/{beastmodeId}",
+  "headers": {
+    "X-DOMO-Developer-Token": "",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "locked": true
+  }
 }
 ```
 
 ### Response
 
 ```json
-  HTTP/1.1 200 OK
-  Content-Type: application/json;charset=UTF-8
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
 {
-    "id": 232,
-    "name": "% Change - Orders",
-    "owner": 27,
-    "locked": true,
-    "global": false,
-    "expression": "(CASE  WHEN (sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END )) = 0) THEN 0 ELSE ((sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < 28) AND (DateDiff(Current_Date(),`Date`) > 0)) THEN `Orders` END )) - sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END ))) / sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END ))) END )",
-    "checkSum": "4041d1731163b41ae86552ebb46f8a2f1d5aecd5",
-    "links": [
-        {
-            "resource": {
-                "type": "DATA_SOURCE",
-                "id": "32e6af61-c725-487a-8a4a-a46fbfed9fb1"
-            },
-            "visible": true,
-            "active": false,
-            "valid": "VALID"
-        }
-    ],
-    "legacyId": "calculation_6ca6ab70-412a-4394-82d7-d6f648758907",
-    "lastModified": 1734470226460,
-    "created": 1654190830737,
-    "aggregated": true,
-    "analytic": false,
-    "dataType": "DECIMAL",
-    "status": "VALID",
-    "cacheWindow": "day",
-    "columnPositions": [
-        {
-            "columnName": "`Date`",
-            "columnPosition": 67
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 123
-        },
-        {
-            "columnName": "`Orders`",
-            "columnPosition": 149
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 238
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 281
-        },
-        {
-            "columnName": "`Orders`",
-            "columnPosition": 300
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 372
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 428
-        },
-        {
-            "columnName": "`Orders`",
-            "columnPosition": 454
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 527
-        },
-        {
-            "columnName": "`Date`",
-            "columnPosition": 583
-        },
-        {
-            "columnName": "`Orders`",
-            "columnPosition": 609
-        }
-    ],
-    "functions": [
-        "DOMO_OP_MULTIPLY",
-        "ADDDATE",
-        "DOMO_OP_ADD",
-        "SUM",
-        "DOMO_OP_SUBTRACT",
-        "DATEDIFF",
-        "DOMO_OP_DIVIDE"
-    ],
-    "archived": false,
-    "hidden": false,
-    "variable": false
+  "id": 232,
+  "name": "% Change - Orders",
+  "owner": 27,
+  "locked": true,
+  "global": false,
+  "expression": "(CASE  WHEN (sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END )) = 0) THEN 0 ELSE ((sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < 28) AND (DateDiff(Current_Date(),`Date`) > 0)) THEN `Orders` END )) - sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END ))) / sum((CASE  WHEN ((DateDiff(AddDate(Current_Date(),-1),`Date`) < (28 + (52 * 7))) AND (DateDiff(Current_Date(),`Date`) > (52 * 7))) THEN `Orders` END ))) END )",
+  "checkSum": "4041d1731163b41ae86552ebb46f8a2f1d5aecd5",
+  "links": [
+      {
+          "resource": {
+              "type": "DATA_SOURCE",
+              "id": "32e6af61-c725-487a-8a4a-a46fbfed9fb1"
+          },
+          "visible": true,
+          "active": false,
+          "valid": "VALID"
+      }
+  ],
+  "legacyId": "calculation_6ca6ab70-412a-4394-82d7-d6f648758907",
+  "lastModified": 1734470226460,
+  "created": 1654190830737,
+  "aggregated": true,
+  "analytic": false,
+  "dataType": "DECIMAL",
+  "status": "VALID",
+  "cacheWindow": "day",
+  "columnPositions": [
+    {
+      "columnName": "`Date`",
+      "columnPosition": 67
+    },
+    {
+      "columnName": "`Date`",
+      "columnPosition": 123
+    },
+    {
+      "columnName": "`Orders`",
+      "columnPosition": 149
+    }
+  ],
+  "functions": [
+    "DOMO_OP_MULTIPLY",
+    "ADDDATE",
+    "DOMO_OP_ADD",
+    "SUM",
+    "DOMO_OP_SUBTRACT",
+    "DATEDIFF",
+    "DOMO_OP_DIVIDE"
+  ],
+  "archived": false,
+  "hidden": false,
+  "variable": false
 }
 ```

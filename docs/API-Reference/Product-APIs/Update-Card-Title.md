@@ -33,7 +33,7 @@
 }
 ```
 
-**Response**:  
+**Response**:
 
 ```json
 200:

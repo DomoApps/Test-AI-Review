@@ -511,6 +511,11 @@
               "type": "item",
               "title": "Manage Pro-Code Editor Apps",
               "uri": "docs/Apps/App-Framework/Guides/manage-save-pro-code.md"
+            },
+            {
+              "type": "item",
+              "title": "Clearing out Collections",
+              "uri": "docs/Apps/App-Framework/Guides/clearing-out-collections.md"
             }
           ]
         },
