@@ -9,7 +9,7 @@ This guide will provide more technical detail on how sessions work in the App Fr
 ### What is Stored in the App Session
 ---
 
-When an App Platform App is loaded (i.e., the `index.html` file is requested), an app session is created. This session is used as authentication; it stores any state passed to the app at load time which needs to be available during subsequent requests made by the app to the App Platform APIs.
+When an App Platform App is loaded (i.e., the `index.html` file is requested), an app session is created. This session is used as authentication and stores any state passed to the app at load time which needs to be available on subsequent requests made by the app to the App Platform APIs.
 
 Information stored in the app session:
 - Authentication details (customer, user)
