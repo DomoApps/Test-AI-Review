@@ -27,7 +27,7 @@ A new app session is created every time the app is loaded, and the session ID is
 >
 > The existence of the session cookie can cause problems if more than one copy of same app instance is running in a shared context (e.g., loaded on multiple browser tabs/windows, multiple copies of the same Card on a page, etc.). See an example of this scenario at the bottom of the page.
 >
-> Because of the shared context, the session cookie is also shared--and all copies of the app instance will share the same session as well. If this is a concern, the session ID can be sent in a different way so that the session cookie is not considered.
+> Because of the shared context, the session cookie is also shared—and all copies of the app instance will share the same session as well. If this is a concern, the session ID can be sent in a different way so that the session cookie is not considered.
 
 
 
