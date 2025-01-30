@@ -43,7 +43,7 @@ Thus, if the session ID is sent as the header or the query parameter, the cookie
 
 The code for the app can be written such that the session ID is explicitly added as a header or query parameter. This will work to override the session cookie but can be labor-intensive. 
 
-Another option is to use the `domo.js` library, which can be included in the app (generally by loading it from the public-assets folder). Sent requests--either static asset requests or the functions supplied in `domo.js` (such as `domo.get()`)--will be modified to include either the query parameter (on static asset requests) or the header (on function calls). See the [`domo.js` documentation here](../Tools/domo.js.md) for more details.
+Another option is to use the `domo.js` library, which can be included in the app (generally by loading it from the public-assets folder). Requests which have been sent--either as static asset requests or as functions, as supplied in `domo.js` (such as `domo.get()`)--will be modified to include either the query parameter (on static asset requests) or the header (on function calls). See the [`domo.js` documentation here](../Tools/domo.js.md) for more details.
 
 <!-- theme: info -->
 > #### Make sure you have the most up-to-date Apps SDK (domo.js)
