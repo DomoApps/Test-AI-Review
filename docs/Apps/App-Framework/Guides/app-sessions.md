@@ -33,7 +33,7 @@ A new app session is created every time the app is loaded, and the session ID is
 
 **The App Platform needs to receive the session ID on all requests from the app.**
 
-There are 3 ways to send the session ID. In order of preference, these session IDs are used in the following:
+There are 3 ways to send the session ID. They are used in the following preference order:
 
 1. The `X-Domo-Ryuu-Session` header
 2. The `ryuu_sid` query parameter
