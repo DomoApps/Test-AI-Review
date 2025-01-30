@@ -75,7 +75,8 @@ Let's say you have an app that only displays the data in a DataSet.
 
 The app has a button that sends the request to query the data and display it. You open 2 browser tabs and navigate to the same app in both tabs. 
 
-In tab 1, set page filters such that the DataSet is filtered to rows, where the column 'State' has the value 'UT'. Verify that the data is correctly filtered. 
+In tab 1, set page filters such that the DataSet is filtered to rows where the column 'State' has the value 'UT'. 
+Verify that the data is correctly filtered. 
 
 Then in tab 2, set the page filters to filter the value 'TX' in the 'State' column. Verify that the data is correctly filtered. 
 
