@@ -5,7 +5,7 @@
 
 **Example**:
 
-```json http
+```json
 {
   "method": "POST",
   "url": "https://{instance}.domo.com/api/query/v1/execute/export/<DATASET_ID>?includeHeader=true",
@@ -13,7 +13,7 @@
     "X-DOMO-Developer-Token": "",
     "Content-Type": "application/json"
   },
-  "body": {"sql":"SELECT * FROM `<DATASET_ID>` WHERE status='error'"}
+  "body": { "sql": "SELECT * FROM `<DATASET_ID>` WHERE status='error'" }
 }
 ```
 

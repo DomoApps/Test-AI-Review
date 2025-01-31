@@ -182,13 +182,13 @@
         },
         {
           "type": "item",
-          "title": "Code Engine API",
-          "uri": "docs/API-Reference/Product-APIs/Code-Engine.md"
+          "title": "Connectors API",
+          "uri": "docs/API-Reference/Product-APIs/Connectors.md"
         },
         {
           "type": "item",
-          "title": "Connectors API",
-          "uri": "docs/API-Reference/Product-APIs/Connectors.md"
+          "title": "Dataset Schema API",
+          "uri": "docs/API-Reference/Product-APIs/Get-Dataset-Schema.md"
         },
         {
           "type": "item",

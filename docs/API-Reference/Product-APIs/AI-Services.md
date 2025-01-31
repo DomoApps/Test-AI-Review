@@ -35,17 +35,17 @@ Generate text based on the given text input.
 
 Minimal text generation request using the default model, system message and prompt template.
 
-```json http
+```json
 {
-	"method": "POST",
-	"url": "https://{instance}.domo.com/api/ai/v1/text/generation",
-	"headers": {
-		"X-DOMO-Developer-Token": "",
-		"Content-Type": "application/json"
-	},
-	"body": {
-		"input": "Why is the sky blue?"
-	}
+  "method": "POST",
+  "url": "https://{instance}.domo.com/api/ai/v1/text/generation",
+  "headers": {
+    "X-DOMO-Developer-Token": "",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "input": "Why is the sky blue?"
+  }
 }
 ```
 
@@ -53,24 +53,24 @@ Minimal text generation request using the default model, system message and prom
 
 Text generation request leveraging prompt template and specifying the model to use.
 
-```json http
+```json
 {
-	"method": "POST",
-	"url": "https://{instance}.domo.com/api/ai/v1/text/generation",
-	"headers": {
-		"X-DOMO-Developer-Token": "",
-		"Content-Type": "application/json"
-	},
-	"body": {
-		"input": "Why is the sky blue?",
-		"promptTemplate": {
-			"template": "Respond to the following in ${language}: ${input}"
-		},
-		"parameters": {
-			"language": "Japanese"
-		},
-		"model": "domo.domo_ai.domogpt-chat-small-v1:anthropic"
-	}
+  "method": "POST",
+  "url": "https://{instance}.domo.com/api/ai/v1/text/generation",
+  "headers": {
+    "X-DOMO-Developer-Token": "",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "input": "Why is the sky blue?",
+    "promptTemplate": {
+      "template": "Respond to the following in ${language}: ${input}"
+    },
+    "parameters": {
+      "language": "Japanese"
+    },
+    "model": "domo.domo_ai.domogpt-chat-small-v1:anthropic"
+  }
 }
 ```
 
@@ -78,19 +78,19 @@ Text generation request leveraging prompt template and specifying the model to u
 
 Text generation with a system message
 
-```json http
+```json
 {
-	"method": "POST",
-	"url": "https://{instance}.domo.com/api/ai/v1/text/generation",
-	"headers": {
-		"X-DOMO-Developer-Token": "",
-		"Content-Type": "application/json"
-	},
-	"body": {
-		"input": "Why is the sky blue?",
-		"system": "Respond only in Japanese",
-		"model": "domo.domo_ai.domogpt-chat-small-v1:anthropic"
-	}
+  "method": "POST",
+  "url": "https://{instance}.domo.com/api/ai/v1/text/generation",
+  "headers": {
+    "X-DOMO-Developer-Token": "",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "input": "Why is the sky blue?",
+    "system": "Respond only in Japanese",
+    "model": "domo.domo_ai.domogpt-chat-small-v1:anthropic"
+  }
 }
 ```
 
@@ -142,50 +142,50 @@ Generate SQL based on the given text input and schemas
 
 Minimal Text-to-SQL request using the default model, system message and prompt template.
 
-```json http
+```json
 {
-	"method": "POST",
-	"url": "https://{instance}.domo.com/api/ai/v1/text/sql",
-	"headers": {
-		"X-DOMO-Developer-Token": "",
-		"Content-Type": "application/json"
-	},
-	"body": {
-		"input": "What are my total sales by region?",
-		"dataSourceSchemas": [
-			{
-				"dataSourceName": "Store Sales",
-				"description": "",
-				"columns": [
-					{
-						"type": "STRING",
-						"name": "product",
-						"description": ""
-					},
-					{
-						"type": "LONG",
-						"name": "store",
-						"description": ""
-					},
-					{
-						"type": "LONG",
-						"name": "amount",
-						"description": ""
-					},
-					{
-						"type": "DATETIME",
-						"name": "timestamp'",
-						"description": ""
-					},
-					{
-						"type": "STRING",
-						"name": "region",
-						"description": ""
-					}
-				]
-			}
-		]
-	}
+  "method": "POST",
+  "url": "https://{instance}.domo.com/api/ai/v1/text/sql",
+  "headers": {
+    "X-DOMO-Developer-Token": "",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "input": "What are my total sales by region?",
+    "dataSourceSchemas": [
+      {
+        "dataSourceName": "Store Sales",
+        "description": "",
+        "columns": [
+          {
+            "type": "STRING",
+            "name": "product",
+            "description": ""
+          },
+          {
+            "type": "LONG",
+            "name": "store",
+            "description": ""
+          },
+          {
+            "type": "LONG",
+            "name": "amount",
+            "description": ""
+          },
+          {
+            "type": "DATETIME",
+            "name": "timestamp'",
+            "description": ""
+          },
+          {
+            "type": "STRING",
+            "name": "region",
+            "description": ""
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
 
@@ -239,17 +239,17 @@ Generate a summary based on the given text input.
 
 Minimal text summarization request.
 
-```json http
+```json
 {
-	"method": "POST",
-	"url": "https://{instance}.domo.com/api/ai/v1/text/summarize",
-	"headers": {
-		"X-DOMO-Developer-Token": "",
-		"Content-Type": "application/json"
-	},
-	"body": {
-		"input": "San Francisco, officially the City and County of San Francisco, is a commercial, financial, and cultural center in Northern California. With a population of 808,437 residents as of 2022, San Francisco is the fourth most populous city in the U.S. state of California. The city covers a land area of 46.9 square miles (121 square kilometers) at the end of the San Francisco Peninsula, making it the second-most densely populated large U.S. city after New York City and the fifth-most densely populated U.S. county, behind only four New York City boroughs. Among the 92 U.S. cities proper with over 250,000 residents, San Francisco is ranked first by per capita income and sixth by aggregate income as of 2022."
-	}
+  "method": "POST",
+  "url": "https://{instance}.domo.com/api/ai/v1/text/summarize",
+  "headers": {
+    "X-DOMO-Developer-Token": "",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "input": "San Francisco, officially the City and County of San Francisco, is a commercial, financial, and cultural center in Northern California. With a population of 808,437 residents as of 2022, San Francisco is the fourth most populous city in the U.S. state of California. The city covers a land area of 46.9 square miles (121 square kilometers) at the end of the San Francisco Peninsula, making it the second-most densely populated large U.S. city after New York City and the fifth-most densely populated U.S. county, behind only four New York City boroughs. Among the 92 U.S. cities proper with over 250,000 residents, San Francisco is ranked first by per capita income and sixth by aggregate income as of 2022."
+  }
 }
 ```
 
@@ -257,23 +257,23 @@ Minimal text summarization request.
 
 Text summarization request with custom output formatting and length
 
-```json http
+```json
 {
-	"method": "POST",
-	"url": "https://{instance}.domo.com/api/ai/v1/text/generation",
-	"headers": {
-		"X-DOMO-Developer-Token": "",
-		"Content-Type": "application/json"
-	},
-	"body": {
-		"input": "San Francisco, officially the City and County of San Francisco, is a commercial, financial, and cultural center in Northern California. With a population of 808,437 residents as of 2022, San Francisco is the fourth most populous city in the U.S. state of California. The city covers a land area of 46.9 square miles (121 square kilometers) at the end of the San Francisco Peninsula, making it the second-most densely populated large U.S. city after New York City and the fifth-most densely populated U.S. county, behind only four New York City boroughs. Among the 92 U.S. cities proper with over 250,000 residents, San Francisco is ranked first by per capita income and sixth by aggregate income as of 2022.",
-		"outputWordLength": {
-			"min": 5,
-			"max": 10
-		},
-		"outputStyle": "PARAGRAPH",
-		"model": "domo.domo_ai.domogpt-summarize-v1:anthropic"
-	}
+  "method": "POST",
+  "url": "https://{instance}.domo.com/api/ai/v1/text/generation",
+  "headers": {
+    "X-DOMO-Developer-Token": "",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "input": "San Francisco, officially the City and County of San Francisco, is a commercial, financial, and cultural center in Northern California. With a population of 808,437 residents as of 2022, San Francisco is the fourth most populous city in the U.S. state of California. The city covers a land area of 46.9 square miles (121 square kilometers) at the end of the San Francisco Peninsula, making it the second-most densely populated large U.S. city after New York City and the fifth-most densely populated U.S. county, behind only four New York City boroughs. Among the 92 U.S. cities proper with over 250,000 residents, San Francisco is ranked first by per capita income and sixth by aggregate income as of 2022.",
+    "outputWordLength": {
+      "min": 5,
+      "max": 10
+    },
+    "outputStyle": "PARAGRAPH",
+    "model": "domo.domo_ai.domogpt-summarize-v1:anthropic"
+  }
 }
 ```
 
