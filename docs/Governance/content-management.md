@@ -32,7 +32,7 @@ Creating a new page in Domo, updating the page layout by adding collections for
  	<li>Create page collections</li>
  	<li>Share a page with users or groups</li>
 </ol>
-Once a page is created, you can continue to programatically update it's content and access.
+Once a page is created, you can continue to programmatically update it's content and access.
 
 > **NOTE:** 
 > In order to utilize this Quickstart you will need to obtain an [access token](../API-Reference/Embed-APIs/Embed-Token-API.yaml#quickstart) or you can leverage any of [Domo's SDKs](../Getting-Started/sdks.md) which will also handle authentication.
@@ -89,7 +89,7 @@ Once you create the page, store the `page_id` value to page name in your own dat
 
 ### Step 2: Create a page collection
 ---
-Now that you've create a page and added cards, you can now organized the page's content into page collections.  
+Now that you've created a page and added cards, you can now organize the page's content into page collections.  
 
 NOTE: In order to add cards to a page collection,  the cards must already exist on the page. To add a card to the page, you may either add cards when you create or update the Page via the API.
 
@@ -123,7 +123,7 @@ HTTP/1.1 200 OK
 ---
 When you share a page with a user, the page itself is added to the page tab row in the user's personalized Domo view, and the name of the page is added to the user's Pages listing in the People tab. 
 
-When you share a page with a group, the page is added to the Domo view of every member of that group, and the name of the page is added to the group's Content Accessible by this Group listing in the Groups tab. Users you've shared with have access to the page and all of the cards in it (unless you restrict access to specific cards in the page using the Share dialog).
+When you share a page with a group, the page is added to the Domo view of every member of that group, and the name of the page is added to the group's Content Accessible by this Group listing in the Groups tab. Users you've shared with have access to the page and all the cards in it (unless you restrict access to specific cards in the page using the Share dialog).
 
 In order to share a page with either a group or user, the `visibility` object needs to be added as a parameter with either an array of  `group_ids` or `user_ids` you wish to grant access.
 

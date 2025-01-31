@@ -2,8 +2,6 @@
 stoplight-id: d2309f6f9be66
 ---
 
-# Help & Support
-
 <h3 class="doc-row-title">Help &amp; Support</h3>
 <div class="small-pad-bottom">
 
@@ -20,14 +18,16 @@ Try us: Our technical support consultants are there 24/7 to provide world-class 
 
 ### Frequently Asked Questions
 ---
-<strong>
-How do I access the IDE?</strong>
 
-This feature is available from the Custom Connectors page.
+**How do I access the IDE?**
+
+This feature is available from the Custom Connectors page.  
+
 
 <strong>How do I designate the corresponding icon for this connector?</strong>
 
-User will be prompted to upload the desired icon as part of the custom connector creation process.
+User will be prompted to upload the desired icon as part of the custom connector creation process.  
+
 
 <strong>How long is the beta / trial period for the custom connector?</strong>
 
@@ -35,10 +35,12 @@ The beta / trial version of the connector will be available for 14 days, after w
 <ul>
  	<li>Domo has approved the custom connector and the final version is published for use</li>
  	<li>The customer has to refine the connector and resubmit.</li>
-</ul>
+</ul>  
+
 <strong>What should I do in case my connector is rejected?</strong>
 
-Make the requested revisions as listed by the Domo custom connector team and resubmit the custom connector.
+Make the requested revisions as listed by the Domo custom connector team and resubmit the custom connector.  
+
 
 <strong>If I resubmit my custom connector, will my newly submitted connector be eligible for another 14 day trial / review period?</strong>
 
