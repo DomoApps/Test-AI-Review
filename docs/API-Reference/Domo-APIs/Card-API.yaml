@@ -16,7 +16,7 @@ paths:
       operationId: listCards
       parameters:
         - name: limit
-          description: Maximum count of cards to be returned
+          description: Maximum count of Cards to be returned
           in: query
           required: false
           schema:
@@ -24,7 +24,7 @@ paths:
             format: int32
             default: 35
         - name: offset
-          description: Offset of cards to skip before returning
+          description: Offset of Cards to skip before returning
           in: query
           required: false
           schema:
@@ -68,7 +68,7 @@ paths:
   /v1/cards/chart:
     post:
       summary: Create Chart Card
-      description: Create a new Card to visualize data from an existing dataset
+      description: Create a new Card to visualize data from an existing DataSet.
       operationId: createChartCard
       parameters:
         - name: pageId
@@ -100,7 +100,7 @@ paths:
   '/v1/cards/chart/{cardUrn}':
     get:
       summary: Get Chart Card Definition
-      description: Retrieves the definition for an existing chart Card
+      description: Retrieves the definition for an existing chart Card.
       operationId: getCardDefinition
       parameters:
         - name: cardUrn
@@ -124,7 +124,7 @@ paths:
         - oauth2Auth: []
     put:
       summary: Update Chart Card Definition
-      description: Updates definition of an existing chart Card
+      description: Updates definition of an existing chart Card.
       operationId: updateChartCardDefinition
       parameters:
         - name: cardUrn
@@ -155,7 +155,7 @@ paths:
   '/v1/cards/chart/{cardUrn}/drill':
     post:
       summary: Add Drill View
-      description: Adds a new drill view definition to an existing Card
+      description: Adds a new drill view definition to an existing Card.
       operationId: addDrillView
       parameters:
         - name: cardUrn
@@ -186,7 +186,7 @@ paths:
   '/v1/cards/chart/{cardUrn}/drillpath':
     get:
       summary: Get Drill Properties
-      description: Retrieves drill views of a Card
+      description: Retrieves drill views of a Card.
       operationId: getDrillProperties
       parameters:
         - name: cardUrn
