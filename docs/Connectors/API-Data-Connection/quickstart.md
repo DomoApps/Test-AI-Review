@@ -80,7 +80,7 @@ Content-Type: application/json
 }
 ```
 
-Once you've created the DataSet, store the `dataset_id` value to DataSet name in your own database to utilize when importing additional data or applying data permissions.
+Once you've created the DataSet, store the `dataset_id` value to the DataSet name in your own database to utilize when importing additional data or applying data permissions.
 
 ### Step 2: Import data into a DataSet
 ---
