@@ -4,7 +4,7 @@ stoplight-id: 278e9d611eaa6
 
 # Quickstart
 
-Creating a DataSet, importing data, and creating a Personalized Data Permission (PDP) policy within the DataSet is straightforward and only requires four steps
+Creating a DataSet, importing data, and creating a Personalized Data Permission (PDP) policy within the DataSet is straightforward and only requires three steps:
 <ol>
  	<li>Create a DataSet</li>
  	<li>Import data into a DataSet</li>
@@ -80,7 +80,7 @@ Content-Type: application/json
 }
 ```
 
-Once you create the DataSet, store the `dataset_id` value to DataSet name in your own database to utilize when importing additional data or applying data permissions.
+Once you've created the DataSet, store the `dataset_id` value to DataSet name in your own database to utilize when importing additional data or applying data permissions.
 
 ### Step 2: Import data into a DataSet
 ---
@@ -102,7 +102,7 @@ Alan Turing,TRUE
 George Boole,TRUE
 ```
 
-Domo will return a response of success or error for the outcome of data being imported into DataSet.
+Domo will return a response of success or error for the outcome of data being imported into the DataSet.
 
 #### Sample Response
 ```HTTP
@@ -111,7 +111,7 @@ HTTP/1.1 204 No Content
 
 ### Step 3: Create a Personalized Data Permission
 ---
-Once you've created a DataSet that has data, you can now create a Personalized Data Permission (PDP) policy to restrict access to rows of data within the DataSet.  Users and groups must exist before creating PDP policy.
+Once you've created a DataSet that has data, you can now create a Personalized Data Permission (PDP) policy to restrict access to rows of data within the DataSet. Please note that users and groups must exist before creating a PDP policy.
 
 #### Sample Request
 See this sample request in [Java](https://github.com/domoinc/domo-java-sdk/blob/master/domo-java-sdk-all/src/test/java/com/domo/sdk/datasets/CreateExample.java), [Python](https://github.com/domoinc/domo-python-sdk/blob/master/examples/dataset.py).
@@ -160,7 +160,7 @@ Content-Type: application/json
 ---
 Congrats! You now have a DataSet with data you've uploaded from a DataSet API.
 
-You may want to learn how to manage DataSets in more detail or explore these other topics:
+You may want to learn how to manage DataSets in more detail, or explore these other topics, here:
 
 - [Import and Export Data](import-and-export-data.md)
 - [Manage DataSets](managing-datasets.md)
@@ -169,7 +169,7 @@ You may want to learn how to manage DataSets in more detail or explore these oth
 
 ### Need additional help?
 ---
-No problem, we'd love to help. Explore our [documentation](https://knowledge.domo.com), answers to [frequently asked questions](https://dojo.domo.com/main), or join other developers in Domo's [Developer Forum](https://dojo.domo.com/main).  For further help, feel free to [email us](mailto:support@domo.com) or [contact our sales team](mailto:sales@domo.com).
+No problem, we'd love to help. Explore our [documentation](https://knowledge.domo.com), answers to [frequently asked questions](https://dojo.domo.com/main), or join other developers in Domo's [Developer Forum](https://dojo.domo.com/main).  For further support, feel free to [email us](mailto:support@domo.com) or [contact our sales team](mailto:sales@domo.com).
 
 
 
