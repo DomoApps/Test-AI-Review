@@ -174,7 +174,7 @@ You may want to learn how to manage DataSets in more detail, or explore these ot
 
 ### Need additional help?
 ---
-No problem, we'd love to help. Explore our [documentation](https://knowledge.domo.com), answers to [frequently asked questions](https://dojo.domo.com/main), or join other developers in Domo's [Developer Forum](https://dojo.domo.com/main).  For additional support, feel free to [email us](mailto:support@domo.com) or [contact our sales team](mailto:sales@domo.com).
+No problem, we'd love to help. Explore our [documentation](https://knowledge.domo.com), answers to [frequently asked questions](https://community-forums.domo.com/main), or join other developers in Domo's [Developer Forum](https://community-forums.domo.com/main).  For additional support, feel free to [email us](mailto:support@domo.com) or [contact our sales team](mailto:sales@domo.com).
 
 
 
