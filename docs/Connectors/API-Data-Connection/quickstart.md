@@ -156,6 +156,11 @@ Content-Type: application/json
 }
 ```
 
+<!-- theme: info -->
+> #### PDP Off By Default
+>
+> Since PDP is off by default in new DataSets, when you're ready, you can turn it on with the [Update DataSet Details endpoint](https://developer.domo.com/portal/b96e1dbabff23-update-data-set-details).
+
 ### Next steps
 ---
 Congrats! You now have a DataSet with data you've uploaded from a DataSet API.
