@@ -15,7 +15,7 @@ After creating a DataSet, you can continue to import data if needed or create m
 <!-- theme: info -->
 
 > #### Note
-> In order to utilize this Quickstart you will need to obtain an [access token](../../API-Reference/Embed-APIs/Embed-Token-API.yaml) or you can leverage any of [Domo's SDKs](../../Getting-Started/sdks.md) which will also handle authentication.
+> In order to utilize this Quickstart you will need to obtain an [access token](../../API-Reference/Domo-APIs/API-Authentication.yaml) or you can leverage any of [Domo's SDKs](../../Getting-Started/sdks.md) which will also handle authentication.
 
 ### Step 1: Create a DataSet
 ---
