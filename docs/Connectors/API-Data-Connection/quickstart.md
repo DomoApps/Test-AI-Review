@@ -84,7 +84,7 @@ Once you've created the DataSet, store its `id` value somewhere to utilize when 
 
 ### Step 2: Import data into a DataSet
 ---
-With a new `dataset_id`, import data into the DataSet via a CSV:
+With the recently created DataSet `id`, you can import data into the DataSet:
 
 #### Sample Request
 See this sample request in [Java](https://github.com/domoinc/domo-java-sdk/blob/master/domo-java-sdk-all/src/test/java/com/domo/sdk/datasets/ImportDataExample.java), [Python](https://github.com/domoinc/domo-python-sdk/blob/master/examples/dataset.py).
