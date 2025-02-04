@@ -163,7 +163,7 @@ Content-Type: application/json
 
 ### Next steps
 ---
-Congrats! You now have a DataSet with data you've uploaded from a DataSet API.
+Congrats! You now have a DataSet with data you've uploaded with the DataSet API.
 
 You may want to learn how to manage DataSets in more detail, or explore these other topics, here:
 
