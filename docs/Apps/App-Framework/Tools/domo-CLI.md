@@ -26,7 +26,7 @@ If at any point you need a reminder on the available commands for the CLI, you c
 $ domo -h
 ```
 
-Additionally, you can get available options for a specific command with:
+Additionally, you can get available options for a specific command with
 
 ```
 $ domo [command] -h
