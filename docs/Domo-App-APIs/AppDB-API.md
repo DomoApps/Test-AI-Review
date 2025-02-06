@@ -4,15 +4,15 @@ stoplight-id: 1l1fm2g0sfm69
 
 # AppDB API
 
-AppDB allows the storage of arbitrary JSON documents similar to a normal nosql database. This enables the ability to store state within your DomoApp. Optionally, you can also sync the data in AppDB back to a Domo dataset. This data storage is provided through 3 layers analogous to traditional storage mechanisms:
+AppDB allows the storage of arbitrary JSON documents similar to a normal NoSQL database. This enables the ability to store a state within your DomoApp. Optionally, you can also sync the data in AppDB back to a Domo DataSet. Three layers (analogous to traditional storage mechanisms) provide this data storage: 
 
-1. Datastores – Analogous to a database. A CustomApp has a single Datastore that is created automatically, named with the CustomApp’s ID and managed transparently to the CustomApp
-2. Collections – Analogous to a collection in a nosql database or a table in a relational database. A Datastore can have multiple Collections defined
-3. Documents – Analogous to documents in a nosql database or a table row in a relational database. A Collection can have multiple documents
+1. Datastores: Analogous to a database. A CustomApp has a single Datastore that is created automatically, named with the CustomApp’s ID and managed transparently to the CustomApp.
+2. Collections: Analogous to a collection in a NoSQL database or a table in a relational database. A Datastore can have multiple Collections defined.
+3. Documents: Analogous to documents in a NoSQL database or a table row in a relational database. A Collection can have multiple documents.
 
 ### Defining Collections in the Manifest
 
-Within the app manifest, you can define the collections that you want your app to be able to use by simply listing it in a collections property like so:
+Within the app manifest, you can define the Collections that you want your app to be able to use by simply listing them in a collections property as in the following: 
 
 ```json
 {
@@ -42,7 +42,7 @@ Within the app manifest, you can define the collections that you want your app t
 }
 ```
 
-As you can see, if you do not need to sync it back to Domo the only property you need to define is the collection name. If you want it to sync back to Domo, you must also provide the schema you wish for the Domo dataset to have.
+As you can see, if you do not need to sync a Collection back to Domo, the only property you need to define is the Collection name. If you want it to sync back to Domo, you must also provide the schema you want for the Domo DataSet.
 
 #### Schema Object
 
@@ -59,33 +59,33 @@ The schema object takes a list of columns. Each column has a name and a type. Th
 
 > #### Note
 >
-> Documents that contain DATE or DATETIME data must be formatted as YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ in order to be successfully synced to a Domo dataset.
+> Documents that contain DATE or DATETIME data must be formatted as YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ in order to be successfully synced to a Domo DataSet.
 
 <!-- theme: danger -->
 
 > #### Warning
 >
-> If your app has not yet created a dataset and you provide the wrong data type in the schema section of your manifest, your collection will not be able to create a dataset to export to. If, after adding documents to your collection and waiting the 15-minute period for a normally scheduled export, you do not see your AppDB dataset in your data center, double check to ensure that your schema is set up correctly. Common mistakes are to include a data type like NUMBER or INTEGER.
+> If your app has not yet created a DataSet and you provide the wrong data type in the schema section of your manifest, your collection will not be able to create a DataSet to export to. If, after adding documents to your collection and waiting the 15-minute period for a normally scheduled export, you do not see your AppDB DataSet in your data center, double check to ensure that your schema is set up correctly. A common mistake is to include a data type like NUMBER or INTEGER.
 
 <!-- theme: danger -->
 
 > #### Warning
 >
-> It's also important to be aware that collections won't sync to Domo if the owner of the collection doesn't have the correct permissions on the dataset that it's syncing to.
+> It's also important to be aware that Collections won't sync to Domo if the owner of the Collection doesn't have the correct permissions on the DataSet it's syncing to. 
 >
-> This is important to know in the case of someone who gets removed from their Domo instance. For example, if Bob owns a collection that is synced to dataset, but then is removed from the Domo instance, "deleted user" will remain as owner of the collection unless updated, but will have no permissions on the dataset, so it will stop syncing.
+> This is important to know in the case of someone who gets removed from their Domo instance. For example, if Bob owns a Collection that is synced to DataSet, and is then removed from the Domo instance, "deleted user" will remain as owner of the Collection unless updated; however, Bob will have no permissions on the DataSet, so it will stop syncing.
 >
-> The new owner of the collection not only has to be the owner, but has to be given admin permissions on the collection as well.
+> The new owner of the Collection not only has to be the owner, but has to be given Admin Permissions on the Collection as well.
 
 ### Making API Calls to Your Collection
 
-Examples of how to make calls to the collections defined in your manifest are below. For now, you will not be able to make these calls in local dev without including a proxy. Instead, you must publish your app and ensure that it is making calls in an installed app.
+Examples of how to make calls to the Collections defined in your manifest are below. For now, you will not be able to make these calls in local dev without including a proxy. Instead, you must publish your app and ensure that it is making calls in an installed app.
 
 <!-- theme: info -->
 
 > #### Note
 >
-> If you make any updates to the manifest and re-publish your app design, **you will need to edit the installed app and re-save it** for the manifest changes to take effect on the installed app (similar to what you would have to do if you made changes to the mapping section of your manifest).
+> If you make any updates to the manifest and re-publish your app design, **you will need to edit the installed app and re-save it** for the manifest changes to take effect on the installed app (similar to what you would have to do when making changes to the mapping section of your manifest).
 
 ### Create Document
 
@@ -162,7 +162,7 @@ domo.post(`/domo/datastores/v1/collections/Users/documents`, {
 
 ### List Documents
 
-List all documents from a given collection.
+Lists all documents from a given Collection.
 
 #### Code Example
 
@@ -228,7 +228,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### Get Document
 
-Retrieve a single document from a collection given its document ID.
+Retrieves a single document from a Collection when given its document ID.
 
 #### Code Example
 
@@ -279,7 +279,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### Update Document
 
-Update an existing document in a collection given its document ID.
+Updates an existing document in a Collection when given its document ID.
 
 #### Code Example
 
@@ -347,13 +347,13 @@ domo
 
 ### Delete Document
 
-Permanently deletes a document from your application's collection.
+Permanently deletes a document from your application's Collection.
 
 <!-- theme: danger -->
 
 > #### Warning
 >
-> This is destructive and cannot be reversed. Note: Deleting documents in an AppDB collection may have performance implications with regard to syncing to its corresponding dataset in Domo if the `syncEnabled` property is set to `true` for the collection.
+> This is destructive and cannot be reversed. Deleting documents in an AppDB Collection may have performance implications with regard to syncing to its corresponding DataSet in Domo if the `syncEnabled` property is set to `true` for the Collection.
 > Code Example
 > domo.delete(`/domo/datastores/v1/collections/Users/documents/1e61d99d-9885-419a-a33e-3be3941ee720`);
 
@@ -374,7 +374,7 @@ Accept: application/json
 
 #### HTTP Response
 
-Returns the parameter of success or error.
+Returns the parameter of a success or an error.
 
 ```text
 HTTP/1.1 200 OK
@@ -385,7 +385,7 @@ HTTP/1.1 200 OK
 Any MongoDB query that can be used in a Mongo `find()` function can be used to query for documents in an AppDB Datastore. Official MongoDB query documentation is below:
 https://docs.mongodb.com/manual/reference/operator/query/
 
-Example of querying for a document that includes a comment that has the word 'happy' (via a regex operator) or does not include the username 'Eeyore' (via the not equals operator) can be found below. The return value of this call will be an array of documents that match the query.
+Example of querying for a document that includes a comment that has the word 'happy' (via a regex operator) or does not include the username 'Eeyore' (via the not equals operator) can be found below. The return value of this call will be an array of documents that matches the query.
 
 #### HTTP Request
 
@@ -453,7 +453,7 @@ HTTP/1.1 200 OK
 ]
 ```
 
-#### Querying based on dates
+#### Querying Based on Dates
 
 Dates can be queried in AppDB using the [MongoDB Extended JSON v2](https://www.mongodb.com/docs/manual/reference/mongodb-extended-json/) spec shown below. This essentially casts the string that is being provided to the "less than or equal to" operator into a Date object. MongoDB documentation on the `$date` operator can be found [here](https://www.mongodb.com/docs/manual/reference/mongodb-extended-json/#bson.Date). The date string provided will need to be in the demonstrated ISO date format.
 
