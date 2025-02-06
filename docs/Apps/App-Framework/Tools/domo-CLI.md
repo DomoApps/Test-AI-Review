@@ -94,7 +94,7 @@ design-name
 
 * basic chart: Gets you started rendering a basic [Domo Phoenix] bar chart.
 
-* map chart: Aets you started rendering a [Domo Phoenix] world map chart.
+* map chart: Gets you started rendering a [Domo Phoenix] world map chart.
 
 * sugarforce: Creates an app with multiple screens; it shows how to handle tabbing between screens, database CRUD operations, and more.
 
