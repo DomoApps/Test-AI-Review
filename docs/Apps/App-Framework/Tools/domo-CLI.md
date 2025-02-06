@@ -14,7 +14,7 @@ Custom App designs to your Domo instance.
 
 Here's how to [install it](/docs/Apps/App-Framework/Quickstart/Setup-and-Installation.md). 
 
-The following is an enhanced reference for the more common CLI commands. 
+The following is an enhanced **reference** for the more **common** CLI commands. 
 
 For a complete list of commands available, use `domo --help` (refer to the Help section below).
 
