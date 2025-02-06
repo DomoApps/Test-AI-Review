@@ -20,7 +20,7 @@ For a **complete** list of commands available, use `domo --help` (refer to the H
 
 ### Help
 ---
-If at any point you need a reminder on the available commands for the CLI, you can run:
+If at any point you need a reminder on the available commands for the CLI, you can run
 
 ```
 $ domo -h
