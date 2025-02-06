@@ -92,7 +92,7 @@ design-name
 
 * manifest only: Adds a single `manifest.json` file to the current working directory.
 
-* basic chart: Aets you started rendering a basic [Domo Phoenix] bar chart.
+* basic chart: Gets you started rendering a basic [Domo Phoenix] bar chart.
 
 * map chart: Aets you started rendering a [Domo Phoenix] world map chart.
 
