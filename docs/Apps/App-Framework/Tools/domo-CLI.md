@@ -16,7 +16,7 @@ Here's how to [install it](/docs/Apps/App-Framework/Quickstart/Setup-and-Install
 
 The following is an enhanced **reference** for the more **common** CLI commands. 
 
-For a complete list of commands available, use `domo --help` (refer to the Help section below).
+For a **complete** list of commands available, use `domo --help` (refer to the Help section below).
 
 ### Help
 ---
