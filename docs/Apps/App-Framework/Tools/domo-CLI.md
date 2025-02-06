@@ -45,7 +45,7 @@ $ domo [command] -h
 
 Spins up a local development server with the following features:
 
-  * **Live Reload**: Reloads when changes to code are detected.
+  * **Live Reload**: Reloads when code changes are detected.
   * **App Sizing**: Renders the app in a frame that honors the sizing and full-page settings from the app manifest.
   * **Data Proxy**: Proxies basic XHR requests for data to the appropriate Domo instance, enabling local development with live data.
 
