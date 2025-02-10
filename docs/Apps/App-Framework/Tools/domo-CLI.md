@@ -6,11 +6,11 @@ stoplight-id: rmfbkwje8kmqj
 
 The Domo Apps Command Line Interface (CLI) will be your main tool to 
 
-- create
-- publish
+- create,
+- publish, and
 - edit
 
-custom app designs to your Domo instance. 
+Custom App designs to your Domo instance. 
 
 Here's how to [install it](/docs/Apps/App-Framework/Quickstart/Setup-and-Installation.md). 
 
@@ -20,13 +20,13 @@ For a **complete** list of commands available, use `domo --help` (refer to the H
 
 ### Help
 ---
-If at any point you need a reminder on the available commands for the CLI you can run
+If at any point you need a reminder on the available commands for the CLI, you can run
 
 ```
 $ domo -h
 ```
 
-Additionally, you can get available options for a specific command
+Additionally, you can get available options for a specific command with
 
 ```
 $ domo [command] -h
@@ -45,28 +45,28 @@ $ domo [command] -h
 
 Spins up a local development server with the following features:
 
-  * **Live Reload**: reloads when changes to code are detected
-  * **App Sizing**: renders the app in a frame that honors the sizing and fullpage settings from the app manifest
-  * **Data Proxy**: proxies basic XHR requests for data to the appropriate Domo instance, enabling local development with live data.
+  * **Live Reload**: Reloads when code changes are detected.
+  * **App Sizing**: Renders the app in a frame that honors the sizing and fullpage settings from the app manifest.
+  * **Data Proxy**: Proxies basic XHR requests for data to the appropriate Domo instance, enabling local development with live data.
 
 ```
 $ domo dev [options]
 ```
 
 #### OPTIONS
-* `-u, --userId`: Use a specific user. Helpful for testing app states where user Id is important
-* `-e, --external`: exposes the dev server on a public IP address
+* `-u, --userId`: Utilizes a specific user. Helpful for testing app states where user ID is important.
+* `-e, --external`: Exposes the dev server on a public IP address.
 
 #### Advanced Data Proxy for Developing Locally
-In order to enable proxying for advanced requests (like the AppDB, Files, Code Engine, and Workflows APIs), you must provide the Id of an app in your instance that the CLI can proxy to (e.g. impersonate a particular card). You can add this app Id to your manifest under the property `proxyId` and, assuming that the Id is valid, proxying advanced requests with `domo dev` will automatically start working.
+In order to enable proxying for advanced requests (like the AppDB, Files, Code Engine, and Workflows APIs), you must provide the ID of an app in your instance that the CLI can proxy to (e.g., impersonate a particular Card). You can add this app ID to your manifest under the property `proxyId`. Assuming the ID is valid, proxying advanced requests with `domo dev` will automatically start working.
 
-All proxy ids for your app can be found on the App Design page under the "Cards" tab.
+All proxy IDs for your app can be found on the App Design page under the "Cards" tab.
 
-Proxy ids tie apps to cards. If you delete the card from which you retrieved the id, you will have to get a new one from another card created from your app design.
+Proxy IDs tie apps to Cards. If you delete the Card from which you retrieved the ID, you will have to get a new one from another card created from your app design.
 
 #### init
 
-Asks you some questions to initialize a new Custom App design template. Once complete, be sure to follow the "Next Steps" provided.
+Asks you questions to initialize a new Custom App design template. Once complete, be sure to follow the "Next Steps" provided.
 
 <!-- theme: info -->
 > #### No `mkdir` necessary
@@ -90,25 +90,25 @@ design-name
   - manifest.json
 ```
 
-* manifest only: adds a single `manifest.json` file to the current working directory
+* manifest only: Adds a single `manifest.json` file to the current working directory.
 
-* basic chart: gets you started rendering a basic [Domo Phoenix] bar chart
+* basic chart: Gets you started rendering a basic [Domo Phoenix] bar chart.
 
-* map chart: gets you started rendering a [Domo Phoenix] world map chart
+* map chart: Gets you started rendering a [Domo Phoenix] world map chart.
 
-* sugarforce: creates an app with multiple screens. It shows how to handle tabbing between screens, database CRUD operations and more.
+* sugarforce: Creates an app with multiple screens; it shows how to handle tabbing between screens, database CRUD operations, and more.
 
 [Domo Phoenix]: https://domoapps.github.io/domo-phoenix/
 
 #### DATASET MAPPING PROMPTS
-* dataset id: can be found in the URL of the dataset detail page in the Domo instance. `https://[customer].domo.com/datasources/[dataset id]/details/overview`
-* dataset alias: the alias your app will use when requesting data from Domo. Make sure it has no spaces or special characters.
+* dataset id: Can be found in the URL of the DataSet detail page in the Domo instance. `https://[customer].domo.com/datasources/[dataset id]/details/overview`
+* dataset alias: The alias your app will use when requesting data from Domo. Make sure it has no spaces or special characters.
 
 **Note**: Be sure to complete the field mapping portion in the `manifest.json`. Refer to the [manifest](/docs/Apps/App-Framework/Guides/manifest.md#mapping) reference docs for more details on data mapping.
 
 #### login [options]
 
-Authenticate to your Domo instance from the CLI. This is a requirement before doing other commands like `publish`, and for fetching data during `domo dev`. If no options are provided, then you'll be prompted to choose from a list of previous instances or a "new instance", at which point you'll be prompted for instance name, username, and password.
+Authenticate to your Domo instance from the CLI. This is a requirement before doing other commands like `publish`, and for fetching data during `domo dev`. If no options are provided, you'll be prompted to choose from a list of previous instances or a "new instance", at which point you'll be prompted for instance name, username, and password.
 
 ```
 $ domo login [options]
@@ -116,40 +116,40 @@ $ domo login [options]
 
 #### OPTIONS
 * `i, --instance`: Domo instance (e.g. customer.domo.com)
-* `u, --user-email`: user email
-* `--no-upgrade-check`: prevent the CLI from checking for new versions and prompting for user input to upgrade or not
+* `u, --user-email`: User email
+* `--no-upgrade-check`: Prevent the CLI from checking for new versions and prompting for user input to upgrade or not
 
 #### owner <add|rm|ls>
 
 Manage the owners of the Custom App design. 
 
-Only owners of a design are able to manage that design from the CLI or the Asset Library within the Domo instance. Additionally, only owners of a design are authorized to deploy new apps based on said design.
+Only owners of a design are able to manage that design from the CLI or the Asset Library within the Domo instance. Additionally, only owners of a design are authorized to deploy new apps based on that design.
 
 ```
 $ domo owner [options] [add|rm|ls] joe.bob@mycompany.com
 ```
 
 #### OPTIONS
-* `-i, --design_id`: specify a design Id or defaults to the Id from the manifest file in the current working directory
+* `-i, --design_id`: specify a design ID or defaults to the ID from the manifest file in the current working directory
 
 #### publish 
 
 Uploads all the assets of your current working directory as a Custom App design.
 
-You can choose to [ignore certain files]((/docs/Apps/App-Framework/Guides/manifest.md#ignore)), meaning domo publish will not upload those files. Any node_modules directories are ignored by default. Refer to the [manifest](/docs/Apps/App-Framework/Guides/manifest.md#ignore) reference docs for more details on ignoring files.
+You can choose to [ignore certain files]((/docs/Apps/App-Framework/Guides/manifest.md#ignore)), meaning `domo publish` will not upload those files. Any node_modules directories are ignored by default. Refer to the [manifest](/docs/Apps/App-Framework/Guides/manifest.md#ignore) reference docs for more details on ignoring files.
 
-If an existing ID is not found in the manifest then a new design will be created and the manifest file will be updated with the newly created design Id. Existing designs will be updated.
+If an existing ID is not found in the manifest, a new design will be created, and the manifest file will be updated with the newly created design ID. Existing designs will be updated.
 
 ```
 $ domo publish [options]
 ```
 
 #### OPTIONS
-* `-g, --go`: open the design in the Asset Library after publishing
+* `-g, --go`: Opens the design in the Asset Library after publishing.
 
 #### release
 
-Locks a design version for submitting to the Domo Appstore. Once a version is released you can't make further changes to it. You can, however, work on a new version by bumping the version in the manifest file. 
+Locks a design version for submitting to the Domo Appstore. Once a version is released, you can't make further changes to it. You can, however, work on a new version by bumping the version in the manifest file. 
 
 ```
 $ domo release
