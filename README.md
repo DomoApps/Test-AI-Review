@@ -42,6 +42,7 @@ Across all resources, it's important to remain consistent. Please follow these b
 - Code: Include code snippets within triple backticks for syntax highlighting, and use inline code formatting for short code references.
 - Links: Hyperlink external references with descriptive text.
 - Tone: Aim for a helpful and approachable tone, free of jargon unless necessary, while ensuring accessibility best practices are met.
+- Credentials/PII: Scrub all Personal Identifying Information, live Credentials, Cookies, or any other authentication information. Ideally these should be replaced with `<placeholders>`
 
 ### Guide / How To
 
@@ -78,7 +79,6 @@ These usually have multiple parts, include all code required to build the soluti
 
 [Example Tutorial - Building Dynamic Infographics with Domo and Canva](docs/Apps/App-Framework/Tutorials/Vanilla-Javascript/DynamicInfographic.md)​
 
-
 ### API Reference
 
 API documentation is one of the most critical components to enabling developers to build on Domo.
@@ -108,13 +108,13 @@ Please include:
 1. Overview of the service - (including links to relevant guides, examples, etc.)
 2. Then, each endpoint should have:
 
-    - title: `h2`
-    - brief description: `plain text`
-    - code example: `code snippet`
-    - http request (including query params): `code snippet`
-    - request body arguments accepted: `table`
-    - request body example code example: `code snippet`
-    - http response example: `code snippet`
+   - title: `h2`
+   - brief description: `plain text`
+   - code example: `code snippet`
+   - http request (including query params): `code snippet`
+   - request body arguments accepted: `table`
+   - request body example code example: `code snippet`
+   - http response example: `code snippet`
 
 #### Platform APIs
 
