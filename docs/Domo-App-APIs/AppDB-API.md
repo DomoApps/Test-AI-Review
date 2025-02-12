@@ -4,7 +4,7 @@ stoplight-id: 1l1fm2g0sfm69
 
 # AppDB API
 
-AppDB allows the storage of arbitrary JSON documents similar to a normal NoSQL database. This enables the ability to store a state within your DomoApp. Optionally, you can also sync the data in AppDB back to a Domo DataSet. Three layers (analogous to traditional storage mechanisms) provide this data storage: 
+AppDB allows the storage of arbitrary JSON documents similar to a normal NoSQL database. This enables the ability to store a state within your DomoApp. Optionally, you can also sync the data in AppDB back to a Domo DataSet. Three layers (analogous to traditional storage mechanisms) provide this data storage:
 
 1. Datastores: Analogous to a database. A CustomApp has a single datastore that is created automatically, named with the CustomApp’s ID and managed transparently to the CustomApp.
 2. Collections: Analogous to a collection in a NoSQL database or a table in a relational database. A datastore can have multiple collections defined.
@@ -12,7 +12,7 @@ AppDB allows the storage of arbitrary JSON documents similar to a normal NoSQL d
 
 ### Defining Collections in the Manifest
 
-Within the app manifest, you can define the Collections that you want your app to be able to use by simply listing them in a Collections property as in the following: 
+Within the app manifest, you can define the Collections that you want your app to be able to use by simply listing them in a Collections property as in the following:
 
 ```json
 {
@@ -71,7 +71,7 @@ The schema object takes a list of columns. Each column has a name and a type. Th
 
 > #### Warning
 >
-> It's also important to be aware that Collections won't sync to Domo if the owner of the Collection doesn't have the correct permissions on the DataSet it's syncing to. 
+> It's also important to be aware that Collections won't sync to Domo if the owner of the Collection doesn't have the correct permissions on the DataSet it's syncing to.
 >
 > This is important to know in the case of someone who gets removed from their Domo instance. For example, if Bob owns a Collection that is synced to DataSet, and is then removed from the Domo instance, "deleted user" will remain as owner of the Collection unless updated; however, Bob will have no permissions on the DataSet, so it will stop syncing.
 >
@@ -155,7 +155,7 @@ Content-Type: application/json;charset=UTF-8
 ```js
 domo.post(`/domo/datastores/v1/collections/Users/documents`, {
   content: {
-    username: "Bill S. Preston, Esquire",
+    username: 'Bill S. Preston, Esquire',
   },
 });
 ```
@@ -234,7 +234,9 @@ Retrieves a single document from a Collection when given its document ID.
 
 ```js
 domo
-  .get(`/domo/datastores/v1/collections/Users/documents/b3ea3d2d-86c5-44e6-a2f4-985136bbbce1`)
+  .get(
+    `/domo/datastores/v1/collections/Users/documents/b3ea3d2d-86c5-44e6-a2f4-985136bbbce1`,
+  )
   .then((data) => console.log(data));
 ```
 
@@ -341,8 +343,10 @@ Content-Type: application/json;charset=UTF-8
 
 ```js
 domo
-    .put(`/domo/datastores/v1/collections/Users/documents/b3ea3d2d-86c5-44e6-a2f4-985136bbbce1`)
-    .then(console.log)
+  .put(
+    `/domo/datastores/v1/collections/Users/documents/b3ea3d2d-86c5-44e6-a2f4-985136bbbce1`,
+  )
+  .then(console.log);
 ```
 
 ### Delete Document
@@ -383,7 +387,7 @@ HTTP/1.1 200 OK
 ### Query Documents
 
 Any MongoDB query that can be used in a Mongo `find()` function can be used to query for documents in an AppDB Datastore. Official MongoDB query documentation is below:
-HTTPs://docs.mongodb.com/manual/reference/operator/query/
+https://docs.mongodb.com/manual/reference/operator/query/
 
 Example of querying for a document that includes a comment that has the word 'happy' (via a regex operator) or does not include the username 'Eeyore' (via the not equals operator) can be found below. The return value of this call will be an array of documents that matches the query.
 
@@ -455,7 +459,7 @@ HTTP/1.1 200 OK
 
 #### Querying Based on Dates
 
-Dates can be queried in AppDB using the [MongoDB Extended JSON v2](HTTPs://www.mongodb.com/docs/manual/reference/mongodb-extended-json/) spec shown below. This essentially casts the string provided to the "less than or equal to" operator into a date object. MongoDB documentation on the `$date` operator can be found [here](HTTPs://www.mongodb.com/docs/manual/reference/mongodb-extended-json/#bson.Date). The date string provided will need to be in the demonstrated ISO date format.
+Dates can be queried in AppDB using the [MongoDB Extended JSON v2](https://www.mongodb.com/docs/manual/reference/mongodb-extended-json/) spec shown below. This essentially casts the string provided to the "less than or equal to" operator into a date object. MongoDB documentation on the `$date` operator can be found [here](https://www.mongodb.com/docs/manual/reference/mongodb-extended-json/#bson.Date). The date string provided will need to be in the demonstrated ISO date format.
 
 ```js
 {
@@ -499,9 +503,10 @@ Accept: application/json
 #### Code Example
 
 ```js
-const url = '/domo/datastores/v1/collections/campaigns/documents/query?groupby=content.campaignName, content.month&count=documentCount&avg=content.clicks avgClicks, content.impressions avgImps&sum=content.clicks sumClicks, content.impressions sumImps&max=content.clicks maxClicks, content.impressions maxImps&min=content.clicks minClicks, content.impressions minImps&orderby=sumClicks descending';
+const url =
+  '/domo/datastores/v1/collections/campaigns/documents/query?groupby=content.campaignName, content.month&count=documentCount&avg=content.clicks avgClicks, content.impressions avgImps&sum=content.clicks sumClicks, content.impressions sumImps&max=content.clicks maxClicks, content.impressions maxImps&min=content.clicks minClicks, content.impressions minImps&orderby=sumClicks descending';
 
-domo.post(url, {}).then(data => console.log(data));
+domo.post(url, {}).then((data) => console.log(data));
 ```
 
 #### Response
@@ -588,7 +593,7 @@ Supported Modifiers:
 - slice
 - sort
 
-Please refer to the official [mongoDB documentation](HTTPs://www.mongodb.com/docs/manual/reference/operator/update/) on Update Operators to better understand these operators and how to create them. Note that since we require that the query reference an existing document or property, the operator `$setOnInsert` is not supported.
+Please refer to the official [mongoDB documentation](https://www.mongodb.com/docs/manual/reference/operator/update/) on Update Operators to better understand these operators and how to create them. Note that since we require that the query reference an existing document or property, the operator `$setOnInsert` is not supported.
 
 #### Code Example
 
@@ -790,8 +795,11 @@ Provides a list of document IDs to be permanently deleted as a comma-separated q
 > This is destructive and cannot be reversed. Deleting documents in an AppDB collection may have performance implications with regard to syncing to its corresponding DataSet in Domo if the `syncEnabled` property is set to `true` for the Collection.
 
 ```js
-domo.delete(`/domo/datastores/v1/collections/Users/documents/bulk?ids=2bdd6370-85af-4e06-aadb-380839e4de8c,c78ba737-5f84-49c9-8ac9-58615a0f8aa8,1e61d99d-9885-419a-a33e-3be3941ee720`)
-    .then(data => console.log(data));
+domo
+  .delete(
+    `/domo/datastores/v1/collections/Users/documents/bulk?ids=2bdd6370-85af-4e06-aadb-380839e4de8c,c78ba737-5f84-49c9-8ac9-58615a0f8aa8,1e61d99d-9885-419a-a33e-3be3941ee720`,
+  )
+  .then((data) => console.log(data));
 ```
 
 #### Arguments
@@ -820,7 +828,6 @@ Content-Type: application/json;charset=UTF-8
 
 While most of the time you are going to want to define a Collection in your manifest and have the platform automatically create the Collection for you, there is also the option to programmatically manipulate Dollections from your app code.
 
-
 ### Create a Collection
 
 To create a Collection programmatically, send a POST request to the below endpoint and provide as the body of the request the same JSON value that you would have provided in your manifest for a Collection. Once created, the Collection can be retrieved by the name you provided as usual.
@@ -830,8 +837,9 @@ To create a Collection programmatically, send a POST request to the below endpoi
 The `collection` variable in this code sample is equal to the collection object in the sample request body.
 
 ```js
-domo.post(`/domo/datastores/v1/collections`, collection)
-    .then(data => console.log(data));
+domo
+  .post(`/domo/datastores/v1/collections`, collection)
+  .then((data) => console.log(data));
 ```
 
 #### HTTP Request
@@ -904,8 +912,7 @@ Retrieves a list of the existing Collections for your application.
 #### Code Example
 
 ```js
-domo.get(`/domo/datastores/v1/collections/`)
-    .then(data => console.log(data));
+domo.get(`/domo/datastores/v1/collections/`).then((data) => console.log(data));
 ```
 
 #### HTTP Request
@@ -1002,8 +1009,9 @@ This PUT request allows you to modify any of your Collections programmatically.
 #### Code Example
 
 ```js
-domo.put(`/domo/datastores/v1/collections/{collectionName}`, collection)
-    .then(data => console.log(data));
+domo
+  .put(`/domo/datastores/v1/collections/{collectionName}`, collection)
+  .then((data) => console.log(data));
 ```
 
 #### Arguments
@@ -1103,7 +1111,7 @@ Programmatically deletes a Collection.
 #### Code Example
 
 ```js
-domo.delete(`/domo/datastores/v1/collections/{collectionName}`)
+domo.delete(`/domo/datastores/v1/collections/{collectionName}`);
 ```
 
 #### Arguments
@@ -1137,7 +1145,7 @@ The export endpoint is a POST request that takes no body.
 #### Code Example
 
 ```js
-domo.post(`/domo/datastores/v1/export`)
+domo.post(`/domo/datastores/v1/export`);
 ```
 
 #### HTTP Request
@@ -1161,11 +1169,11 @@ By default, hitting this endpoint will only export Collections that were created
 ```javascript
 const exportCollection = async () => {
   const response = await fetch(
-    "/domo/datastores/v1/export?includeRelatedCollections=true",
+    '/domo/datastores/v1/export?includeRelatedCollections=true',
     {
-      body: "{}",
-      method: "POST",
-    }
+      body: '{}',
+      method: 'POST',
+    },
   );
   console.log(response);
   return response;
@@ -1216,7 +1224,7 @@ While your front-end application code can accomplish these examples in an attemp
 
 In this example, any user who belongs to the group with ID `12` or `15` in Domo will only be able to see, modify, or delete documents that have the value of “West” in the document’s `content.region` property. As you can see, the `filters` property of this Collection's configuration object takes a list of filter rules. Adding multiple filter rules in the `filters` property will chain together the rules as an `OR` statement as in any standard data query language. There are several properties of a filter rule that are required to secure your documents. The following image groups them together by function.
 
-![Filter Rule](HTTPs://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appdbb-security-Filtering.png)
+![Filter Rule](https://web-assets.domo.com/miyagi/images/product/product-feature-dev-portal-appdbb-security-Filtering.png)
 
 #### Filter Rule
 
@@ -1279,7 +1287,9 @@ Assuming you already have permission to modify the Collection, you can change th
 #### Code Example
 
 ```js
-domo.put("/domo/datastores/v1/collections/Users/permission/RYUU_APP/733ff55b-387c-472e-b3c7-9911c7057f5f?permissions=read,create_content,update_content,read_content");
+domo.put(
+  '/domo/datastores/v1/collections/Users/permission/RYUU_APP/733ff55b-387c-472e-b3c7-9911c7057f5f?permissions=read,create_content,update_content,read_content',
+);
 ```
 
 #### HTTP Request
@@ -1326,7 +1336,9 @@ You can remove all permissions for an entity using the endpoint below. If all en
 #### Code Example
 
 ```js
-domo.delete("/domo/datastores/v1/collections/Users/permission/RYUU_APP/733ff55b-387c-472e-b3c7-9911c7057f5f");
+domo.delete(
+  '/domo/datastores/v1/collections/Users/permission/RYUU_APP/733ff55b-387c-472e-b3c7-9911c7057f5f',
+);
 ```
 
 #### HTTP Request
