@@ -6,6 +6,8 @@ This tutorial will walk you through building a custom React app that displays a 
 - Use the [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/guides) library to build a custom map
 - Wire the app to a dataset in Domo and fetch data to add points to the map
 
+All code and files used for this tutorial can be found at [this GitHub repository](https://github.com/DomoApps/mapbox-tutorial).
+
 ### Step 1: Setup and Installation
 
 ---
@@ -140,7 +142,7 @@ Check your browser at `localhost:3000`, where your app should be running. You sh
 
 Mapbox provides a way to create custom map styles inside their Mapbox Studio feature. We won't be building one in this tutorial, but you can find out how to do it yourself by following their guide, [Create a custom style](https://docs.mapbox.com/help/tutorials/create-a-custom-style/).
 
-We've created a simple custom style already and we are providing you the json file that will allow you to use it in your app. **Please download the file [here](../../../../../assets/files/map-style.json)**.
+We've created a simple custom style already and we are providing you the json file that will allow you to use it in your app. You can get it from the code repo for this tutorial. **Please download the map-style.json file [here](https://github.com/DomoApps/mapbox-tutorial/blob/main/src/map-style.json)**.
 
 You'll want to add the `map-style.json` file to your `src` folder. Then, bring it into your app by adding this line of code at the top of your `App.js` file:
 
@@ -314,7 +316,7 @@ Save your changes and check the browser. You should see our 10 U.S. cities on th
 
 Now that we have our map looking how we want it, it's time to add some real data to it. Building Domo apps on the App Framework becomes the most powerful when we're able to leverage connections with your data via wiring to DataSets, AppDB collections, Workflows, and more. For this tutorial, we will be wiring our app to a DataSet that contains population data for cities all over the world.
 
-First, you will want to [**download the DataSet here**](../../../../../assets/files/World_Cities.csv).
+First, you will want to download the `World_Cities.csv` file from the code repo, which you can find [**here**](https://github.com/DomoApps/mapbox-tutorial/blob/main/src/World_Cities.csv).
 
 Then, upload the DataSet to your Domo instance. Go to the `Data` tab in Domo, click on `CONNECT DATA` at the top of the screen, then select `Upload a spreadsheet`. You'll then be able to select the file from your machine or drag and drop into the UI. Click through the file upload screens and save the dataset without making any modifications.
 
