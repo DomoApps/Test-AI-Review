@@ -85,86 +85,84 @@ const createGenerateActionPlanButton = () => {
 This step will involve a few sub-steps.
 
 1. Create two new global variables we can reference to hold the games we own and the game night plan. Place `var gamesOwned = []` and `var gameNightPlan = "";` below our other global variables at the top of the `app.js` file.
-
-```js
-var datasets = ['boardgames'];
-const collectionAlias = 'ownership';
-const userId = domo.env.userId;
-var gamesOwned = [];
-var gameNightPlan = "";
-...
-```
+    ```js
+    var datasets = ['boardgames'];
+    const collectionAlias = 'ownership';
+    const userId = domo.env.userId;
+    var gamesOwned = [];
+    var gameNightPlan = "";
+    ...
+    ```
 
 2. Update our `fetchData` function to filter our data downed to just the games we own, store that in the `gamesOwned` variable, and call the `createGenerateActionPlanButton` function.
-
-```js
-async function fetchData() {
-    console.log("fetching data");
-    // Query your dataset(s): https://developer.domo.com/docs/dev-studio-references/data-api
-    const boardGameDataQuery = `/data/v1/${datasets[0]}`;
-    const boardGameOwnershipDataQuery = {
-        "owner": {
-            "$eq": userId
+    ```js
+    async function fetchData() {
+        console.log("fetching data");
+        // Query your dataset(s): https://developer.domo.com/docs/dev-studio-references/data-api
+        const boardGameDataQuery = `/data/v1/${datasets[0]}`;
+        const boardGameOwnershipDataQuery = {
+            "owner": {
+                "$eq": userId
+            }
         }
+    
+        const boardGameData = await domo.get(boardGameDataQuery);
+        const boardGameOwnershipData = await domo.post(`/domo/datastores/v1/collections/${collectionAlias}/documents/query`, boardGameOwnershipDataQuery)
+    
+        const data = mergeGameData(boardGameData, boardGameOwnershipData);
+    
+        gamesOwned = data.filter(game => game.owned === true);
+    
+        gamesOwned = gamesOwned.map(game => ({
+            primary: game.primary,
+            description: game.description,
+            boardgamecategory: game.boardgamecategory,
+            minplaytime: game.minplaytime,
+            playingtime: game.playingtime
+        }));
+    
+        createGenerateActionPlanButton();
+        handleResult(data);
+    
     }
+    ```
 
-    const boardGameData = await domo.get(boardGameDataQuery);
-    const boardGameOwnershipData = await domo.post(`/domo/datastores/v1/collections/${collectionAlias}/documents/query`, boardGameOwnershipDataQuery)
+3. Update our `createGenerateActionPlanButton` function to set up a callback to generate the plan when the user clicks the button.
 
-    const data = mergeGameData(boardGameData, boardGameOwnershipData);
+    ```js
+    const createGenerateActionPlanButton = () => {
+        const planButton = document.createElement("button");
+        planButton.id = "generate-plan-button";
+        planButton.textContent = "Generate Game Night Plan";
+        generatePlanButtonContainer.innerHTML = "";
+        // Insert the button into the container
+        generatePlanButtonContainer.appendChild(planButton);
+    
+        planButton.addEventListener("click", async function() {
+            console.log("clicked button");
+            try {
+                gameNightPlan = await generatePlan(gamesOwned);
+                gameNightPlan = gameNightPlan.choices[0]["output"];
+    
+            } catch {
+                console.log("Error generating plan");
+            }
+            
+            console.log("games night plan after click", gameNightPlan);
+        });
+    
+    }
+    ```
 
-    gamesOwned = data.filter(game => game.owned === true);
-
-    gamesOwned = gamesOwned.map(game => ({
-        primary: game.primary,
-        description: game.description,
-        boardgamecategory: game.boardgamecategory,
-        minplaytime: game.minplaytime,
-        playingtime: game.playingtime
-    }));
-
-    createGenerateActionPlanButton();
-    handleResult(data);
-
-}
-
-```
-
-3. Update our `createGenerateActionPlanButton` function to setup a callback to generate the plan when the user clicks the button.
-
-```js
-const createGenerateActionPlanButton = () => {
-    const planButton = document.createElement("button");
-    planButton.id = "generate-plan-button";
-    planButton.textContent = "Generate Game Night Plan";
-    generatePlanButtonContainer.innerHTML = "";
-    // Insert the button into the container
-    generatePlanButtonContainer.appendChild(planButton);
-
-    planButton.addEventListener("click", async function() {
-        console.log("clicked button");
-        try {
-            gameNightPlan = await generatePlan(gamesOwned);
-            gameNightPlan = gameNightPlan.choices[0]["output"];
-
-        } catch {
-            console.log("Error generating plan");
-        }
-        
-        console.log("games night plan after click", gameNightPlan);
-    });
-
-}
-```
 Now when we reload our app, we should be able to see a button appear after the data has been loaded and when we click the button we should see our AI generated plan in the console output.
 
 
-![Screenshot 2024-03-25 at 6.56.15 AM.png](<../../assets/images/Screenshot 2024-03-25 at 6.56.15 AM.png>)
+![Screenshot 2024-03-25 at 6.56.15 AM.png](../../assets/images/Screenshot%202024-03-25%20at%206.56.15%20AM.png)
 
 
 **Bonus challenge**: add some css to our button to make it look a bit nicer.
 
-![Screenshot 2024-03-25 at 7.03.38 AM.png](<../../assets/images/Screenshot 2024-03-25 at 7.03.38 AM.png>)
+![Screenshot 2024-03-25 at 7.03.38 AM.png](../../assets/images/Screenshot%202024-03-25%20at%207.03.38%20AM.png)
 
 We should also implement one more small change to account for the case where we've recently made an update to the list of games we own. Currently, what is stored in `gamesOwned` won't update when we edit our table. 
 
@@ -222,7 +220,7 @@ There are other, more efficient ways to handle the state of data in your applica
 The last thing we want to do is actually show the response after we click the button.
 
 
-Add an new div where we can display the `gameNightPlan`.
+Add a new div where we can display the `gameNightPlan`.
 
 ```html
 ...
@@ -274,12 +272,12 @@ const createGenerateActionPlanButton = () => {
 **Bonus challenge**: Implement a loading state for your button so users can't click it twice while making our `generatePlan` request.
 
 
-![Screenshot 2024-03-25 at 7.19.11 AM.png](<../../assets/images/Screenshot 2024-03-25 at 7.19.11 AM.png>)
+![Screenshot 2024-03-25 at 7.19.11 AM.png](../../assets/images/Screenshot%202024-03-25%20at%207.19.11%20AM.png)
 
 
 **Bonus challenge #2**: Add some css to make our game night plan container display better.
 
-![Screenshot 2024-03-25 at 7.25.51 AM.png](<../../assets/images/Screenshot 2024-03-25 at 7.25.51 AM.png>)
+![Screenshot 2024-03-25 at 7.25.51 AM.png](../../assets/images/Screenshot%202024-03-25%20at%207.25.51%20AM.png)
 
 
 ### Treating your App as a custom component in App Studio
@@ -295,57 +293,57 @@ Run `domo publish` for the final time today!
 
 Next, navigate to App Studio - "Apps" in the top navbar.
 
-![Screenshot 2024-03-25 at 7.41.16 AM.png](<../../assets/images/Screenshot 2024-03-25 at 7.41.16 AM.png>)
+![Screenshot 2024-03-25 at 7.41.16 AM.png](../../assets/images/Screenshot%202024-03-25%20at%207.41.16%20AM.png)
 
 Click "Create App" and pick your theme:
 
-![Screenshot 2024-03-25 at 7.42.02 AM.png](<../../assets/images/Screenshot 2024-03-25 at 7.42.02 AM.png>)
+![Screenshot 2024-03-25 at 7.42.02 AM.png](../../assets/images/Screenshot%202024-03-25%20at%207.42.02%20AM.png)
 
 I'm going to go with "Domo Classic".
 
 Next, I'll give my app a name, add an icon, and rename "App Page 1" to "Game Night Explorer".
 
-![Screenshot 2024-03-25 at 7.43.58 AM.png](<../../assets/images/Screenshot 2024-03-25 at 7.43.58 AM.png>)
+![Screenshot 2024-03-25 at 7.43.58 AM.png](../../assets/images/Screenshot%202024-03-25%20at%207.43.58%20AM.png)
 
 Let's drop our Custom app on this page. Click the + button and drag the Card icon into the canvas.
 
-![Screenshot 2024-03-25 at 7.44.36 AM.png](<../../assets/images/Screenshot 2024-03-25 at 7.44.36 AM.png>)
+![Screenshot 2024-03-25 at 7.44.36 AM.png](../../assets/images/Screenshot%202024-03-25%20at%207.44.36%20AM.png)
 
 Click "Add Existing Card" and search for the App Instance ("Card") you've been building.
 
-![Screenshot 2024-03-25 at 7.47.00 AM.png](<../../assets/images/Screenshot 2024-03-25 at 7.47.00 AM.png>)
+![Screenshot 2024-03-25 at 7.47.00 AM.png](../../assets/images/Screenshot%202024-03-25%20at%207.47.00%20AM.png)
 
 
 Now let's add a filter component to help us explore our games table a bit better.
 
 Drag another Card onto the canvas and this time select "Create new Card" > "Visualization" > "Existing Data".
 
-![Screenshot 2024-03-25 at 7.49.18 AM.png](<../../assets/images/Screenshot 2024-03-25 at 7.49.18 AM.png>)
+![Screenshot 2024-03-25 at 7.49.18 AM.png](../../assets/images/Screenshot%202024-03-25%20at%207.49.18%20AM.png)
 
 
 Select the same Dataset powering our App.
 
-![Screenshot 2024-03-25 at 7.50.05 AM.png](<../../assets/images/Screenshot 2024-03-25 at 7.50.05 AM.png>)
+![Screenshot 2024-03-25 at 7.50.05 AM.png](../../assets/images/Screenshot%202024-03-25%20at%207.50.05%20AM.png)
 
 
 Select a filter card:
 
-![Screenshot 2024-03-25 at 7.50.37 AM.png](<../../assets/images/Screenshot 2024-03-25 at 7.50.37 AM.png>)
+![Screenshot 2024-03-25 at 7.50.37 AM.png](../../assets/images/Screenshot%202024-03-25%20at%207.50.37%20AM.png)
 
 I'm going to create a playing time filter so I can more easily narrow games down by playing time.
 
-![Screenshot 2024-03-25 at 7.51.56 AM.png](<../../assets/images/Screenshot 2024-03-25 at 7.51.56 AM.png>)
+![Screenshot 2024-03-25 at 7.51.56 AM.png](../../assets/images/Screenshot%202024-03-25%20at%207.51.56%20AM.png)
 
 Click "Save".
 
 Now if I'm looking for a short game, I can easily filter my App.
 
-![Screenshot 2024-03-25 at 7.58.59 AM.png](<../../assets/images/Screenshot 2024-03-25 at 7.58.59 AM.png>)
+![Screenshot 2024-03-25 at 7.58.59 AM.png](../../assets/images/Screenshot%202024-03-25%20at%207.58.59%20AM.png)
 
 
 **Bonus Challenges**: 
 - Add more filters to the current page.
-- Create a new page or tabs on the current page to use more out of the box charts for additional analytics on games
+- Create a new page or tabs on the current page to use more out-of-the-box charts for additional analytics on games
 - Leverage game category or game designer data (may need to create Beast Modes or derivative DataSets to parse out individual values)
 
 

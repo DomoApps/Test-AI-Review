@@ -5,7 +5,6 @@
       "type": "divider",
       "title": "Getting Started"
     },
-
     {
       "type": "item",
       "title": "Overview",
@@ -47,7 +46,7 @@
         {
           "type": "item",
           "title": "Code Engine API",
-          "uri": "docs/Domo-App-APIs/Code-Engine-API.md"
+          "uri": "docs/Automate-Actions/Code-Engine/api.md"
         },
         {
           "type": "item",
@@ -102,6 +101,11 @@
         },
         {
           "type": "item",
+          "title": "Cards API",
+          "uri": "docs/API-Reference/Domo-APIs/Card-API.yaml"
+        },
+        {
+          "type": "item",
           "title": "DataSet API",
           "uri": "docs/API-Reference/Domo-APIs/DataSet-API.yaml"
         },
@@ -148,13 +152,138 @@
       "items": [
         {
           "type": "item",
-          "title": "Workflows API",
-          "uri": "docs/API-Reference/Product-APIs/Workflows.yaml"
+          "title": "Activity Log API",
+          "uri": "docs/API-Reference/Product-APIs/Activity-Log.md"
+        },
+        {
+          "type": "item",
+          "title": "AI Services API",
+          "uri": "docs/API-Reference/Product-APIs/AI-Services.md"
+        },
+        {
+          "type": "item",
+          "title": "Alerts API",
+          "uri": "docs/API-Reference/Product-APIs/Alerts.md"
+        },
+        {
+          "type": "item",
+          "title": "Beast Modes API",
+          "uri": "docs/API-Reference/Product-APIs/Beast-Modes.md"
+        },
+        {
+          "type": "item",
+          "title": "Cards API",
+          "uri": "docs/API-Reference/Product-APIs/Update-Card-Title.md"
+        },
+        {
+          "type": "item",
+          "title": "Certified Content API",
+          "uri": "docs/API-Reference/Product-APIs/Certified-Content.md"
+        },
+        {
+          "type": "item",
+          "title": "Connectors API",
+          "uri": "docs/API-Reference/Product-APIs/Connectors.md"
+        },
+        {
+          "type": "item",
+          "title": "Dataset Schema API",
+          "uri": "docs/API-Reference/Product-APIs/Get-Dataset-Schema.md"
+        },
+        {
+          "type": "item",
+          "title": "Data Accounts API",
+          "uri": "docs/API-Reference/Product-APIs/Data-Accounts.md"
+        },
+        {
+          "type": "item",
+          "title": "Datasets API",
+          "uri": "docs/API-Reference/Product-APIs/Datasets.md"
+        },
+        {
+          "type": "item",
+          "title": "Dataset Schema API",
+          "uri": "docs/API-Reference/Product-APIs/Get-Dataset-Schema.md"
+        },
+        {
+          "type": "item",
+          "title": "Export to S3 API",
+          "uri": "docs/API-Reference/Product-APIs/Export-to-S3.md"
+        },
+        {
+          "type": "item",
+          "title": "Federated V1 to V2 Migration API",
+          "uri": "docs/API-Reference/Product-APIs/Federated-V1-to-V2-Migration-APIs.md"
+        },
+        {
+          "type": "item",
+          "title": "Federated V2 to Amplifier Migration API",
+          "uri": "docs/API-Reference/Product-APIs/Federated-V2-to-Amplifier-Migration-APIs.md"
+        },
+        {
+          "type": "item",
+          "title": "Files API",
+          "uri": "docs/API-Reference/Product-APIs/Files.md"
+        },
+        {
+          "type": "item",
+          "title": "Groups API",
+          "uri": "docs/API-Reference/Product-APIs/Groups.md"
         },
         {
           "type": "item",
           "title": "Managing Dataset History API",
           "uri": "docs/API-Reference/Product-APIs/Managing-Dataset-History.md"
+        },
+        {
+          "type": "item",
+          "title": "Pages API",
+          "uri": "docs/API-Reference/Product-APIs/Pages-API.md"
+        },
+        {
+          "type": "item",
+          "title": "Query Dataset API",
+          "uri": "docs/API-Reference/Product-APIs/Query-Data.md"
+        },
+        {
+          "type": "item",
+          "title": "Get KPI Card Image API",
+          "uri": "docs/API-Reference/Product-APIs/Render-KPI-Card-Chart.md"
+        },
+        {
+          "type": "item",
+          "title": "Roles Governance API",
+          "uri": "docs/API-Reference/Product-APIs/RolesGovernance.md"
+        },
+        {
+          "type": "item",
+          "title": "Remote Datasets API",
+          "uri": "docs/API-Reference/Product-APIs/Remote-Domostats.md"
+        },
+        {
+          "type": "item",
+          "title": "Scheduled Reports API",
+          "uri": "docs/Domo-App-APIs/Scheduled-Reports-API.md"
+        },
+        {
+          "type": "item",
+          "title": "Search API",
+          "uri": "docs/API-Reference/Product-APIs/Search.md"
+        },
+        {
+          "type": "item",
+          "title": "Task Center API",
+          "uri": "docs/API-Reference/Product-APIs/TaskCenter.md"
+        },
+        {
+          "type": "item",
+          "title": "Users API",
+          "uri": "docs/API-Reference/Product-APIs/Users.md"
+        },
+        {
+          "type": "item",
+          "title": "Workflows API",
+          "uri": "docs/API-Reference/Product-APIs/Workflows.md"
         }
       ]
     },
@@ -218,54 +347,86 @@
           "items": [
             {
               "type": "group",
-              "title": "Vanilla Javascript",
+              "title": "Pro-Code Editor",
               "items": [
                 {
                   "type": "item",
-                  "title": "Sugar Force",
-                  "uri": "docs/Apps/App-Framework/Tutorials/Vanilla-Javascript/SugarForce.md"
+                  "title": "PDF Export",
+                  "uri": "docs/Apps/Pro-Code-Editor/Tutorials/pdf-export.md"
                 },
                 {
                   "type": "item",
-                  "title": "Return Flow",
-                  "uri": "docs/Apps/App-Framework/Tutorials/Vanilla-Javascript/ReturnFlow.md"
-                },
-                {
-                  "type": "item",
-                  "title": "Creating Dynamic Infographics",
-                  "uri": "docs/Apps/App-Framework/Tutorials/Vanilla-Javascript/DynamicInfographic.md"
-                },
-                {
-                  "type": "group",
-                  "title": "Game Night Planner App",
-                  "items": [
-                    {
-                      "type": "item",
-                      "title": "Intro to Bricks",
-                      "uri": "docs/GameNightPlannerApp/intro-to-bricks.md"
-                    },
-                    {
-                      "type": "item",
-                      "title": "Migrating from Brick to App",
-                      "uri": "docs/GameNightPlannerApp/going-from-brick-to-app.md"
-                    },
-                    {
-                      "type": "item",
-                      "title": "Adding AI to Our App",
-                      "uri": "docs/GameNightPlannerApp/adding-advanced-capabilities-to-your-app.md"
-                    }
-                  ]
+                  "title": "Stacked Bars",
+                  "uri": "docs/Apps/Pro-Code-Editor/Tutorials/stacked-bars.md"
                 }
               ]
             },
             {
               "type": "group",
-              "title": "React",
+              "title": "App Framework",
               "items": [
                 {
-                  "type": "item",
-                  "title": "Basic Todo App",
-                  "uri": "docs/Apps/App-Framework/Tutorials/React/Todo-App.md"
+                  "type": "group",
+                  "title": "React",
+                  "items": [
+                    {
+                      "type": "item",
+                      "title": "Basic Todo App",
+                      "uri": "docs/Apps/App-Framework/Tutorials/React/Todo-App.md"
+                    },
+                    {
+                      "type": "item",
+                      "title": "Mapbox World App",
+                      "uri": "docs/Apps/App-Framework/Tutorials/React/Mapbox-World-App.md"
+                    },
+                    {
+                      "type": "item",
+                      "title": "Bar Code Scanne PWA",
+                      "uri": "docs/Apps/App-Framework/Tutorials/React/Bar-Code-Scanner-PWA.md"
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "title": "Vanilla Javascript",
+                  "items": [
+                    {
+                      "type": "group",
+                      "title": "Game Night Planner App",
+                      "items": [
+                        {
+                          "type": "item",
+                          "title": "Intro to Bricks",
+                          "uri": "docs/GameNightPlannerApp/intro-to-bricks.md"
+                        },
+                        {
+                          "type": "item",
+                          "title": "Migrating from Brick to App",
+                          "uri": "docs/GameNightPlannerApp/going-from-brick-to-app.md"
+                        },
+                        {
+                          "type": "item",
+                          "title": "Adding AI to Our App",
+                          "uri": "docs/GameNightPlannerApp/adding-advanced-capabilities-to-your-app.md"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "title": "Sugar Force",
+                      "uri": "docs/Apps/App-Framework/Tutorials/Vanilla-Javascript/SugarForce.md"
+                    },
+                    {
+                      "type": "item",
+                      "title": "Return Flow",
+                      "uri": "docs/Apps/App-Framework/Tutorials/Vanilla-Javascript/ReturnFlow.md"
+                    },
+                    {
+                      "type": "item",
+                      "title": "Creating Dynamic Infographics",
+                      "uri": "docs/Apps/App-Framework/Tutorials/Vanilla-Javascript/DynamicInfographic.md"
+                    }
+                  ]
                 }
               ]
             }
@@ -284,6 +445,21 @@
               "type": "item",
               "title": "domo.js",
               "uri": "docs/Apps/App-Framework/Tools/domo.js.md"
+            },
+            {
+              "type": "item",
+              "title": "Query",
+              "uri": "docs/Apps/App-Framework/Tools/query.md"
+            },
+            {
+              "type": "item",
+              "title": "Phoenix (charting)",
+              "uri": "docs/Apps/App-Framework/Tools/phoenix.md"
+            },
+            {
+              "type": "item",
+              "title": "Toolkit",
+              "uri": "docs/Apps/App-Framework/Tools/toolkit.md"
             }
           ]
         },
@@ -291,6 +467,16 @@
           "type": "group",
           "title": "Guides",
           "items": [
+            {
+              "type": "item",
+              "title": "Getting started with the Pro-Code Editor",
+              "uri": "/docs/Apps/App-Framework/Guides/getting-started-pro-code.md"
+            },
+            {
+              "type": "item",
+              "title": "Managing, Editing, and Saving Your App in the Pro-Code Editor",
+              "uri": "/docs/Apps/App-Framework/Guides/manage-save-pro-code.md"
+            },
             {
               "type": "item",
               "title": "The Manifest File",
@@ -335,6 +521,21 @@
               "type": "item",
               "title": "Design Guide",
               "uri": "docs/Apps/App-Framework/Guides/design-guide.md"
+            },
+            {
+              "type": "item",
+              "title": "How To Sync AppDB Only Once a Day",
+              "uri": "docs/Apps/App-Framework/Guides/workflow-appdb-sync.md"
+            },
+            {
+              "type": "item",
+              "title": "Manage Pro-Code Editor Apps",
+              "uri": "docs/Apps/App-Framework/Guides/manage-save-pro-code.md"
+            },
+            {
+              "type": "item",
+              "title": "Clearing out Collections",
+              "uri": "docs/Apps/App-Framework/Guides/clearing-out-collections.md"
             }
           ]
         },
@@ -402,6 +603,83 @@
               "uri": "/docs/Apps/DDX-Bricks/Guides/DDX-Pro-Code.md"
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "title": "Automate Actions"
+    },
+    {
+      "type": "item",
+      "title": "Overview",
+      "uri": "docs/Automate-Actions/overview.md"
+    },
+    {
+      "type": "group",
+      "title": "Workflows",
+      "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/Automate-Actions/Workflows/overview.md"
+        },
+        {
+          "type": "item",
+          "title": "Workflows API",
+          "uri": "docs/Automate-Actions/Workflows.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Start a workflow",
+          "uri": "docs/Automate-Actions/Workflows/Workflows.md"
+        },
+        {
+          "type": "item",
+          "title": "Canceling a workflow",
+          "uri": "docs/Automate-Actions/Workflows/Canceling-a-workflow.md"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Code Engine",
+      "items": [
+        {
+          "type": "group",
+          "title": "Guides",
+          "items": [
+            {
+              "type": "item",
+              "title": "Instance Management",
+              "uri": "docs/Apps/Code-Engine/DOMO-Instance-Management.md"
+            },
+            {
+              "type": "item",
+              "title": "Cards to PDF",
+              "uri": "docs/Apps/Code-Engine/Cards-to-PDF.md"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/Automate-Actions/Code-Engine/overview.md"
+        },
+        {
+          "type": "item",
+          "title": "JavaScript Libraries",
+          "uri": "docs/Automate-Actions/Code-Engine/javascript-libraries.md"
+        },
+        {
+          "type": "item",
+          "title": "Python Packages",
+          "uri": "docs/Automate-Actions/Code-Engine/python-packages.md"
+        },
+        {
+          "type": "item",
+          "title": "Global Code Engine Packages",
+          "uri": ""
         }
       ]
     },
@@ -478,6 +756,11 @@
           "type": "item",
           "title": "Getting Data Overview",
           "uri": "docs/Partner-Developers/Guides/getting-data-overview.md"
+        },
+        {
+          "type": "item",
+          "title": "Start a Remote Workflow",
+          "uri": "docs/Partner-Developers/Guides/start-a-remote-workflow.md"
         }
       ]
     },
