@@ -261,7 +261,7 @@ paths:
       description: |-
         When creating a Stream, specify the DataSet properties (name and description) and as a convenience, the create Stream API will create a DataSet for you.
 
-        In addition, you can only have one Stream open at a time. If you need to add additional data, we recommended adding more parts to the currently open Stream or executing a commit of the open stream before creating a new stream.
+        Streams support both append and replace import methods, as well as Upsert. In order to create an Upsert dataset you must specify the Upsert key column(s) in keyColumnNames and set updateMethod to APPEND.
 
         <!-- theme: info -->
         > ### Known Limitation
@@ -284,6 +284,20 @@ paths:
           application/json:
             schema:
               type: object
+              x-examples:
+                Example 1:
+                  dataSet:
+                    name: Leonhard Euler Party
+                    description: Mathematician Guest List
+                    schema:
+                      columns:
+                        - type: STRING
+                          name: Friend
+                        - type: STRING
+                          name: Attending
+                  updateMethod: APPEND
+              required:
+                - dataSet
               properties:
                 dataSet:
                   type: object
@@ -306,18 +320,11 @@ paths:
                                 type: string
                 updateMethod:
                   type: string
-              x-examples:
-                Example 1:
-                  dataSet:
-                    name: Leonhard Euler Party
-                    description: Mathematician Guest List
-                    schema:
-                      columns:
-                        - type: STRING
-                          name: Friend
-                        - type: STRING
-                          name: Attending
-                  updateMethod: APPEND
+                keyColumnNames:
+                  type: array
+                  description: '`keyColumnNames` defines the upsert key for upsert Datasets.'
+                  items:
+                    type: string
             examples:
               Example 1:
                 value:
