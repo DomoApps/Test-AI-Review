@@ -1,4 +1,4 @@
-# SHIPPING TO LOGS TO SIEM 
+# Shipping Logs to SIEM
 
 ## Domo Activity Logs 
 
@@ -8,7 +8,7 @@ This document focused on how you can send these logs to external SIEM solution u
 
 ## Access the Activity Logs 
 
-From the Admin Settings under <strong>Governance</strong>, select  <strong>Activity log</strong>. 
+From the Admin Settings under **Governance**, select  **Activity log**. 
 
 You can only view the Activity log if you have an Admin default security role or a custom role with the View Activity Logs grant enabled. 
 
@@ -25,38 +25,38 @@ In this document we are taking Sentinel as our SIEM solution, you can use any ot
 3. Click the Add button on top.
 <img class="size-full wp-image-3271 aligncenter" src="../../assets/images/siem1.png" alt=""  />
 
-4. Select the <strong>Resource Group</strong>, provide a useful <strong>Logic App Name</strong> and <strong>region</strong>. 
+4. Select the **Resource Group**, provide a useful **Logic App Name** and **region**. 
 5. Select the Storage, Networking configuration and monitoring in next steps. 
 6. Provide appropriate tags. 
 7. Click Create to deploy the app. 
 
 ### STEP 2
 
-1. Under <strong>Workflows</strong> click <strong>Workflows</strong>.
+1. Under **Workflows** click **Workflows**.
 <img class="size-full wp-image-3271 aligncenter" src="../../assets/images/siem2.png" alt=""  />
 
-2. Click Add<strong>Add</strong> -> <strong>Add</strong>. 
-3. Provide a useful name and choose <strong>Stateful</strong> or <strong>Stateless</strong> depending on your use case and Click <strong>CREATE</strong>.
+2. Click Add**Add** -> **Add**. 
+3. Provide a useful name and choose **Stateful** or **Stateless** depending on your use case and Click **CREATE**.
 4. Now select your created workflow. 
-5. In the above selected workflow click <strong>Developer -> Designer</strong>. 
+5. In the above selected workflow click **Developer -> Designer**. 
 
 ### STEP 3
 
-1. Click <strong>Add-a-Trigger</strong>. 
-2. In the search bar search for <strong>“When a HTTP request is received”</strong>. Click it. 
-3. Select the method as <strong>POST</strong>
+1. Click **Add-a-Trigger**. 
+2. In the search bar search for **“When a HTTP request is received”**. Click it. 
+3. Select the method as **POST**
 
 ### STEP 4
 1. Click the + sign. 
-2. Search for <strong>Azure Log Analytics</strong> and then <strong>Send Data</strong>. 
-3. In the <strong>Json Request Body</strong>, click <strong>Fx</strong>
+2. Search for **Azure Log Analytics** and then **Send Data**. 
+3. In the **Json Request Body**, click **Fx**
 <img class="size-full wp-image-3271 aligncenter" src="../../assets/images/siem3.png" alt=""  />
 
-4. After that click <strong>Dynamic Content</strong>Dynamic Content and then <strong>body</strong>.
+4. After that click **Dynamic Content**Dynamic Content and then **body**.
 <img class="size-full wp-image-3271 aligncenter" src="../../assets/images/siem4.png" alt=""  />
 
 5. Add a Custom Log Name which you want to keep for log table
-6. Then Click <strong>Save</strong>, once you click save the webhook URL will appear.
+6. Then Click **Save**, once you click save the webhook URL will appear.
 <img class="size-full wp-image-3271 aligncenter" src="../../assets/images/siem5.png" alt=""  />
 
 7. You can see the webhook URL as shown in the below image.
@@ -70,21 +70,21 @@ Go to your Domo instance and sign in using your preferred method.
 
 ### STEP 2
 
-Once logged in go to <strong>More -> Admin</strong>. 
+Once logged in go to **More -> Admin**. 
 
 <img class="size-full wp-image-3271 aligncenter" src="../../assets/images/siem7.png" alt=""  />
 
 ### STEP 3
 
-Go to <strong>Activity Logs</strong> under <strong>Governance</strong>. 
+Go to **Activity Logs** under **Governance**. 
 
 <img class="size-full wp-image-3271 aligncenter" src="../../assets/images/siem8.png" alt=""  />
 
 ### STEP 4
 
-Once you click the <strong>Activity Logs</strong>, you will see all of the activity happening in your instance. 
+Once you click the **Activity Logs**, you will see all of the activity happening in your instance. 
 
-Once on this page click the <strong>Webhook</strong> icon as shown in image below. 
+Once on this page click the **Webhook** icon as shown in image below. 
 
 <img class="size-full wp-image-3271 aligncenter" src="../../assets/images/siem9.png" alt=""  />
 
@@ -96,15 +96,15 @@ In the highlighted field enter your webhook URL as highlighted in image, if your
 
 ### STEP 6
 
-Here you will see the <strong>Webhook Filtering</strong> field as well. You can choose for which <strong>categories</strong> you want to forward the logs as well as to go more granule you can select the <strong>subfields</strong> under that category. 
+Here you will see the **Webhook Filtering** field as well. You can choose for which **categories** you want to forward the logs as well as to go more granule you can select the **subfields** under that category. 
  
-<strong>NOTE:</strong> If you don’t select any field nothing will be forwarded. 
+**NOTE:** If you don’t select any field nothing will be forwarded. 
 
 <img class="size-full wp-image-3271 aligncenter" src="../../assets/images/siem11.png" alt=""  />
 
 
 ### STEP 7
 
-Verify the logs from this dashboard itself. Once the logs are forwarded to webhook these logs will be available on the same page under <strong>Activity Log Webhook Recent Deliveries</strong>. 
+Verify the logs from this dashboard itself. Once the logs are forwarded to webhook these logs will be available on the same page under **Activity Log Webhook Recent Deliveries**. 
 
 That’s All! 
