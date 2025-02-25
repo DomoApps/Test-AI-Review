@@ -19,16 +19,16 @@ Migrating Federated V1 datasources to V2 requires that Federated V2 accounts of 
 Once Federated V2 has been enabled, create the necessary Federated V2 account(s) by repeating the following steps as many times as needed:
 
 1. Navigate to the Domo Datacenter page, then the DataSets view on that page.
-   ![image-2024-4-25_8-21-5.png](../../../assets/images/image-2024-4-25_8-21-5.png)
+   ![Dataset navigation example](../../../assets/images/image-2024-4-25_8-21-5.png)
 
 2. Click on the Federated button to open the Federated / Cloud Amplifier start screen.
-   ![image-2024-4-25_8-23-51.png](../../../assets/images/image-2024-4-25_8-23-51.png)
+   ![Federated integration example](../../../assets/images/image-2024-4-25_8-23-51.png)
 
 3. Select the Federated integration type matching the V1 datasource(s) to migrate. If you do not see a matching integration type, click on the 'See More' option.
-   ![image-2024-4-25_8-26-24.png](../../../assets/images/image-2024-4-25_8-26-24.png)
+   ![Federated see more example](../../../assets/images/image-2024-4-25_8-26-24.png)
 
 4. In the opened 'Connect a Federated DataSet' dialog, click the 'Add New Account' button.
-   ![image-2024-4-25_8-28-9.png](../../../assets/images/image-2024-4-25_8-28-9.png)
+   ![add new account example](../../../assets/images/image-2024-4-25_8-28-9.png)
 
 5. Complete the displayed form and click the now enabled 'Connect' button to finish creating the account.
 
