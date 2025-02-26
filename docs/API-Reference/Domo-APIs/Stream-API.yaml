@@ -267,18 +267,7 @@ paths:
         > ### Known Limitation
         >
         > The StreamAPI currently only allows you to import data to a DataSet created via the Stream API. For example, it is currently not supported to import data to a DataSet created by a Domo Connector.
-      parameters:
-        - schema:
-            type: array
-          in: query
-          name: dataSet
-          required: true
-          description: The DataSet object associated with this Stream.
-        - schema:
-            type: string
-          in: query
-          name: updateMethod
-          description: 'The data import behavior: "APPEND" or "REPLACE".'
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -301,6 +290,7 @@ paths:
               properties:
                 dataSet:
                   type: object
+                  description: The Dataset object to be created with the Stream
                   properties:
                     name:
                       type: string
@@ -320,6 +310,7 @@ paths:
                                 type: string
                 updateMethod:
                   type: string
+                  description: 'The data import behavior: "APPEND" or "REPLACE"'
                 keyColumnNames:
                   type: array
                   description: '`keyColumnNames` defines the upsert key for upsert Datasets.'
