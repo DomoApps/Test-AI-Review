@@ -1,6 +1,6 @@
 # App Developer Design Guide
 
-Domo adheres to Material Design principles, and we highly encourage you to consider these same principles when building a Domo app, as they will ensure a seamless transition from Domo to your app.
+Domo adheres to Material Design principles, and we highly encourage that you consider these same principles when building a Domo app as they will ensure a seamless transition from Domo to your app.
 
 Please be familiar with the following principles and guidelines as you design your app:
 
