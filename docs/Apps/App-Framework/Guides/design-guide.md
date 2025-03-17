@@ -1,6 +1,6 @@
 # App Developer Design Guide
 
-Domo adheres to Material Design principles and we highly encourage you to consider these same principles when building a Domo app as it will ensure a seamless experience from transitioning from Domo to your app.
+Domo adheres to Material Design principles, and we highly encourage you to consider these same principles when building a Domo app, as they will ensure a seamless transition from Domo to your app.
 
 Please be familiar with the following principles and guidelines as you design your app:
 
@@ -13,7 +13,7 @@ Please be familiar with the following principles and guidelines as you design yo
 
 ---
 
-You're welcome to use the color palette of your choice when designing your app; however, designers will often want to design the app to look and feel more like native Domo. If that's the route you want to take we've provided the basic Domo color palette for your reference.
+You're welcome to use the color palette of your choice when designing your app; however, designers will often want to design the app to look and feel more like native Domo. If that's the route you want to take, we've provided the basic Domo color palette for your reference.
 
 #### Domo Blue Palette
 
@@ -168,7 +168,7 @@ When coloring multi-series charts, be sure to alternate the color saturation. Ch
 
 ---
 
-Domo’s typography foundation lies in traditional typographical measures. It utilizes a 6px baseline grid. All pages are designed using spacing units of 6 between different components. This creates a pleasing and predictable vertical rhythm and extends to our horizontal grid as well.
+Domo’s typography foundation lies in traditional typographical measures, utilizing a 6px baseline grid. All pages are designed using spacing units of 6 between different components. This creates a pleasing and predictable vertical rhythm and extends to our horizontal grid as well.
 
 Again, you're not required to use Domo styling in your app, but many designers have requested these guides in order to design their app to look and feel more like Domo.
 
