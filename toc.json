@@ -46,7 +46,7 @@
         {
           "type": "item",
           "title": "Code Engine API",
-          "uri": "docs/Automate-Actions/Code-Engine/api.md"
+          "uri": "docs/Domo-App-APIs/Code-Engine-API.md"
         },
         {
           "type": "item",
@@ -179,6 +179,11 @@
           "type": "item",
           "title": "Certified Content API",
           "uri": "docs/API-Reference/Product-APIs/Certified-Content.md"
+        },
+        {
+          "type":"item",
+          "title": "Code Engine API",
+          "uri": "docs/Automate-Actions/Code-Engine/api.md"
         },
         {
           "type": "item",
