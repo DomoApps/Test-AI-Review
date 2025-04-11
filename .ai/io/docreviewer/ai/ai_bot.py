@@ -11,7 +11,7 @@ class AiBot(ABC):
     __problems = "spelling errors, grammar errors, punctuation errors, style issues, formatting issues, bad language, bad words, content issues, and style consistency with surrounding documentation"
     __chat_gpt_ask_long = """
 Could you describe briefly {problems} for the documention with given git diffs? 
-Please, also, do not add intro words, just print errors in the format: "line_number : cause effect"
+Please, ignore lines that are not added indicated by a leading '+'. Also, do not add intro words, just print errors in the format: "line_number : cause effect"
 If there are no {problems} just say "{no_response}".
 
 DIFFS:
