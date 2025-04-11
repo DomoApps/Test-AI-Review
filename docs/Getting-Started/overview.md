@@ -59,8 +59,6 @@ Create an app on the Domo Platform for maximum flexibility in design, data colle
 
 Check out these resources that we regularly update and improve to help you make the most out of Domo.
 
-<<<<<<< Updated upstream
-=======
 ### Connect Data
 
 ---
@@ -117,7 +115,6 @@ Domo has a robust and vibrant community that creates extraordinarily useful cont
 ## Other Resources
 
 - **[Domo University](https://www.domo.com/university)**: Self-guided learning, instructor-led training, and Domo certification programs.
->>>>>>> Stashed changes
 - **[Knowledge Base](https://www.domo.com/help-center):** Read guides and articles, view how-to videos, and find training courses on the Domo platform.
 - **[Domo University](https://www.domo.com/university)**: Participate in self-guided learning, instructor-led training, and Domo certification programs.
 - **[Pre-built Solutions](http://www.domo.com/appstore)**: Find pre-built apps and connectors in the Domo Appstore.
