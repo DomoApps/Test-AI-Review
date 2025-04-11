@@ -8,9 +8,9 @@ from ai.line_comment import LineComment
 class AiBot(ABC):
     
     __no_response = "No critical issues found"
-    __problems="spelling errors, grammar errors, punctuation errors, style issues, formatting issues, bad language, bad words"
-    __chat_gpt_ask_long="""
-Could you describe briefly {problems} for the next code with given git diffs? 
+    __problems = "spelling errors, grammar errors, punctuation errors, style issues, formatting issues, bad language, bad words, content issues, and style consistency with surrounding documentation"
+    __chat_gpt_ask_long = """
+Could you describe briefly {problems} for the documention with given git diffs? 
 Please, also, do not add intro words, just print errors in the format: "line_number : cause effect"
 If there are no {problems} just say "{no_response}".
 
@@ -70,4 +70,3 @@ Full code from the file:
 
             models.append(LineComment(line = number, text = full_text))
         return models
-    
