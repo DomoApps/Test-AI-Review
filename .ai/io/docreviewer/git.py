@@ -41,12 +41,4 @@ class Git:
     @staticmethod
     def get_diff_in_file(remote_name, head_ref, base_ref, file_path) -> str:
         command = ["git", "diff", f"{remote_name}/{base_ref}", f"{remote_name}/{head_ref}", "--", file_path]
-        diff_output = Git.__run_subprocess(command)
-
-        added_lines = []
-        for line in diff_output.splitlines():
-            # Skip metadata and context
-            if line.startswith('+') and not line.startswith('+++'):
-                added_lines.append(line[1:])  # Strip leading '+'
-
-        return '\n'.join(added_lines)
+        return Git.__run_subprocess(command)
