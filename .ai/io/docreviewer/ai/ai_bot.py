@@ -10,15 +10,47 @@ class AiBot(ABC):
     __no_response = "No critical issues found"
     __problems = "spelling errors, grammar errors, punctuation errors, style issues, formatting issues, bad language, bad words, content issues, and style consistency with surrounding documentation"
     __chat_gpt_ask_long = """
-Could you describe briefly {problems} for the documentation with the given git diffs? 
+Task:
+Review the following diff for issues and provide comments directly in the format required for posting to the GitHub API.
 
-For each issue, output one line in this format:
-position : cause effect
+Instructions:
+1. Focus Areas:
+   - Spelling errors
+   - Grammar issues
+   - Style consistency
+   - Clarity improvements
+   - Formatting issues
 
-Instructions for determining the position:
-1. Only reference added lines in the diff (lines starting with `+` that are not part of the diff header `+++`).
-2. Use the diff structure to calculate the position of the added line in the diff.
-3. Increment the position for each added line, starting from 1 for the first added line in the diff.
+2. Output Format:
+   Provide comments in the following JSON format:
+   {{
+     "path": "{file_path}",
+     "position": <position_in_diff>,
+     "body": "<comment_text>"
+   }}
+   - The `position` should correspond to the line number in the diff where the issue occurs, as indicated by the `+` lines in the diff.
+
+3. Guidelines:
+   - Only comment on added lines (lines starting with `+` in the diff).
+   - Ensure the `position` matches the line's position in the diff, not the original file.
+   - Be concise and professional in your comments.
+
+4. Example:
+   For the following diff:
+   ```
+   @@ -1,3 +1,4 @@
+   -Old line
+   +New line with typo
+   +Another new line
+   ```
+   If you identify a typo in "New line with typo", your output should be:
+   ```json
+   {{
+     "path": "example/file.txt",
+     "position": 1,
+     "body": "Typo: 'typo' should be corrected."
+   }}
+   ```
 
 DIFFS:
 
@@ -50,29 +82,30 @@ Full code from the file:
     
     @staticmethod
     def split_ai_response(input) -> list[LineComment]:
-        if input is None or not input:
+        """
+        Parses the AI response in JSON format and converts it into a list of LineComment objects.
+
+        Args:
+            input (str): The AI response in JSON format.
+
+        Returns:
+            list[LineComment]: A list of LineComment objects.
+        """
+        if input is None or not input.strip():
             return []
-        
-        lines = input.strip().split("\n")
-        models = []
 
-        for full_text in lines:
-            number_str = ''
-            number = 0
-            full_text = full_text.strip()
-            if len( full_text ) == 0:
-                continue
+        import json
 
-            reading_number = True
-            for char in full_text.strip():
-                if reading_number:
-                    if char.isdigit():
-                        number_str += char
-                    else:
-                        break
+        try:
+            comments = json.loads(input)
+            models = []
 
-            if number_str:
-                number = int(number_str)
+            for comment in comments:
+                line = comment.get("position", 0)
+                text = comment.get("body", "")
+                if line > 0 and text:
+                    models.append(LineComment(line=line, text=text))
 
-            models.append(LineComment(line = number, text = full_text))
-        return models
+            return models
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Failed to parse AI response as JSON: {e}")
