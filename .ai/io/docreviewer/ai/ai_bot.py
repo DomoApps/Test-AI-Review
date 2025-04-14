@@ -43,7 +43,8 @@ class AiBot(ABC):
 
     For calculating line_number:
     Use the line number from the diff header (e.g., +4 in @@ -4,61 +4,66 @@) to determine the starting line in the modified file.
-    For each added line, increment the starting line number based on its order in the diff (e.g., the first added line corresponds to position +4, the second to position +5, and so on).
+    For each added line, increment the starting line number based on its order in the diff (e.g., the first added line corresponds to line 4, the second to line 5, and so on).
+    Use the exact line number in the modified file after applying the diff. 
 
     DIFFS:
 
