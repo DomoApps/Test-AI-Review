@@ -12,13 +12,15 @@ class AiBot(ABC):
     __chat_gpt_ask_long = """
 Given the git diff output, which includes lines starting with + (added lines), could you describe briefly any {problems}  only for the added lines (lines starting with +)?
 
-For line numbers, please treat them as relative to the diff, meaning:
+For line numbers:
 
-Count all lines, including context lines (those starting with - and ), before reaching the first + line.
+Treat the line numbers as relative to the diff.
 
-For the added lines (starting with +), the line numbers should correspond to their actual position within the diff, considering context lines.
+Include all lines in the diff (lines starting with -, +, and ) to compute the correct relative line number for the added lines (those starting with +).
 
-This way, the line numbers for + lines should reflect their positions in the context of the full diff, including all - and lines before them.
+The first + line should have the correct line number considering the full diff output, including all context lines (- and ).
+
+For each + line, count all the lines above it, and then apply the line number relative to the full diff output.
 
 For each issue, output one line in this format:
 line_number : cause effect
