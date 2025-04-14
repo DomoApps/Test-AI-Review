@@ -8,49 +8,26 @@ from ai.line_comment import LineComment
 class AiBot(ABC):
     
     __no_response = "No critical issues found"
-    __problems = """
-    Spelling errors (e.g., common typos or incorrect word usage)
-
-    Grammar errors (e.g., subject-verb agreement, incorrect phrasing)
-
-    Punctuation errors (e.g., missing commas, incorrect punctuation usage)
-
-    Style issues (e.g., informal language or non-professional tone)
-
-    Formatting issues (e.g., improper line breaks, inconsistent use of headers or bullet points)
-
-    Content issues (e.g., missing or incorrect information, misleading statements, foul language, racism, sexism, or other forms of discrimination)
-
-    Clarity issues (e.g., confusing wording or ambiguity)
-
-    Redundancy (e.g., repeated phrases or unnecessary wordiness)
-
-    Tone issues (e.g., informal, colloquial, or overly casual language where more formal language is needed)"""
+    __problems = "spelling errors, grammar errors, punctuation errors, style issues, formatting issues, bad language, bad words, content issues, and style consistency with surrounding documentation"
     __chat_gpt_ask_long = """
-    You are an expert documentation reviewer.
+Could you describe briefly {problems} for the documentation with the given git diffs? 
 
-    Given the git diff output, could you describe briefly any {problems} only for the added lines?
-    
-    For each issue, output one line in this format:
-    line_number : cause effect
+For each issue, output one line in this format:
+line_number : cause effect
 
-    For line numbers:
-    1. Start with the line number from the diff header. For example, in @@ -4,61 +4,66 @@, use the number 4 as the starting line for the modified lines.
-    2. For each added line, increment the line number sequentially. The first added line corresponds to the starting line, the second added line to the next line, and so on.
-    3. Do **not** count the unchanged lines in the diff. Only focus on the added lines.
+For line numbers:
+1. Start with the line number from the diff header. For example, in @@ -4,61 +4,66 @@, use the number 4 as the starting line for the modified lines.
+2. For each added line, increment the line number sequentially. The first added line corresponds to the starting line, the second added line to the next line, and so on.
+3. Do **not** count the unchanged lines in the diff. Only focus on the added lines.
 
-    Do not include any introductions or explanations—just the list of issues, formatted as specified.
+DIFFS:
 
-    If there are no {problems}, just say "{no_response}".
+{diffs}
 
-    DIFFS:
+Full code from the file:
 
-    {diffs}
-
-    Full code from the file:
-
-    {code}
-    """
+{code}
+"""
 
     @abstractmethod
     def ai_request_diffs(self, code, diffs) -> str:
