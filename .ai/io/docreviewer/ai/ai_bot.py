@@ -14,13 +14,11 @@ Given the git diff output, which includes lines starting with + (added lines), c
 
 For line numbers:
 
-Treat the line numbers as relative to the diff.
+For each line starting with +, count all lines in the diff (those starting with +, -, and ) to calculate its correct line number.
 
-Include all lines in the diff (lines starting with -, +, and ) to compute the correct relative line number for the added lines (those starting with +).
+Treat the line numbers as relative to the entire diff output, including all lines before, in between, and after the added lines.
 
-The first + line should have the correct line number considering the full diff output, including all context lines (- and ).
-
-For each + line, count all the lines above it, and then apply the line number relative to the full diff output.
+The line number for each added line (+) should be based on its position within the diff, relative to the context (both removed and unchanged lines).
 
 For each issue, output one line in this format:
 line_number : cause effect
