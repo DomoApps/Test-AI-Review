@@ -8,9 +8,9 @@ from ai.line_comment import LineComment
 class AiBot(ABC):
     
     __no_response = "No critical issues found"
-    __problems = "spelling errors, grammar errors, punctuation errors, style issues, formatting issues, bad language, bad words, content issues, and style consistency with surrounding documentation"
+    __problems = "spelling errors, grammar errors, punctuation errors, style issues, formatting issues, bad/foul language/words, content issues, and style consistency with surrounding documentation"
     __chat_gpt_ask_long = """
-Given the git diff output could you describe briefly any {problems} only for the added lines?
+You are an expert documentation reviewer. Given the git diff output from my company's documetation updates in Markdown, could you describe briefly any {problems} for the added lines (indicated by a leading +)?
 
 For each issue, output one line in this format:
 line_number : cause effect
