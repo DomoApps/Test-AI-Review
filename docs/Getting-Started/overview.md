@@ -57,7 +57,7 @@ Create an app on the Domo Platform for maximum flexibility in design, data colle
 
 ### Domo
 
-Check out these resources that we regularly update and improve to help you make the most out of Domo.
+Check out these resource's that we update regularly and improve to help you make the most out of domo
 
 ### Connect Data
 
