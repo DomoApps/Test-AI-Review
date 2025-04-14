@@ -77,8 +77,13 @@ def main():
             for response in responses:
                 Log.print_green(f"Processing AI response: line={response.line}, text={response.text}")
                 if response.line:
-                    Log.print_green(f"Posting comment to line {response.line} in file {file}")
-                    result = post_line_comment(github=github, file=file, text=response.text, line=response.line)
+                    # Map the AI's line number to the diff's position
+                    diff_position = Git.map_line_to_position(file_diffs, response.line)
+                    if diff_position is not None:
+                        Log.print_green(f"Mapped AI line {response.line} to diff position {diff_position}")
+                        result = post_line_comment(github=github, file=file, text=response.text, line=diff_position)
+                    else:
+                        Log.print_red(f"Could not map AI line {response.line} to a diff position. AI output: {response.text}")
                 if not result:
                     Log.print_yellow(f"Posting general comment for file {file}")
                     result = post_general_comment(github=github, file=file, text=response.text)
