@@ -69,12 +69,8 @@ def main():
             result = False
             for response in responses:
                 if response.line:
-                    # Map the AI's line number to the diff's position
-                    diff_position = Git.map_line_to_position(file_diffs, response.line)
-                    if diff_position is not None:
-                        result = post_line_comment(github=github, file=file, text=response.text, line=diff_position)
-                    else:
-                        Log.print_red(f"Could not map line {response.line} to a diff position. AI output: {response.text}")
+                    # Use the AI's line number directly without mapping
+                    result = post_line_comment(github=github, file=file, text=response.text, line=response.line)
                 if not result:
                     result = post_general_comment(github=github, file=file, text=response.text)
                 if not result:

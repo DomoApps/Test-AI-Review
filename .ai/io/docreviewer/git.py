@@ -42,36 +42,3 @@ class Git:
     def get_diff_in_file(remote_name, head_ref, base_ref, file_path) -> str:
         command = ["git", "diff", f"{remote_name}/{base_ref}", f"{remote_name}/{head_ref}", "--", file_path]
         return Git.__run_subprocess(command)
-
-    @staticmethod
-    def map_line_to_position(file_diffs: str, line_number: int) -> int:
-        Log.print_green(f"AI line number: {line_number}")
-        Log.print_green(f"File diffs being processed:\n{file_diffs}")
-
-        current_line = 0
-        position = 0
-
-        for diff_line in file_diffs.splitlines():
-            Log.print_green(f"Processing diff line: {diff_line}")
-            if diff_line.startswith("@@"):
-                # Extract the starting line number for the diff hunk
-                hunk_info = diff_line.split(" ")[2]
-                start_line = int(hunk_info.split(",")[0].lstrip("+"))
-                current_line = start_line - 1
-                position = 0  # Reset position for each hunk
-                Log.print_green(f"New hunk starts at line: {start_line}")
-            elif diff_line.startswith("+") and not diff_line.startswith("+++"):
-                position += 1
-                current_line += 1
-                Log.print_green(f"Added line {current_line} maps to position {position}")
-                if current_line == line_number:
-                    Log.print_green(f"Mapped AI line number {line_number} to diff position {position}")
-                    return position
-            elif diff_line.startswith("-"):
-                # Skip removed lines
-                continue
-            else:
-                current_line += 1
-
-        Log.print_red(f"Failed to map AI line number {line_number} to a diff position.")
-        return None
