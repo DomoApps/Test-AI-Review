@@ -8,31 +8,51 @@ from ai.line_comment import LineComment
 class AiBot(ABC):
     
     __no_response = "No critical issues found"
-    __problems = "spelling errors, grammar errors, punctuation errors, style issues, formatting issues, bad/foul language/words, content issues, and style consistency with surrounding documentation"
+    __problems = """
+    Spelling errors (e.g., common typos or incorrect word usage)
+
+    Grammar errors (e.g., subject-verb agreement, incorrect phrasing)
+
+    Punctuation errors (e.g., missing commas, incorrect punctuation usage)
+
+    Style issues (e.g., informal language or non-professional tone)
+
+    Formatting issues (e.g., improper line breaks, inconsistent use of headers or bullet points)
+
+    Content issues (e.g., missing or incorrect information, misleading statements)
+
+    Clarity issues (e.g., confusing wording or ambiguity)
+
+    Redundancy (e.g., repeated phrases or unnecessary wordiness)
+
+    Tone issues (e.g., informal, colloquial, or overly casual language where more formal language is needed)"""
     __chat_gpt_ask_long = """
-You are an expert documentation reviewer. Given the git diff output from my company's documetation updates in Markdown, could you describe briefly any {problems} for the added lines (indicated by a leading +)?
+    You are an expert documentation reviewer.
 
-For each issue, output one line in this format:
-line_number : cause effect
+    Given the git diff output from my company's documetation updates in Markdown, could you describe briefly any {problems}?
 
-For calculating line_number:
+    Please focus only on the added lines (indicated by a leading +).
 
-Use the line number from the diff header (e.g., +4 in @@ -4,61 +4,66 @@) to determine the starting line in the modified file.
+    Do not include any introductions or explanations—just the list of issues, formatted as specified.
 
-For each added line, increment the starting line number based on its order in the diff (e.g., the first added line corresponds to position +4, the second to position +5, and so on).
+    If there are no {problems} just say "{no_response}".
 
-Do not include any introductions or explanations—just the list of issues, formatted as specified.
+    For each issue, output one line in this format: line_number : cause effect.
 
-If there are no {problems} just say "{no_response}".
+    For calculating line_number:
 
-DIFFS:
+    Use the line number from the diff header (e.g., +4 in @@ -4,61 +4,66 @@) to determine the starting line in the modified file.
 
-{diffs}
+    For each added line, increment the starting line number based on its order in the diff (e.g., the first added line corresponds to position +4, the second to position +5, and so on).
 
-Full code from the file:
+    DIFFS:
 
-{code}
-"""
+    {diffs}
+
+    Full code from the file:
+
+    {code}
+    """
 
     @abstractmethod
     def ai_request_diffs(self, code, diffs) -> str:
