@@ -30,20 +30,19 @@ class AiBot(ABC):
     You are an expert documentation reviewer.
 
     Given the git diff output, could you describe briefly any {problems} only for the added lines?
+    
+    For each issue, output one line in this format:
+    line_number : cause effect
 
     For line numbers:
-
     1. Start with the line number from the diff header. For example, in @@ -4,61 +4,66 @@, use the number 4 as the starting line for the modified lines.
     2. For each added line, increment the line number sequentially. The first added line corresponds to the starting line, the second added line to the next line, and so on.
     3. Do **not** count the unchanged lines in the diff. Only focus on the added lines.
 
-    For each issue, output one line in this format:
-    line_number : cause effect
-
     Do not include any introductions or explanations—just the list of issues, formatted as specified.
 
     If there are no {problems}, just say "{no_response}".
-    
+
     DIFFS:
 
     {diffs}
