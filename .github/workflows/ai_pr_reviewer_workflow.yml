@@ -25,12 +25,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r .ai/io/docreviewer/requirements.txt
 
-      - name: Debug Git Diff
-        run: |
-          echo "Fetching git diff..."
-          git diff ${{ github.base_ref }}..${{ github.head_ref }} > git_diff_output.txt
-          echo "Git diff output:" && cat git_diff_output.txt
-
       - name: Run Reviewer Script
         env:
           GITHUB_HEAD_REF: ${{ github.head_ref }}
