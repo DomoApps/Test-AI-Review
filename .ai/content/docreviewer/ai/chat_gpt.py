@@ -32,7 +32,7 @@ class ChatGPT(AiBot):
             str: The AI's response.
         """
         prompt = AiBot.build_ask_text(code=code, diffs=diffs, file_path=file_path)
-        return self._send_request(self, prompt)
+        return self._send_request(prompt)
 
     def _send_request(self, prompt):
         stream = self.__client.chat.completions.create(
