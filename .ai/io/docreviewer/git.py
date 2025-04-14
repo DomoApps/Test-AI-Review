@@ -55,22 +55,38 @@ class Git:
         Returns:
             int: The position in the diff corresponding to the line number, or None if not found.
         """
+        Log.print_green(f"AI line number: {line_number}")
+        Log.print_green(f"File diffs being processed:\n{file_diffs}")
+
         current_line = 0
         position = 0
 
         for diff_line in file_diffs.splitlines():
+            Log.print_green(f"Processing diff line: {diff_line}")
             if diff_line.startswith("@@"):
                 # Extract the starting line number for the diff hunk
                 hunk_info = diff_line.split(" ")[2]
                 start_line = int(hunk_info.split(",")[0].lstrip("+"))
                 current_line = start_line - 1
                 position = 0  # Reset position for each hunk
+                Log.print_green(f"New hunk starts at line: {start_line}")
             elif diff_line.startswith("+") and not diff_line.startswith("+++"):
-                current_line += 1
                 position += 1
-                if current_line == line_number:
-                    return position
-            elif not diff_line.startswith("-"):
                 current_line += 1
+                Log.print_green(f"Added line {current_line} maps to position {position}")
+                if current_line == line_number:
+                    Log.print_green(f"Mapped AI line number {line_number} to diff position {position}")
+                    return position
+            elif diff_line.startswith("-"):
+                # Skip removed lines
+                continue
+            else:
+                current_line += 1
+
+        Log.print_red(f"Failed to map AI line number {line_number} to a diff position. Falling back to approximate mapping.")
+        # Fallback: Return the closest position if possible
+        if position > 0:
+            Log.print_yellow(f"Falling back to last known position: {position}")
+            return position
 
         return None

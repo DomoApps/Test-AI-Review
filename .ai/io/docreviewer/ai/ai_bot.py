@@ -16,8 +16,8 @@ For each issue, output one line in this format:
 position : cause effect
 
 Instructions for determining the position:
-1. Use the diff structure to calculate the position of the added line in the diff.
-2. Only consider lines starting with `+` (added lines) that are not part of the diff header (`+++`).
+1. Only reference added lines in the diff (lines starting with `+` that are not part of the diff header `+++`).
+2. Use the diff structure to calculate the position of the added line in the diff.
 3. Increment the position for each added line, starting from 1 for the first added line in the diff.
 
 DIFFS:
