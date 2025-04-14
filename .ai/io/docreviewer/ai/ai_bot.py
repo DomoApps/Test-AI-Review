@@ -110,14 +110,10 @@ class AiBot(ABC):
 
         try:
             comments = json.loads(input)
-            models = []
-
-            for comment in comments:
-                line = comment.get("position", 0)
-                text = comment.get("body", "")
-                if line > 0 and text:
-                    models.append(LineComment(line=line, text=text))
-
-            return models
+            return [
+                LineComment(line=comment["position"], text=comment["body"])
+                for comment in comments
+                if "position" in comment and "body" in comment
+            ]
         except json.JSONDecodeError as e:
             raise ValueError(f"Failed to parse AI response as JSON: {e}")
