@@ -40,11 +40,21 @@ class AiBot(ABC):
     For each issue, output one line in this format:
     line_number : cause effect.
     No extra spaces in the response.
+    
+    For calculating the line_number for added lines:
+    Identify the Starting Line Number:
 
-    For calculating line_number:
-    Use the line number from the diff header (e.g., +4 in @@ -4,61 +4,66 @@) to determine the starting line in the modified file.
-    For each added line, increment the starting line number based on its order in the diff (e.g., the first added line corresponds to line 4, the second to line 5, and so on).
-    Use the exact line number in the modified file after applying the diff. 
+    Extract the starting line number from the diff header. The header has a format like @@ -4,61 +4,66 @@, where +4 indicates that the first added line starts at line 4 in the modified file.
+
+    Increment the Line Number for Each Added Line:
+
+    The first added line corresponds to the starting line number (e.g., line 4 if the diff header is +4).
+
+    For each subsequent added line, increment the line number by 1. So, the second added line would correspond to line 5, the third to line 6, and so on.
+
+    Use the Correct Line Number in the Modified File:
+
+    The calculated line number is based on the modified file, i.e., after the diff has been applied, not the original file. Ensure that the position reflects the correct line number in the modified file.
 
     DIFFS:
 
