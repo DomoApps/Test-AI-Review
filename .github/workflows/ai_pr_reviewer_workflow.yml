@@ -25,6 +25,12 @@ jobs:
       - name: Install dependencies
         run: pip install -r .ai/io/docreviewer/requirements.txt
 
+      - name: Debug Git Diff
+        run: |
+          echo "Fetching git diff..."
+          git diff ${{ github.base_ref }}..${{ github.head_ref }} > git_diff_output.txt
+          echo "Git diff output:" && cat git_diff_output.txt
+
       - name: Run Reviewer Script
         env:
           GITHUB_HEAD_REF: ${{ github.head_ref }}
@@ -38,6 +44,12 @@ jobs:
           PULL_NUMBER: ${{ github.event.number }}
         run: |
           python .ai/io/docreviewer/github_reviewer.py
+
+      - name: Debug AI Response
+        run: |
+          echo "Running AI reviewer script..."
+          python .ai/io/docreviewer/github_reviewer.py > ai_response_output.txt
+          echo "AI response output:" && cat ai_response_output.txt
 
       - name: Upload result as an artifact
         uses: actions/upload-artifact@v4

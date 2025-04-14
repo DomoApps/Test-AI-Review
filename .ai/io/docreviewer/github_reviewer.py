@@ -59,6 +59,13 @@ def main():
 
         log_file.write(f"{separator}{file_content}{separator}{file_diffs}{separator}{response}{separator}")
 
+        Log.print_green("Fetching git diff...")
+        Log.print_green(f"Git diff for file {file}:")
+        Log.print_green(file_diffs)
+
+        Log.print_green("AI response:")
+        Log.print_green(response)
+
         if AiBot.is_no_issues_text(response):
             Log.print_green("File looks good. Continue", file)
         else:
@@ -68,12 +75,15 @@ def main():
 
             result = False
             for response in responses:
+                Log.print_green(f"Processing AI response: line={response.line}, text={response.text}")
                 if response.line:
-                    # Use the AI's line number directly without mapping
+                    Log.print_green(f"Posting comment to line {response.line} in file {file}")
                     result = post_line_comment(github=github, file=file, text=response.text, line=response.line)
                 if not result:
+                    Log.print_yellow(f"Posting general comment for file {file}")
                     result = post_general_comment(github=github, file=file, text=response.text)
                 if not result:
+                    Log.print_red("Failed to post any comments.")
                     raise RepositoryError("Failed to post any comments.")
                     
 def post_line_comment(github: GitHub, file: str, text:str, line: int):
