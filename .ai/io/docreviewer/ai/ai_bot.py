@@ -10,9 +10,15 @@ class AiBot(ABC):
     __no_response = "No critical issues found"
     __problems = "spelling errors, grammar errors, punctuation errors, style issues, formatting issues, bad language, bad words, content issues, and style consistency with surrounding documentation"
     __chat_gpt_ask_long = """
-Given the git diff output, which includes lines starting with + (added lines), could you describe briefly any {problems} for the added lines (lines starting with +)??
+Given the git diff output, which includes lines starting with + (added lines), could you describe briefly any {problems}  only for the added lines (lines starting with +)?
 
-For line numbers, please treat them as relative to the entire diff output, not starting from 1. This means that line numbers should correspond to their actual position in the full diff output, counting the context lines (those starting with - or ) before reaching the first + line.
+For line numbers, please treat them as relative to the diff, meaning:
+
+Count all lines, including context lines (those starting with - and ), before reaching the first + line.
+
+For the added lines (starting with +), the line numbers should correspond to their actual position within the diff, considering context lines.
+
+This way, the line numbers for + lines should reflect their positions in the context of the full diff, including all - and lines before them.
 
 For each issue, output one line in this format:
 line_number : cause effect
