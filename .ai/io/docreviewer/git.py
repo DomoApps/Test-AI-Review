@@ -60,6 +60,7 @@ class Git:
 
         current_line = 0
         position = 0
+        hunk_start_line = None
 
         for diff_line in file_diffs.splitlines():
             Log.print_green(f"Processing diff line: {diff_line}")
@@ -69,6 +70,7 @@ class Git:
                 start_line = int(hunk_info.split(",")[0].lstrip("+"))
                 current_line = start_line - 1
                 position = 0  # Reset position for each hunk
+                hunk_start_line = start_line
                 Log.print_green(f"New hunk starts at line: {start_line}")
             elif diff_line.startswith("+") and not diff_line.startswith("+++"):
                 position += 1
@@ -84,9 +86,8 @@ class Git:
                 current_line += 1
 
         Log.print_red(f"Failed to map AI line number {line_number} to a diff position. Falling back to approximate mapping.")
-        # Fallback: Return the closest position if possible
-        if position > 0:
-            Log.print_yellow(f"Falling back to last known position: {position}")
-            return position
+        if hunk_start_line is not None:
+            Log.print_yellow(f"Falling back to hunk start line: {hunk_start_line}")
+            return hunk_start_line
 
         return None
