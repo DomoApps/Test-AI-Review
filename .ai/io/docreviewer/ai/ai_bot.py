@@ -19,7 +19,7 @@ class AiBot(ABC):
 
     Formatting issues (e.g., improper line breaks, inconsistent use of headers or bullet points)
 
-    Content issues (e.g., missing or incorrect information, misleading statements)
+    Content issues (e.g., missing or incorrect information, misleading statements, foul language, racism, sexism, or other forms of discrimination)
 
     Clarity issues (e.g., confusing wording or ambiguity)
 
@@ -37,12 +37,12 @@ class AiBot(ABC):
 
     If there are no {problems} just say "{no_response}".
 
-    For each issue, output one line in this format: line_number : cause effect.
+    For each issue, output one line in this format:
+    line_number : cause effect.
+    No extra spaces in the response.
 
     For calculating line_number:
-
     Use the line number from the diff header (e.g., +4 in @@ -4,61 +4,66 @@) to determine the starting line in the modified file.
-
     For each added line, increment the starting line number based on its order in the diff (e.g., the first added line corresponds to position +4, the second to position +5, and so on).
 
     DIFFS:
