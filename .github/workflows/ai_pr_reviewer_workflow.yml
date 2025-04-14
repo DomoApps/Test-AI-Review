@@ -44,13 +44,11 @@ jobs:
           PULL_NUMBER: ${{ github.event.number }}
         run: |
           python .ai/io/docreviewer/github_reviewer.py
-
       - name: Debug AI Response
         run: |
           echo "Running AI reviewer script..."
           python .ai/io/docreviewer/github_reviewer.py > ai_response_output.txt
           echo "AI response output:" && cat ai_response_output.txt
-
       - name: Upload result as an artifact
         uses: actions/upload-artifact@v4
         with:
