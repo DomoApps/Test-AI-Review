@@ -45,6 +45,9 @@ class Git:
 
     @staticmethod
     def map_line_to_position(file_diffs: str, line_number: int) -> int:
+        Log.print_green(f"AI line number: {line_number}")
+        Log.print_green(f"File diffs being processed:\n{file_diffs}")
+
         current_line = 0
         position = 0
 
@@ -62,6 +65,7 @@ class Git:
                 current_line += 1
                 Log.print_green(f"Added line {current_line} maps to position {position}")
                 if current_line == line_number:
+                    Log.print_green(f"Mapped AI line number {line_number} to diff position {position}")
                     return position
             elif diff_line.startswith("-"):
                 # Skip removed lines
@@ -69,4 +73,5 @@ class Git:
             else:
                 current_line += 1
 
+        Log.print_red(f"Failed to map AI line number {line_number} to a diff position.")
         return None
