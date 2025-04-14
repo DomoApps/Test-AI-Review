@@ -10,9 +10,7 @@ class AiBot(ABC):
     __no_response = "No critical issues found"
     __problems = "spelling errors, grammar errors, punctuation errors, style issues, formatting issues, bad language, bad words, content issues, and style consistency with surrounding documentation"
     __chat_gpt_ask_long = """
-You are an expert documentation reviewer.
-
-Given the git diff output, identify {problems} in the added lines and provide the position in the diff where the comment should be placed.
+Could you describe briefly {problems} for the documentation with the given git diffs? 
 
 For each issue, output one line in this format:
 position : cause effect
