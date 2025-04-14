@@ -46,11 +46,8 @@ class ChatGPT(AiBot):
         """
         import openai
 
-        try:
-            response = openai.ChatCompletion.create(
-                model=self.__chat_gpt_model,
-                messages=[{"role": "user", "content": prompt}]
-            )
-            return response['choices'][0]['message']['content']
-        except (openai.InvalidRequestError, openai.RateLimitError, openai.ServiceUnavailableError) as e:
-            raise RuntimeError(f"Failed to communicate with ChatGPT API: {e}")
+        response = openai.ChatCompletion.create(
+            model=self.__chat_gpt_model,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        return response['choices'][0]['message']['content']
