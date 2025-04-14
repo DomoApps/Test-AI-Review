@@ -73,6 +73,8 @@ def main():
                     diff_position = Git.map_line_to_position(file_diffs, response.line)
                     if diff_position is not None:
                         result = post_line_comment(github=github, file=file, text=response.text, line=diff_position)
+                    else:
+                        Log.print_red(f"Could not map line {response.line} to a diff position. AI output: {response.text}")
                 if not result:
                     result = post_general_comment(github=github, file=file, text=response.text)
                 if not result:
