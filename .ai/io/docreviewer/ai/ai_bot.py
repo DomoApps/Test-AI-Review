@@ -12,18 +12,14 @@ class AiBot(ABC):
     __chat_gpt_ask_long = """
 Given the git diff output could you describe briefly any {problems} only for the added lines?
 
-Start with the line number from the diff header, which specifies where the added lines begin in the original file (e.g., @@ -4,61 +4,66 @@).
-
-For each issue, the correct line number should be calculated by considering the number of lines modified (added or removed).
-
 For each issue, output one line in this format:
 line_number : cause effect
 
-Where:
+For calculating line_number:
 
-line_number corresponds to the correct line number in the original file (calculated based on the starting line from the diff header).
+Use the line number from the diff header (e.g., +4 in @@ -4,61 +4,66 @@) to determine the starting line in the modified file.
 
-cause effect describes the problem found in the line, e.g., "grammatical error - 'resource 's' should be 'resources'".
+For each added line, increment the starting line number based on its order in the diff (e.g., the first added line corresponds to position +4, the second to position +5, and so on).
 
 Do not include any introductions or explanations—just the list of issues, formatted as specified.
 
