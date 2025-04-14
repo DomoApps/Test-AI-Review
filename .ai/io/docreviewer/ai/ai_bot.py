@@ -10,11 +10,15 @@ class AiBot(ABC):
     __no_response = "No critical issues found"
     __problems = "spelling errors, grammar errors, punctuation errors, style issues, formatting issues, bad language, bad words, content issues, and style consistency with surrounding documentation"
     __chat_gpt_ask_long = """
-Given a unified Git diff, could you describe briefly any {problems} for the added lines only (lines beginning with +)?
-Please use line numbers relative to the diff itself—that is, count only lines beginning with +, and number them starting at 1. Ignore all context except for what is visible in the diff.
+Given the diff output (lines starting with + or -), could you describe briefly any {problems} for the added lines only (lines beginning with +)?
+
+Please use line numbers relative to the diff itself—that is, count only lines starting with +, and number them starting at 1. Ignore all unchanged lines and context.
+
 For each issue, output one line in this format:
 line_number : cause effect
+
 Do not include any introductions or explanations—only the list of issues, formatted as specified.
+
 If there are no {problems} just say "{no_response}".
 
 DIFFS:
