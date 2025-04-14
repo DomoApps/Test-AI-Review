@@ -107,9 +107,15 @@ class AiBot(ABC):
             return []
 
         import json
+        import re
 
         try:
-            comments = json.loads(input)
+            # Preprocess the input to remove extra spaces around keys and values
+            sanitized_input = re.sub(r'\s*:\s*', ':', input)  # Remove spaces around colons
+            sanitized_input = re.sub(r'"\s+', '"', sanitized_input)  # Remove spaces after opening quotes
+            sanitized_input = re.sub(r'\s+"', '"', sanitized_input)  # Remove spaces before closing quotes
+
+            comments = json.loads(sanitized_input)
             return [
                 LineComment(line=comment["position"], text=comment["body"])
                 for comment in comments
