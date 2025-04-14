@@ -29,33 +29,21 @@ class AiBot(ABC):
     __chat_gpt_ask_long = """
     You are an expert documentation reviewer.
 
-    Given the git diff output from my company's documetation updates in Markdown, could you describe briefly any {problems}?
+    Given the git diff output, could you describe briefly any {problems} only for the added lines?
 
-    Please focus only on the added lines (indicated by a leading +).
+    For line numbers:
+
+    1. Start with the line number from the diff header. For example, in @@ -4,61 +4,66 @@, use the number 4 as the starting line for the modified lines.
+    2. For each added line, increment the line number sequentially. The first added line corresponds to the starting line, the second added line to the next line, and so on.
+    3. Do **not** count the unchanged lines in the diff. Only focus on the added lines.
+
+    For each issue, output one line in this format:
+    line_number : cause effect
 
     Do not include any introductions or explanations—just the list of issues, formatted as specified.
 
-    If there are no {problems} just say "{no_response}".
-
-    For each issue, output one line in this format:
-    line_number : cause effect.
-    No extra spaces in the response.
+    If there are no {problems}, just say "{no_response}".
     
-    For calculating the line_number for added lines:
-    Identify the Starting Line Number:
-
-    Extract the starting line number from the diff header. The header has a format like @@ -4,61 +4,66 @@, where +4 indicates that the first added line starts at line 4 in the modified file.
-
-    Increment the Line Number for Each Added Line:
-
-    The first added line corresponds to the starting line number (e.g., line 4 if the diff header is +4).
-
-    For each subsequent added line, increment the line number by 1. So, the second added line would correspond to line 5, the third to line 6, and so on.
-
-    Use the Correct Line Number in the Modified File:
-
-    The calculated line number is based on the modified file, i.e., after the diff has been applied, not the original file. Ensure that the position reflects the correct line number in the modified file.
-
     DIFFS:
 
     {diffs}
