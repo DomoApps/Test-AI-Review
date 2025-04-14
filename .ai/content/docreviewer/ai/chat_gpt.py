@@ -17,7 +17,7 @@ class ChatGPT(AiBot):
         """
         import openai
         self.__chat_gpt_model = model
-        openai.api_key = token
+        self.__client = OpenAI(api_key = token)
 
     def ai_request_diffs(self, code, diffs, file_path):
         """
@@ -32,22 +32,21 @@ class ChatGPT(AiBot):
             str: The AI's response.
         """
         prompt = AiBot.build_ask_text(code=code, diffs=diffs, file_path=file_path)
-        return self._send_request(prompt)
+        return self._send_request(self, prompt)
 
     def _send_request(self, prompt):
-        """
-        Sends a prompt to the OpenAI API and returns the response.
-
-        Args:
-            prompt (str): The prompt to send to the OpenAI API.
-
-        Returns:
-            str: The response from the OpenAI API.
-        """
-        import openai
-
-        response = openai.ChatCompletion.create(
-            model=self.__chat_gpt_model,
-            messages=[{"role": "user", "content": prompt}]
+        stream = self.__client.chat.completions.create(
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt,
+                }
+            ],
+            model = self.__chat_gpt_model,
+            stream = True,
         )
-        return response['choices'][0]['message']['content']
+        content = []
+        for chunk in stream:
+            if chunk.choices[0].delta.content:
+                content.append(chunk.choices[0].delta.content)
+        return " ".join(content)
