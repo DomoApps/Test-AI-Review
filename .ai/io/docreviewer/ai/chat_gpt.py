@@ -4,6 +4,7 @@
 
 import os
 from openai import OpenAI
+from openai.error import InvalidRequestError, RateLimitError, ServiceUnavailableError
 from ai.ai_bot import AiBot
 
 class ChatGPT(AiBot):
@@ -52,5 +53,5 @@ class ChatGPT(AiBot):
                 messages=[{"role": "user", "content": prompt}]
             )
             return response['choices'][0]['message']['content']
-        except openai.error.OpenAIError as e:
+        except (InvalidRequestError, RateLimitError, ServiceUnavailableError) as e:
             raise RuntimeError(f"Failed to communicate with ChatGPT API: {e}")
