@@ -12,20 +12,18 @@ class ChatGPT(AiBot):
         self.__chat_gpt_model = model
         self.__client = OpenAI(api_key = token)
 
-    def ai_request_diffs(self, code, diffs):
-        stream = self.__client.chat.completions.create(
-            messages=[
-                {
-                    "role": "user",
-                    "content": AiBot.build_ask_text(code=code, diffs=diffs),
-                }
-            ],
-            model = self.__chat_gpt_model,
-            stream = True,
+    def ai_request_diffs(self, code, diffs, file_path):
+        """
+        Requests AI feedback on diffs using the updated prompt.
+
+        Args:
+            code (str): The full code of the file.
+            diffs (str): The git diffs to review.
+            file_path (str): The path of the file being reviewed.
+
+        Returns:
+            str: The AI's response.
+        """
+        return self._chat_gpt_request(
+            AiBot.build_ask_text(code=code, diffs=diffs, file_path=file_path)
         )
-        content = []
-        for chunk in stream:
-            if chunk.choices[0].delta.content:
-                content.append(chunk.choices[0].delta.content)
-        return " ".join(content)
-    
