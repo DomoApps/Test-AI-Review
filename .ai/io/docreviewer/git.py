@@ -45,31 +45,28 @@ class Git:
 
     @staticmethod
     def map_line_to_position(file_diffs: str, line_number: int) -> int:
-        """
-        Maps a line number from the AI's output to the correct position in the diff.
-
-        Args:
-            file_diffs (str): The diff content for the file.
-            line_number (int): The line number from the AI's output.
-
-        Returns:
-            int: The position in the diff corresponding to the line number, or None if not found.
-        """
         current_line = 0
         position = 0
 
         for diff_line in file_diffs.splitlines():
+            Log.print_green(f"Processing diff line: {diff_line}")
             if diff_line.startswith("@@"):
                 # Extract the starting line number for the diff hunk
-                hunk_info = diff_line.split(" ")[1]
+                hunk_info = diff_line.split(" ")[2]
                 start_line = int(hunk_info.split(",")[0].lstrip("+"))
                 current_line = start_line - 1
+                position = 0  # Reset position for each hunk
+                Log.print_green(f"New hunk starts at line: {start_line}")
             elif diff_line.startswith("+") and not diff_line.startswith("+++"):
-                current_line += 1
                 position += 1
+                current_line += 1
+                Log.print_green(f"Added line {current_line} maps to position {position}")
                 if current_line == line_number:
                     return position
-            elif not diff_line.startswith("-"):
+            elif diff_line.startswith("-"):
+                # Skip removed lines
+                continue
+            else:
                 current_line += 1
 
         return None
