@@ -133,9 +133,8 @@ class AiBot(ABC):
                 if "position" in comment and "body" in comment
             ]
         except json.JSONDecodeError as e:
-            # log the error
-            import logging
-            logging.error(f"LOG Failed to parse AI response as JSON: {e}")
+            Log.print_red("Responses where not parsed:", input)
             raise ValueError(f"Failed to parse AI response as JSON: {e}")
         except Exception as e:
+            Log.print_red("Responses where not parsed:", input)
             raise ValueError(f"Unexpected error while parsing AI response: {e}")
