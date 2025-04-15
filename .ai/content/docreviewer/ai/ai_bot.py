@@ -43,12 +43,14 @@ class AiBot(ABC):
 
       Do not count metadata lines:
         diff --git, index, ---, +++, and @@
-        Only create comments on added lines (+)
+      
+      Only create comments on added lines (+)
 
     4. Output Rules:
       Do not comment on removed (-) or context ( ) lines.
       Be concise and professional in your comments.
-      Return a JSON array of comments. If no issues are found, return an empty array [].
+      Return a JSON array of comments.
+      If no issues are found, return an empty array [].
       Do not include any markdown, explanations, or additional text.
 
     5. Example: Given this diff:
@@ -132,8 +134,8 @@ class AiBot(ABC):
                 if "position" in comment and "body" in comment
             ]
         except json.JSONDecodeError as e:
-            Log.print_red("Responses where not parsed:", input)
+            Log.print_red("JSON Decode error:", input)
             raise ValueError(f"Failed to parse AI response as JSON: {e}")
         except Exception as e:
-            Log.print_red("Responses where not parsed:", input)
+            Log.print_red("AI bot exception:", input)
             raise ValueError(f"Unexpected error while parsing AI response: {e}")
