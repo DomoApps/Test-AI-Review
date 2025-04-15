@@ -16,76 +16,68 @@ class AiBot(ABC):
 
     Instructions:
     1. Focus Areas:
-      - Spelling errors
-      - Grammar issues
-      - Style consistency
-      - Clarity improvements
-      - Formatting issues
-      - Racism, sexism, and other forms of discrimination
-      - Inappropriate language
-      - Inappropriate content
+      Spelling errors
+      Grammar issues
+      Style consistency
+      Clarity improvements
+      Formatting issues
+      Racism, sexism, and other forms of discrimination
+      Inappropriate language or content
 
     2. Output Format:
-      Provide comments in the following JSON format:
       [
         {{
           "position": <position_in_diff>,
           "body": "<comment_text>"
         }}
       ]
-      - The `position` should correspond to the line number in the diff where the issue occurs, as indicated by the `+` lines in the diff.
+      The position corresponds to the line number in the diff where the issue occurs, starting at 1, immediately after the @@ hunk header.
 
-    3. Guidelines:
-      - Only review added lines (lines starting with `+` in the diff). Ignore issues with lines starting with `-` or context lines.
-      - Be concise and professional in your comments.
-      - Return only valid JSON with no markdown modifiers, wrappers, or additional text.Rules:
-      - Positioning:
-          The first line of the diff has position 1. Count all lines that appear in the diff output after the @@ hunk header, including:
-          Context lines (start with a space)
-          Added lines (start with +)
-          Removed lines (start with -)
-          Do not include metadata lines in the position count. These include lines starting with:
-          diff --git
-          index
-          ---
-          +++
-          @@ (these indicate a new hunk but do not count toward position)
+    3. Positioning Rules:
+      Start counting positions at 1 for each file.
 
-    4. Example:
-      For the following diff:
+      Count all lines that appear after the @@ hunk header:
+        Context lines (start with a space)
+        Added lines (start with +)
+        Removed lines (start with -)
 
-      @@ -1,3 +1,4 @@
+      Do not count metadata lines:
+        diff --git, index, ---, +++, and @@
+        Only create comments on added lines (+)
+
+    4. Output Rules:
+
+      Do not comment on removed (-) or context ( ) lines.
+
+      Be concise and professional in your comments.
+
+      Return a JSON array of comments. If no issues are found, return an empty array [].
+
+      Do not include any markdown, explanations, or additional text.
+
+    5. Example: Given this diff:
+
+    @@ -1,3 +1,4 @@
       -Old line
-       
+      
       +New line with typo
-       
+      
       +Another new line
 
-      If you identify a typo in "New line with typo", your output should be:
+      A comment on "New line with typo" should be:
       [
         {{
           "position": 3,
           "body": "Typo: 'typo' should be corrected."
         }}
       ]
-
-      If you identify an issue in "Another new line", your output should be:
+      A comment on "Another new line" should be:
       [
         {{
           "position": 5,
           "body": "Consider rephrasing for clarity."
         }}
       ]
-
-      If no issues are found, respond with and empty array
-
-    DIFFS:
-
-    {diffs}
-
-    Full code from the file:
-
-    {code}
     """
 
     @abstractmethod
