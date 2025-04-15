@@ -24,7 +24,6 @@ class GitHub(Repository):
             "commit_id": commit_id,
             "path" : file_path,
             "position" : position,
-            "line": position,
             "side": "right"
         }
         response = requests.post(self.__url_add_comment, json = body, headers = headers)

@@ -33,12 +33,13 @@ class AiBot(ABC):
           "body": "<comment_text>"
         }}
       ]
+      - The `position` should correspond to the line number in the diff where the issue occurs, as indicated by the `+` lines in the diff.
 
     3. Guidelines:
       - Only comment on added lines (lines starting with `+` in the diff).
       - Ensure the `position` matches the line's position in the diff, not the original file.
       - Be concise and professional in your comments.
-      - Return only valid JSON with no markdown modifiers or additional text.
+      - Return only valid JSON with no markdown modifiers, wrappers, or additional text.
 
     4. Example:
       For the following diff:
@@ -56,8 +57,7 @@ class AiBot(ABC):
         }}
       ]
 
-      If no issues are found, respond with:
-      {no_response}
+      If no issues are found, respond with and empty array
 
     DIFFS:
 
@@ -66,6 +66,11 @@ class AiBot(ABC):
     Full code from the file:
 
     {code}
+
+    Notes:
+    - The `position` is relative to the added lines in the diff (lines starting with `+`).
+    - Removed lines (lines starting with `-`) and context lines should not be included in the `position` calculation.
+    - If a hunk contains multiple added lines, count only the `+` lines to determine the `position`.
     """
 
     @abstractmethod
