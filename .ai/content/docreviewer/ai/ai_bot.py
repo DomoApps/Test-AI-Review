@@ -37,10 +37,19 @@ class AiBot(ABC):
 
     3. Guidelines:
       - Only review added lines (lines starting with `+` in the diff). Ignore issues with lines starting with `-` or context lines.
-      - To ensure accurate positioning, you must count all lines in the diff (including +, -, and context lines) sequentially, starting from the first line of the diff.
-      - The first line in the diff is `position` 1, the second line is `position` 2, and so on.
       - Be concise and professional in your comments.
-      - Return only valid JSON with no markdown modifiers, wrappers, or additional text.
+      - Return only valid JSON with no markdown modifiers, wrappers, or additional text.Rules:
+      - Positioning:
+          The first line of the diff has position 1. Count all lines that appear in the diff output after the @@ hunk header, including:
+          Context lines (start with a space)
+          Added lines (start with +)
+          Removed lines (start with -)
+          Do not include metadata lines in the position count. These include lines starting with:
+          diff --git
+          index
+          ---
+          +++
+          @@ (these indicate a new hunk but do not count toward position)
 
     4. Example:
       For the following diff:
