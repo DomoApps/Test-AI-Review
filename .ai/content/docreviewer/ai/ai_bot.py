@@ -46,18 +46,14 @@ class AiBot(ABC):
         Only create comments on added lines (+)
 
     4. Output Rules:
-
       Do not comment on removed (-) or context ( ) lines.
-
       Be concise and professional in your comments.
-
       Return a JSON array of comments. If no issues are found, return an empty array [].
-
       Do not include any markdown, explanations, or additional text.
 
     5. Example: Given this diff:
 
-    @@ -1,3 +1,4 @@
+      @@ -1,3 +1,4 @@
       -Old line
       
       +New line with typo
