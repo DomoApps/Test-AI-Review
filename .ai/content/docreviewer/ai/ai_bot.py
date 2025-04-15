@@ -76,6 +76,8 @@ class AiBot(ABC):
           "body": "Consider rephrasing for clarity."
         }}
       ]
+      Here is the diff to review:
+        {diffs}
     """
 
     @abstractmethod
