@@ -20,9 +20,20 @@ def test_ai_request_diffs(mock_chat_completion_create):
         ]
     }
 
-    ai = ChatGPT(token="fake-token", model="gpt-4")
+    ai = ChatGPT(client=mock_chat_completion_create, model="gpt-4")
     code = "def example_function():\n    pass"
     diffs = "- def example_function():\n+ def example_function(param):\n    pass"
+
+    # Simulate the response from the create method
+    mock_chat_completion_create.create.return_value = {
+        "choices": [
+            {
+                "message": {
+                    "content": "Mocked AI response"
+                }
+            }
+        ]
+    }
 
     response = ai.ai_request_diffs(code=code, diffs=diffs)
 
@@ -30,9 +41,10 @@ def test_ai_request_diffs(mock_chat_completion_create):
     assert response == "Mocked AI response"
 
     # Ensure the OpenAI API was called with the correct parameters
-    mock_chat_completion_create.assert_called_once_with(
+    mock_chat_completion_create.create.assert_called_once_with(
         messages=ANY,
-        model="gpt-4"
+        model="gpt-4",
+        stream=True
     )
 
     mock_response = [
@@ -43,3 +55,18 @@ def test_ai_request_diffs(mock_chat_completion_create):
     with patch("ai.ai_bot.AiBot.build_ask_text", return_value=mock_response):
         response = AiBot.build_ask_text("code", "diffs")
         assert response == mock_response
+
+@patch("openai.ChatCompletion.create")
+def test_build_request_payload(mock_chat_completion_create):
+    ai = ChatGPT(client=mock_chat_completion_create, model="gpt-4")
+    code = "def example_function():\n    pass"
+    diffs = "- def example_function():\n+ def example_function(param):\n    pass"
+
+    payload = ai.build_request_payload(code, diffs)
+
+    # Assert the payload structure
+    assert payload["model"] == "gpt-4"
+    assert payload["stream"] is True
+    assert "messages" in payload
+    assert payload["messages"][0]["role"] == "user"
+    assert "content" in payload["messages"][0]

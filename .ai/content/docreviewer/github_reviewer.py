@@ -6,6 +6,7 @@ import os
 from git import Git 
 from pathlib import Path
 from ai.chat_gpt import ChatGPT
+from openai import OpenAI
 from ai.ai_bot import AiBot
 from log import Log
 from env_vars import EnvVars
@@ -18,8 +19,8 @@ def main():
     with open('output.txt', 'a') as log_file:
         vars = EnvVars()
         vars.check_vars()
-
-        ai = ChatGPT(vars.chat_gpt_token, vars.chat_gpt_model)
+        model = OpenAI(api_key = vars.chat_gpt_token)
+        ai = ChatGPT(model, vars.chat_gpt_model)
         github = GitHub(vars.token, vars.owner, vars.repo, vars.pull_number)
 
         remote_name = Git.get_remote_name()

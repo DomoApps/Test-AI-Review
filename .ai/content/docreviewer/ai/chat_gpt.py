@@ -7,42 +7,51 @@ from openai import OpenAI
 from ai.ai_bot import AiBot
 
 class ChatGPT(AiBot):
-    def __init__(self, token, model):
+    def __init__(self, client, model):
         """
-        Initializes the ChatGPT class with the OpenAI API token and model.
+        Initialize ChatGPT with a client and model.
 
         Args:
-            token (str): The OpenAI API token.
-            model (str): The OpenAI model to use (e.g., 'gpt-4').
+            client: An instance of the OpenAI client or a mock for testing.
+            model: The model name to use for the OpenAI API.
         """
-        import openai
         self.__chat_gpt_model = model
-        self.__client = OpenAI(api_key = token)
-        self.__client.ChatCompletion = openai.ChatCompletion
+        self.__client = client
+
+    def build_request_payload(self, code, diffs):
+        """
+        Build the request payload for the OpenAI API.
+
+        Args:
+            code: The code to analyze.
+            diffs: The diffs to include in the request.
+
+        Returns:
+            A dictionary representing the request payload.
+        """
+        return {
+            "messages": [
+                {
+                    "role": "user",
+                    "content": AiBot.build_ask_text(code=code, diffs=diffs),
+                }
+            ],
+            "model": self.__chat_gpt_model,
+            "stream": True,
+        }
 
     def ai_request_diffs(self, code, diffs):
         """
-        Sends a request to the OpenAI API to analyze diffs and return comments.
+        Request diffs from the OpenAI API.
 
         Args:
-            code (str): The full code of the file.
-            diffs (str): The git diffs to review.
-            file_path (str): The path of the file being reviewed.
+            code: The code to analyze.
+            diffs: The diffs to include in the request.
 
         Returns:
-            str: The AI's response.
+            A string containing the response from the OpenAI API.
         """
-        prompt = AiBot.build_ask_text(code=code, diffs=diffs)
-        return self._send_request(prompt)
-
-    def _send_request(self, prompt):
-        response = self.__client.ChatCompletion.create(
-            messages=[
-                {
-                    "role": "user",
-                    "content": prompt,
-                }
-            ],
-            model=self.__chat_gpt_model
-        )
+        payload = self.build_request_payload(code, diffs)
+        response = self.__client.create(**payload)  # Updated to directly call `create` on the client
+        
         return response["choices"][0]["message"]["content"]
