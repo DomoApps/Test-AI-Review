@@ -87,11 +87,6 @@ class AiBot(ABC):
     Full code from the file:
 
     {code}
-
-    Notes:
-    - The `position` is relative to the added lines in the diff (lines starting with `+`).
-    - Removed lines (lines starting with `-`) and context lines should not be included in the `position` calculation.
-    - If a hunk contains multiple added lines, count only the `+` lines to determine the `position`.
     """
 
     @abstractmethod
