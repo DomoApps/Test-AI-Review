@@ -39,7 +39,7 @@ class AiBot(ABC):
       - Only comment on added lines (lines starting with `+` in the diff).
       - Ensure the `position` matches the line's position in the diff, not the original file.
       - Be concise and professional in your comments.
-      - Return only valid JSON
+      - Return only valid JSON with no wrappers or additional text.
 
     4. Example:
       For the following diff:
