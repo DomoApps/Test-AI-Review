@@ -24,14 +24,14 @@ def test_split_ai_response():
 def test_split_ai_response_malformed_json():
     input_json = "{malformed_json}"
 
-    with pytest.raises(ValueError, match="Failed to parse AI response as JSON: Expecting value"):
+    with pytest.raises(ValueError, match="Unexpected error while parsing AI response: Input does not appear to be a valid JSON array."):
         AiBot.split_ai_response(input_json)
 
 def test_split_ai_response_with_mocked_api():
-    with patch('ai.ai_bot.AiBot.split_ai_response', side_effect=lambda *args, **kwargs: """[
-        {"position": 3, "body": "Consider using 'powerful' instead of 'a powerful' for improved flow."},
-        {"position": 5, "body": "Grammatically, 'Dive in to explore' could be improved for clarity. Consider rephrasing to 'Dive in and explore'."}
-    ]"""):
+    with patch('ai.ai_bot.AiBot.split_ai_response', side_effect=lambda *args, **kwargs: [
+        LineComment(line=3, text="Consider using 'powerful' instead of 'a powerful' for improved flow."),
+        LineComment(line=5, text="Grammatically, 'Dive in to explore' could be improved for clarity. Consider rephrasing to 'Dive in and explore'.")
+    ]):
         input_json = """[
             {"position": 3, "body": "Consider using 'powerful' instead of 'a powerful' for improved flow."},
             {"position": 5, "body": "Grammatically, 'Dive in to explore' could be improved for clarity. Consider rephrasing to 'Dive in and explore'."}

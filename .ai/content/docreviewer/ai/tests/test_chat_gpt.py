@@ -8,10 +8,9 @@ from ai.chat_gpt import ChatGPT
 from ai.ai_bot import AiBot
 
 @patch("openai.ChatCompletion.create")
-@patch("ai.chat_gpt.OpenAI")
-def test_ai_request_diffs(mock_openai_create, mock_openai):
+def test_ai_request_diffs(mock_chat_completion_create):
     # Mock the OpenAI API response
-    mock_openai_create.return_value = {
+    mock_chat_completion_create.return_value = {
         "choices": [
             {
                 "message": {
@@ -31,9 +30,9 @@ def test_ai_request_diffs(mock_openai_create, mock_openai):
     assert response == "Mocked AI response"
 
     # Ensure the OpenAI API was called with the correct parameters
-    mock_openai_create.assert_called_once_with(
-        model="gpt-4",
-        messages=ANY
+    mock_chat_completion_create.assert_called_once_with(
+        messages=ANY,
+        model="gpt-4"
     )
 
     mock_response = [
