@@ -33,7 +33,8 @@ class AiBot(ABC):
           "body": "<comment_text>"
         }}
       ]
-      - The `position` should correspond to the line number in the diff where the issue occurs, as indicated by the `+` lines in the diff.
+      - The `position` is the must be the line number as it relates to the diff itself. Line 1 is the first line of the diff.
+      - The `body` is the comment text that will be in the comment on GitHub.
 
     3. Guidelines:
       - Only comment on added lines (lines starting with `+` in the diff).

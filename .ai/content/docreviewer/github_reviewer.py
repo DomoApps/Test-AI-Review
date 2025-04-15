@@ -92,6 +92,8 @@ def post_line_comment(github: GitHub, file: str, text:str, line: int):
             commit_id=Git.get_last_commit_sha(file=file), 
             file_path=file, 
             position=line,
+            line=line,
+            side="right"
         )
         Log.print_yellow("Posted", git_response)
         return True
