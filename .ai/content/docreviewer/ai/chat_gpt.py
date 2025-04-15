@@ -19,7 +19,7 @@ class ChatGPT(AiBot):
         self.__chat_gpt_model = model
         self.__client = OpenAI(api_key = token)
 
-    def ai_request_diffs(self, code, diffs, file_path):
+    def ai_request_diffs(self, code, diffs):
         """
         Sends a request to the OpenAI API to analyze diffs and return comments.
 

@@ -8,7 +8,6 @@ from ai.line_comment import LineComment
 class AiBot(ABC):
     
     __no_response = "No critical issues found"
-    __problems = "spelling errors, grammar errors, punctuation errors, style issues, formatting issues, bad language, bad words, content issues, and style consistency with surrounding documentation"
     __chat_gpt_ask_long = """
     Task:
     Review the following diff for issues and provide comments directly in the format required for posting to the GitHub API.
@@ -54,6 +53,8 @@ class AiBot(ABC):
         }
       ]
 
+      If no issues are found, respond with:
+      {no_response}
 
     DIFFS:
 
@@ -65,14 +66,13 @@ class AiBot(ABC):
     """
 
     @abstractmethod
-    def ai_request_diffs(self, code, diffs, file_path) -> str:
+    def ai_request_diffs(self, code, diffs) -> str:
         """
         Abstract method to request AI feedback on diffs.
 
         Args:
             code (str): The full code of the file.
             diffs (str): The git diffs to review.
-            file_path (str): The path of the file being reviewed.
 
         Returns:
             str: The AI's response.
@@ -82,7 +82,6 @@ class AiBot(ABC):
     @staticmethod
     def build_ask_text(code, diffs, file_path) -> str:
         return AiBot.__chat_gpt_ask_long.format(
-            problems=AiBot.__problems,
             no_response=AiBot.__no_response,
             diffs=diffs,
             code=code
@@ -117,12 +116,6 @@ class AiBot(ABC):
             sanitized_input = re.sub(r'"\s+', '"', sanitized_input)  # Remove spaces after opening quotes
             sanitized_input = re.sub(r'\s+"', '"', sanitized_input)  # Remove spaces before closing quotes
             sanitized_input = re.sub(r'\s{2,}', ' ', sanitized_input)  # Replace multiple spaces with a single space
-            # Additional sanitization to handle odd spacing issues
-            sanitized_input = re.sub(r'\s*,\s*', ',', sanitized_input)  # Remove spaces around commas
-            sanitized_input = re.sub(r'\s*\[\s*', '[', sanitized_input)  # Remove spaces after opening brackets
-            sanitized_input = re.sub(r'\s*\]\s*', ']', sanitized_input)  # Remove spaces before closing brackets
-            sanitized_input = re.sub(r'\s*{\s*', '{', sanitized_input)  # Remove spaces after opening braces
-            sanitized_input = re.sub(r'\s*}\s*', '}', sanitized_input)  # Remove spaces before closing braces
 
             # Ensure the input is valid JSON
             if not sanitized_input.startswith('[') or not sanitized_input.endswith(']'):

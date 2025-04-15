@@ -18,7 +18,6 @@ def test_ai_request_diffs(mock_openai):
     response = chat_gpt.ai_request_diffs(
         code="print('Hello, world!')",
         diffs="@@ -1 +1 @@\n-print('Hello')\n+print('Hello, world!')",
-        file_path="example.py"
     )
 
     assert response == "[{\"position\": 1, \"body\": \"Typo in line\"}]"
