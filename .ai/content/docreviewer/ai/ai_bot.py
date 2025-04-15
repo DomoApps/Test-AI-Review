@@ -38,6 +38,8 @@ class AiBot(ABC):
     3. Guidelines:
       - Only comment on added lines (lines starting with `+` in the diff).
       - Ensure the `position` matches the line's position in the diff, not the original file.
+      - Count all lines in the diff (including `+`, `-`, and context lines) to determine the `position`.
+      - The first line in the diff is `position` 1, the second line is `position` 2, and so on.
       - Be concise and professional in your comments.
       - Return only valid JSON with no markdown modifiers, wrappers, or additional text.
 
@@ -52,8 +54,16 @@ class AiBot(ABC):
       If you identify a typo in "New line with typo", your output should be:
       [
         {{
-          "position": 1,
+          "position": 2,
           "body": "Typo: 'typo' should be corrected."
+        }}
+      ]
+
+      If you identify an issue in "Another new line", your output should be:
+      [
+        {{
+          "position": 3,
+          "body": "Consider rephrasing for clarity."
         }}
       ]
 
