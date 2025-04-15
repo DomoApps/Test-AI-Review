@@ -85,8 +85,7 @@ class AiBot(ABC):
             problems=AiBot.__problems,
             no_response=AiBot.__no_response,
             diffs=diffs,
-            code=code,
-            file_path=file_path,
+            code=code
         )
 
     @staticmethod
