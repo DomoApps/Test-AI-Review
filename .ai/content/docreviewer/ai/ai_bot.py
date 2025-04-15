@@ -20,6 +20,9 @@ class AiBot(ABC):
       - Style consistency
       - Clarity improvements
       - Formatting issues
+      - Racism, sexism, and other forms of discrimination
+      - Inappropriate language
+      - Inappropriate content
 
     2. Output Format:
       Provide comments in the following JSON format:
@@ -33,6 +36,7 @@ class AiBot(ABC):
       - Only comment on added lines (lines starting with `+` in the diff).
       - Ensure the `position` matches the line's position in the diff, not the original file.
       - Be concise and professional in your comments.
+      - Return only valid json
 
     4. Example:
       For the following diff:
