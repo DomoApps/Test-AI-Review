@@ -4,6 +4,8 @@
 
 from abc import ABC, abstractmethod
 from ai.line_comment import LineComment
+from log import Log
+
 
 class AiBot(ABC):
     
@@ -116,17 +118,7 @@ class AiBot(ABC):
         import re
 
         try:
-            # Preprocess the input to remove extra spaces around keys and values
-            sanitized_input = re.sub(r'\s*:\s*', ':', input.strip())  # Remove spaces around colons
-            sanitized_input = re.sub(r'"\s+', '"', sanitized_input)  # Remove spaces after opening quotes
-            sanitized_input = re.sub(r'\s+"', '"', sanitized_input)  # Remove spaces before closing quotes
-            sanitized_input = re.sub(r'\s{2,}', ' ', sanitized_input)  # Replace multiple spaces with a single space
-
-            # Ensure the input is valid JSON
-            if not sanitized_input.startswith('[') or not sanitized_input.endswith(']'):
-                raise ValueError("Input does not appear to be a valid JSON array.")
-
-            comments = json.loads(sanitized_input)
+            comments = json.loads(input)
             return [
                 LineComment(line=comment["position"], text=comment["body"])
                 for comment in comments

@@ -37,18 +37,13 @@ class ChatGPT(AiBot):
                 }
             ],
             "model": self.__chat_gpt_model,
-            "stream": True,
         }
 
     def ai_request_diffs(self, code, diffs):
         payload = self.build_request_payload(code, diffs)
-        stream = self.__client.chat.completions.create(
+        response = self.__client.chat.completions.create(
             messages=payload["messages"], 
-            model=payload["model"], 
-            stream=payload["stream"]
+            model=payload["model"]
         )
-        content = []
-        for chunk in stream:
-            if chunk.choices[0].delta.content:
-                content.append(chunk.choices[0].delta.content)
-        return " ".join(content)
+        content = response.choices[0].message.content
+        return content
