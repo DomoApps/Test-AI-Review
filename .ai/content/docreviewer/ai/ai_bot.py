@@ -55,7 +55,6 @@ class AiBot(ABC):
       For the following diff:
 
       @@ -1,3 +1,4 @@
-       
       -Old line
        
       +New line with typo
@@ -65,7 +64,7 @@ class AiBot(ABC):
       If you identify a typo in "New line with typo", your output should be:
       [
         {{
-          "position": 4,
+          "position": 3,
           "body": "Typo: 'typo' should be corrected."
         }}
       ]
@@ -73,7 +72,7 @@ class AiBot(ABC):
       If you identify an issue in "Another new line", your output should be:
       [
         {{
-          "position": 6,
+          "position": 5,
           "body": "Consider rephrasing for clarity."
         }}
       ]
