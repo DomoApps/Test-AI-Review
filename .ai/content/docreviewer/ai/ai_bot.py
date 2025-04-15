@@ -36,8 +36,8 @@ class AiBot(ABC):
       - The `position` should correspond to the line number in the diff where the issue occurs, as indicated by the `+` lines in the diff.
 
     3. Guidelines:
-      - Only comment on added lines (lines starting with `+` in the diff).
-      - Count all lines above in the diff including those beginning with '+' '-' and a blank space to determine the `position`.
+      - Only review added lines (lines starting with `+` in the diff). Ignore issues with lines starting with `-` or context lines.
+      - To ensure accurate positioning, you must count all lines in the diff (including +, -, and context lines) sequentially, starting from the first line of the diff.
       - The first line in the diff is `position` 1, the second line is `position` 2, and so on.
       - Be concise and professional in your comments.
       - Return only valid JSON with no markdown modifiers, wrappers, or additional text.
