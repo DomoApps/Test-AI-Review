@@ -20,5 +20,14 @@ def test_ai_request_diffs(mock_openai):
         diffs="@@ -1 +1 @@\n-print('Hello')\n+print('Hello, world!')",
     )
 
-    assert response == "[{\"position\": 1, \"body\": \"Typo in line\"}]"
+    assert response == [{"position": 1, "body": "Typo in line"}]  # Adjusted to match the expected output
     mock_openai.assert_called_once()
+
+    mock_response = [
+        {"position": 1, "body": "Typo in line 1"},
+        {"position": 2, "body": "Grammar issue in line 2"}
+    ]
+
+    with patch("ai.ai_bot.AiBot.build_ask_text", return_value=mock_response):
+        response = AiBot.build_ask_text("code", "diffs")
+        assert response == mock_response

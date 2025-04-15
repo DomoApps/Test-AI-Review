@@ -25,10 +25,12 @@ class AiBot(ABC):
 
     2. Output Format:
       Provide comments in the following JSON format:
-      {{
-        "position": <position_in_diff>,
-        "body": "<comment_text>"
-      }}
+      [
+        {
+          "position": <position_in_diff>,
+          "body": "<comment_text>"
+        }
+      ]
       - The `position` should correspond to the line number in the diff where the issue occurs, as indicated by the `+` lines in the diff.
 
     3. Guidelines:
@@ -80,7 +82,7 @@ class AiBot(ABC):
         pass
 
     @staticmethod
-    def build_ask_text(code, diffs, file_path) -> str:
+    def build_ask_text(code, diffs) -> str:
         return AiBot.__chat_gpt_ask_long.format(
             no_response=AiBot.__no_response,
             diffs=diffs,
@@ -106,6 +108,9 @@ class AiBot(ABC):
         """
         if input is None or not input.strip():
             return []
+
+        if not isinstance(input, str):
+            raise ValueError("Input must be a string.")
 
         import json
         import re

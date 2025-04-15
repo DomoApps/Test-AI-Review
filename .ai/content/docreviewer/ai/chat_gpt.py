@@ -31,7 +31,7 @@ class ChatGPT(AiBot):
         Returns:
             str: The AI's response.
         """
-        prompt = AiBot.build_ask_text(code=code, diffs=diffs, file_path=file_path)
+        prompt = AiBot.build_ask_text(code=code, diffs=diffs)
         return self._send_request(prompt)
 
     def _send_request(self, prompt):

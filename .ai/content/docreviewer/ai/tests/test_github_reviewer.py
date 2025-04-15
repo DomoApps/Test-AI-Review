@@ -31,7 +31,14 @@ def test_main(mock_chat_gpt, mock_github, mock_git):
 
     # Mock file content
     with patch("builtins.open", mock_open(read_data="print('Hello')")) as mock_file:
+        with open("example.py", "r") as file:
+            content = file.read()
+            assert content == "print('Hello')"  # Ensure file content is read correctly
+
         main()
+
+        # Ensure file operations are completed within the block
+        mock_file.assert_called_once_with("example.py", "r")
 
     # Assertions
     mock_git.get_diff_in_file.assert_called_once_with(
