@@ -18,6 +18,7 @@ class ChatGPT(AiBot):
         import openai
         self.__chat_gpt_model = model
         self.__client = OpenAI(api_key = token)
+        self.__client.ChatCompletion = openai.ChatCompletion
 
     def ai_request_diffs(self, code, diffs):
         """
@@ -35,18 +36,13 @@ class ChatGPT(AiBot):
         return self._send_request(prompt)
 
     def _send_request(self, prompt):
-        stream = self.__client.chat.completions.create(
+        response = self.__client.ChatCompletion.create(
             messages=[
                 {
                     "role": "user",
                     "content": prompt,
                 }
             ],
-            model = self.__chat_gpt_model,
-            stream = True,
+            model=self.__chat_gpt_model
         )
-        content = []
-        for chunk in stream:
-            if chunk.choices[0].delta.content:
-                content.append(chunk.choices[0].delta.content)
-        return " ".join(content)
+        return response["choices"][0]["message"]["content"]

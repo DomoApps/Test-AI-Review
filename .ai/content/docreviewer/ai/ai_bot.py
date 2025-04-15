@@ -37,7 +37,7 @@ class AiBot(ABC):
       - Only comment on added lines (lines starting with `+` in the diff).
       - Ensure the `position` matches the line's position in the diff, not the original file.
       - Be concise and professional in your comments.
-      - Return only valid json
+      - Return only valid JSON
 
     4. Example:
       For the following diff:
@@ -133,6 +133,9 @@ class AiBot(ABC):
                 if "position" in comment and "body" in comment
             ]
         except json.JSONDecodeError as e:
+            # log the error
+            import logging
+            logging.error(f"LOG Failed to parse AI response as JSON: {e}")
             raise ValueError(f"Failed to parse AI response as JSON: {e}")
         except Exception as e:
             raise ValueError(f"Unexpected error while parsing AI response: {e}")
