@@ -42,7 +42,11 @@ class ChatGPT(AiBot):
 
     def ai_request_diffs(self, code, diffs):
         payload = self.build_request_payload(code, diffs)
-        stream = self.__client.chat.completions.create(messages=payload.messages, model=payload.model, stream=payload.stream)
+        stream = self.__client.chat.completions.create(
+            messages=payload["messages"], 
+            model=payload["model"], 
+            stream=payload["stream"]
+        )
         content = []
         for chunk in stream:
             if chunk.choices[0].delta.content:
