@@ -40,19 +40,20 @@ class AiBot(ABC):
 
     4. Example:
       For the following diff:
-      ```
+
       @@ -1,3 +1,4 @@
       -Old line
       +New line with typo
       +Another new line
-      ```
+
       If you identify a typo in "New line with typo", your output should be:
-      ```json
-      {{
-        "position": 1,
-        "body": "Typo: 'typo' should be corrected."
-      }}
-      ```
+      [
+        {
+          "position": 1,
+          "body": "Typo: 'typo' should be corrected."
+        }
+      ]
+
 
     DIFFS:
 
@@ -117,6 +118,12 @@ class AiBot(ABC):
             sanitized_input = re.sub(r'"\s+', '"', sanitized_input)  # Remove spaces after opening quotes
             sanitized_input = re.sub(r'\s+"', '"', sanitized_input)  # Remove spaces before closing quotes
             sanitized_input = re.sub(r'\s{2,}', ' ', sanitized_input)  # Replace multiple spaces with a single space
+            # Additional sanitization to handle odd spacing issues
+            sanitized_input = re.sub(r'\s*,\s*', ',', sanitized_input)  # Remove spaces around commas
+            sanitized_input = re.sub(r'\s*\[\s*', '[', sanitized_input)  # Remove spaces after opening brackets
+            sanitized_input = re.sub(r'\s*\]\s*', ']', sanitized_input)  # Remove spaces before closing brackets
+            sanitized_input = re.sub(r'\s*{\s*', '{', sanitized_input)  # Remove spaces after opening braces
+            sanitized_input = re.sub(r'\s*}\s*', '}', sanitized_input)  # Remove spaces before closing braces
 
             # Ensure the input is valid JSON
             if not sanitized_input.startswith('[') or not sanitized_input.endswith(']'):
