@@ -41,17 +41,10 @@ class ChatGPT(AiBot):
         }
 
     def ai_request_diffs(self, code, diffs):
-        """
-        Request diffs from the OpenAI API.
-
-        Args:
-            code: The code to analyze.
-            diffs: The diffs to include in the request.
-
-        Returns:
-            A string containing the response from the OpenAI API.
-        """
         payload = self.build_request_payload(code, diffs)
-        response = self.__client.create(**payload)  # Updated to directly call `create` on the client
-        
-        return response["choices"][0]["message"]["content"]
+        stream = self.__client.chat.completions.create(payload)
+        content = []
+        for chunk in stream:
+            if chunk.choices[0].delta.content:
+                content.append(chunk.choices[0].delta.content)
+        return " ".join(content)
