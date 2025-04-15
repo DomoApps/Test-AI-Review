@@ -24,7 +24,6 @@ class AiBot(ABC):
     2. Output Format:
       Provide comments in the following JSON format:
       {{
-        "path": "{file_path}",
         "position": <position_in_diff>,
         "body": "<comment_text>"
       }}
@@ -46,7 +45,6 @@ class AiBot(ABC):
       If you identify a typo in "New line with typo", your output should be:
       ```json
       {{
-        "path": "example/file.txt",
         "position": 1,
         "body": "Typo: 'typo' should be corrected."
       }}
