@@ -3,25 +3,38 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 
 import pytest
-from unittest.mock import patch
+from unittest.mock import patch, ANY
 from ai.chat_gpt import ChatGPT
+from ai.ai_bot import AiBot
 
 @patch("openai.ChatCompletion.create")
-def test_ai_request_diffs(mock_openai):
-    mock_openai.return_value = {
+@patch("ai.chat_gpt.OpenAI")
+def test_ai_request_diffs(mock_openai_create, mock_openai):
+    # Mock the OpenAI API response
+    mock_openai_create.return_value = {
         "choices": [
-            {"message": {"content": "[{\"position\": 1, \"body\": \"Typo in line\"}]"}}
+            {
+                "message": {
+                    "content": "Mocked AI response"
+                }
+            }
         ]
     }
 
-    chat_gpt = ChatGPT(token="fake-token", model="gpt-4")
-    response = chat_gpt.ai_request_diffs(
-        code="print('Hello, world!')",
-        diffs="@@ -1 +1 @@\n-print('Hello')\n+print('Hello, world!')",
-    )
+    ai = ChatGPT(token="fake-token", model="gpt-4")
+    code = "def example_function():\n    pass"
+    diffs = "- def example_function():\n+ def example_function(param):\n    pass"
 
-    assert response == [{"position": 1, "body": "Typo in line"}]  # Adjusted to match the expected output
-    mock_openai.assert_called_once()
+    response = ai.ai_request_diffs(code=code, diffs=diffs)
+
+    # Assert the mocked response is returned
+    assert response == "Mocked AI response"
+
+    # Ensure the OpenAI API was called with the correct parameters
+    mock_openai_create.assert_called_once_with(
+        model="gpt-4",
+        messages=ANY
+    )
 
     mock_response = [
         {"position": 1, "body": "Typo in line 1"},
