@@ -34,7 +34,7 @@ class AiBot(ABC):
       The position corresponds to the line number in the diff where the issue occurs, starting at 1, immediately after the @@ hunk header.
 
     3. Positioning Rules:
-      Start counting positions at 1 for each file.
+      Start counting positions at 1 for each hunk.
 
       Count all lines that appear after the @@ hunk header:
         Context lines (start with a space)
@@ -43,8 +43,10 @@ class AiBot(ABC):
 
       Do not count metadata lines:
         diff --git, index, ---, +++, and @@
-      
-      Only create comments on added lines (+)
+
+      Only create comments on added lines (+).
+
+      Reset the position count for each new hunk.
 
     4. Output Rules:
       Do not comment on removed (-) or context ( ) lines.
@@ -69,6 +71,7 @@ class AiBot(ABC):
           "body": "Typo: 'typo' should be corrected."
         }}
       ]
+
       A comment on "Another new line" should be:
       [
         {{
@@ -76,6 +79,7 @@ class AiBot(ABC):
           "body": "Consider rephrasing for clarity."
         }}
       ]
+
       Here is the diff to review:
         {diffs}
     """
