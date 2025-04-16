@@ -19,7 +19,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install -r docreviewer/requirements.txt
+        run: pip install -r doc_reviewer_action/requirements.txt
 
       - name: Run Reviewer Script
         env:
@@ -33,7 +33,7 @@ jobs:
           REPO_NAME: ${{ github.event.repository.name }}
           PULL_NUMBER: ${{ github.event.number }}
         run: |
-          python docreviewer/github_reviewer.py
+          python doc_reviewer_action/github_reviewer.py
 
       - name: Upload result as an artifact
         uses: actions/upload-artifact@v4
