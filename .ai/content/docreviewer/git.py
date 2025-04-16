@@ -42,3 +42,31 @@ class Git:
     def get_diff_in_file(remote_name, head_ref, base_ref, file_path) -> str:
         command = ["git", "diff", f"{remote_name}/{base_ref}", f"{remote_name}/{head_ref}", "--", file_path]
         return Git.__run_subprocess(command)
+
+    @staticmethod
+    def prep_diff_for_ai(diff: str) -> str:
+        lines = diff.splitlines()
+        processed_lines = []
+        line_number = 1
+        inside_diff = False
+
+        for line in lines:
+            # Skip headers above the actual diff
+            if not inside_diff:
+                if line.startswith('@@'):
+                    inside_diff = True
+                continue
+
+            # Skip hunk headers
+            if line.startswith('@@'):
+                continue
+
+            # Handle empty lines explicitly as a single space for context lines
+            if not line.strip():
+                processed_lines.append(f"{line_number} ")  # Single space for empty lines
+            else:
+                # Prepend each line with an incrementing number without modifying the content
+                processed_lines.append(f"{line_number}{line}")
+            line_number += 1
+
+        return '\n'.join(processed_lines)

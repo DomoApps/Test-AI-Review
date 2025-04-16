@@ -17,13 +17,14 @@ class GitHub(Repository):
         self.__url_add_comment = f"https://api.github.com/repos/{repo_owner}/{repo_name}/pulls/{pull_number}/comments"
         self.__url_add_issue = f"https://api.github.com/repos/{repo_owner}/{repo_name}/issues/{pull_number}/comments"
 
-    def post_comment_to_line(self, text, commit_id, file_path, line):
+    def post_comment_to_line(self, text, commit_id, file_path, position):
         headers = self.__header_accept_json | self.__header_authorization
         body = {
             "body": text,
             "commit_id": commit_id,
             "path" : file_path,
-            "position" : line
+            "position" : position,
+            "side": "right"
         }
         response = requests.post(self.__url_add_comment, json = body, headers = headers)
         if response.status_code == 200 or response.status_code == 201:
