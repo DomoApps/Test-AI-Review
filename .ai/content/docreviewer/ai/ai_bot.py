@@ -48,7 +48,9 @@ class AiBot(ABC):
 
       Reset the position count for each new hunk.
 
-      Ensure that the position corresponds to the exact line in the diff where the issue occurs. Double-check the line content to avoid misalignment.
+      Ensure that the position corresponds to the exact line in the diff where the issue occurs. Match the content of the line to confirm its location.
+
+      Recount all lines in the hunk explicitly, including context, added, and removed lines, to avoid misalignment.
 
     4. Output Rules:
       Do not comment on removed (-) or context ( ) lines.
