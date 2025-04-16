@@ -63,7 +63,7 @@ def main():
 
             Log.print_green("Fetching git diff...")
             Log.print_green(f"Git diff for file {file}:")
-            Log.print_green(file_diffs)
+            Log.print_green(formatted_diff)
 
             Log.print_green("AI response:")
             Log.print_green(response)
