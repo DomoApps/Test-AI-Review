@@ -1,0 +1,10 @@
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  ai_pr_reviewer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Review Code
+        uses: DomoApps/doc-reviewer-action@v1.0.0
