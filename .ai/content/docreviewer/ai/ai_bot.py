@@ -31,26 +31,11 @@ class AiBot(ABC):
           "body": "<comment_text>"
         }}
       ]
-      The position corresponds to the line number in the diff where the issue occurs, starting at 1, immediately after the @@ hunk header.
 
     3. Positioning Rules:
-      Start counting positions at 1 for each hunk.
+      The position is indicated by the number at the start of the line in the diff.
 
-      Count all lines that appear after the @@ hunk header:
-        Context lines (start with a space)
-        Added lines (start with +)
-        Removed lines (start with -)
-
-      Do not count metadata lines:
-        diff --git, index, ---, +++, and @@
-
-      Only create comments on added lines (+).
-
-      Reset the position count for each new hunk.
-
-      Ensure that the position corresponds to the exact line in the diff where the issue occurs. Match the content of the line to confirm its location.
-
-      Recount all lines in the hunk explicitly, including context, added, and removed lines, to avoid misalignment.
+      Only create comments on added lines (`<line_number>+`).
 
     4. Output Rules:
       Do not comment on removed (-) or context ( ) lines.
@@ -60,26 +45,32 @@ class AiBot(ABC):
       Do not include any markdown, explanations, or additional text.
 
     5. Example: Given this diff:
+    index b21e242..bee2ab2 100644
+    --- a/docs/Getting-Started/overview.md
+    +++ b/docs/Getting-Started/overview.md
+    @@ -4,61 +4,66 @@ stoplight-id: d01f63a6ba662
+    1 
+    2 # Some Header
+    3 
+    4-Some text that was removed.
+    5+Some text that was added with a typo
+    6 
+    7-Some more text that was removed.
+    8+Some more text that was added with a clarity issue.
+    9 
 
-      @@ -1,3 +1,4 @@
-      -Old line
-      
-      +New line with typo
-      
-      +Another new line
-
-      A comment on "New line with typo" should be:
+      A comment on "Some text that was added with a typo" should be:
       [
         {{
-          "position": 3,
+          "position": 5,
           "body": "Typo: 'typo' should be corrected."
         }}
       ]
 
-      A comment on "Another new line" should be:
+      A comment on "Some more text that was added with a clarity issue" should be:
       [
         {{
-          "position": 5,
+          "position": 8,
           "body": "Consider rephrasing for clarity."
         }}
       ]

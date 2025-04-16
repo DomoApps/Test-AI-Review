@@ -55,7 +55,9 @@ def main():
                 Log.print_red("Diffs are empty")
 
             Log.print_green(f"Asking AI. Content Len:{len(file_content)} Diff Len: {len(file_diffs)}")
-            response = ai.ai_request_diffs(code=file_content, diffs=file_diffs)
+            # take the diff, and add an incrementing number to each line after the hunk header
+            formatted_diff = Git.prep_diff_for_ai(file_diffs)
+            response = ai.ai_request_diffs(code=file_content, diffs=formatted_diff)
 
             log_file.write(f"{separator}{file_content}{separator}{file_diffs}{separator}{response}{separator}")
 

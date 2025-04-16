@@ -44,50 +44,29 @@ class Git:
         return Git.__run_subprocess(command)
 
     @staticmethod
-    def map_line_to_position(file_diffs: str, line_number: int) -> int:
-        """
-        Maps a line number from the AI's output to the correct position in the diff.
+    def prep_diff_for_ai(diff: str) -> str:
+        lines = diff.splitlines()
+        processed_lines = []
+        line_number = 1
+        inside_diff = False
 
-        Args:
-            file_diffs (str): The diff content for the file.
-            line_number (int): The line number from the AI's output.
-
-        Returns:
-            int: The position in the diff corresponding to the line number, or None if not found.
-        """
-        Log.print_green(f"AI line number: {line_number}")
-        Log.print_green(f"File diffs being processed:\n{file_diffs}")
-
-        current_line = 0
-        position = 0
-        hunk_start_line = None
-
-        for diff_line in file_diffs.splitlines():
-            Log.print_green(f"Processing diff line: {diff_line}")
-            if diff_line.startswith("@@"):
-                # Extract the starting line number for the diff hunk
-                hunk_info = diff_line.split(" ")[2]
-                start_line = int(hunk_info.split(",")[0].lstrip("+"))
-                current_line = start_line - 1
-                position = 0  # Reset position for each hunk
-                hunk_start_line = start_line
-                Log.print_green(f"New hunk starts at line: {start_line}")
-            elif diff_line.startswith("+") and not diff_line.startswith("+++"):
-                position += 1
-                current_line += 1
-                Log.print_green(f"Added line {current_line} maps to position {position}")
-                if current_line == line_number:
-                    Log.print_green(f"Mapped AI line number {line_number} to diff position {position}")
-                    return position
-            elif diff_line.startswith("-"):
-                # Skip removed lines
+        for line in lines:
+            # Skip headers above the actual diff
+            if not inside_diff:
+                if line.startswith('@@'):
+                    inside_diff = True
                 continue
+
+            # Skip hunk headers
+            if line.startswith('@@'):
+                continue
+
+            # Handle empty lines explicitly as a single space for context lines
+            if not line.strip():
+                processed_lines.append(f"{line_number} ")  # Single space for empty lines
             else:
-                current_line += 1
+                # Prepend each line with an incrementing number without modifying the content
+                processed_lines.append(f"{line_number}{line}")
+            line_number += 1
 
-        Log.print_red(f"Failed to map AI line number {line_number} to a diff position. Falling back to approximate mapping.")
-        if hunk_start_line is not None:
-            Log.print_yellow(f"Falling back to hunk start line: {hunk_start_line}")
-            return hunk_start_line
-
-        return None
+        return '\n'.join(processed_lines)
