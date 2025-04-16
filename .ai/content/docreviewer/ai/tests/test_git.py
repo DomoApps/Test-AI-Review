@@ -4,7 +4,6 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../.
 
 import unittest
 from git import Git
-
 class TestGit(unittest.TestCase):
 
     def test_prep_diff_for_ai(self):
@@ -33,7 +32,8 @@ class TestGit(unittest.TestCase):
 
         # Call the method under test
         result = Git.prep_diff_for_ai(diff_input)
-
+        # can we log the result during the test
+        print("Result:", result)
         # Split the outputs into lines for comparison
         expected_lines = expected_output.splitlines()
         result_lines = result.splitlines()

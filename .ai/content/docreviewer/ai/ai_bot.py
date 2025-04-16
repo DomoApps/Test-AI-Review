@@ -33,9 +33,7 @@ class AiBot(ABC):
       ]
 
     3. Positioning Rules:
-      The position is indicated by the number at the start of the line in the diff.
-
-      Only create comments on added lines (`<line_number>+`).
+      For the position value, always use the value is indicated by the number at the start of the line being reviewed
 
     4. Output Rules:
       Do not comment on removed (-) or context ( ) lines.
