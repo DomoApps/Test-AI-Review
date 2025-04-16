@@ -59,7 +59,7 @@ def main():
             formatted_diff = Git.prep_diff_for_ai(file_diffs)
             response = ai.ai_request_diffs(code=file_content, diffs=formatted_diff)
 
-            log_file.write(f"{separator}{file_content}{separator}{file_diffs}{separator}{response}{separator}")
+            log_file.write(f"{separator}{file_content}{separator}{formatted_diff}{separator}{response}{separator}")
 
             Log.print_green("Fetching git diff...")
             Log.print_green(f"Git diff for file {file}:")
