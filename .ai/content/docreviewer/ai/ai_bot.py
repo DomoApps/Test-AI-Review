@@ -48,6 +48,8 @@ class AiBot(ABC):
 
       Reset the position count for each new hunk.
 
+      Ensure that the position corresponds to the exact line in the diff where the issue occurs. Double-check the line content to avoid misalignment.
+
     4. Output Rules:
       Do not comment on removed (-) or context ( ) lines.
       Be concise and professional in your comments.
