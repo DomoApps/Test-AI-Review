@@ -19,7 +19,9 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install -r .docreviewer/requirements.txt
+        run: |
+          cd .docreviewer
+          pip install -r requirements.txt
 
       - name: Run Reviewer Script
         env:
