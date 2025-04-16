@@ -33,7 +33,8 @@ class AiBot(ABC):
       ]
 
     3. Positioning Rules:
-      For the position value, always use the value is indicated by the number at the start of the line being reviewed
+      For the position value, always use the value is indicated by the number at the start of the line being reviewed.
+      Do not use the line number with any variations. If you are reviewing line 89, use 89, not 88 or 90.
 
     4. Output Rules:
       Do not comment on removed (-) or context ( ) lines.
