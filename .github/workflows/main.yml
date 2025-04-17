@@ -6,7 +6,7 @@ on:
 
 jobs:
   ai_pr_reviewer:
-    uses: DomoApps/doc-reviewer-actions/.github/workflows/action.yml@main
+    uses: domoapps/doc-reviewer-action/.github/workflows/action.yml@v1.0.0
     secrets:
       CHATGPT_KEY: ${{ secrets.CHATGPT_KEY }}
       CHATGPT_MODEL: ${{ secrets.CHATGPT_MODEL }}
