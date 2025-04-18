@@ -1,10 +1,13 @@
+name: Pull Request ChatGPT review
+
 on:
   pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
   ai_pr_reviewer:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Review Code
-        uses: DomoApps/doc-reviewer-action@v1.0.0
+    uses: domoapps/doc-reviewer-action/.github/workflows/action.yml@main
+    secrets:
+      CHATGPT_KEY: ${{ secrets.CHATGPT_KEY }}
+      CHATGPT_MODEL: ${{ secrets.CHATGPT_MODEL }}
+      API_KEY: ${{ secrets.API_KEY }}

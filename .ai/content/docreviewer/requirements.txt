@@ -1,5 +1,0 @@
-requests
-openai
-pytest
-pytest-mock
-mock_open
